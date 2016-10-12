@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automation instance="Mailosaur">
+ <instances>
+  <instance tag="Mailosaur">
+   <url>https://cherry.epmxweb.com</url>
+   <grid>no</grid>
+   <accessKey>68338cb8-f90d-4812-a070-e76e3926da5c</accessKey>
+   <username>viendo</username>
+  </instance>
+ </instances>
+</automation>

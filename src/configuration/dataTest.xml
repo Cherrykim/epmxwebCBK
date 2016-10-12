@@ -1,0 +1,22 @@
+<DataTest>
+	<TestModules>
+		<TestModule name="Search_001">
+			<completeStatus>Complete</completeStatus>
+			<terminatedStatus>Terminated</terminatedStatus>
+			<activeStatus>Active</activeStatus>
+			<statusColoum>Status</statusColoum>
+		</TestModule>
+		<TestModule name="Demo_001">
+			<color>invalidStatus</color>
+		</TestModule>
+		<TestModule name="WorkPlan_001">
+			<workPlanName>Child 2</workPlanName>
+			<stepStart>START</stepStart>
+			<stepEnd>END</stepEnd>
+		</TestModule>
+		<TestModule name="WorkPlan_002">
+			<workPlanName>Child 2</workPlanName>
+			<stepStart>START</stepStart>
+		</TestModule>
+	</TestModules>
+</DataTest>

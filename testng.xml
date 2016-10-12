@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Mailosaur" parallel="tests" thread-count="1">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="config.MethodListener" />		
+	</listeners>
+
+	<test name="Run on Chrome">
+		<parameter name="browser" value="chrome" />
+		<parameter name="ipClient" value="192.168.189.156"/>
+		<parameter name="port" value="6666"/>
+		<groups>
+			<run>
+				<include name="regression" />
+			</run>
+		</groups>
+		<classes>
+<!-- 			<class name="Login.Login_01" /> -->
+<!-- 			<class name="Logout.Logout_01" /> -->
+<!-- 			<class name="CreateMailbox.CreateMailbox_01" /> -->
+<!-- 			<class name="HomePage.HomePage_01" /> -->
+						<class name="RegisterPage.RegisterPage_01" />
+			
+			
+		</classes>
+	</test>	
+</suite> 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Mailosaur" parallel="tests" thread-count="1">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="config.MethodListener" />		
+	</listeners>
+
+	<test name="Run on Chrome">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserVersion" value="52"/>
+		<parameter name="platform" value="Windows 7"/>
+		<groups>
+			<run>
+				<include name="regression" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Login.Login_01_Saucelabs" />
+			<class name="Logout.Logout_01_Saucelabs" />
+			<class name="CreateMailbox.CreateMailbox_01_Saucelabs" />
+		</classes>
+	</test>	
+</suite> 
+
