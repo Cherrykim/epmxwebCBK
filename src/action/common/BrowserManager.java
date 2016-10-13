@@ -246,27 +246,27 @@ public class BrowserManager {
 	 * Start chrome driver
 	 */
 	public void startChromeDriver() {
-		System.setProperty("webdriver.chrome.driver", "..\\Mailosaur\\src\\resource\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "..\\selenium\\src\\resource\\chromedriver.exe");
 	}
 
 	/**
 	 * Start chrome driver on Mac
 	 */
 	public void startChromeDriverOnMac() {
-		System.setProperty("webdriver.chrome.driver", "../Mailosaur/src/resource/chromedriverMac");
+		System.setProperty("webdriver.chrome.driver", "../selenium/src/resource/chromedriverMac");
 	}
 
 	/**
 	 * Start chrome driver on linux
 	 */
 	public void startChromeDriverOnLinux(){
-		System.setProperty("webdriver.chrome.driver", "../Mailosaur/src/resource/chromedriverLinux");
+		System.setProperty("webdriver.chrome.driver", "../selenium/src/resource/chromedriverLinux");
 	}
 	/**
 	 * start IE driver
 	 */
 	public void startIEDriver() {
-		System.setProperty("webdriver.ie.driver", "..\\Mailosaur\\src\\resource\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", "..\\selenium\\src\\resource\\IEDriverServer.exe");
 	}
 
 	/**

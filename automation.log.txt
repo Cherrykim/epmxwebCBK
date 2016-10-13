@@ -1,0 +1,29 @@
+2016-10-13 17:59:10,135 INFO  [Login.Login_01] - Step Login_001 - 01: Open the site https://cherry.epmxweb.com
+2016-10-13 17:59:10,135 INFO  [Login.Login_01] - Step Login_001 - 02: Leave User ID empty and click on Login button
+2016-10-13 17:59:16,264 INFO  [Login.Login_01] - VP - 01: The system will show error message: Please enter a  User ID
+2016-10-13 17:59:19,194 INFO  [Login.Login_01] - <font color='green'>===PASSED=== </font>
+2016-10-13 17:59:19,198 INFO  [Login.Login_01] - Step Login_002 - 01: Open the site https://cherry.epmxweb.com
+2016-10-13 17:59:19,198 INFO  [Login.Login_01] - Step Login_002 - 02: Input an User ID
+2016-10-13 17:59:19,198 INFO  [Login.Login_01] - Step Login_002 - 03: Leave Password field empty and click on Login button
+2016-10-13 17:59:25,290 INFO  [Login.Login_01] - VP - 01: The system will show error message: Please enter a  Password
+2016-10-13 17:59:27,789 INFO  [Login.Login_01] - <font color='red'>===FAILED=== </font>
+2016-10-13 17:59:29,934 INFO  [Login.Login_01] - Step Login_003 - 01: Open the site https://cherry.epmxweb.com
+2016-10-13 17:59:29,934 INFO  [Login.Login_01] - Step Login_003 - 02: Input incorrect Username and Password then click on Login button
+2016-10-13 17:59:36,073 INFO  [Login.Login_01] - VP - 01: The system will show error message: Invalid User ID
+2016-10-13 17:59:36,426 INFO  [Login.Login_01] - <font color='green'>===PASSED=== </font>
+2016-10-13 17:59:36,428 INFO  [Login.Login_01] - Step Login_004 - 01: Open the site http://tool.cherry.epmxweb.com/
+2016-10-13 17:59:36,428 INFO  [Login.Login_01] - Step Login_004 - 02: Select Brand: 'master'
+2016-10-13 17:59:36,428 INFO  [Login.Login_01] - Step Login_004 - 03: Choose available MySQL database and get an Username
+2016-10-13 17:59:36,428 INFO  [Login.Login_01] - Step Login_004 - 04: Open the site https://cherry.epmxweb.com
+2016-10-13 17:59:36,428 INFO  [Login.Login_01] - Step Login_004 - 05: Input correct username and incorrect password
+2016-10-13 17:59:42,570 INFO  [Login.Login_01] - VP - 01: The system will show error message: Invalid Password
+2016-10-13 17:59:42,881 INFO  [Login.Login_01] - <font color='green'>===PASSED=== </font>
+2016-10-13 17:59:42,883 INFO  [Login.Login_01] - Step Login_005 - 01: Open the site http://tool.cherry.epmxweb.com/
+2016-10-13 17:59:42,884 INFO  [Login.Login_01] - Step Login_005 - 02: Select Brand: 'master'
+2016-10-13 17:59:42,884 INFO  [Login.Login_01] - Step Login_005 - 03: Choose available MySQL database and get an Username
+2016-10-13 17:59:42,884 INFO  [Login.Login_01] - Step Login_005 - 04: Click on Config button and get default Password
+2016-10-13 17:59:42,884 INFO  [Login.Login_01] - Step Login_005 - 05: Open the site https://cherry.epmxweb.com
+2016-10-13 17:59:42,884 INFO  [Login.Login_01] - Step Login_005 - 06: Input correct username and password
+2016-10-13 17:59:49,027 INFO  [Login.Login_01] - Step Login_005 - 07: Accept Alert message
+2016-10-13 17:59:58,463 INFO  [Login.Login_01] - VP - 01: The system will show error message: Invalid Password
+2016-10-13 17:59:59,768 INFO  [Login.Login_01] - <font color='green'>===PASSED=== </font>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<script langauge="JavaScript" type="text/javascript">
+function doMenu(item) {
+ obj=document.getElementById(item);
+ col=document.getElementById("x" + item);
+ if (obj.style.display=="none") {
+  obj.style.display="block";
+  col.innerHTML="[-]";
+ }
+ else {
+  obj.style.display="none";
+  col.innerHTML="[+]";
+ }
+}
+</script>
+<head>
+  <title>Test Results Report - Log Output</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+  </head>
+<body>
+  <h1>Log Output</h1>
+  <p>
+    Combined output from all calls to the log methods of the <a href="http://testng.org/javadocs/org/testng/Reporter.html">TestNG Reporter</a>.    
+  </p>
+<a href="JavaScript:doMenu('log');" id=xmain>[+]</a> Steps:
+  <div id="log">
+                  2016-10-13 17:53:09,718 INFO  Login_01 - Step Login_001 - 01: Open the site https://cherry.epmxweb.com
+
+                        2016-10-13 17:53:09,719 INFO  Login_01 - Step Login_001 - 02: Leave User ID empty and click on Login button
+
+                        2016-10-13 17:53:12,227 INFO  Login_01 - VP - 01: The system will show error message: Please enter a  User ID
+
+                        2016-10-13 17:53:14,272 INFO  Login_01 - <font color='green'>===PASSED=== </font>
+
+                        2016-10-13 17:53:14,278 INFO  Login_01 - Step Login_002 - 01: Open the site https://cherry.epmxweb.com
+
+                        2016-10-13 17:53:14,278 INFO  Login_01 - Step Login_002 - 02: Input an User ID
+
+                        2016-10-13 17:53:14,279 INFO  Login_01 - Step Login_002 - 03: Leave Password field empty and click on Login button
+
+                        2016-10-13 17:53:16,476 INFO  Login_01 - VP - 01: The system will show error message: Please enter a  Password
+
+                        2016-10-13 17:53:18,492 INFO  Login_01 - <font color='green'>===PASSED=== </font>
+
+                        2016-10-13 17:53:18,495 INFO  Login_01 - Step Login_003 - 01: Open the site https://cherry.epmxweb.com
+
+                        2016-10-13 17:53:18,495 INFO  Login_01 - Step Login_003 - 02: Input incorrect Username and Password then click on Login button
+
+                        2016-10-13 17:53:20,711 INFO  Login_01 - VP - 01: The system will show error message: Invalid User ID
+
+                        2016-10-13 17:53:20,836 INFO  Login_01 - <font color='green'>===PASSED=== </font>
+
+                        2016-10-13 17:53:20,838 INFO  Login_01 - Step Login_004 - 01: Open the site http://tool.cherry.epmxweb.com/
+
+                        2016-10-13 17:53:20,838 INFO  Login_01 - Step Login_004 - 02: Select Brand: 'master'
+
+                        2016-10-13 17:53:20,838 INFO  Login_01 - Step Login_004 - 03: Choose available MySQL database and get an Username
+
+                        2016-10-13 17:53:20,838 INFO  Login_01 - Step Login_004 - 04: Open the site https://cherry.epmxweb.com
+
+                        2016-10-13 17:53:20,838 INFO  Login_01 - Step Login_004 - 05: Input correct username and incorrect password
+
+                        2016-10-13 17:53:23,183 INFO  Login_01 - VP - 01: The system will show error message: Invalid Password
+
+                        2016-10-13 17:53:23,249 INFO  Login_01 - <font color='green'>===PASSED=== </font>
+
+                        2016-10-13 17:53:23,252 INFO  Login_01 - Step Login_005 - 01: Open the site http://tool.cherry.epmxweb.com/
+
+                        2016-10-13 17:53:23,252 INFO  Login_01 - Step Login_005 - 02: Select Brand: 'master'
+
+                        2016-10-13 17:53:23,252 INFO  Login_01 - Step Login_005 - 03: Choose available MySQL database and get an Username
+
+                        2016-10-13 17:53:23,252 INFO  Login_01 - Step Login_005 - 04: Click on Config button and get default Password
+
+                        2016-10-13 17:53:23,252 INFO  Login_01 - Step Login_005 - 05: Open the site https://cherry.epmxweb.com
+
+                        2016-10-13 17:53:23,252 INFO  Login_01 - Step Login_005 - 06: Input correct username and password
+
+                        2016-10-13 17:53:25,589 INFO  Login_01 - Step Login_005 - 07: Accept Alert message
+
+                        2016-10-13 17:53:33,602 INFO  Login_01 - VP - 01: The system will show error message: Invalid Password
+
+                        2016-10-13 17:53:33,718 INFO  Login_01 - <font color='green'>===PASSED=== </font>
+
+            </div>
+
+</body>
+</html>
