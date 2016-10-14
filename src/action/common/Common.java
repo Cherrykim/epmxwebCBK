@@ -6,7 +6,9 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -14,6 +16,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
@@ -28,6 +32,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.w3c.dom.Element;
 
+import au.com.bytecode.opencsv.CSVReader;
 import config.XmlHelper;
 
 public class Common {
@@ -583,6 +588,56 @@ public class Common {
 		Random rd = new Random();
 		return rd.nextInt(max);
 	}
+	
+	public int getNumberOfUrl(String fileName){
+		 // This will load csv file 
+		int numberOfUrl = 0;
+		try{
+		 CSVReader reader = new CSVReader(new FileReader(getPathFile("src/resource/file/"+fileName)));
+		 
+		 // this will load content into list
+		  List<String[]> li=reader.readAll();
+		  System.out.println("Total rows which we have is "+li.size());
+		  reader.close();
+		  numberOfUrl = li.size() -1;
+		}catch (Exception e) {
+			System.out.print(e.getMessage());
+		}
+		return numberOfUrl;
+		}
+
+	
+	public String[] getUrlListByReadCSVFile(String fileName){
+		 // This will load csv file 
+		String[] urlList = new String[1000];
+		try{
+		 CSVReader reader = new CSVReader(new FileReader(getPathFile("src/resource/file/"+fileName)));
+		 
+		 // this will load content into list
+		  List<String[]> li=reader.readAll();
+//		  System.out.println("Total rows which we have is "+li.size());
+		           
+		  reader.close();
+		  
+		// create Iterator reference
+		  Iterator<String[]>i1= li.iterator();
+		  i1.next();
+		 int i=0;
+		 // Iterate all values 
+		 while(i1.hasNext()){
+		     
+		 String[] str=i1.next();
+//		 System.out.println("Link: "+str[0]+"/"+str[1]);
+		 urlList[i] = "/"+str[0]+"/"+str[1];
+		 i++;
+		 } 
+		}catch (Exception e) {
+			System.out.print(e.getMessage());
+		}
+		return urlList;
+		}
+
+	
 	public static String en = "";
 	private String logOutLink = "";
 	private static Common instance = null;

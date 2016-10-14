@@ -18,7 +18,8 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="Login.Login_01" />
+<!-- 			<class name="Login.Login_01" /> -->
+			<class name="CheckCSVUrls.UrlsChecking" />
 		</classes>
 	</test>	
 </suite> 

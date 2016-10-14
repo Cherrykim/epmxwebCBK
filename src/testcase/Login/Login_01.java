@@ -24,7 +24,7 @@ public class Login_01 extends AbstractTest {
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
 	}
 
-	@Test(groups = { "regression" }, description = "Login _Leave User ID blank")
+	@Test(groups = { "regression" }, description = "Login _Leave the User ID field blank")
 	public void Login_001_LeaveUserIDBlank() {	
 		
 		log.info("Step Login_001 - 01: Open the site https://cherry.epmxweb.com");

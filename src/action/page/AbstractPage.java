@@ -167,6 +167,25 @@ public class AbstractPage extends AutomationAction {
 		sleep();
 	}
 	
+	public void openUrlFromUrlList(WebDriver driver, String baseUrl, String[] urlList){
+		System.out.println(urlList.length);
+		for(String url : urlList){
+			if(!url.isEmpty())
+			System.out.println("Link: " + baseUrl+url);
+			openLink(driver, baseUrl+url);
+//			else;
+		}
+	}
+	
+	/**
+	 * Check alert message is displayed correctly
+	 * @param driver
+	 * @param text
+	 * @return
+	 */
+	public boolean isTextDisplayed(WebDriver driver, String text){
+		return isControlDisplayedWithLowerTimeOut(driver, Mailosaur.AbstractPage.dynamicText, text);
+	}
 	protected final Log log;
 	private String ipClient;
 }

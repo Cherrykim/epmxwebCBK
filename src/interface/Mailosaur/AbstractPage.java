@@ -15,6 +15,7 @@ public class AbstractPage {
 	
 	
 	// ==================================Dynamic Controls========================================//
+	public static String dynamicText = "//*[contains(text(),'%s')]";
 	public static String dynamicPageHeader = "//h1[contains(text(),'%s')]";
 	public static String dynamicPageLegend = "//legend[contains(text(),'%s')]";
 	public static String dynamicRegularButtonByName = "//button[contains(text(),'%s')]";

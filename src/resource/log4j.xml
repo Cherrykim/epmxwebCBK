@@ -38,33 +38,13 @@
     <appender-ref ref="testng" /> 
   </category>
   
-  <category name="Logout">
+  <category name="CheckCSVUrls">
     <priority value="all" />
     <appender-ref ref="console" />
     <appender-ref ref="logfile" />
     <appender-ref ref="testng" /> 
   </category>
   
-    <category name="RegisterPage">
-    <priority value="all" />
-    <appender-ref ref="console" />
-    <appender-ref ref="logfile" />
-    <appender-ref ref="testng" /> 
-  </category>
-  
-    <category name="HomePage">
-    <priority value="all" />
-    <appender-ref ref="console" />
-    <appender-ref ref="logfile" />
-    <appender-ref ref="testng" /> 
-  </category>
-  
-      <category name="ResetPassword">
-    <priority value="all" />
-    <appender-ref ref="console" />
-    <appender-ref ref="logfile" />
-    <appender-ref ref="testng" /> 
-  </category>
   
   <category name="com.gargoylesoftware.htmlunit">
     <priority value="error" />

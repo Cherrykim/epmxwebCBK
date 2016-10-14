@@ -14,12 +14,13 @@ public class Constant {
 	}
 
 	public static class LoginData {
-		public static final String USERNAME = "pnorcross";
+		public static final String USERNAME = "tls15";
 		public static final String PASSWORD = "password";
 	}
 
 	public static class DefaultValue {
 		public static final String COMPANY_NAME = "Cherry's Test Site";
+		public static final String URL_CSV_FILENAME = "ePMX UI Pages.csv";
 	}
 
 	public static class MainNavigationTab {

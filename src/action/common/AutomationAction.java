@@ -1,5 +1,7 @@
 package common;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -703,7 +705,7 @@ public class AutomationAction {
 	 */
 	public void openLink(WebDriver driver, String url) {
 		driver.get(url);
-		sleep(5); //wait for link load successfully
+		sleep(3); //wait for link load successfully
 	}
 	
 	
@@ -832,6 +834,31 @@ public class AutomationAction {
 		Alert alert = driver.switchTo().alert();
 		driver.switchTo().alert().sendKeys(value);
 		alert.accept();
+	}
+
+	public String[] getUrlList(WebDriver driver, String fileName){
+			return Common.getCommon().getUrlListByReadCSVFile(fileName);
+	}
+	
+	public int getNumberOfUrl(WebDriver driver, String fileName){
+		return Common.getCommon().getNumberOfUrl(fileName);
+}
+	
+	/**
+	 * Check dynamic control display
+	 * 
+	 * @param driver
+	 * @param dynamicControlName
+	 * @param value
+	 * @return true/false
+	 */
+	public boolean isControlDisplayedWithLowerTimeOut(WebDriver driver, String dynamicControlName, String... value) {
+		waitForControl(driver, dynamicControlName, 2, value);
+		try {
+			return control.findElement(driver, dynamicControlName, value).isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
 	}
 	
 	protected int timeout = 10;
