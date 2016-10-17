@@ -246,7 +246,7 @@ public class BrowserManager {
 	 * Start chrome driver
 	 */
 	public void startChromeDriver() {
-		System.setProperty("webdriver.chrome.driver", "..\\selenium\\src\\resource\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "..\\epmx-selenium\\src\\resource\\chromedriver.exe");
 	}
 
 	/**
@@ -266,7 +266,7 @@ public class BrowserManager {
 	 * start IE driver
 	 */
 	public void startIEDriver() {
-		System.setProperty("webdriver.ie.driver", "..\\selenium\\src\\resource\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver", "..\\epmx-selenium\\src\\resource\\IEDriverServer.exe");
 	}
 
 	/**
