@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="lib/testng-6.9beta.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-java-2.53.1.jar"/>
 	<classpathentry kind="lib" path="lib/selenium-server-standalone-2.53.1.jar"/>
+	<classpathentry kind="lib" path="lib/opencsv-2.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
