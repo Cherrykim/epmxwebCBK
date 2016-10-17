@@ -40,9 +40,23 @@ public class UrlsChecking extends AbstractTest {
 		log.info("Step UrlsChecking_01 - 08: Accept Alert message");
 		urlList = loginPage.getUrlList(DriverManager.getDriver(), Constant.DefaultValue.URL_CSV_FILENAME);
 		numberOfUrl = loginPage.getNumberOfUrl(DriverManager.getDriver(), Constant.DefaultValue.URL_CSV_FILENAME);
-		
+		loop = 0;
 		log.info("Step UrlsChecking_01 - 09: Start checking for "+ numberOfUrl + " page screen");
 		for(int i = 0; i<numberOfUrl; i++){
+			
+			if(loop==50) {
+				log.info("Step UrlsChecking_01 - 05: Open the site https://cherry.epmxweb.com");
+				log.info("Step UrlsChecking_01 - 06: Input correct username and password");
+				loginPage.openLink(DriverManager.getDriver(), baseUrl);
+				loginPage.login(Constant.LoginData.USERNAME, Constant.LoginData.PASSWORD);
+				
+				log.info("Step UrlsChecking_01: Accept alert if it's displayed ");
+				loginPage.acceptAlert();
+				
+				loop = 0;
+			} 
+			
+			loop++;
 			
 			log.info("Step UrlsChecking_01: Navigate to url: "+ baseUrl + urlList[i]);
 			loginPage.openLink(DriverManager.getDriver(), baseUrl +  urlList[i]);
@@ -74,5 +88,5 @@ public class UrlsChecking extends AbstractTest {
 	private LoginPage loginPage;
 	private String[] urlList;
 	private String baseUrl;
-	private int numberOfUrl;
+	private int numberOfUrl, loop;
 }
