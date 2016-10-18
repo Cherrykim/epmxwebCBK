@@ -1,5 +1,8 @@
 package common;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -858,6 +861,49 @@ public class AutomationAction {
 			return control.findElement(driver, dynamicControlName, value).isDisplayed();
 		} catch (Exception e) {
 			return false;
+		}
+	}
+	
+	/**
+	 * Close dialog download because web driver does not capture or use hot key
+	 * 
+	 * @param keyEvent
+	 */
+	public void keyPressing(String keyEvent) {
+		try {
+			Robot robot = new Robot();
+			if (keyEvent == "esc") {
+				robot.keyPress(KeyEvent.VK_ESCAPE);
+				robot.keyRelease(KeyEvent.VK_ESCAPE);
+				sleep();
+			}
+			if (keyEvent == "enter") {
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+				sleep(5);
+			}
+			if (keyEvent == "tab") {
+				robot.keyPress(KeyEvent.VK_TAB);
+				robot.keyRelease(KeyEvent.VK_TAB);
+			}
+			if (keyEvent == "space") {
+				robot.keyPress(KeyEvent.VK_SPACE);
+				robot.keyRelease(KeyEvent.VK_SPACE);
+			}
+			if (keyEvent == "alt_s") {
+				robot.keyPress(KeyEvent.VK_ALT);
+				robot.keyPress(KeyEvent.VK_S);
+				robot.keyRelease(KeyEvent.VK_ALT);
+				robot.keyRelease(KeyEvent.VK_S);
+			}
+			if (keyEvent == "window_q") {
+				robot.keyPress(KeyEvent.VK_WINDOWS);
+				robot.keyPress(KeyEvent.VK_Q);
+				robot.keyRelease(KeyEvent.VK_WINDOWS);
+				robot.keyRelease(KeyEvent.VK_Q);
+			}
+		} catch (AWTException e) {
+			log.debug("Can not use Key");
 		}
 	}
 	

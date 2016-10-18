@@ -24,5 +24,13 @@ public class PageFactory {
 		return new HomePage(driver, ipClient);
 	}
 	
-	
+	/**
+	 * get ConfigPage
+	 * @param driver
+	 * @param ipClient
+	 * @return ConfigPage object
+	 */
+	public static ConfigPage getConfigPage(WebDriver driver, String ipClient) {
+		return new ConfigPage(driver, ipClient);
+	}
 }

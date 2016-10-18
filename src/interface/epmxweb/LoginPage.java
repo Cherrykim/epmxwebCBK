@@ -1,4 +1,4 @@
-package Mailosaur;
+package epmxweb;
 
 import org.openqa.selenium.By;
 

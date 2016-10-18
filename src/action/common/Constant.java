@@ -26,6 +26,11 @@ public class Constant {
 		public static final String COMPANY_NAME = "Cherry's Test Site";
 		public static final String URL_CSV_FILENAME = "ePMX UI Pages.csv";
 	}
+	
+	public static class PageUrl {
+		public static final String TEST_PAGE_URL = "https://cherry.epmxweb.com";
+		public static final String TOOL_PAGE_URL = "http://tool.cherry.epmxweb.com/";
+	}
 
 	public static class MainNavigationTab {
 		public static final String LOGOUT = "Logout";

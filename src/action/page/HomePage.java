@@ -12,7 +12,7 @@ public class HomePage extends AbstractPage {
 
 	// ==============================Action Methods===========================//
 	public boolean isWelcomeMessageDisplayed(){
-		return getText(driver, Mailosaur.HomePage.welcomeMessage).contains("Welcome");
+		return getText(driver, epmxweb.HomePage.welcomeMessage).contains("Welcome");
 	}
 	
 	

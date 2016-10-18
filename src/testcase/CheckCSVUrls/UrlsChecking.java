@@ -21,6 +21,7 @@ public class UrlsChecking extends AbstractTest {
 		
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
 		baseUrl = "https://cherry.epmxweb.com";
+		
 	}
 	
 	@Test(groups = { "regression" }, description = "Check page is displayed correctly")
