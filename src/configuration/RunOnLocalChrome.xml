@@ -19,7 +19,11 @@
 		</groups>
 		<classes>
 <!-- 			<class name="Login.Login_01" /> -->
-			<class name="CheckCSVUrls.UrlsChecking" />
+<!-- 			<class name="CheckCSVUrls.UrlsCheckingMaster" /> -->
+				<class name="CheckCSVUrls.UrlsCheckingMysqlpdo" />
+<!-- 			<class name="SearchByProjectCode.ProjectCodeSearching" /> -->
+
+
 		</classes>
 	</test>	
 </suite> 
