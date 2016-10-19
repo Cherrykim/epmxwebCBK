@@ -69,6 +69,14 @@ public class AbstractPage extends AutomationAction {
 	 * click Link by text
 	 * @param driver
 	 */
+	public boolean isLinkByItsTextDisplayed(WebDriver driver, String text){
+		return isControlDisplayed(driver, epmxweb.AbstractPage.dynamicLinkByLinkName, text);
+	}
+	
+	/**
+	 * click Link by text
+	 * @param driver
+	 */
 	public void clickLinkByItsText(WebDriver driver, String text, String index){
 		click(driver, epmxweb.AbstractPage.dynamicLinkByLinkNameWithIndex, text, index);
 		sleep(2);

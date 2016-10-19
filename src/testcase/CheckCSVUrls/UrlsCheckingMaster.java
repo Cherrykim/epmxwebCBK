@@ -29,7 +29,7 @@ public class UrlsCheckingMaster extends AbstractTest {
 		log.info("Pre-condition - 04: Click on Config button and get default Password");
 		log.info("Pre-condition - 05: Open the site https://cherry.epmxweb.com");
 //		configPage.selectBranchAndDatabase("master", "epmxdata_nydoh_daily_18Oct16");
-		configPage.selectBranchAndDatabase("master", "epmxdata_csc_daily_16Oct16");
+		configPage.selectBranchAndDatabase("master", "epmxdata_nydoh_weekly_15Oct16");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check page is displayed correctly")
@@ -77,7 +77,7 @@ public class UrlsCheckingMaster extends AbstractTest {
 			verifyTrue(loginPage.isTextDisplayed(DriverManager.getDriver(), "Powered by"));
 			
 			log.info("VP : The text 'version' is showed in the page with Url: "+ baseUrl + urlList[i]);
-			verifyTrue(loginPage.isTextDisplayed(DriverManager.getDriver(), "version"));
+			verifyTrue(loginPage.isLinkByItsTextDisplayed(DriverManager.getDriver(), "version"));
 			
 			log.info("VP : The text 'There is an error on the page' is not showed in the page with Url: "+ baseUrl + urlList[i]);
 			verifyFalse(loginPage.isTextDisplayed(DriverManager.getDriver(), "There is an error on the page"));

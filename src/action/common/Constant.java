@@ -15,17 +15,17 @@ public class Constant {
 
 	public static class LoginData {
 		//Database: epmxdata_nydoh
-//		public static final String USERNAME = "tls15";
-//		public static final String PASSWORD = "password";
+		public static final String USERNAME = "tls15";
+		public static final String PASSWORD = "password";
 		//Database: epmxdata_7dc
 //		public static final String USERNAME = "pnorcross";
-		public static final String USERNAME = "tschmitt";
-		public static final String PASSWORD = "password";
+//		public static final String PASSWORD = "password";
 	}
 
 	public static class DefaultValue {
 		public static final String COMPANY_NAME = "Cherry's Test Site";
-		public static final String URL_CSV_FILENAME = "ePMX UI Pages.csv";
+//		public static final String URL_CSV_FILENAME = "ePMX UI Pages.csv";
+		public static final String URL_CSV_FILENAME = "ePMX UI Pages - Copy.csv";
 	}
 	
 	public static class PageUrl {

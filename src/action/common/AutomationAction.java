@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.Stack;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -707,7 +708,14 @@ public class AutomationAction {
 	 * @param url
 	 */
 	public void openLink(WebDriver driver, String url) {
-		driver.get(url);
+		try{
+			driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+			driver.get(url);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Time out. Can't open this URL: "+url);
+		}
 		sleep(3); //wait for link load successfully
 	}
 	
