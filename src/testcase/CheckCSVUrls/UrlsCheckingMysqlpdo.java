@@ -9,9 +9,10 @@ import common.AbstractTest;
 import common.Constant;
 import common.DriverManager;
 import page.PageFactory;
+import page.ConfigPage;
 import page.LoginPage;
 
-public class UrlsChecking extends AbstractTest {
+public class UrlsCheckingMysqlpdo extends AbstractTest {
 
 	@Parameters({ "browser", "ipClient", "port" })
 	@BeforeClass(alwaysRun = true)
@@ -20,8 +21,14 @@ public class UrlsChecking extends AbstractTest {
 		openBrowser(browser, port, ipClient);
 		
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
+		configPage = PageFactory.getConfigPage(DriverManager.getDriver(), ipClient);
 		baseUrl = "https://cherry.epmxweb.com";
-		
+		log.info("Pre-condition - 01: Open the site http://tool.cherry.epmxweb.com/");
+		log.info("Pre-condition - 02: Select Brand: 'mysqlpdo'");
+		log.info("Pre-condition - 03: Choose available MySQL database and get an Username");
+		log.info("Pre-condition - 04: Click on Config button and get default Password");
+		log.info("Pre-condition - 05: Open the site https://cherry.epmxweb.com");
+		configPage.selectBranchAndDatabase("mysqlpdo", "epmxdata_nydoh_daily_18Oct16");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check page is displayed correctly")
@@ -45,7 +52,7 @@ public class UrlsChecking extends AbstractTest {
 		log.info("Step UrlsChecking_01 - 09: Start checking for "+ numberOfUrl + " page screen");
 		for(int i = 0; i<numberOfUrl; i++){
 			
-			if(loop==50) {
+			if(loop==20) {
 				log.info("Step UrlsChecking_01 - 05: Open the site https://cherry.epmxweb.com");
 				log.info("Step UrlsChecking_01 - 06: Input correct username and password");
 				loginPage.openLink(DriverManager.getDriver(), baseUrl);
@@ -87,6 +94,7 @@ public class UrlsChecking extends AbstractTest {
 	}
 
 	private LoginPage loginPage;
+	private ConfigPage configPage;
 	private String[] urlList;
 	private String baseUrl;
 	private int numberOfUrl, loop;
