@@ -28,7 +28,7 @@ public class UrlsCheckingMysqlpdo extends AbstractTest {
 		log.info("Pre-condition - 03: Choose available MySQL database and get an Username");
 		log.info("Pre-condition - 04: Click on Config button and get default Password");
 		log.info("Pre-condition - 05: Open the site https://cherry.epmxweb.com");
-		configPage.selectBranchAndDatabase("mysqlpdo", "epmxdata_nydoh_daily_18Oct16");
+		configPage.selectBranchAndDatabase("mysqlpdo", Constant.DefaultValue.CURRENT_DATABASE);
 	}
 	
 	@Test(groups = { "regression" }, description = "Check page is displayed correctly")

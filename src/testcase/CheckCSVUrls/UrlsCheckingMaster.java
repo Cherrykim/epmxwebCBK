@@ -29,7 +29,7 @@ public class UrlsCheckingMaster extends AbstractTest {
 		log.info("Pre-condition - 04: Click on Config button and get default Password");
 		log.info("Pre-condition - 05: Open the site https://cherry.epmxweb.com");
 //		configPage.selectBranchAndDatabase("master", "epmxdata_nydoh_daily_18Oct16");
-		configPage.selectBranchAndDatabase("master", "epmxdata_nydoh_weekly_15Oct16");
+		configPage.selectBranchAndDatabase("master", Constant.DefaultValue.CURRENT_DATABASE);
 	}
 	
 	@Test(groups = { "regression" }, description = "Check page is displayed correctly")

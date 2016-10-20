@@ -28,7 +28,7 @@ public class ProjectCodeSearching extends AbstractTest {
 		log.info("Pre-condition - 02: Select Brand: 'case4707'");
 		log.info("Pre-condition - 03: Choose 'epmxdata_nydoh_daily_18Oct16' database and get an Username");
 		log.info("Pre-condition - 04: Click on Config button and get default Password");
-		configPage.selectBranchAndDatabase("case4707", "epmxdata_nydoh_daily_18Oct16");
+		configPage.selectBranchAndDatabase("case4707", Constant.DefaultValue.CURRENT_DATABASE);
 	}
 	
 	@Test(groups = { "regression" }, description = "Search with Project Code")
