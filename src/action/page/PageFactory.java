@@ -33,4 +33,44 @@ public class PageFactory {
 	public static ConfigPage getConfigPage(WebDriver driver, String ipClient) {
 		return new ConfigPage(driver, ipClient);
 	}
+	
+	/**
+	 * get LicenseAgreementPage
+	 * @param driver
+	 * @param ipClient
+	 * @return LicenseAgreementPage object
+	 */
+	public static LicenseAgreementPage getLicenseAgreementPage(WebDriver driver, String ipClient) {
+		return new LicenseAgreementPage(driver, ipClient);
+	}
+	
+	/**
+	 * get ForgotPasswordPage
+	 * @param driver
+	 * @param ipClient
+	 * @return ForgotPasswordPage object
+	 */
+	public static ForgotPasswordPage getForgotPasswordPage(WebDriver driver, String ipClient) {
+		return new ForgotPasswordPage(driver, ipClient);
+	}
+	
+	/**
+	 * get AddUserPage
+	 * @param driver
+	 * @param ipClient
+	 * @return AddUserPage object
+	 */
+	public static AddUserPage getAddUserPage(WebDriver driver, String ipClient) {
+		return new AddUserPage(driver, ipClient);
+	}
+	
+	/**
+	 * get MailinatorPage
+	 * @param driver
+	 * @param ipClient
+	 * @return MailinatorPage object
+	 */
+	public static MailinatorPage getMailinatorPage(WebDriver driver, String ipClient) {
+		return new MailinatorPage(driver, ipClient);
+	}
 }

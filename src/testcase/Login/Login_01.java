@@ -86,7 +86,7 @@ public class Login_01 extends AbstractTest {
 		log.info("Step Login_005 - 07: Accept Alert message");
 		loginPage.acceptAlert();
 		
-		log.info("VP - 01: The system will show error message: Invalid Password");
+		log.info("VP - 01: Wellcome message is displayed");
 		verifyTrue(homePage.isWelcomeMessageDisplayed());
 	}
 	

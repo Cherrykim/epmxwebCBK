@@ -99,10 +99,20 @@ public class AbstractPage extends AutomationAction {
 	 * @param label
 	 * @param text
 	 */
-	public void inputTextfieldByID(WebDriver driver, String id, String text){
+	public void inputTextfieldByIDWithEnter(WebDriver driver, String id, String text){
 		type(driver, epmxweb.AbstractPage.dynamicTextFieldByID, text, id);
 		keyPressing("enter");
 		keyPressing("enter");
+	}
+	
+	/**
+	 * Input textfield by textfield id
+	 * @param driver
+	 * @param label
+	 * @param text
+	 */
+	public void inputTextfieldByID(WebDriver driver, String id, String text){
+		type(driver, epmxweb.AbstractPage.dynamicTextFieldByID, text, id);
 	}
 	
 	public void clickOnClearButton(WebDriver driver){
@@ -124,6 +134,30 @@ public class AbstractPage extends AutomationAction {
 	public boolean isTableByIdContainsText(WebDriver driver, String id, String item){
 		return isControlDisplayed(driver, epmxweb.AbstractPage.dynamicTableByIDContainsText, id, item);
 	}
+	
+    public String getPageTitle(WebDriver driver) {
+    	sleep(2);
+        return driver.getTitle();
+    }
+    
+    public void clickOnElementByItsID(WebDriver driver, String id){
+    	click(driver, epmxweb.AbstractPage.dynamicElementByID, id);
+    	sleep(2);
+    }
+    
+    public void clickOnElementByItsTitle(WebDriver driver, String title){
+    	click(driver, epmxweb.AbstractPage.dynamicElementByTitle, title);
+    	sleep(2);
+    }
+    
+    public String getAlertText(WebDriver driver){
+		return getTextJavascriptAlert(driver);
+	}
+	
+	public void acceptAlert(WebDriver driver){
+		if(isAlertPresent(driver)) acceptJavascriptAlert(driver);
+	}
+	
 	protected final Log log;
 	private String ipClient;
 }
