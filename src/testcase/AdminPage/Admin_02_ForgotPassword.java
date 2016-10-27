@@ -22,7 +22,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 	@Parameters({ "browser", "ipClient", "port" })
 	@BeforeClass(alwaysRun = true)
 	public void setup(String browser, String ipClient, String port) {
-		userID = "newuser" + getUniqueNumber();
+		userID = getUniqueNumber();
 		userEmail = "qa1@mailinator.com";
 		openBrowser(browser, port, ipClient);
 		homePage = PageFactory.getHomePage(DriverManager.getDriver(), ipClient);
