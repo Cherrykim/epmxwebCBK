@@ -26,20 +26,20 @@ public class Admin_05_AddLabel extends AbstractTest {
 		homePage = PageFactory.getHomePage(DriverManager.getDriver(), ipClient);
 	}
 
-	@Test(groups = { "regression" }, description = "Choose 'I do not accept the Terms' radio button")
-	public void LicenseAgreement_001_DoNotAcceptTheTerms() {	
+	@Test(groups = { "regression" }, description = "Leave Enter display label blank")
+	public void AddLabel_001_LeaveEnterDisplayLabelBlank() {	
 		
-		log.info("Step LicenseAgreement_001 - 01: Open the site https://cherry.epmxweb.com");
-		log.info("Step LicenseAgreement_001 - 02: Input correct username and password");
+		log.info("Step AddLabel_001 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddLabel_001 - 02: Input correct username and password");
 		loginPage.login(Constant.LoginData.USERNAME, Constant.LoginData.PASSWORD);
 		
-		log.info("Step LicenseAgreement_001 - 03: Accept Alert message");
+		log.info("Step AddLabel_001 - 03: Accept Alert message");
 		loginPage.acceptAlert();
 		
-		log.info("Step LicenseAgreement_001 - 04: Open License Agreement page");
+		log.info("Step AddLabel_001 - 04: Open License Agreement page");
 		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/admin/end_user_agreement.php");
 
-		log.info("Step LicenseAgreement_001 - 05: Choose 'I do not accept the Terms' radio button");
+		log.info("Step AddLabel_001 - 05: Choose 'I do not accept the Terms' radio button");
 		licenseAgreementPage.selectRadioButtonByValue("N");
 		
 		log.info("VP: Next button is disabled");
@@ -49,14 +49,14 @@ public class Admin_05_AddLabel extends AbstractTest {
 		verifyFalse(licenseAgreementPage.isButtonByValueEnabled("Print"));
 	}
 	
-	@Test(groups = { "regression" }, description = "Choose 'I accept the Terms' radio button")
-	public void LicenseAgreement_002_AcceptTheTerms() {	
+	@Test(groups = { "regression" }, description = "Check Cancel button works")
+	public void AddLabel_002_CheckCancelButtonWorks() {	
 		
-		log.info("Step LicenseAgreement_002 - 01: Open the site https://cherry.epmxweb.com");
-		log.info("Step LicenseAgreement_002 - 02: Input correct username and password");
-		log.info("Step LicenseAgreement_002 - 03: Accept Alert message");
-		log.info("Step LicenseAgreement_002 - 04: Open License Agreement page");
-		log.info("Step LicenseAgreement_002 - 05: Choose 'I accept the Terms' radio button");
+		log.info("Step AddLabel_002 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddLabel_002 - 02: Input correct username and password");
+		log.info("Step AddLabel_002 - 03: Accept Alert message");
+		log.info("Step AddLabel_002 - 04: Open License Agreement page");
+		log.info("Step AddLabel_002 - 05: Choose 'I accept the Terms' radio button");
 		licenseAgreementPage.selectRadioButtonByValue("Y");
 		
 		log.info("VP: Next button is enabled");
@@ -66,15 +66,15 @@ public class Admin_05_AddLabel extends AbstractTest {
 		verifyTrue(licenseAgreementPage.isButtonByValueEnabled("Print"));
 	}
 	
-	@Test(groups = { "regression" }, description = "Check Print button works")
-	public void LicenseAgreement_003_CheckPrintButtonWorks() {	
+	@Test(groups = { "regression" }, description = "Check create labels works correctly")
+	public void AddLabel_003_CheckCreateLabelsWorksCorrectly() {	
 		
-		log.info("Step LicenseAgreement_003 - 01: Open the site https://cherry.epmxweb.com");
-		log.info("Step LicenseAgreement_003 - 02: Input correct username and password");
-		log.info("Step LicenseAgreement_003 - 03: Accept Alert message");
-		log.info("Step LicenseAgreement_003 - 04: Open License Agreement page");
-		log.info("Step LicenseAgreement_003 - 05: Choose 'I accept the Terms' radio button");
-		log.info("Step LicenseAgreement_003 - 06: Click on Print button");
+		log.info("Step AddLabel_003 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddLabel_003 - 02: Input correct username and password");
+		log.info("Step AddLabel_003 - 03: Accept Alert message");
+		log.info("Step AddLabel_003 - 04: Open License Agreement page");
+		log.info("Step AddLabel_003 - 05: Choose 'I accept the Terms' radio button");
+		log.info("Step AddLabel_003 - 06: Click on Print button");
 		licenseAgreementPage.clickOnButtonByValue("Print");
 		currentTab = licenseAgreementPage.switchTab(DriverManager.getDriver());
 		
@@ -83,15 +83,15 @@ public class Admin_05_AddLabel extends AbstractTest {
 		licenseAgreementPage.switchWindowBackAndCloseCurrentWindow(DriverManager.getDriver(), currentTab);
 	}
 	
-	@Test(groups = { "regression" }, description = "Check Next button works")
-	public void LicenseAgreement_004_CheckNextButtonWorks() {	
+	@Test(groups = { "regression" }, description = "Can search for new label in Global Dictionary page")
+	public void AddLabel_004_SearchForNewLabelInGlobalDictionaryPage() {	
 		
-		log.info("Step LicenseAgreement_003 - 01: Open the site https://cherry.epmxweb.com");
-		log.info("Step LicenseAgreement_003 - 02: Input correct username and password");
-		log.info("Step LicenseAgreement_003 - 03: Accept Alert message");
-		log.info("Step LicenseAgreement_003 - 04: Open License Agreement page");
-		log.info("Step LicenseAgreement_003 - 05: Choose 'I accept the Terms' radio button");
-		log.info("Step LicenseAgreement_003 - 06: Click on Next button");
+		log.info("Step AddLabel_003 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddLabel_003 - 02: Input correct username and password");
+		log.info("Step AddLabel_003 - 03: Accept Alert message");
+		log.info("Step AddLabel_003 - 04: Open License Agreement page");
+		log.info("Step AddLabel_003 - 05: Choose 'I accept the Terms' radio button");
+		log.info("Step AddLabel_003 - 06: Click on Next button");
 		licenseAgreementPage.clickOnButtonByValue("Next");
 		
 		log.info("VP - 01: Wellcome message is displayed");
