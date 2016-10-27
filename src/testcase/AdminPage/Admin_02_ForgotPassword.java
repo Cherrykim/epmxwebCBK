@@ -105,7 +105,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 		forgotPasswordPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save");
 		
 		log.info("VP: 'Email has been sent to ...' message is displayed correctly");
-		verifyEquals(forgotPasswordPage.getAlertText(DriverManager.getDriver()), "Email has been sent to "+userID);
+		verifyEquals(forgotPasswordPage.getAlertText(DriverManager.getDriver()).trim(), "Email has been sent to "+userID);
 	}
 	
 	@Test(groups = { "regression" }, description = "Input incorrect Verify password")

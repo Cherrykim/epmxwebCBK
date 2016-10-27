@@ -52,7 +52,7 @@ public class MailinatorPage extends AbstractPage {
 	 */
 	public void openNewPasswordPage(){
 		switchToFrame(driver, epmxweb.MailinatorPage.mailFrame);
-		clickLinkButtonByItsText(driver, "New Password.");
+		clickLinkByItsText(driver, "New Password.");
 		switchToTopWindowFrame(driver);
 		sleep(3);
 	}
