@@ -150,6 +150,16 @@ public class AbstractPage extends AutomationAction {
     	sleep(2);
     }
     
+    public void clickOnDivByItsText(WebDriver driver, String divName){
+    	click(driver, epmxweb.AbstractPage.dynamicDiv, divName);
+    	sleep(2);
+    }
+    
+    public void clickOnCheckboxByName(WebDriver driver, String checkboxName){
+    	click(driver, epmxweb.AbstractPage.dynamicCheckboxByItsName, checkboxName);
+    	sleep(2);
+    }
+    
     public String getAlertText(WebDriver driver){
 		return getTextJavascriptAlert(driver);
 	}

@@ -1,6 +1,5 @@
 package AdminPage;
 
-import java.sql.Driver;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,7 +12,6 @@ import common.DriverManager;
 import page.PageFactory;
 import page.AddUserPage;
 import page.ForgotPasswordPage;
-import page.HomePage;
 import page.LoginPage;
 import page.MailinatorPage;
 
@@ -24,8 +22,8 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 	public void setup(String browser, String ipClient, String port) {
 		userID = getUniqueNumber();
 		userEmail = "qa1@mailinator.com";
+		corporation = "Wadsworth Center";
 		openBrowser(browser, port, ipClient);
-		homePage = PageFactory.getHomePage(DriverManager.getDriver(), ipClient);
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
 		addUserPage = PageFactory.getAddUserPage(DriverManager.getDriver(), ipClient);
 		forgotPasswordPage = PageFactory.getForgotPasswordPage(DriverManager.getDriver(), ipClient);
@@ -37,7 +35,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 		loginPage.acceptAlert();
 		log.info("Pre-condition - 04: Open Add user page");
 		log.info("Pre-condition - 05: Create new user");
-		addUserPage.createNewUser(userID, getUniqueNumber(), getUniqueNumber(), userEmail);
+		addUserPage.createNewUser(userID, getUniqueNumber(), getUniqueNumber(), userEmail, corporation);
 	}
 
 	@Test(groups = { "regression" }, description = "Check cancel button works")
@@ -186,7 +184,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 		forgotPasswordPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Password", "12345678");
 		
 		log.info("Step ForgotPassword_007 - 14: Click on Save button");
-		forgotPasswordPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save");
+		forgotPasswordPage.clickOnElementByItsID(DriverManager.getDriver(), "txt_Confirm");
 		
 		log.info("VP: 'Password must contain one upper case letter (A-Z).' message is displayed correctly");
 		verifyEquals(forgotPasswordPage.getAlertText(DriverManager.getDriver()), "Password must contain one upper case letter (A-Z).");
@@ -211,7 +209,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 		forgotPasswordPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Password", "A12345678");
 		
 		log.info("Step ForgotPassword_008 - 14: Click on Save button");
-		forgotPasswordPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save");
+		forgotPasswordPage.clickOnElementByItsID(DriverManager.getDriver(), "txt_Confirm");
 		
 		log.info("VP: 'Password must contain one special character.' message is displayed correctly");
 		verifyEquals(forgotPasswordPage.getAlertText(DriverManager.getDriver()), "Password must contain one special character.");
@@ -236,7 +234,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 		forgotPasswordPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Password", "A123!");
 		
 		log.info("Step ForgotPassword_009 - 14: Click on Save button");
-		forgotPasswordPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save");
+		forgotPasswordPage.clickOnElementByItsID(DriverManager.getDriver(), "txt_Confirm");
 		
 		log.info("VP: 'Minimum length of the password is 8 character(s).' message is displayed correctly");
 		verifyEquals(forgotPasswordPage.getAlertText(DriverManager.getDriver()), "Minimum length of the password is 8 character(s).");
@@ -264,7 +262,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 		forgotPasswordPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Confirm", "A1234567!");
 		
 		log.info("Step ForgotPassword_010 - 15: Click on Save button");
-		forgotPasswordPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save");
+		forgotPasswordPage.clickOnElementByItsID(DriverManager.getDriver(), "txt_Password");
 		
 		log.info("VP: 'Passwords do not Match. Please re-enter.' message is displayed correctly");
 		verifyEquals(forgotPasswordPage.getAlertText(DriverManager.getDriver()), "Passwords do not Match. Please re-enter.");
@@ -294,11 +292,13 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 		
 		log.info("Step ForgotPassword_011 - 16: Input correct username and password");
 		loginPage.login(userID, "A123456!");
-//		log.info("Step ForgotPassword_011 - 17: Accept Alert message");
-//		loginPage.acceptAlert();
+		
+		
+		log.info("Step ForgotPassword_011 - 17: Accept Alert message");
+		loginPage.acceptAlert();
 		
 		log.info("VP: 'End User License Agreement' message is displayed correctly");
-		verifyEquals(forgotPasswordPage.getPageTitle(DriverManager.getDriver()), "End User License Agreement");
+		verifyEquals(loginPage.getPageTitle(DriverManager.getDriver()), "End User License Agreement");
 	}
 	
 	@AfterClass(alwaysRun = true)
@@ -307,9 +307,8 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 	}
 
 	private LoginPage loginPage;
-	private HomePage homePage;
 	private AddUserPage addUserPage;
 	private ForgotPasswordPage forgotPasswordPage;
 	private MailinatorPage mailinatorPage;
-	private String userID, userEmail;
+	private String userID, userEmail, corporation;
 }

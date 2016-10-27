@@ -15,7 +15,7 @@ public class AddUserPage extends AbstractPage {
 		return getText(driver, epmxweb.HomePage.welcomeMessage).contains("Welcome");
 	}
 	
-	public void createNewUser(String userID, String firstName, String lastName, String emailAddress){
+	public void createNewUser(String userID, String firstName, String lastName, String emailAddress, String corporation){
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_user.php");
 		sleep(2);
 		inputTextfieldByIDWithEnter(driver, "txt_UserName", userID);
@@ -25,6 +25,8 @@ public class AddUserPage extends AbstractPage {
 		inputTextfieldByIDWithEnter(driver, "txt_FName", firstName);
 		inputTextfieldByIDWithEnter(driver, "txt_LName", lastName);
 		inputTextfieldByIDWithEnter(driver, "txt_Email1", emailAddress);
+		clickOnDivByItsText(driver, "Corporate Security");
+		clickOnCheckboxByName(driver, corporation);
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	

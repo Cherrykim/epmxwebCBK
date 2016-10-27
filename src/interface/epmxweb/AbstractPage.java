@@ -10,6 +10,7 @@ public class AbstractPage {
 	
 	// ==================================Dynamic Controls========================================//
 	public static String dynamicText = "//*[contains(text(),'%s')]";
+	public static String dynamicDiv = "//div[contains(text(),'%s')]";
 	public static String dynamicElementByID = "//*[@id='%s']";
 	public static String dynamicElementByTitle = "//*[@title='%s']";
 	public static String dynamicRegularButtonByName = "//button[contains(text(),'%s')]";
@@ -20,6 +21,7 @@ public class AbstractPage {
 	public static String dynamicSelectFieldByID = "//select[@id='%s']";
 	public static String dynamicTextFieldByID = "//input[@id='%s']";
 	public static String dynamicTableByIDContainsText = "//table[contains(@id,'%s')]//tr[td[contains(.,'%s')]]";
+	public static String dynamicCheckboxByItsName = "//tr[td[@class='LabelText' and contains(text(),'%s')]]//input";
 	
 
 }
