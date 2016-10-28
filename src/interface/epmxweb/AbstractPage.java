@@ -16,12 +16,16 @@ public class AbstractPage {
 	public static String dynamicRegularButtonByName = "//button[contains(text(),'%s')]";
 	public static String dynamicLinkButtonByName = "//a[contains(@class,'btn') and contains(text(),'%s')]";
 	public static String dynamicLinkByLinkName = "//a[contains(text(),'%s')]";
+	public static String dynamicLinkByLinkNamePrecisely = "//a[text()='%s']";
 	public static String dynamicLinkByLinkNameWithIndex = "(//a[contains(text(),'%s')])[%s]";
 	public static String dynamicTextFieldByTextfieldLabel = "//div[label[contains(text(),'%s')]]//input";
 	public static String dynamicSelectFieldByID = "//select[@id='%s']";
+	public static String dynamicSelectFieldByClass = "//select[@class='%s']";
+	public static String dynamicSelectFieldByName = "//select[@name='%s']";
 	public static String dynamicTextFieldByID = "//input[@id='%s']";
+	public static String dynamicTextFieldByName = "//input[@name='%s']";
 	public static String dynamicTableByIDContainsText = "//table[contains(@id,'%s')]//tr[td[contains(.,'%s')]]";
 	public static String dynamicCheckboxByItsName = "//tr[td[@class='LabelText' and contains(text(),'%s')]]//input";
-	
+	public static String dynamicImgByItsSrc = "//img[contains(@src,'%s')]";
 
 }

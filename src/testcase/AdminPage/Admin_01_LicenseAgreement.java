@@ -9,7 +9,7 @@ import common.AbstractTest;
 import common.Constant;
 import common.DriverManager;
 import page.PageFactory;
-import page.HomePage;
+import page.MainPage;
 import page.LicenseAgreementPage;
 import page.LoginPage;
 
@@ -23,7 +23,7 @@ public class Admin_01_LicenseAgreement extends AbstractTest {
 		
 		licenseAgreementPage = PageFactory.getLicenseAgreementPage(DriverManager.getDriver(), ipClient);
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
-		homePage = PageFactory.getHomePage(DriverManager.getDriver(), ipClient);
+		homePage = PageFactory.getMainPage(DriverManager.getDriver(), ipClient);
 	}
 
 	@Test(groups = { "regression" }, description = "Choose 'I do not accept the Terms' radio button")
@@ -105,6 +105,6 @@ public class Admin_01_LicenseAgreement extends AbstractTest {
 
 	private LoginPage loginPage;
 	private LicenseAgreementPage licenseAgreementPage;
-	private HomePage homePage;
+	private MainPage homePage;
 	private String currentTab;
 }

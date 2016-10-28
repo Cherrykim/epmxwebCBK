@@ -2,9 +2,9 @@ package page;
 
 import org.openqa.selenium.WebDriver;
 
-public class ForgotPasswordPage extends AbstractPage {
+public class MainPage extends AbstractPage {
 
-	public ForgotPasswordPage(WebDriver driver, String ipClient) {
+	public MainPage(WebDriver driver, String ipClient) {
 		control.setPage(this.getClass().getSimpleName());
 		this.driver = driver;
 		this.ipClient = ipClient;
@@ -15,8 +15,8 @@ public class ForgotPasswordPage extends AbstractPage {
 		return getText(driver, epmxweb.MainPage.welcomeMessage).contains("Welcome");
 	}
 	
-	public String getVerficationCode(){
-		return getText(driver, epmxweb.ForgotPasswordPage.verficationCode);
+	public boolean isSubMenuButtonDisplayed(String menuID, String buttonName){
+		return isControlDisplayed(driver, epmxweb.MainPage.dynamicSubMenuButton, menuID, buttonName);
 	}
 	private WebDriver driver;
 	private String ipClient;

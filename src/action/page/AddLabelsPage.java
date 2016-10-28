@@ -2,9 +2,9 @@ package page;
 
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends AbstractPage {
+public class AddLabelsPage extends AbstractPage {
 
-	public HomePage(WebDriver driver, String ipClient) {
+	public AddLabelsPage(WebDriver driver, String ipClient) {
 		control.setPage(this.getClass().getSimpleName());
 		this.driver = driver;
 		this.ipClient = ipClient;
@@ -12,7 +12,7 @@ public class HomePage extends AbstractPage {
 
 	// ==============================Action Methods===========================//
 	public boolean isWelcomeMessageDisplayed(){
-		return getText(driver, epmxweb.HomePage.welcomeMessage).contains("Welcome");
+		return getText(driver, epmxweb.MainPage.welcomeMessage).contains("Welcome");
 	}
 	
 	

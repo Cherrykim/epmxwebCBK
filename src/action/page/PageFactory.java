@@ -20,8 +20,8 @@ public class PageFactory {
 	 * @param ipClient
 	 * @return HomePage object
 	 */
-	public static HomePage getHomePage(WebDriver driver, String ipClient) {
-		return new HomePage(driver, ipClient);
+	public static MainPage getMainPage(WebDriver driver, String ipClient) {
+		return new MainPage(driver, ipClient);
 	}
 	
 	/**
@@ -73,4 +73,25 @@ public class PageFactory {
 	public static MailinatorPage getMailinatorPage(WebDriver driver, String ipClient) {
 		return new MailinatorPage(driver, ipClient);
 	}
+	
+	/**
+	 * get AddLabelsPage
+	 * @param driver
+	 * @param ipClient
+	 * @return AddLabelsPage object
+	 */
+	public static AddLabelsPage getAddLabelsPage(WebDriver driver, String ipClient) {
+		return new AddLabelsPage(driver, ipClient);
+	}
+	
+	/**
+	 * get GlobalDictionaryPage
+	 * @param driver
+	 * @param ipClient
+	 * @return GlobalDictionaryPage object
+	 */
+	public static GlobalDictionaryPage getGlobalDictionaryPage(WebDriver driver, String ipClient) {
+		return new GlobalDictionaryPage(driver, ipClient);
+	}
+	
 }

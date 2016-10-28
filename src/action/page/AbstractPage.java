@@ -115,6 +115,36 @@ public class AbstractPage extends AutomationAction {
 		type(driver, epmxweb.AbstractPage.dynamicTextFieldByID, text, id);
 	}
 	
+	/**
+	 * Input textfield by textfield id
+	 * @param driver
+	 * @param label
+	 * @param text
+	 */
+	public String getTextfieldByID(WebDriver driver, String id){
+		return getAttributeValue(driver, epmxweb.AbstractPage.dynamicTextFieldByID, "value", id);
+	}
+	
+	/**
+	 * Input textfield by textfield id
+	 * @param driver
+	 * @param label
+	 * @param text
+	 */
+	public void inputTextfieldByName(WebDriver driver, String name, String text){
+		type(driver, epmxweb.AbstractPage.dynamicTextFieldByName, text, name);
+	}
+	
+	/**
+	 * Input textfield by textfield id
+	 * @param driver
+	 * @param label
+	 * @param text
+	 */
+	public String getTextfieldByName(WebDriver driver, String name){
+		return getAttributeValue(driver, epmxweb.AbstractPage.dynamicTextFieldByName, "value", name);
+	}
+	
 	public void clickOnClearButton(WebDriver driver){
 		click(driver, epmxweb.AbstractPage.clearButton);
 		sleep(3);
@@ -129,6 +159,29 @@ public class AbstractPage extends AutomationAction {
 		sleep();
 		selectComboxboxItem(driver, epmxweb.AbstractPage.dynamicSelectFieldByID, item, id);
 		sleep();
+	}
+	
+	
+	public String getSelectedItemByID(WebDriver driver, String id){
+		return getSelectedComboboxItem(driver, epmxweb.AbstractPage.dynamicSelectFieldByID, id);
+	}
+	
+	public void selectItemFromDropdownByClass(WebDriver driver, String className, String item){
+		selectComboxboxItem(driver, epmxweb.AbstractPage.dynamicSelectFieldByClass, item, className);
+		sleep();
+	}
+	
+	public String getSelectedItemByClass(WebDriver driver, String className){
+		return getSelectedComboboxItem(driver, epmxweb.AbstractPage.dynamicSelectFieldByClass, className);
+	}
+	
+	public void selectItemFromDropdownByName(WebDriver driver, String name, String item){
+		selectComboxboxItem(driver, epmxweb.AbstractPage.dynamicSelectFieldByName, item, name);
+		sleep();
+	}
+	
+	public String getSelectedItemByName(WebDriver driver, String name){
+		return getSelectedComboboxItem(driver, epmxweb.AbstractPage.dynamicSelectFieldByName, name);
 	}
 	
 	public boolean isTableByIdContainsText(WebDriver driver, String id, String item){
@@ -168,6 +221,19 @@ public class AbstractPage extends AutomationAction {
 		if(isAlertPresent(driver)) acceptJavascriptAlert(driver);
 	}
 	
+	public void clickOnImageButtonByItsSrc(WebDriver driver, String src){
+		click(driver, epmxweb.AbstractPage.dynamicImgByItsSrc, src);
+    	sleep(3);
+	}
+	
+	public void clickOnLinkByPreciselyText(WebDriver driver, String linkName){
+		click(driver, epmxweb.AbstractPage.dynamicLinkByLinkNamePrecisely, linkName);
+		sleep(2);
+	}
+	
+	public boolean isLinkNameDisplayed(WebDriver driver, String linkName){
+		return isControlDisplayed(driver, epmxweb.AbstractPage.dynamicLinkByLinkNamePrecisely, linkName);
+	}
 	protected final Log log;
 	private String ipClient;
 }

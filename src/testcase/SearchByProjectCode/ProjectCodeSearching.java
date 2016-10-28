@@ -10,7 +10,7 @@ import common.Constant;
 import common.DriverManager;
 import page.PageFactory;
 import page.ConfigPage;
-import page.HomePage;
+import page.MainPage;
 import page.LoginPage;
 
 public class ProjectCodeSearching extends AbstractTest {
@@ -23,7 +23,7 @@ public class ProjectCodeSearching extends AbstractTest {
 		
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
 		configPage = PageFactory.getConfigPage(DriverManager.getDriver(), ipClient);
-		homePage = PageFactory.getHomePage(DriverManager.getDriver(), ipClient);
+		homePage = PageFactory.getMainPage(DriverManager.getDriver(), ipClient);
 		log.info("Pre-condition - 01: Open the site http://tool.cherry.epmxweb.com/");
 		log.info("Pre-condition - 02: Select Brand: 'case4707'");
 		log.info("Pre-condition - 03: Choose 'epmxdata_nydoh_daily_18Oct16' database and get an Username");
@@ -81,5 +81,5 @@ public class ProjectCodeSearching extends AbstractTest {
 
 	private LoginPage loginPage;
 	private ConfigPage configPage;
-	private HomePage homePage;
+	private MainPage homePage;
 }

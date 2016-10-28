@@ -9,7 +9,7 @@ import common.AbstractTest;
 import common.Constant;
 import common.DriverManager;
 import page.PageFactory;
-import page.HomePage;
+import page.MainPage;
 import page.LoginPage;
 
 public class Admin_04_Index extends AbstractTest {
@@ -20,7 +20,7 @@ public class Admin_04_Index extends AbstractTest {
 
 		openBrowser(browser, port, ipClient);
 		
-		homePage = PageFactory.getHomePage(DriverManager.getDriver(), ipClient);
+		homePage = PageFactory.getMainPage(DriverManager.getDriver(), ipClient);
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
 	}
 
@@ -96,5 +96,5 @@ public class Admin_04_Index extends AbstractTest {
 	}
 
 	private LoginPage loginPage;
-	private HomePage homePage;
+	private MainPage homePage;
 }

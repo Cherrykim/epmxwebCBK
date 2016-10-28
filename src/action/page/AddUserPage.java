@@ -12,7 +12,7 @@ public class AddUserPage extends AbstractPage {
 
 	// ==============================Action Methods===========================//
 	public boolean isWelcomeMessageDisplayed(){
-		return getText(driver, epmxweb.HomePage.welcomeMessage).contains("Welcome");
+		return getText(driver, epmxweb.MainPage.welcomeMessage).contains("Welcome");
 	}
 	
 	public void createNewUser(String userID, String firstName, String lastName, String emailAddress, String corporation){
