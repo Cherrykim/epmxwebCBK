@@ -90,8 +90,8 @@ public class PageFactory {
 	 * @param ipClient
 	 * @return GlobalDictionaryPage object
 	 */
-	public static GlobalDictionaryPage getGlobalDictionaryPage(WebDriver driver, String ipClient) {
-		return new GlobalDictionaryPage(driver, ipClient);
+	public static MasterFilesPage getMasterFilesPage(WebDriver driver, String ipClient) {
+		return new MasterFilesPage(driver, ipClient);
 	}
 	
 }

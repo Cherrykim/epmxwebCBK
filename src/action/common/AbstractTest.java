@@ -161,6 +161,10 @@ public abstract class AbstractTest extends BrowserManager {
 	    return Long.toString(date);
 	}
 	
+	public String getUniqueText(int index){
+		return Common.getCommon().getUniqueName(index);
+	}
+	
 	protected final Log log;
 	protected WebDriver driver;
 	protected String ipClient;

@@ -10,7 +10,7 @@ import common.Constant;
 import common.DriverManager;
 import page.PageFactory;
 import page.AddLabelsPage;
-import page.GlobalDictionaryPage;
+import page.MasterFilesPage;
 import page.LoginPage;
 
 public class Admin_05_AddLabel extends AbstractTest {
@@ -23,7 +23,7 @@ public class Admin_05_AddLabel extends AbstractTest {
 		
 		addLabelsPage = PageFactory.getAddLabelsPage(DriverManager.getDriver(), ipClient);
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
-		globalDictionaryPage = PageFactory.getGlobalDictionaryPage(DriverManager.getDriver(), ipClient);
+		globalDictionaryPage = PageFactory.getMasterFilesPage(DriverManager.getDriver(), ipClient);
 		uniqueNumber = getUniqueNumber();
 		newLabelName = "label"+ uniqueNumber;
 		labelShortName = "lb"+ uniqueNumber;
@@ -156,6 +156,6 @@ public class Admin_05_AddLabel extends AbstractTest {
 
 	private LoginPage loginPage;
 	private AddLabelsPage addLabelsPage;
-	private GlobalDictionaryPage globalDictionaryPage;
+	private MasterFilesPage globalDictionaryPage;
 	private String uniqueNumber, newLabelName, labelShortName, labelDisplayName, labelModules, labelFieldType, labelRequiredFlag;
 }

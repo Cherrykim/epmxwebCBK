@@ -2,7 +2,7 @@ package epmxweb;
 
 import org.openqa.selenium.By;
 
-public class GlobalDictionaryPage {
+public class MasterFilesPage {
 
 	//==================================Static Controls========================================//
 	public static By defaultDisplayName = By.xpath("//table//tr[@class='OddRow']/td[1]");

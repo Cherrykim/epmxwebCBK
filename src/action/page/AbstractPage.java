@@ -234,6 +234,11 @@ public class AbstractPage extends AutomationAction {
 	public boolean isLinkNameDisplayed(WebDriver driver, String linkName){
 		return isControlDisplayed(driver, epmxweb.AbstractPage.dynamicLinkByLinkNamePrecisely, linkName);
 	}
+	
+	public String getElementAttributeByID(WebDriver driver, String id, String value){
+		return getAttributeValue(driver, epmxweb.AbstractPage.dynamicElementByID, value, id);
+	}
+	
 	protected final Log log;
 	private String ipClient;
 }

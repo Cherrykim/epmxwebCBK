@@ -55,6 +55,15 @@ public class Common {
 	}
 
 	/**
+	 * Return a random unique string
+	 * 
+	 * @return unique string
+	 */
+	public String getUniqueName(int index) {
+		return UUID.randomUUID().toString().replace("-", "").substring(0, index);
+	}
+	
+	/**
 	 * Return a random unique number
 	 * 
 	 * @return unique number
