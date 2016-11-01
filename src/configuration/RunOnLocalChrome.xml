@@ -19,11 +19,14 @@
 		</groups>
 		<classes>
 <!-- 			<class name="Login.Login_01" /> -->
-<!-- 			<class name="CheckCSVUrls.UrlsCheckingMaster" /> -->
-				<class name="CheckCSVUrls.UrlsCheckingMysqlpdo" />
+<!-- 			<class name="CheckCSVUrls.UrlsChecking" /> -->
+<!-- 				<class name="CheckCSVUrls.UrlsCheckingStaging" /> -->
 <!-- 			<class name="SearchByProjectCode.ProjectCodeSearching" /> -->
-
-
+<!-- 			<class name="AdminPage.Admin_01_LicenseAgreement" /> -->
+<!-- 						<class name="AdminPage.Admin_02_ForgotPassword" /> -->
+<!-- 						<class name="AdminPage.Admin_05_AddLabel" /> -->
+<!-- 						<class name="AdminPage.Admin_06_MainPage" /> -->
+						
 		</classes>
 	</test>	
 </suite> 
