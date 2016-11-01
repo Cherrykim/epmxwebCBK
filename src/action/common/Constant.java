@@ -27,6 +27,7 @@ public class Constant {
 //		public static final String URL_CSV_FILENAME = "ePMX UI Pages.csv";
 		public static final String URL_CSV_FILENAME = "ePMX UI Pages - Copy.csv";
 		public static final String CURRENT_DATABASE = "epmxdata_nydoh_monthly_01Aug16";
+		public static final String CURRENT_BRANCH = "master";
 	}
 	
 	public static class PageUrl {
