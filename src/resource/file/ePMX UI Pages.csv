@@ -360,7 +360,6 @@ utilities,pdf_pending_req.php
 utilities,pdf_update_budget.php
 utilities,po_glacc.php
 utilities,po_receipt.php
-utilities,process_change_items.php
 utilities,process_merge_spreadsheets.php
 utilities,purge.php
 utilities,purge_asset_control_files.php
