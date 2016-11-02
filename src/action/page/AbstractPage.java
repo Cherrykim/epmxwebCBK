@@ -116,7 +116,17 @@ public class AbstractPage extends AutomationAction {
 	}
 	
 	/**
-	 * Input textfield by textfield id
+	 * Input textarea by textfield id
+	 * @param driver
+	 * @param label
+	 * @param text
+	 */
+	public void inputTextareaByID(WebDriver driver, String id, String text){
+		type(driver, epmxweb.AbstractPage.dynamicTextAreaByID, text, id);
+	}
+	
+	/**
+	 * Get textfield by textfield id
 	 * @param driver
 	 * @param label
 	 * @param text
@@ -125,6 +135,15 @@ public class AbstractPage extends AutomationAction {
 		return getAttributeValue(driver, epmxweb.AbstractPage.dynamicTextFieldByID, "value", id);
 	}
 	
+	/**
+	 * Get textfield by textfield id
+	 * @param driver
+	 * @param label
+	 * @param text
+	 */
+	public String getTextareaByID(WebDriver driver, String id){
+		return getText(driver, epmxweb.AbstractPage.dynamicTextAreaByID, id);
+	}
 	/**
 	 * Input textfield by textfield id
 	 * @param driver
@@ -239,6 +258,10 @@ public class AbstractPage extends AutomationAction {
 		return getAttributeValue(driver, epmxweb.AbstractPage.dynamicElementByID, value, id);
 	}
 	
+	public void selectRadioButtonByName(WebDriver driver, String radioButtonName){
+		click(driver, epmxweb.AbstractPage.dynamicRadioButtonByName, radioButtonName);
+		sleep(2);
+	}
 	protected final Log log;
 	private String ipClient;
 }

@@ -23,9 +23,11 @@ public class AbstractPage {
 	public static String dynamicSelectFieldByClass = "//select[@class='%s']";
 	public static String dynamicSelectFieldByName = "//select[@name='%s']";
 	public static String dynamicTextFieldByID = "//input[@id='%s']";
+	public static String dynamicTextAreaByID = "//textarea[@id='%s']";
 	public static String dynamicTextFieldByName = "//input[@name='%s']";
 	public static String dynamicTableByIDContainsText = "//table[contains(@id,'%s')]//tr[td[contains(.,'%s')]]";
 	public static String dynamicCheckboxByItsName = "//tr[td[@class='LabelText' and contains(text(),'%s')]]//input";
 	public static String dynamicImgByItsSrc = "//img[contains(@src,'%s')]";
+	public static String dynamicRadioButtonByName = "//td[contains(.,'%s')]/input[@type='radio']";
 
 }
