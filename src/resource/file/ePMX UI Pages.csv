@@ -259,7 +259,6 @@ requisitions,add_item_requisition.php
 requisitions,add_requisition.php
 requisitions,add_requisition_new.php
 requisitions,attachment_iframe.php
-requisitions,Copy of req_approvals.php
 requisitions,create_req_from_rfq.php
 requisitions,edit_item_requisition.php
 requisitions,edit_requisition.php
@@ -381,7 +380,6 @@ utilities,purge_rfq.php
 utilities,purge_unit_of_measure.php
 utilities,purge_vendor.php
 utilities,push_quickbooks.php
-utilities,quickbooks_server_interface.php
 utilities,report_user_submodule_access.php
 utilities,req_app_log.php
 utilities,reset_po_receipt.php
