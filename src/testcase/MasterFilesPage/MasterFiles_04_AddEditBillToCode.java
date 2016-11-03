@@ -73,8 +73,8 @@ public class MasterFiles_04_AddEditBillToCode extends AbstractTest {
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Country"), "UK");
 	}
 	
-	@Test(groups = { "regression" }, description = "Check Add Bill-to code works")
-	public void AddEditBillToCode_002_CheckAddBillToCodeWorks() {	
+	@Test(groups = { "regression" }, description = "Check Edit Bill-to code works")
+	public void AddEditBillToCode_002_CheckEdiBillToCodeWorks() {	
 		
 		log.info("Step AddEditBillToCode_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditBillToCode_002 - 02: Input correct username and password");

@@ -60,8 +60,8 @@ public class MasterFiles_03_AddEditBankCode extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_BankDesc"), "new description");
 	}
 	
-	@Test(groups = { "regression" }, description = "Check Add Bank code works")
-	public void AddEditBankCode_002_CheckAddBankCodeWorks() {	
+	@Test(groups = { "regression" }, description = "Check Edit Bank code works")
+	public void AddEditBankCode_002_CheckEditBankCodeWorks() {	
 		
 		log.info("Step AddEditBankCode_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditBankCode_002 - 02: Input correct username and password");
