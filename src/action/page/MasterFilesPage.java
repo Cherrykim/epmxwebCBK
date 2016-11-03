@@ -35,20 +35,25 @@ public class MasterFilesPage extends AbstractPage {
 	}
 	
 	public void createNewVendor(String vendorID, String vendorName){
-		openLink(driver, "https://cherry.epmxweb.com/master_files/add_user.php");
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_vendors.php");
 		sleep(2);
-		inputTextfieldByIDWithEnter(driver, "txt_UserName", vendorID);
+		inputTextfieldByID(driver, "txt_VendorCode", vendorID);
 		clickOnElementByItsID(driver, "img_Add");
 		if(isAlertPresent(driver)) {
 			acceptAlert(driver);
 			return;
 		}
-		inputTextfieldByIDWithEnter(driver, "txt_VendorName", vendorName);
+		inputTextfieldByID(driver, "txt_VendorName", vendorName);
 		clickOnDivByItsText(driver, "Addl Vendor Info");
-		inputTextfieldByIDWithEnter(driver, "txt_TaxId", vendorName);
+		inputTextfieldByID(driver, "txt_TaxId", vendorName);
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	public boolean isPrimaryVendorDisplayedCorrectly(String vendorName){
+//		return isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicFirstCatalogItem, itemName);
+//		System.out.println(getAttributeValue(driver, epmxweb.MasterFilesPage.primaryVendor, "innerHTML"));
+		return getAttributeValue(driver, epmxweb.MasterFilesPage.primaryVendor, "innerHTML").contains(vendorName);
+	}
 	private WebDriver driver;
 	private String ipClient;
 }

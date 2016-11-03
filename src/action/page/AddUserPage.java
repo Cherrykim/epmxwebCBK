@@ -33,7 +33,7 @@ public class AddUserPage extends AbstractPage {
 	public void createNewUserWithRole(String userID, String firstName, String lastName, String emailAddress, String userRole){
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_user.php");
 		sleep(2);
-		inputTextfieldByIDWithEnter(driver, "txt_UserName", userID);
+		inputTextfieldByID(driver, "txt_UserName", userID);
 		clickOnElementByItsID(driver, "img_Add");
 		if(isAlertPresent(driver)) {
 			acceptAlert(driver);
