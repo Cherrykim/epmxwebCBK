@@ -18,10 +18,18 @@
 			</run>
 		</groups>
 		<classes>
-<!-- 			<class name="Login.Login_01" /> -->
-<!-- 			<class name="CheckCSVUrls.UrlsChecking" /> -->
-				<class name="CheckCSVUrls.UrlsCheckingMysqlpdo" />
-<!-- 			<class name="SearchByProjectCode.ProjectCodeSearching" /> -->
+			<class name="Login.Login_01" />
+			<class name="CheckCSVUrls.UrlsChecking" />
+			<class name="SearchByProjectCode.ProjectCodeSearching" />
+			<class name="AdminPage.Admin_01_LicenseAgreement" />
+			<class name="AdminPage.Admin_02_ForgotPassword" />
+			<class name="AdminPage.Admin_04_Index" />
+			<class name="AdminPage.Admin_05_AddLabel" />
+			<class name="AdminPage.Admin_06_MainPage" />
+			<class name="MasterFilesPage.MasterFiles_01_AddEdit1099Code" />
+			<class name="MasterFilesPage.MasterFiles_03_AddEditBankCode" />
+			<class name="MasterFilesPage.MasterFiles_04_AddEditBillToCode" />
+			<class name="MasterFilesPage.MasterFiles_05_AddEditCatalog" />
 		</classes>
 	</test>	
 </suite> 
