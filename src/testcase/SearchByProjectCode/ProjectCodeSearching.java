@@ -25,10 +25,10 @@ public class ProjectCodeSearching extends AbstractTest {
 		configPage = PageFactory.getConfigPage(DriverManager.getDriver(), ipClient);
 		homePage = PageFactory.getMainPage(DriverManager.getDriver(), ipClient);
 		log.info("Pre-condition - 01: Open the site http://tool.cherry.epmxweb.com/");
-		log.info("Pre-condition - 02: Select Brand: 'case4707'");
-		log.info("Pre-condition - 03: Choose 'epmxdata_nydoh_daily_18Oct16' database and get an Username");
+		log.info("Pre-condition - 02: Select Brand: " + Constant.DefaultValue.CURRENT_DATABASE);
+		log.info("Pre-condition - 03: Choose database and get an Username");
 		log.info("Pre-condition - 04: Click on Config button and get default Password");
-		configPage.selectBranchAndDatabase("case4707", Constant.DefaultValue.CURRENT_DATABASE);
+		configPage.selectBranchAndDatabase(Constant.DefaultValue.CURRENT_DATABASE, Constant.DefaultValue.CURRENT_DATABASE);
 	}
 	
 	@Test(groups = { "regression" }, description = "Search with Project Code")
