@@ -20,12 +20,21 @@ public class AddUserPage extends AbstractPage {
 		sleep(2);
 		inputTextfieldByIDWithEnter(driver, "txt_UserName", userID);
 		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
 		inputTextfieldByIDWithEnter(driver, "txt_Password", "12345678");
 		inputTextfieldByIDWithEnter(driver, "txt_Confirm", "12345678");
 		inputTextfieldByIDWithEnter(driver, "txt_FName", firstName);
 		inputTextfieldByIDWithEnter(driver, "txt_LName", lastName);
 		inputTextfieldByIDWithEnter(driver, "txt_Email1", emailAddress);
 		clickOnDivByItsText(driver, "Corporate Security");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			clickOnElementByItsID(driver, "img_Save");
+			return;
+		}
 		clickOnCheckboxByName(driver, corporation);
 		clickOnElementByItsID(driver, "img_Save");
 	}

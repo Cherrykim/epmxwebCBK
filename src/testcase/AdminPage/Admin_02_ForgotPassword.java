@@ -20,7 +20,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 	@Parameters({ "browser", "ipClient", "port" })
 	@BeforeClass(alwaysRun = true)
 	public void setup(String browser, String ipClient, String port) {
-		userID = getUniqueNumber();
+		userID = "newuserid";
 		userEmail = "qa1@mailinator.com";
 		corporation = "Wadsworth Center";
 		openBrowser(browser, port, ipClient);
@@ -101,6 +101,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 
 		log.info("Step ForgotPassword_004 - 06: Click on Save button");
 		forgotPasswordPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save");
+		forgotPasswordPage.sleep(5);
 		
 		log.info("VP: 'Email has been sent to ...' message is displayed correctly");
 		verifyEquals(forgotPasswordPage.getAlertText(DriverManager.getDriver()).trim(), "Email has been sent to "+userID);
