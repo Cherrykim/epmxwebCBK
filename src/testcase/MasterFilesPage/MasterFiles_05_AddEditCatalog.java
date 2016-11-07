@@ -68,7 +68,7 @@ public class MasterFiles_05_AddEditCatalog extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_Description"), "new description");
 		
 		log.info("VP: First record is displayed correctly");
-		verifyTrue(masterFilesPage.isFirstRecordDisplayedCorrectly(item1));
+		verifyTrue(masterFilesPage.isFirstCatalogItemDisplayedCorrectly(item1));
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Edit Catalog works")
@@ -112,7 +112,7 @@ public class MasterFiles_05_AddEditCatalog extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_Description"), "new description 2");
 		
 		log.info("VP: First record is displayed correctly");
-		verifyTrue(masterFilesPage.isFirstRecordDisplayedCorrectly(item2));
+		verifyTrue(masterFilesPage.isFirstCatalogItemDisplayedCorrectly(item2));
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Deactivate Catalog works")

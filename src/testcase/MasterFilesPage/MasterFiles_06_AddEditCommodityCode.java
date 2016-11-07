@@ -165,7 +165,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_CommodityCodeDescription"), "new description");
 		
 		log.info("VP: Primary user is saved correctly");
-		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BuyerID"), "new description");
+		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BuyerID"), primaryUserName2);
 		
 		log.info("VP: Primary vendor is displayed correctly");
 		verifyTrue(masterFilesPage.isPrimaryVendorDisplayedCorrectly(vendorName2));

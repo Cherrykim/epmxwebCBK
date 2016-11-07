@@ -28,10 +28,14 @@ public class MasterFilesPage extends AbstractPage {
 		return isControlSelected(driver, epmxweb.MasterFilesPage.optionalRadioButton);
 	}
 	
-	public boolean isFirstRecordDisplayedCorrectly(String itemName){
-//		return isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicFirstCatalogItem, itemName);
-		System.out.println(getAttributeValue(driver, epmxweb.MasterFilesPage.firstCatalogItem, "innerHTML"));
+	public boolean isFirstCatalogItemDisplayedCorrectly(String itemName){
+//		System.out.println(getAttributeValue(driver, epmxweb.MasterFilesPage.firstCatalogItem, "innerHTML"));
 		return getAttributeValue(driver, epmxweb.MasterFilesPage.firstCatalogItem, "innerHTML").contains(itemName);
+	}
+	
+	public boolean isFirstTranslationCurrencyCodeDisplayedCorrectly(String itemName){
+//		System.out.println(getAttributeValue(driver, epmxweb.MasterFilesPage.firstTranslationCurrencyCode, "innerHTML"));
+		return getAttributeValue(driver, epmxweb.MasterFilesPage.firstTranslationCurrencyCode, "innerHTML").contains(itemName);
 	}
 	
 	public void createNewVendor(String vendorID, String vendorName){
@@ -53,6 +57,16 @@ public class MasterFilesPage extends AbstractPage {
 //		return isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicFirstCatalogItem, itemName);
 //		System.out.println(getAttributeValue(driver, epmxweb.MasterFilesPage.primaryVendor, "innerHTML"));
 		return getAttributeValue(driver, epmxweb.MasterFilesPage.primaryVendor, "innerHTML").contains(vendorName);
+	}
+	
+	public void deactiveTranslationCode(String codeName){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_currency_translation.php");
+		inputTextfieldByID(driver, "txt_BaseCurCode", codeName);
+		clickOnImageButtonByItsSrc(driver, "manage");
+		sleep(3);
+		if(isImageButtonDisplayed(driver, "deactivate")) clickOnImageButtonByItsSrc(driver, "deactivate");
+		acceptAlert(driver);
+		sleep();
 	}
 	private WebDriver driver;
 	private String ipClient;

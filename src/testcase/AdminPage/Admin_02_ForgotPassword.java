@@ -101,7 +101,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 
 		log.info("Step ForgotPassword_004 - 06: Click on Save button");
 		forgotPasswordPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save");
-		forgotPasswordPage.sleep(5);
+		forgotPasswordPage.sleep(20);
 		
 		log.info("VP: 'Email has been sent to ...' message is displayed correctly");
 		verifyEquals(forgotPasswordPage.getAlertText(DriverManager.getDriver()).trim(), "Email has been sent to "+userID);

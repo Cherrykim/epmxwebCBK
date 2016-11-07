@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -915,7 +916,24 @@ public class AutomationAction {
 		}
 	}
 	
-	protected int timeout = 10;
+	public String convertDate(String oldDateType, String newDateType, String date)
+	{
+		String newDateString;
+
+		SimpleDateFormat sdf = new SimpleDateFormat(oldDateType);
+		Date d = new Date();
+		try {
+			d = sdf.parse(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		sdf.applyPattern(newDateType);
+		newDateString = sdf.format(d);
+		return newDateString.toString();
+	}
+	
+	protected int timeout = 15;
 	protected int timeWait = 30;
 	protected int timeSleep = 2;
 	protected WebElement element;

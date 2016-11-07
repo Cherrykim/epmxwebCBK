@@ -262,6 +262,10 @@ public class AbstractPage extends AutomationAction {
 		click(driver, epmxweb.AbstractPage.dynamicRadioButtonByName, radioButtonName);
 		sleep(2);
 	}
+	
+	public boolean isImageButtonDisplayed(WebDriver driver, String src){
+		return isControlDisplayed(driver, epmxweb.AbstractPage.dynamicImgByItsSrc, src);
+	}
 	protected final Log log;
 	private String ipClient;
 }
