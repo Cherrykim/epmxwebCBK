@@ -2,6 +2,8 @@ package page;
 
 import org.openqa.selenium.WebDriver;
 
+import common.DriverManager;
+
 public class MasterFilesPage extends AbstractPage {
 
 	public MasterFilesPage(WebDriver driver, String ipClient) {
@@ -67,6 +69,36 @@ public class MasterFilesPage extends AbstractPage {
 		if(isImageButtonDisplayed(driver, "deactivate")) clickOnImageButtonByItsSrc(driver, "deactivate");
 		acceptAlert(driver);
 		sleep();
+	}
+	
+	public void createNewGLAccount(String accountID){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_gl_account_code.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_GLCode", accountID);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Desc", "new description");
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewCommodityCode(String codeID){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_commodity_code.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_CommodityCode", codeID);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", codeID);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public boolean isAlternateVendorRecordDisplayedCorrectly(String vendorName, String itemCode, String itemPrice){
+		return isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicAlternateVendorRecord, vendorName, itemCode, itemPrice);
 	}
 	private WebDriver driver;
 	private String ipClient;

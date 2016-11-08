@@ -245,6 +245,11 @@ public class AbstractPage extends AutomationAction {
     	sleep(3);
 	}
 	
+	public void clickOnImageButtonByItsSrc(WebDriver driver, String src, String index){
+		click(driver, epmxweb.AbstractPage.dynamicImgByItsSrcWithIndex, src, index);
+    	sleep(3);
+	}
+	
 	public void clickOnLinkByPreciselyText(WebDriver driver, String linkName){
 		click(driver, epmxweb.AbstractPage.dynamicLinkByLinkNamePrecisely, linkName);
 		sleep(2);
@@ -266,6 +271,15 @@ public class AbstractPage extends AutomationAction {
 	public boolean isImageButtonDisplayed(WebDriver driver, String src){
 		return isControlDisplayed(driver, epmxweb.AbstractPage.dynamicImgByItsSrc, src);
 	}
+	
+	public boolean isItemInSelectedList(WebDriver driver, String id, String itemName){
+		return isControlDisplayed(driver, epmxweb.AbstractPage.dynamicSelectedListByID, id, itemName);
+	}
+	
+	public boolean isSuggestionDropdownDisplayedCorrectly(WebDriver driver, String id, String value){
+		return getAttributeValue(driver, epmxweb.AbstractPage.dynamicSuggestionDropdownByID, "innerHTML", id).contains(value);
+	}
+	
 	protected final Log log;
 	private String ipClient;
 }

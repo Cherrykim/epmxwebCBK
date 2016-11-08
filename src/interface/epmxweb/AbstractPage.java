@@ -29,6 +29,8 @@ public class AbstractPage {
 	public static String dynamicTableByIDContainsText = "//table[contains(@id,'%s')]//tr[td[contains(.,'%s')]]";
 	public static String dynamicCheckboxByItsName = "//tr[td[@class='LabelText' and contains(text(),'%s')]]//input";
 	public static String dynamicImgByItsSrc = "//img[contains(@src,'%s')]";
+	public static String dynamicImgByItsSrcWithIndex = "(//img[contains(@src,'%s')])[%s]";
 	public static String dynamicRadioButtonByName = "//td[contains(.,'%s')]/input[@type='radio']";
-
+	public static String dynamicSelectedListByID = "//select[@id='%s']/option[contains(text(),'%s')]";
+	public static String dynamicSuggestionDropdownByID = "//div[@id='%s']/..//script";
 }
