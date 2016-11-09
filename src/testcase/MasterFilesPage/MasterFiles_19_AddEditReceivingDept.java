@@ -97,10 +97,10 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		log.info("Step AddEditReceivingDept_002 - 11: Input Description");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RecvDesc", "new description 2");
 		
-		log.info("Step AddEditReceivingDept_001 - 12: Input GL Account code");
+		log.info("Step AddEditReceivingDept_002 - 12: Input GL Account code");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
 		
-		log.info("Step AddEditReceivingDept_001 - 13: Input Miscellaneous");
+		log.info("Step AddEditReceivingDept_002 - 13: Input Miscellaneous");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Misc", "misc 2");
 		
 		log.info("Step AddEditReceivingDept_002 - 14: Click on Save button");
