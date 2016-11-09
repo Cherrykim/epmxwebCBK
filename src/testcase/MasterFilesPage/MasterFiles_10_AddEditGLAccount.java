@@ -134,7 +134,7 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		log.info("Step AddEditGLAccount_003 - 13: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("VP: All fields returned to default");
+		log.info("VP: G/L Account Code is deactivated");
 		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "G/L Account Code is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	

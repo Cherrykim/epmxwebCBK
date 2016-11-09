@@ -132,7 +132,7 @@ public class MasterFiles_08_AddEditCorporation extends AbstractTest {
 		log.info("Step AddCorporation_003 - 13: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("VP: Bank Code is deactivated correctly");
+		log.info("VP: Corporation is deactivated correctly");
 		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Corporation is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	

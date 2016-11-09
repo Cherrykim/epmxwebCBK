@@ -137,7 +137,7 @@ public class MasterFiles_04_AddEditBillToCode extends AbstractTest {
 		log.info("Step AddEditBillToCode_003 - 13: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("VP: All fields returned to default");
+		log.info("VP: Bill-To Code is deactivated");
 		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Bill-To Code is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	

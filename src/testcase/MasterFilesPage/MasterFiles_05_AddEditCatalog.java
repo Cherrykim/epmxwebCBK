@@ -139,7 +139,7 @@ public class MasterFiles_05_AddEditCatalog extends AbstractTest {
 		log.info("Step AddCatalogCode_003 - 13: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("VP: Bank Code is deactivated correctly");
+		log.info("VP: Catalog Code is deactivated correctly");
 		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Catalog Code is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	

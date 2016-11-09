@@ -97,6 +97,18 @@ public class MasterFilesPage extends AbstractPage {
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	public void createNewTaxCode(String taxID){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_tax_code.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_TaxCode", taxID);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
 	public boolean isAlternateVendorRecordDisplayedCorrectly(String vendorName, String itemCode, String itemPrice){
 		return isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicAlternateVendorRecord, vendorName, itemCode, itemPrice);
 	}

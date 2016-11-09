@@ -143,7 +143,7 @@ public class MasterFiles_13_AddEditJobNumber extends AbstractTest {
 		log.info("Step AddEditJobNumber_003 - 13: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("VP: All fields returned to default");
+		log.info("VP: Object Code is deactivated");
 		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Object Code is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	

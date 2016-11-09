@@ -198,7 +198,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		log.info("Step AddCommodityCode_003 - 13: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("VP: Bank Code is deactivated correctly");
+		log.info("VP: Commodity Code is deactivated correctly");
 		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Commodity Code is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	
