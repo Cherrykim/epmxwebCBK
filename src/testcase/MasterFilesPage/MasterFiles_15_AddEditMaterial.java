@@ -46,6 +46,8 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		commodity2 = commodCode2+ " : "+commodCode2;
 		glAccountCode1 = "glNo1";
 		glAccountCode2 = "glNo2";
+		unitOfMeasure1 = "um1";
+		unitOfMeasure2 = "um2";
 		
 		log.info("Pre-condition - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Pre-condition - 02: Input correct username and password");
@@ -69,6 +71,10 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Pre-condition - 08: Create GL Account");
 		masterFilesPage.createNewGLAccount(glAccountCode1);
 		masterFilesPage.createNewGLAccount(glAccountCode2);
+		
+		log.info("Pre-condition - 09: Create Unit of Measure");
+		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
+		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
 	}
 
 	@Test(groups = { "regression" }, description = "Check Add Material works")
@@ -91,7 +97,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		
 		log.info("Step AddMaterial_001 - 08: Select all dropdowns");
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_CommodityCode", commodity1);
-		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", "amp");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", unitOfMeasure1);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ExpeditorID", primaryUserName);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BuyerID", primaryUserName);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Rank", "Level 1");
@@ -136,7 +142,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		
 		log.info("VP: All dropdowns are saved correctly");
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_CommodityCode"), commodity1);
-		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_UnitMeasure"), "amp");
+		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_UnitMeasure"), unitOfMeasure1);
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ExpeditorID"), primaryUserName);
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BuyerID"), primaryUserName);
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Rank"), "Level 1");
@@ -186,7 +192,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		
 		log.info("Step AddMaterial_002 - 08: Select all dropdowns");
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_CommodityCode", commodity2);
-		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", "bag");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", unitOfMeasure2);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ExpeditorID", primaryUserName2);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BuyerID", primaryUserName2);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Rank", "Level 2");
@@ -232,7 +238,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		
 		log.info("VP: All dropdowns are saved correctly");
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_CommodityCode"), commodity2);
-		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_UnitMeasure"), "bag");
+		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_UnitMeasure"), unitOfMeasure2);
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ExpeditorID"), primaryUserName2);
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BuyerID"), primaryUserName2);
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Rank"), "Level 2");
@@ -321,4 +327,5 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 	private String vendorID2, vendorName2;
 	private String commodCode1, commodCode2, commodity1, commodity2;
 	private String glAccountCode1, glAccountCode2;
+	private String unitOfMeasure1, unitOfMeasure2;
 }

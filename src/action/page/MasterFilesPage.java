@@ -109,6 +109,33 @@ public class MasterFilesPage extends AbstractPage {
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	public void createNewUnitOfMeasure(String unitName){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_units_of_measure.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_UMCode", unitName);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", "new unit");
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewItemCode(String itemName){
+		createNewUnitOfMeasure("um1");
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_material.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_ItemCode", itemName);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", "um1");
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
 	public boolean isAlternateVendorRecordDisplayedCorrectly(String vendorName, String itemCode, String itemPrice){
 		return isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicAlternateVendorRecord, vendorName, itemCode, itemPrice);
 	}
