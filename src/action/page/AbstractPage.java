@@ -280,6 +280,10 @@ public class AbstractPage extends AutomationAction {
 		return getAttributeValue(driver, epmxweb.AbstractPage.dynamicSuggestionDropdownByID, "innerHTML", id).contains(value);
 	}
 	
+	public String getElementTextByClass(WebDriver driver, String className){
+		return getText(driver, epmxweb.AbstractPage.dynamicElementByID, className);
+	}
+	
 	protected final Log log;
 	private String ipClient;
 }

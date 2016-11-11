@@ -14,6 +14,7 @@ public class AbstractPage {
 	public static String dynamicElementByID = "//*[@id='%s']";
 	public static String dynamicElementByTitle = "//*[@title='%s']";
 	public static String dynamicElementByText = "//*[contains(text(),'%s')]";
+	public static String dynamicElementByClass = "//*[@class='%s']";
 	public static String dynamicRegularButtonByName = "//button[contains(text(),'%s')]";
 	public static String dynamicLinkButtonByName = "//a[contains(@class,'btn') and contains(text(),'%s')]";
 	public static String dynamicLinkByLinkName = "//a[contains(text(),'%s')]";

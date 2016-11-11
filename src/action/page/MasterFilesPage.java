@@ -84,6 +84,20 @@ public class MasterFilesPage extends AbstractPage {
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	public void createNewGLAccount(String corpName, String accountID){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_gl_account_code.php");
+		sleep(2);
+		selectItemFromDropdownByID(driver, "sel_Corporation", corpName);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_GLCode", accountID);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Desc", "new description");
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
 	public void createNewCommodityCode(String codeID){
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_commodity_code.php");
 		sleep(2);
@@ -133,6 +147,44 @@ public class MasterFilesPage extends AbstractPage {
 			return;
 		}
 		selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", "um1");
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewCorporation(String corpName){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_corporation.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_CompName", corpName);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewVendorType(String vendorType){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_vendor_type.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_VenType", vendorType);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", vendorType);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewTermsCode(String termsCode){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_terms_code.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_TermsCode", termsCode);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", termsCode);
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
