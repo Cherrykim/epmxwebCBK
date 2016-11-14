@@ -16,5 +16,5 @@ public class MasterFilesPage {
 	public static String dynamicLanguageExample = "//pre[@id='%s']";
 	public static String dynamicFirstCatalogItem = "//div[@id='div_Item0']/..//script";
 	public static String dynamicAlternateVendorRecord = "//table/tbody/tr[td[span[contains(text(),'%s')]] and td[span[contains(text(),'%s')]]  and td[span[contains(text(),'%s')]]]";
-
+	public static String dynamicTextfieldByName = "//input[contains(@name,'%s')]";
 }

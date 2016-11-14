@@ -11,6 +11,7 @@ public class AbstractPage {
 	// ==================================Dynamic Controls========================================//
 	public static String dynamicText = "//*[contains(text(),'%s')]";
 	public static String dynamicDiv = "//div[contains(text(),'%s')]";
+	public static String dynamicElementByValue = "//*[@value='%s']";
 	public static String dynamicElementByID = "//*[@id='%s']";
 	public static String dynamicElementByTitle = "//*[@title='%s']";
 	public static String dynamicElementByText = "//*[contains(text(),'%s')]";

@@ -212,6 +212,11 @@ public class AbstractPage extends AutomationAction {
         return driver.getTitle();
     }
     
+    public void clickOnElementByItsValue(WebDriver driver, String value){
+    	click(driver, epmxweb.AbstractPage.dynamicElementByValue, value);
+    	sleep(2);
+    }
+    
     public void clickOnElementByItsID(WebDriver driver, String id){
     	click(driver, epmxweb.AbstractPage.dynamicElementByID, id);
     	sleep(2);
@@ -281,7 +286,7 @@ public class AbstractPage extends AutomationAction {
 	}
 	
 	public String getElementTextByClass(WebDriver driver, String className){
-		return getText(driver, epmxweb.AbstractPage.dynamicElementByID, className);
+		return getText(driver, epmxweb.AbstractPage.dynamicElementByClass, className);
 	}
 	
 	protected final Log log;

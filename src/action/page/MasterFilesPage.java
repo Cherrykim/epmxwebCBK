@@ -22,6 +22,14 @@ public class MasterFilesPage extends AbstractPage {
 		return getText(driver, epmxweb.MasterFilesPage.defaultShortName);
 	}
 	
+	public void selectRequiredRadioButton(){
+		 click(driver, epmxweb.MasterFilesPage.requiredRadioButton);
+	}
+	
+	public void selectOptionalRadioButton(){
+		 click(driver, epmxweb.MasterFilesPage.optionalRadioButton);
+	}
+	
 	public boolean isRequiredRadioButtonChecked(){
 		return isControlSelected(driver, epmxweb.MasterFilesPage.requiredRadioButton);
 	}
@@ -191,6 +199,15 @@ public class MasterFilesPage extends AbstractPage {
 	public boolean isAlternateVendorRecordDisplayedCorrectly(String vendorName, String itemCode, String itemPrice){
 		return isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicAlternateVendorRecord, vendorName, itemCode, itemPrice);
 	}
+	
+	public void inputNameTextfield(String name, String value){
+		type(driver, epmxweb.MasterFilesPage.dynamicTextfieldByName, value, name);
+	}
+	
+	public String getNameTextfieldValue(String name){
+		return getAttributeValue(driver, epmxweb.MasterFilesPage.dynamicTextfieldByName, "value", name);
+	}
+	
 	private WebDriver driver;
 	private String ipClient;
 }
