@@ -289,6 +289,10 @@ public class AbstractPage extends AutomationAction {
 		return getText(driver, epmxweb.AbstractPage.dynamicElementByClass, className);
 	}
 	
+	public boolean isResultTableContainsRecord(WebDriver driver, String value1, String value2){
+		return isControlDisplayed(driver, epmxweb.AbstractPage.dynamicResultTableContainsText, value1, value2);
+	}
+	
 	protected final Log log;
 	private String ipClient;
 }

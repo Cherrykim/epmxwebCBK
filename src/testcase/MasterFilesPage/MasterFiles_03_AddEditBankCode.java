@@ -22,7 +22,7 @@ public class MasterFiles_03_AddEditBankCode extends AbstractTest {
 		
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
 		masterFilesPage = PageFactory.getMasterFilesPage(DriverManager.getDriver(), ipClient);
-		newBankCode = getUniqueText(8);
+		newBankCode = getUniqueText(3);
 	}
 
 	@Test(groups = { "regression" }, description = "Check Add Bank code works")
@@ -140,6 +140,83 @@ public class MasterFiles_03_AddEditBankCode extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Bank code by Code works")
+	public void AddEditBankCode_005_SearchBankCodeByCode() {	
+		
+		log.info("Step AddEditBankCode_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBankCode_005 - 02: Input correct username and password");
+		log.info("Step AddEditBankCode_005 - 03: Accept Alert message");
+		log.info("Step AddEditBankCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditBankCode_005 - 05: Input new Bank code");
+		log.info("Step AddEditBankCode_005 - 06: Click on Add button");
+		log.info("Step AddEditBankCode_005 - 07: Input Description");
+		log.info("Step AddEditBankCode_005 - 08: Click on Save button");
+		log.info("Step AddEditBankCode_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_bank_code.php");
+		
+		log.info("Step AddEditBankCode_005 - 10: Input Bank Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BankCode", newBankCode);
+		
+		log.info("Step AddEditBankCode_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Bank code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBankCode, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Bank code by Corporation works")
+	public void AddEditBankCode_006_SearchBankCodeByCorporation() {	
+		
+		log.info("Step AddEditBankCode_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBankCode_006 - 02: Input correct username and password");
+		log.info("Step AddEditBankCode_006 - 03: Accept Alert message");
+		log.info("Step AddEditBankCode_006 - 04: Open Add labels page");
+		log.info("Step AddEditBankCode_006 - 05: Input new Bank code");
+		log.info("Step AddEditBankCode_006 - 06: Click on Add button");
+		log.info("Step AddEditBankCode_006 - 07: Input Description");
+		log.info("Step AddEditBankCode_006 - 08: Click on Save button");
+		log.info("Step AddEditBankCode_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_bank_code.php");
+		
+		log.info("Step AddEditBankCode_006 - 10: Input Bank Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BankCode", newBankCode);
+		
+		log.info("Step AddEditBankCode_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditBankCode_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Bank code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBankCode, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Bank code by Name works")
+	public void AddEditBankCode_007_SearchBankCodeByName() {	
+		
+		log.info("Step AddEditBankCode_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBankCode_007 - 02: Input correct username and password");
+		log.info("Step AddEditBankCode_007 - 03: Accept Alert message");
+		log.info("Step AddEditBankCode_007 - 04: Open Add labels page");
+		log.info("Step AddEditBankCode_007 - 05: Input new Bank code");
+		log.info("Step AddEditBankCode_007 - 06: Click on Add button");
+		log.info("Step AddEditBankCode_007 - 07: Input Description");
+		log.info("Step AddEditBankCode_007 - 08: Click on Save button");
+		log.info("Step AddEditBankCode_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_bank_code.php");
+		
+		log.info("Step AddEditBankCode_007 - 10: Input Bank Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BankCode", newBankCode);
+		
+		log.info("Step AddEditBankCode_007 - 11: Input Bank Code Name");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BankDesc", "new description 2");
+		
+		log.info("Step AddEditBankCode_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Bank code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBankCode, "new description 2"));
+	}
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

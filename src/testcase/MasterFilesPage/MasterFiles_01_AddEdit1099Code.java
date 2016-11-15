@@ -139,6 +139,84 @@ public class MasterFiles_01_AddEdit1099Code extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search 1099 code by Code works")
+	public void AddEdit1099Code_005_Search1099CodeByCode() {	
+		
+		log.info("Step AddEdit1099Code_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEdit1099Code_005 - 02: Input correct username and password");
+		log.info("Step AddEdit1099Code_005 - 03: Accept Alert message");
+		log.info("Step AddEdit1099Code_005 - 04: Open Add labels page");
+		log.info("Step AddEdit1099Code_005 - 05: Input new 1099 code");
+		log.info("Step AddEdit1099Code_005 - 06: Click on Add button");
+		log.info("Step AddEdit1099Code_005 - 07: Input Description");
+		log.info("Step AddEdit1099Code_005 - 08: Click on Save button");
+		log.info("Step AddEdit1099Code_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_1099_code.php");
+		
+		log.info("Step AddEdit1099Code_005 - 10: Input 1099 Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_1099Code", new1099Code);
+		
+		log.info("Step AddEdit1099Code_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: 1099 code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), new1099Code, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search 1099 code by Corporation works")
+	public void AddEdit1099Code_006_Search1099CodeByCorporation() {	
+		
+		log.info("Step AddEdit1099Code_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEdit1099Code_006 - 02: Input correct username and password");
+		log.info("Step AddEdit1099Code_006 - 03: Accept Alert message");
+		log.info("Step AddEdit1099Code_006 - 04: Open Add labels page");
+		log.info("Step AddEdit1099Code_006 - 05: Input new 1099 code");
+		log.info("Step AddEdit1099Code_006 - 06: Click on Add button");
+		log.info("Step AddEdit1099Code_006 - 07: Input Description");
+		log.info("Step AddEdit1099Code_006 - 08: Click on Save button");
+		log.info("Step AddEdit1099Code_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_1099_code.php");
+		
+		log.info("Step AddEdit1099Code_006 - 10: Input 1099 Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_1099Code", new1099Code);
+		
+		log.info("Step AddEdit1099Code_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEdit1099Code_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: 1099 code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), new1099Code, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search 1099 code by Description works")
+	public void AddEdit1099Code_007_Search1099CodeByDescription() {	
+		
+		log.info("Step AddEdit1099Code_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEdit1099Code_007 - 02: Input correct username and password");
+		log.info("Step AddEdit1099Code_007 - 03: Accept Alert message");
+		log.info("Step AddEdit1099Code_007 - 04: Open Add labels page");
+		log.info("Step AddEdit1099Code_007 - 05: Input new 1099 code");
+		log.info("Step AddEdit1099Code_007 - 06: Click on Add button");
+		log.info("Step AddEdit1099Code_007 - 07: Input Description");
+		log.info("Step AddEdit1099Code_007 - 08: Click on Save button");
+		log.info("Step AddEdit1099Code_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_1099_code.php");
+		
+		log.info("Step AddEdit1099Code_007 - 10: Input 1099 Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_1099Code", new1099Code);
+		
+		log.info("Step AddEdit1099Code_007 - 11: Input 1099 Code description");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_1099Desc", "new description 2");
+		
+		log.info("Step AddEdit1099Code_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: 1099 code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), new1099Code, "new description 2"));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

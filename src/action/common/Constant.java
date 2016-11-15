@@ -24,6 +24,7 @@ public class Constant {
 
 	public static class DefaultValue {
 		public static final String COMPANY_NAME = "Cherry's Test Site";
+		public static final String CORPORATION = "Wadsworth Center";
 		public static final String URL_CSV_FILENAME = "ePMX UI Pages.csv";
 //		public static final String URL_CSV_FILENAME = "ePMX UI Pages - Copy.csv";
 		public static final String CURRENT_DATABASE = "cherry_nydoh_daily_02Nov16";
