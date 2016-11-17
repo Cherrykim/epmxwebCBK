@@ -172,6 +172,56 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Base Currency code by Code works")
+	public void AddTranslationCurrency_005_SearchBaseCurrencyCodeByCode() {	
+		
+		log.info("Step AddTranslationCurrency_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddTranslationCurrency_005 - 02: Input correct username and password");
+		log.info("Step AddTranslationCurrency_005 - 03: Accept Alert message");
+		log.info("Step AddTranslationCurrency_005 - 04: Open Add labels page");
+		log.info("Step AddTranslationCurrency_005 - 05: Input new Base Currency code");
+		log.info("Step AddTranslationCurrency_005 - 06: Click on Add button");
+		log.info("Step AddTranslationCurrency_005 - 07: Input Description");
+		log.info("Step AddTranslationCurrency_005 - 08: Click on Save button");
+		log.info("Step AddTranslationCurrency_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_currency_translation.php");
+		
+		log.info("Step AddTranslationCurrency_005 - 10: Input Base Currency Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BaseCurrencyCode", newBaseCurrencyCode);
+		
+		log.info("Step AddTranslationCurrency_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Base Currency code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBaseCurrencyCode, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Base Currency code by Description works")
+	public void AddTranslationCurrency_006_SearchBaseCurrencyCodeByDescription() {	
+		
+		log.info("Step AddTranslationCurrency_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddTranslationCurrency_006 - 02: Input correct username and password");
+		log.info("Step AddTranslationCurrency_006 - 03: Accept Alert message");
+		log.info("Step AddTranslationCurrency_006 - 04: Open Add labels page");
+		log.info("Step AddTranslationCurrency_006 - 05: Input new Base Currency code");
+		log.info("Step AddTranslationCurrency_006 - 06: Click on Add button");
+		log.info("Step AddTranslationCurrency_006 - 07: Input Description");
+		log.info("Step AddTranslationCurrency_006 - 08: Click on Save button");
+		log.info("Step AddTranslationCurrency_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_currency_translation.php");
+		
+		log.info("Step AddTranslationCurrency_006 - 10: Input Base Currency Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BaseCurrencyCode", newBaseCurrencyCode);
+		
+		log.info("Step AddTranslationCurrency_006 - 11: Input Base Currency name");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BaseCurrencyName", "new description 2");
+		
+		log.info("Step AddTranslationCurrency_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Base Currency code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBaseCurrencyCode, "new description 2"));
+	}
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

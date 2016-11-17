@@ -159,6 +159,29 @@ public class MasterFiles_08_AddEditCorporation extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Corporation code by Corporation works")
+	public void AddEditCorporationCode_005_SearchCorporationCodeByCorporation() {	
+		
+		log.info("Step AddEditCorporationCode_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditCorporationCode_005 - 02: Input correct username and password");
+		log.info("Step AddEditCorporationCode_005 - 03: Accept Alert message");
+		log.info("Step AddEditCorporationCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditCorporationCode_005 - 05: Input new Corporation code");
+		log.info("Step AddEditCorporationCode_005 - 06: Click on Add button");
+		log.info("Step AddEditCorporationCode_005 - 07: Input Description");
+		log.info("Step AddEditCorporationCode_005 - 08: Click on Save button");
+		log.info("Step AddEditCorporationCode_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_corporation.php");
+		
+		log.info("Step AddEditCorporationCode_005 - 10: Input Corporation");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditCorporationCode_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Corporation code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), Constant.DefaultValue.CORPORATION, ""));
+	}
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

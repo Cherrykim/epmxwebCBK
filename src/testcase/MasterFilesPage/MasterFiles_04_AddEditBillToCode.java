@@ -164,6 +164,84 @@ public class MasterFiles_04_AddEditBillToCode extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Bill-To code by Code works")
+	public void AddEditBillToCode_005_SearchBillToCodeByCode() {	
+		
+		log.info("Step AddEditBillToCode_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBillToCode_005 - 02: Input correct username and password");
+		log.info("Step AddEditBillToCode_005 - 03: Accept Alert message");
+		log.info("Step AddEditBillToCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditBillToCode_005 - 05: Input new Bill-To code");
+		log.info("Step AddEditBillToCode_005 - 06: Click on Add button");
+		log.info("Step AddEditBillToCode_005 - 07: Input Description");
+		log.info("Step AddEditBillToCode_005 - 08: Click on Save button");
+		log.info("Step AddEditBillToCode_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_bill_to_code.php");
+		
+		log.info("Step AddEditBillToCode_005 - 10: Input Bill-To Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BillToCode", newBillToCode);
+		
+		log.info("Step AddEditBillToCode_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Bill-To code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBillToCode, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Bill-To code by Corporation works")
+	public void AddEditBillToCode_006_SearchBillToCodeByCorporation() {	
+		
+		log.info("Step AddEditBillToCode_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBillToCode_006 - 02: Input correct username and password");
+		log.info("Step AddEditBillToCode_006 - 03: Accept Alert message");
+		log.info("Step AddEditBillToCode_006 - 04: Open Add labels page");
+		log.info("Step AddEditBillToCode_006 - 05: Input new Bill-To code");
+		log.info("Step AddEditBillToCode_006 - 06: Click on Add button");
+		log.info("Step AddEditBillToCode_006 - 07: Input Description");
+		log.info("Step AddEditBillToCode_006 - 08: Click on Save button");
+		log.info("Step AddEditBillToCode_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_bill_to_code.php");
+		
+		log.info("Step AddEditBillToCode_006 - 10: Input Bill-To Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BillToCode", newBillToCode);
+		
+		log.info("Step AddEditBillToCode_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditBillToCode_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Bill-To code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBillToCode, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Bill-To code by City works")
+	public void AddEditBillToCode_007_SearchBillToCodeByCity() {	
+		
+		log.info("Step AddEditBillToCode_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBillToCode_007 - 02: Input correct username and password");
+		log.info("Step AddEditBillToCode_007 - 03: Accept Alert message");
+		log.info("Step AddEditBillToCode_007 - 04: Open Add labels page");
+		log.info("Step AddEditBillToCode_007 - 05: Input new Bill-To code");
+		log.info("Step AddEditBillToCode_007 - 06: Click on Add button");
+		log.info("Step AddEditBillToCode_007 - 07: Input Description");
+		log.info("Step AddEditBillToCode_007 - 08: Click on Save button");
+		log.info("Step AddEditBillToCode_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_bill_to_code.php");
+		
+		log.info("Step AddEditBillToCode_007 - 10: Input Bill-To Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BillToCode", newBillToCode);
+		
+		log.info("Step AddEditBillToCode_007 - 11: Input Bill-To Code Name");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_City", "Washington");
+		
+		log.info("Step AddEditBillToCode_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Bill-To code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBillToCode, "Washington"));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

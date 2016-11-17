@@ -225,6 +225,84 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Commodity code by Code works")
+	public void AddEditCommodityCode_005_SearchCommodityCodeByCode() {	
+		
+		log.info("Step AddEditCommodityCode_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditCommodityCode_005 - 02: Input correct username and password");
+		log.info("Step AddEditCommodityCode_005 - 03: Accept Alert message");
+		log.info("Step AddEditCommodityCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditCommodityCode_005 - 05: Input new Commodity code");
+		log.info("Step AddEditCommodityCode_005 - 06: Click on Add button");
+		log.info("Step AddEditCommodityCode_005 - 07: Input Description");
+		log.info("Step AddEditCommodityCode_005 - 08: Click on Save button");
+		log.info("Step AddEditCommodityCode_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_commodity_code.php");
+		
+		log.info("Step AddEditCommodityCode_005 - 10: Input Commodity Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_CommCode", newCommodity);
+		
+		log.info("Step AddEditCommodityCode_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Commodity code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newCommodity, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Commodity code by Corporation works")
+	public void AddEditCommodityCode_006_SearchCommodityCodeByCorporation() {	
+		
+		log.info("Step AddEditCommodityCode_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditCommodityCode_006 - 02: Input correct username and password");
+		log.info("Step AddEditCommodityCode_006 - 03: Accept Alert message");
+		log.info("Step AddEditCommodityCode_006 - 04: Open Add labels page");
+		log.info("Step AddEditCommodityCode_006 - 05: Input new Commodity code");
+		log.info("Step AddEditCommodityCode_006 - 06: Click on Add button");
+		log.info("Step AddEditCommodityCode_006 - 07: Input Description");
+		log.info("Step AddEditCommodityCode_006 - 08: Click on Save button");
+		log.info("Step AddEditCommodityCode_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_commodity_code.php");
+		
+		log.info("Step AddEditCommodityCode_006 - 10: Input Commodity Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_CommCode", newCommodity);
+		
+		log.info("Step AddEditCommodityCode_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditCommodityCode_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Commodity code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newCommodity, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Commodity code by Description works")
+	public void AddEditCommodityCode_007_SearchCommodityCodeByDescription() {	
+		
+		log.info("Step AddEditCommodityCode_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditCommodityCode_007 - 02: Input correct username and password");
+		log.info("Step AddEditCommodityCode_007 - 03: Accept Alert message");
+		log.info("Step AddEditCommodityCode_007 - 04: Open Add labels page");
+		log.info("Step AddEditCommodityCode_007 - 05: Input new Commodity code");
+		log.info("Step AddEditCommodityCode_007 - 06: Click on Add button");
+		log.info("Step AddEditCommodityCode_007 - 07: Input Description");
+		log.info("Step AddEditCommodityCode_007 - 08: Click on Save button");
+		log.info("Step AddEditCommodityCode_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_commodity_code.php");
+		
+		log.info("Step AddEditCommodityCode_007 - 10: Input Commodity Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_CommCode", newCommodity);
+		
+		log.info("Step AddEditCommodityCode_007 - 11: Input Commodity Code description");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_CommDesc", "new description 2");
+		
+		log.info("Step AddEditCommodityCode_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Commodity code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newCommodity, "new description 2"));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();
