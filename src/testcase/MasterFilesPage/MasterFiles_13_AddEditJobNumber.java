@@ -58,7 +58,7 @@ public class MasterFiles_13_AddEditJobNumber extends AbstractTest {
 		
 		log.info("Step AddEditJobNumber_001 - 08: Assign GL Account code");
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_GL");
-		masterFilesPage.inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_GlAccount", glAccountCode1);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode1);
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add_field", "2");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "ok", "2");
 		
@@ -97,7 +97,7 @@ public class MasterFiles_13_AddEditJobNumber extends AbstractTest {
 		
 		log.info("Step AddEditJobNumber_002 - 12: Input new data for GL Account code");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "removeall_field");
-		masterFilesPage.inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add_field", "2");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "ok", "2");
 		
@@ -144,7 +144,7 @@ public class MasterFiles_13_AddEditJobNumber extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: Object Code is deactivated");
-		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Object Code is deactivated. Press OK to reactivate or Cancel to view record only.");
+		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Job Code is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check REactivate Job Number works")

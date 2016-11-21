@@ -87,7 +87,7 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		
 		log.info("Step AddEditUser_001 - 08: Assign GL Account code");
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_GL");
-		masterFilesPage.inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_GlAccount", glAccountCode1);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode1);
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add_field", "3");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "ok", "3");
 		

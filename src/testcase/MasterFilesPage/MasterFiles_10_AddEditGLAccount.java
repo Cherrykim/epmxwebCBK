@@ -90,11 +90,11 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ContAmt1", "12.00");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PeriodFrom1", "12-17-2020");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PeriodThru1", "12-18-2020");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AccumAmt1", "12.00");
+//		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AccumAmt1", "12.00");
 		
 		log.info("Step AddEditGLAccount_002 - 13: Click on Save button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
-//		masterFilesPage.acceptAlert(DriverManager.getDriver());
+		masterFilesPage.acceptAlert(DriverManager.getDriver());
 		
 		log.info("Step AddEditGLAccount_002 - 14: Input new GL Account");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GLCode", newGLAccount);
@@ -107,7 +107,7 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_ContAmt1").trim(), "12.00");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_PeriodFrom1"), "12-17-2020");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_PeriodThru1"), "12-18-2020");
-		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_AccumAmt1"), "12.00");
+//		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_AccumAmt1"), "12.00");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Deactivate GL Account works")
@@ -159,6 +159,84 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		
 		log.info("VP: Save button is clickable");
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search GL Account code by Code works")
+	public void AddEditGLAccount_005_SearchGLAccountByCode() {	
+		
+		log.info("Step AddEditGLAccount_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditGLAccount_005 - 02: Input correct username and password");
+		log.info("Step AddEditGLAccount_005 - 03: Accept Alert message");
+		log.info("Step AddEditGLAccount_005 - 04: Open Add labels page");
+		log.info("Step AddEditGLAccount_005 - 05: Input new GL Account code");
+		log.info("Step AddEditGLAccount_005 - 06: Click on Add button");
+		log.info("Step AddEditGLAccount_005 - 07: Input Description");
+		log.info("Step AddEditGLAccount_005 - 08: Click on Save button");
+		log.info("Step AddEditGLAccount_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_gl_account_code.php");
+		
+		log.info("Step AddEditGLAccount_005 - 10: Input GL Account Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", newGLAccount);
+		
+		log.info("Step AddEditGLAccount_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: GL Account code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newGLAccount, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search GL Account code by Corporation works")
+	public void AddEditGLAccount_006_SearchGLAccountByCorporation() {	
+		
+		log.info("Step AddEditGLAccount_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditGLAccount_006 - 02: Input correct username and password");
+		log.info("Step AddEditGLAccount_006 - 03: Accept Alert message");
+		log.info("Step AddEditGLAccount_006 - 04: Open Add labels page");
+		log.info("Step AddEditGLAccount_006 - 05: Input new GL Account code");
+		log.info("Step AddEditGLAccount_006 - 06: Click on Add button");
+		log.info("Step AddEditGLAccount_006 - 07: Input Description");
+		log.info("Step AddEditGLAccount_006 - 08: Click on Save button");
+		log.info("Step AddEditGLAccount_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_gl_account_code.php");
+		
+		log.info("Step AddEditGLAccount_006 - 10: Input GL Account Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", newGLAccount);
+		
+		log.info("Step AddEditGLAccount_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditGLAccount_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: GL Account code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newGLAccount, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search GL Account code by Description works")
+	public void AddEditGLAccount_007_SearchGLAccountByDescription() {	
+		
+		log.info("Step AddEditGLAccount_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditGLAccount_007 - 02: Input correct username and password");
+		log.info("Step AddEditGLAccount_007 - 03: Accept Alert message");
+		log.info("Step AddEditGLAccount_007 - 04: Open Add labels page");
+		log.info("Step AddEditGLAccount_007 - 05: Input new GL Account code");
+		log.info("Step AddEditGLAccount_007 - 06: Click on Add button");
+		log.info("Step AddEditGLAccount_007 - 07: Input Description");
+		log.info("Step AddEditGLAccount_007 - 08: Click on Save button");
+		log.info("Step AddEditGLAccount_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_gl_account_code.php");
+		
+		log.info("Step AddEditGLAccount_007 - 10: Input GL Account Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", newGLAccount);
+		
+		log.info("Step AddEditGLAccount_007 - 11: Input GL Account Code description");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAccDesc", "new description 2");
+		
+		log.info("Step AddEditGLAccount_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: GL Account code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newGLAccount, "new description 2"));
 	}
 	
 	@AfterClass(alwaysRun = true)

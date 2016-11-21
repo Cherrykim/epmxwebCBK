@@ -111,6 +111,18 @@ public class AbstractPage extends AutomationAction {
 	 * @param label
 	 * @param text
 	 */
+	public void inputSelecterTextfieldByID(WebDriver driver, String id, String text){
+		type(driver, epmxweb.AbstractPage.dynamicTextFieldByID, text, id);
+		sleep(2);
+		click(driver, epmxweb.AbstractPage.dynamicDiv, text);
+		sleep(1);
+	}
+	/**
+	 * Input textfield by textfield id
+	 * @param driver
+	 * @param label
+	 * @param text
+	 */
 	public void inputTextfieldByID(WebDriver driver, String id, String text){
 		type(driver, epmxweb.AbstractPage.dynamicTextFieldByID, text, id);
 	}

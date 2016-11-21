@@ -76,7 +76,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BuyerID", primaryUserName);
 		
 		log.info("Step AddCommodityCode_001 - 09: Input Primary vendor");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PVendor", vendorName1);
+		masterFilesPage.inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_PVendor", vendorName1);
 		
 		log.info("Step AddCommodityCode_001 - 10: Click on Add Alternate vendor button");
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "add_alt_vendor");
