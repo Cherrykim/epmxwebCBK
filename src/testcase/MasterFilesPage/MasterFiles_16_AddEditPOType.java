@@ -140,6 +140,84 @@ public class MasterFiles_16_AddEditPOType extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search PO Type code by Code works")
+	public void AddEditPOType_005_SearchPOTypeByCode() {	
+		
+		log.info("Step AddEditPOType_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditPOType_005 - 02: Input correct username and password");
+		log.info("Step AddEditPOType_005 - 03: Accept Alert message");
+		log.info("Step AddEditPOType_005 - 04: Open Add labels page");
+		log.info("Step AddEditPOType_005 - 05: Input new PO Type code");
+		log.info("Step AddEditPOType_005 - 06: Click on Add button");
+		log.info("Step AddEditPOType_005 - 07: Input Description");
+		log.info("Step AddEditPOType_005 - 08: Click on Save button");
+		log.info("Step AddEditPOType_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_po_type.php");
+		
+		log.info("Step AddEditPOType_005 - 10: Input PO Type Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PoTypeCode", newPOType);
+		
+		log.info("Step AddEditPOType_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: PO Type code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newPOType, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search PO Type code by Corporation works")
+	public void AddEditPOType_006_SearchPOTypeByCorporation() {	
+		
+		log.info("Step AddEditPOType_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditPOType_006 - 02: Input correct username and password");
+		log.info("Step AddEditPOType_006 - 03: Accept Alert message");
+		log.info("Step AddEditPOType_006 - 04: Open Add labels page");
+		log.info("Step AddEditPOType_006 - 05: Input new PO Type code");
+		log.info("Step AddEditPOType_006 - 06: Click on Add button");
+		log.info("Step AddEditPOType_006 - 07: Input Description");
+		log.info("Step AddEditPOType_006 - 08: Click on Save button");
+		log.info("Step AddEditPOType_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_po_type.php");
+		
+		log.info("Step AddEditPOType_006 - 10: Input PO Type Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PoTypeCode", newPOType);
+		
+		log.info("Step AddEditPOType_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditPOType_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: PO Type code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newPOType, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search PO Type code by Description works")
+	public void AddEditPOType_007_SearchPOTypeByDescription() {	
+		
+		log.info("Step AddEditPOType_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditPOType_007 - 02: Input correct username and password");
+		log.info("Step AddEditPOType_007 - 03: Accept Alert message");
+		log.info("Step AddEditPOType_007 - 04: Open Add labels page");
+		log.info("Step AddEditPOType_007 - 05: Input new PO Type code");
+		log.info("Step AddEditPOType_007 - 06: Click on Add button");
+		log.info("Step AddEditPOType_007 - 07: Input Description");
+		log.info("Step AddEditPOType_007 - 08: Click on Save button");
+		log.info("Step AddEditPOType_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_po_type.php");
+		
+		log.info("Step AddEditPOType_007 - 10: Input PO Type Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PoTypeCode", newPOType);
+		
+		log.info("Step AddEditPOType_007 - 11: Input PO Type Code description");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PoTypeDesc", "new description 2");
+		
+		log.info("Step AddEditPOType_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: PO Type code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newPOType, "new description 2"));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

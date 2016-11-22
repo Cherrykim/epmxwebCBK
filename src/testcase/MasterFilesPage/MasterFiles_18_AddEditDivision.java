@@ -200,6 +200,84 @@ public class MasterFiles_18_AddEditDivision extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Division code by Code works")
+	public void AddEditDivision_005_SearchDivisionByCode() {	
+		
+		log.info("Step AddEditDivision_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditDivision_005 - 02: Input correct username and password");
+		log.info("Step AddEditDivision_005 - 03: Accept Alert message");
+		log.info("Step AddEditDivision_005 - 04: Open Add labels page");
+		log.info("Step AddEditDivision_005 - 05: Input new Division code");
+		log.info("Step AddEditDivision_005 - 06: Click on Add button");
+		log.info("Step AddEditDivision_005 - 07: Input Description");
+		log.info("Step AddEditDivision_005 - 08: Click on Save button");
+		log.info("Step AddEditDivision_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_project_number.php");
+		
+		log.info("Step AddEditDivision_005 - 10: Input Division Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PrjCode", newDivision);
+		
+		log.info("Step AddEditDivision_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Division code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newDivision, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Division code by Corporation works")
+	public void AddEditDivision_006_SearchDivisionByCorporation() {	
+		
+		log.info("Step AddEditDivision_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditDivision_006 - 02: Input correct username and password");
+		log.info("Step AddEditDivision_006 - 03: Accept Alert message");
+		log.info("Step AddEditDivision_006 - 04: Open Add labels page");
+		log.info("Step AddEditDivision_006 - 05: Input new Division code");
+		log.info("Step AddEditDivision_006 - 06: Click on Add button");
+		log.info("Step AddEditDivision_006 - 07: Input Description");
+		log.info("Step AddEditDivision_006 - 08: Click on Save button");
+		log.info("Step AddEditDivision_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_project_number.php");
+		
+		log.info("Step AddEditDivision_006 - 10: Input Division Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PrjCode", newDivision);
+		
+		log.info("Step AddEditDivision_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditDivision_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Division code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newDivision, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Division code by Description works")
+	public void AddEditDivision_007_SearchDivisionByDescription() {	
+		
+		log.info("Step AddEditDivision_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditDivision_007 - 02: Input correct username and password");
+		log.info("Step AddEditDivision_007 - 03: Accept Alert message");
+		log.info("Step AddEditDivision_007 - 04: Open Add labels page");
+		log.info("Step AddEditDivision_007 - 05: Input new Division code");
+		log.info("Step AddEditDivision_007 - 06: Click on Add button");
+		log.info("Step AddEditDivision_007 - 07: Input Description");
+		log.info("Step AddEditDivision_007 - 08: Click on Save button");
+		log.info("Step AddEditDivision_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_project_number.php");
+		
+		log.info("Step AddEditDivision_007 - 10: Input Division Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PrjCode", newDivision);
+		
+		log.info("Step AddEditDivision_007 - 11: Input Division Code description");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PrjDesc", "new description 2");
+		
+		log.info("Step AddEditDivision_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Division code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newDivision, "new description 2"));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

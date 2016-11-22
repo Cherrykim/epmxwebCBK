@@ -196,6 +196,20 @@ public class MasterFilesPage extends AbstractPage {
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	public void createNewCataloge(String itemCode, String description){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_catalog.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_CatalogCode", itemCode);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", itemCode);
+		inputSelecterTextfieldByID(driver, "txt_Items0", itemCode+ " : "+description);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
 	public boolean isAlternateVendorRecordDisplayedCorrectly(String vendorName, String itemCode, String itemPrice){
 		return isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicAlternateVendorRecord, vendorName, itemCode, itemPrice);
 	}
