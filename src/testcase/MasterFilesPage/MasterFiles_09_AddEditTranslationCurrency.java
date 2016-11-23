@@ -31,9 +31,6 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
-		
-		log.info("Step Pre-condition - 04: Deactivate Base Currency code");
-		masterFilesPage.deactiveTranslationCode(baseCurrencyCode);
 	}
 
 	@Test(groups = { "regression" }, description = "Check Add Translation Currency works")
@@ -50,9 +47,10 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		
 		log.info("Step AddTranslationCurrency_001 - 06: Click on Add button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add");
+		masterFilesPage.switchAddAndModifyCurrency();
 		
-		log.info("Step AddTranslationCurrency_001 - 07: Input Description");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Description", "new description");
+//		log.info("Step AddTranslationCurrency_001 - 07: Input Description");
+//		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Description", "new description");
 		
 		log.info("Step AddTranslationCurrency_001 - 08: Click on Translation Currency item textfield button");
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "txt_TransCurCode0");
@@ -72,8 +70,8 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		log.info("Step AddTranslationCurrency_001 - 12: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("VP: Description field is saved correctly");
-		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_Description"), "new description");
+//		log.info("VP: Description field is saved correctly");
+//		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_Description"), "new description");
 		
 		log.info("VP: First record is displayed correctly");
 		verifyTrue(masterFilesPage.isFirstTranslationCurrencyCodeDisplayedCorrectly(baseCurrencyCode));
@@ -146,7 +144,7 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: Bank Code is deactivated correctly");
-		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Translation Currency is deactivated. Press OK to reactivate or Cancel to view record only.");
+		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Currency Translation Rates is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check REactivate Translation Currency works")
@@ -187,13 +185,13 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_currency_translation.php");
 		
 		log.info("Step AddTranslationCurrency_005 - 10: Input Base Currency Code");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BaseCurrencyCode", newBaseCurrencyCode);
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BaseCurrencyCode", baseCurrencyCode);
 		
 		log.info("Step AddTranslationCurrency_005 - 11: Click on Search button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
 		
 		log.info("VP: Base Currency code displayed correctly");
-		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBaseCurrencyCode, ""));
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), "ARS", "Argentine Peso"));
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Base Currency code by Description works")
@@ -211,16 +209,16 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_currency_translation.php");
 		
 		log.info("Step AddTranslationCurrency_006 - 10: Input Base Currency Code");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BaseCurrencyCode", newBaseCurrencyCode);
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BaseCurrencyCode", baseCurrencyCode);
 		
 		log.info("Step AddTranslationCurrency_006 - 11: Input Base Currency name");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BaseCurrencyName", "new description 2");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_BaseCurrencyName", "Argentine Peso");
 		
 		log.info("Step AddTranslationCurrency_006 - 12: Click on Search button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
 		
 		log.info("VP: Base Currency code displayed correctly");
-		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBaseCurrencyCode, "new description 2"));
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), "ARS", "Argentine Peso"));
 	}
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {

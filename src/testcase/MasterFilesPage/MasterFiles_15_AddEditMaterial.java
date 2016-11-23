@@ -108,7 +108,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_EconomicOrderQty", "11.0000");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_StandardUnitCost", "11.0000");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RoutingCode", "rocode1");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InspectionCode", "inscode1");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InspectionCode", "inscd1");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_QuoteLeadDays", "11");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Maxdays", "11");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_material_manufacturer", "11");
@@ -153,7 +153,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_EconomicOrderQty"), "11.0000");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_StandardUnitCost"), "11.0000");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_RoutingCode"), "rocode1");
-		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_InspectionCode"), "inscode1");
+		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_InspectionCode"), "inscd1");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_QuoteLeadDays"), "11");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_Maxdays"), "11");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_material_manufacturer"), "11");
@@ -203,7 +203,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_EconomicOrderQty", "12.0000");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_StandardUnitCost", "12.0000");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RoutingCode", "rocode2");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InspectionCode", "inscode2");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InspectionCode", "inscd2");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_QuoteLeadDays", "12");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Maxdays", "12");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_material_manufacturer", "12");
@@ -249,7 +249,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_EconomicOrderQty"), "12.0000");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_StandardUnitCost"), "12.0000");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_RoutingCode"), "rocode2");
-		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_InspectionCode"), "inscode2");
+		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_InspectionCode"), "inscd2");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_QuoteLeadDays"), "12");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_Maxdays"), "12");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_material_manufacturer"), "12");

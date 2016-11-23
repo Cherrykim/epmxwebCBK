@@ -57,7 +57,7 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RecvDesc", "new description");
 		
 		log.info("Step AddEditReceivingDept_001 - 08: Input GL Account code");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode1);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode1);
 		
 		log.info("Step AddEditReceivingDept_001 - 09: Input Miscellaneous");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Misc", "misc 1");
@@ -98,7 +98,7 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RecvDesc", "new description 2");
 		
 		log.info("Step AddEditReceivingDept_002 - 12: Input GL Account code");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
 		
 		log.info("Step AddEditReceivingDept_002 - 13: Input Miscellaneous");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Misc", "misc 2");
@@ -185,7 +185,7 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		log.info("Step AddEditReceivingDept_005 - 07: Input Description");
 		log.info("Step AddEditReceivingDept_005 - 08: Click on Save button");
 		log.info("Step AddEditReceivingDept_005 - 09: Open Manager page");
-		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_project_number.php");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_receiving_department.php");
 		
 		log.info("Step AddEditReceivingDept_005 - 10: Input Receiving Dept Code");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RcvCode", newReceivingDept);
@@ -209,7 +209,7 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		log.info("Step AddEditReceivingDept_006 - 07: Input Description");
 		log.info("Step AddEditReceivingDept_006 - 08: Click on Save button");
 		log.info("Step AddEditReceivingDept_006 - 09: Open Manager page");
-		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_project_number.php");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_receiving_department.php");
 		
 		log.info("Step AddEditReceivingDept_006 - 10: Input Receiving Dept Code");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RcvCode", newReceivingDept);
@@ -236,13 +236,13 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		log.info("Step AddEditReceivingDept_007 - 07: Input Description");
 		log.info("Step AddEditReceivingDept_007 - 08: Click on Save button");
 		log.info("Step AddEditReceivingDept_007 - 09: Open Manager page");
-		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_project_number.php");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_receiving_department.php");
 		
 		log.info("Step AddEditReceivingDept_007 - 10: Input Receiving Dept Code");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RcvCode", newReceivingDept);
 		
 		log.info("Step AddEditReceivingDept_007 - 11: Input Receiving Dept GL Account");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
 		
 		log.info("Step AddEditReceivingDept_007 - 12: Click on Search button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");

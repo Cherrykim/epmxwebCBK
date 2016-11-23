@@ -177,6 +177,84 @@ public class MasterFiles_20_AddEditShipToCode extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Ship-to Code code by Code works")
+	public void AddEditShipToCode_005_SearchShipToCodeByCode() {	
+		
+		log.info("Step AddEditShipToCode_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditShipToCode_005 - 02: Input correct username and password");
+		log.info("Step AddEditShipToCode_005 - 03: Accept Alert message");
+		log.info("Step AddEditShipToCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditShipToCode_005 - 05: Input new Ship-to Code code");
+		log.info("Step AddEditShipToCode_005 - 06: Click on Add button");
+		log.info("Step AddEditShipToCode_005 - 07: Input Description");
+		log.info("Step AddEditShipToCode_005 - 08: Click on Save button");
+		log.info("Step AddEditShipToCode_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_ship_to_code.php");
+		
+		log.info("Step AddEditShipToCode_005 - 10: Input Ship-to Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ShipToCode", newShipToCode);
+		
+		log.info("Step AddEditShipToCode_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Ship-to Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newShipToCode, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Ship-to Code code by Corporation works")
+	public void AddEditShipToCode_006_SearchShipToCodeByCorporation() {	
+		
+		log.info("Step AddEditShipToCode_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditShipToCode_006 - 02: Input correct username and password");
+		log.info("Step AddEditShipToCode_006 - 03: Accept Alert message");
+		log.info("Step AddEditShipToCode_006 - 04: Open Add labels page");
+		log.info("Step AddEditShipToCode_006 - 05: Input new Ship-to Code code");
+		log.info("Step AddEditShipToCode_006 - 06: Click on Add button");
+		log.info("Step AddEditShipToCode_006 - 07: Input Description");
+		log.info("Step AddEditShipToCode_006 - 08: Click on Save button");
+		log.info("Step AddEditShipToCode_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_ship_to_code.php");
+		
+		log.info("Step AddEditShipToCode_006 - 10: Input Ship-to Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ShipToCode", newShipToCode);
+		
+		log.info("Step AddEditShipToCode_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditShipToCode_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Ship-to Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newShipToCode, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Ship-to Code code by City works")
+	public void AddEditShipToCode_007_SearchShipToCodeByCity() {	
+		
+		log.info("Step AddEditShipToCode_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditShipToCode_007 - 02: Input correct username and password");
+		log.info("Step AddEditShipToCode_007 - 03: Accept Alert message");
+		log.info("Step AddEditShipToCode_007 - 04: Open Add labels page");
+		log.info("Step AddEditShipToCode_007 - 05: Input new Ship-to Code code");
+		log.info("Step AddEditShipToCode_007 - 06: Click on Add button");
+		log.info("Step AddEditShipToCode_007 - 07: Input Description");
+		log.info("Step AddEditShipToCode_007 - 08: Click on Save button");
+		log.info("Step AddEditShipToCode_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_ship_to_code.php");
+		
+		log.info("Step AddEditShipToCode_007 - 10: Input Ship-to Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ShipToCode", newShipToCode);
+		
+		log.info("Step AddEditShipToCode_007 - 11: Input Ship-to Code City");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_City", "Washington");
+		
+		log.info("Step AddEditShipToCode_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Ship-to Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newShipToCode, "Washington"));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

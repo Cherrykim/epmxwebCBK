@@ -140,6 +140,84 @@ public class MasterFiles_21_AddEditSpecialText extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Special Text Code code by Code works")
+	public void AddEditSpecialText_005_SearchSpecialTextCodeByCode() {	
+		
+		log.info("Step AddEditSpecialText_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditSpecialText_005 - 02: Input correct username and password");
+		log.info("Step AddEditSpecialText_005 - 03: Accept Alert message");
+		log.info("Step AddEditSpecialText_005 - 04: Open Add labels page");
+		log.info("Step AddEditSpecialText_005 - 05: Input new Special Text Code code");
+		log.info("Step AddEditSpecialText_005 - 06: Click on Add button");
+		log.info("Step AddEditSpecialText_005 - 07: Input Description");
+		log.info("Step AddEditSpecialText_005 - 08: Click on Save button");
+		log.info("Step AddEditSpecialText_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_special_text.php");
+		
+		log.info("Step AddEditSpecialText_005 - 10: Input Special Text Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_SplTxtCode", newSpecialText);
+		
+		log.info("Step AddEditSpecialText_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Special Text Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newSpecialText, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Special Text Code code by Corporation works")
+	public void AddEditSpecialText_006_SearchSpecialTextCodeByCorporation() {	
+		
+		log.info("Step AddEditSpecialText_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditSpecialText_006 - 02: Input correct username and password");
+		log.info("Step AddEditSpecialText_006 - 03: Accept Alert message");
+		log.info("Step AddEditSpecialText_006 - 04: Open Add labels page");
+		log.info("Step AddEditSpecialText_006 - 05: Input new Special Text Code code");
+		log.info("Step AddEditSpecialText_006 - 06: Click on Add button");
+		log.info("Step AddEditSpecialText_006 - 07: Input Description");
+		log.info("Step AddEditSpecialText_006 - 08: Click on Save button");
+		log.info("Step AddEditSpecialText_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_special_text.php");
+		
+		log.info("Step AddEditSpecialText_006 - 10: Input Special Text Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_SplTxtCode", newSpecialText);
+		
+		log.info("Step AddEditSpecialText_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditSpecialText_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Special Text Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newSpecialText, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Special Text Code code by Text works")
+	public void AddEditSpecialText_007_SearchSpecialTextCodeByText() {	
+		
+		log.info("Step AddEditSpecialText_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditSpecialText_007 - 02: Input correct username and password");
+		log.info("Step AddEditSpecialText_007 - 03: Accept Alert message");
+		log.info("Step AddEditSpecialText_007 - 04: Open Add labels page");
+		log.info("Step AddEditSpecialText_007 - 05: Input new Special Text Code code");
+		log.info("Step AddEditSpecialText_007 - 06: Click on Add button");
+		log.info("Step AddEditSpecialText_007 - 07: Input Description");
+		log.info("Step AddEditSpecialText_007 - 08: Click on Save button");
+		log.info("Step AddEditSpecialText_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_special_text.php");
+		
+		log.info("Step AddEditSpecialText_007 - 10: Input Special Text Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_SplTxtCode", newSpecialText);
+		
+		log.info("Step AddEditSpecialText_007 - 11: Input Special Text Code content");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_SplTxtDesc", "new description 2");
+		
+		log.info("Step AddEditSpecialText_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Special Text Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newSpecialText, "new description 2"));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

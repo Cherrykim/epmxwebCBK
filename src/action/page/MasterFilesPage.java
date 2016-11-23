@@ -222,6 +222,13 @@ public class MasterFilesPage extends AbstractPage {
 		return getAttributeValue(driver, epmxweb.MasterFilesPage.dynamicTextfieldByName, "value", name);
 	}
 	
+	public void switchAddAndModifyCurrency(){
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			clickOnImageButtonByItsSrc(driver, "manage");
+		}
+	}
+	
 	private WebDriver driver;
 	private String ipClient;
 }

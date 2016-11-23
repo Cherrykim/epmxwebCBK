@@ -90,7 +90,6 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ContAmt1", "12.00");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PeriodFrom1", "12-17-2020");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PeriodThru1", "12-18-2020");
-//		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AccumAmt1", "12.00");
 		
 		log.info("Step AddEditGLAccount_002 - 13: Click on Save button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
@@ -107,7 +106,6 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_ContAmt1").trim(), "12.00");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_PeriodFrom1"), "12-17-2020");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_PeriodThru1"), "12-18-2020");
-//		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_AccumAmt1"), "12.00");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Deactivate GL Account works")

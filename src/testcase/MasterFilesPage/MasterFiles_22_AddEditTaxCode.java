@@ -145,6 +145,84 @@ public class MasterFiles_22_AddEditTaxCode extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Tax Code code by Code works")
+	public void AddEditTaxCode_005_SearchTaxCodeByCode() {	
+		
+		log.info("Step AddEditTaxCode_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditTaxCode_005 - 02: Input correct username and password");
+		log.info("Step AddEditTaxCode_005 - 03: Accept Alert message");
+		log.info("Step AddEditTaxCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditTaxCode_005 - 05: Input new Tax Code code");
+		log.info("Step AddEditTaxCode_005 - 06: Click on Add button");
+		log.info("Step AddEditTaxCode_005 - 07: Input Description");
+		log.info("Step AddEditTaxCode_005 - 08: Click on Save button");
+		log.info("Step AddEditTaxCode_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_tax_code.php");
+		
+		log.info("Step AddEditTaxCode_005 - 10: Input Tax Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxCode", newTaxCode);
+		
+		log.info("Step AddEditTaxCode_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Tax Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newTaxCode, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Tax Code code by Corporation works")
+	public void AddEditTaxCode_006_SearchTaxCodeByCorporation() {	
+		
+		log.info("Step AddEditTaxCode_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditTaxCode_006 - 02: Input correct username and password");
+		log.info("Step AddEditTaxCode_006 - 03: Accept Alert message");
+		log.info("Step AddEditTaxCode_006 - 04: Open Add labels page");
+		log.info("Step AddEditTaxCode_006 - 05: Input new Tax Code code");
+		log.info("Step AddEditTaxCode_006 - 06: Click on Add button");
+		log.info("Step AddEditTaxCode_006 - 07: Input Description");
+		log.info("Step AddEditTaxCode_006 - 08: Click on Save button");
+		log.info("Step AddEditTaxCode_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_tax_code.php");
+		
+		log.info("Step AddEditTaxCode_006 - 10: Input Tax Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxCode", newTaxCode);
+		
+		log.info("Step AddEditTaxCode_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditTaxCode_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Tax Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newTaxCode, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Tax Code code by Taxing Authority works")
+	public void AddEditTaxCode_007_SearchTaxCodeByTaxingAuthority() {	
+		
+		log.info("Step AddEditTaxCode_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditTaxCode_007 - 02: Input correct username and password");
+		log.info("Step AddEditTaxCode_007 - 03: Accept Alert message");
+		log.info("Step AddEditTaxCode_007 - 04: Open Add labels page");
+		log.info("Step AddEditTaxCode_007 - 05: Input new Tax Code code");
+		log.info("Step AddEditTaxCode_007 - 06: Click on Add button");
+		log.info("Step AddEditTaxCode_007 - 07: Input Description");
+		log.info("Step AddEditTaxCode_007 - 08: Click on Save button");
+		log.info("Step AddEditTaxCode_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_tax_code.php");
+		
+		log.info("Step AddEditTaxCode_007 - 10: Input Tax Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxCode", newTaxCode);
+		
+		log.info("Step AddEditTaxCode_007 - 11: Input Tax Code Taxing Authority");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxDesc", "Seller");
+		
+		log.info("Step AddEditTaxCode_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Tax Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newTaxCode, "Seller"));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();
