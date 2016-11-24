@@ -140,6 +140,84 @@ public class MasterFiles_27_AddEditVendorGroup extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Vendor Group code by Code works")
+	public void AddEditVendorGroup_005_SearchVendorGroupByCode() {	
+		
+		log.info("Step AddEditVendorGroup_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditVendorGroup_005 - 02: Input correct username and password");
+		log.info("Step AddEditVendorGroup_005 - 03: Accept Alert message");
+		log.info("Step AddEditVendorGroup_005 - 04: Open Add labels page");
+		log.info("Step AddEditVendorGroup_005 - 05: Input new Vendor Group code");
+		log.info("Step AddEditVendorGroup_005 - 06: Click on Add button");
+		log.info("Step AddEditVendorGroup_005 - 07: Input Description");
+		log.info("Step AddEditVendorGroup_005 - 08: Click on Save button");
+		log.info("Step AddEditVendorGroup_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_vendor_group.php");
+		
+		log.info("Step AddEditVendorGroup_005 - 10: Input Vendor Group Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorGroupCode", newVendorGroup);
+		
+		log.info("Step AddEditVendorGroup_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Vendor Group code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newVendorGroup, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Vendor Group code by Corporation works")
+	public void AddEditVendorGroup_006_SearchVendorGroupByCorporation() {	
+		
+		log.info("Step AddEditVendorGroup_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditVendorGroup_006 - 02: Input correct username and password");
+		log.info("Step AddEditVendorGroup_006 - 03: Accept Alert message");
+		log.info("Step AddEditVendorGroup_006 - 04: Open Add labels page");
+		log.info("Step AddEditVendorGroup_006 - 05: Input new Vendor Group code");
+		log.info("Step AddEditVendorGroup_006 - 06: Click on Add button");
+		log.info("Step AddEditVendorGroup_006 - 07: Input Description");
+		log.info("Step AddEditVendorGroup_006 - 08: Click on Save button");
+		log.info("Step AddEditVendorGroup_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_vendor_group.php");
+		
+		log.info("Step AddEditVendorGroup_006 - 10: Input Vendor Group Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorGroupCode", newVendorGroup);
+		
+		log.info("Step AddEditVendorGroup_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditVendorGroup_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Vendor Group code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newVendorGroup, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Vendor Group code by Description works")
+	public void AddEditVendorGroup_007_SearchVendorGroupByDescription() {	
+		
+		log.info("Step AddEditVendorGroup_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditVendorGroup_007 - 02: Input correct username and password");
+		log.info("Step AddEditVendorGroup_007 - 03: Accept Alert message");
+		log.info("Step AddEditVendorGroup_007 - 04: Open Add labels page");
+		log.info("Step AddEditVendorGroup_007 - 05: Input new Vendor Group code");
+		log.info("Step AddEditVendorGroup_007 - 06: Click on Add button");
+		log.info("Step AddEditVendorGroup_007 - 07: Input Description");
+		log.info("Step AddEditVendorGroup_007 - 08: Click on Save button");
+		log.info("Step AddEditVendorGroup_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_vendor_group.php");
+		
+		log.info("Step AddEditVendorGroup_007 - 10: Input Vendor Group Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorGroupCode", newVendorGroup);
+		
+		log.info("Step AddEditVendorGroup_007 - 11: Input Vendor Group Code description");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorGroupDesc", "new description 2");
+		
+		log.info("Step AddEditVendorGroup_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Vendor Group code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newVendorGroup, "new description 2"));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

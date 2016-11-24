@@ -164,6 +164,85 @@ public class MasterFiles_23_AddEditTermsCode extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Terms Code code by Code works")
+	public void AddEditTermsCode_005_SearchTermsCodeByCode() {	
+		
+		log.info("Step AddEditTermsCode_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditTermsCode_005 - 02: Input correct username and password");
+		log.info("Step AddEditTermsCode_005 - 03: Accept Alert message");
+		log.info("Step AddEditTermsCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditTermsCode_005 - 05: Input new Terms Code code");
+		log.info("Step AddEditTermsCode_005 - 06: Click on Add button");
+		log.info("Step AddEditTermsCode_005 - 07: Input Description");
+		log.info("Step AddEditTermsCode_005 - 08: Click on Save button");
+		log.info("Step AddEditTermsCode_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_terms_code.php");
+		
+		log.info("Step AddEditTermsCode_005 - 10: Input Terms Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TermsCode", newTermsCode);
+		
+		log.info("Step AddEditTermsCode_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Terms Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newTermsCode, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Terms Code code by Corporation works")
+	public void AddEditTermsCode_006_SearchTermsCodeByCorporation() {	
+		
+		log.info("Step AddEditTermsCode_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditTermsCode_006 - 02: Input correct username and password");
+		log.info("Step AddEditTermsCode_006 - 03: Accept Alert message");
+		log.info("Step AddEditTermsCode_006 - 04: Open Add labels page");
+		log.info("Step AddEditTermsCode_006 - 05: Input new Terms Code code");
+		log.info("Step AddEditTermsCode_006 - 06: Click on Add button");
+		log.info("Step AddEditTermsCode_006 - 07: Input Description");
+		log.info("Step AddEditTermsCode_006 - 08: Click on Save button");
+		log.info("Step AddEditTermsCode_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_terms_code.php");
+		
+		log.info("Step AddEditTermsCode_006 - 10: Input Terms Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TermsCode", newTermsCode);
+		
+		log.info("Step AddEditTermsCode_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditTermsCode_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Terms Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newTermsCode, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Terms Code code by Description works")
+	public void AddEditTermsCode_007_SearchTermsCodeByDescription() {	
+		
+		log.info("Step AddEditTermsCode_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditTermsCode_007 - 02: Input correct username and password");
+		log.info("Step AddEditTermsCode_007 - 03: Accept Alert message");
+		log.info("Step AddEditTermsCode_007 - 04: Open Add labels page");
+		log.info("Step AddEditTermsCode_007 - 05: Input new Terms Code code");
+		log.info("Step AddEditTermsCode_007 - 06: Click on Add button");
+		log.info("Step AddEditTermsCode_007 - 07: Input Description");
+		log.info("Step AddEditTermsCode_007 - 08: Click on Save button");
+		log.info("Step AddEditTermsCode_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_terms_code.php");
+		
+		log.info("Step AddEditTermsCode_007 - 10: Input Terms Code Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TermsCode", newTermsCode);
+		
+		log.info("Step AddEditTermsCode_007 - 11: Input Terms Code Description");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TermsDesc", "new description 2");
+		
+		log.info("Step AddEditTermsCode_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Terms Code code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newTermsCode, "Seller"));
+	}
+	
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

@@ -140,6 +140,56 @@ public class MasterFiles_25_AddEditUnitOfMeasure extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Unit of Measure code by Code works")
+	public void AddEditUnitOfMeasure_005_SearchUnitOfMeasureByCode() {	
+		
+		log.info("Step AddEditUnitOfMeasure_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditUnitOfMeasure_005 - 02: Input correct username and password");
+		log.info("Step AddEditUnitOfMeasure_005 - 03: Accept Alert message");
+		log.info("Step AddEditUnitOfMeasure_005 - 04: Open Add labels page");
+		log.info("Step AddEditUnitOfMeasure_005 - 05: Input new Unit of Measure code");
+		log.info("Step AddEditUnitOfMeasure_005 - 06: Click on Add button");
+		log.info("Step AddEditUnitOfMeasure_005 - 07: Input Description");
+		log.info("Step AddEditUnitOfMeasure_005 - 08: Click on Save button");
+		log.info("Step AddEditUnitOfMeasure_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_units_of_measure.php");
+		
+		log.info("Step AddEditUnitOfMeasure_005 - 10: Input Unit of Measure Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ShortCode", newUnitOfMeasure);
+		
+		log.info("Step AddEditUnitOfMeasure_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Unit of Measure code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newUnitOfMeasure, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Unit of Measure code by Description works")
+	public void AddEditUnitOfMeasure_006_SearchUnitOfMeasureByDescription() {	
+		
+		log.info("Step AddEditUnitOfMeasure_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditUnitOfMeasure_006 - 02: Input correct username and password");
+		log.info("Step AddEditUnitOfMeasure_006 - 03: Accept Alert message");
+		log.info("Step AddEditUnitOfMeasure_006 - 04: Open Add labels page");
+		log.info("Step AddEditUnitOfMeasure_006 - 05: Input new Unit of Measure code");
+		log.info("Step AddEditUnitOfMeasure_006 - 06: Click on Add button");
+		log.info("Step AddEditUnitOfMeasure_006 - 07: Input Description");
+		log.info("Step AddEditUnitOfMeasure_006 - 08: Click on Save button");
+		log.info("Step AddEditUnitOfMeasure_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_units_of_measure.php");
+		
+		log.info("Step AddEditUnitOfMeasure_006 - 10: Input Unit of Measure Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ShortCode", newUnitOfMeasure);
+		
+		log.info("Step AddEditUnitOfMeasure_006 - 11: Input Unit of Measure Description");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Desc", "new description 2");
+		
+		log.info("Step AddEditUnitOfMeasure_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Unit of Measure code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newUnitOfMeasure, "new description 2"));
+	}
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

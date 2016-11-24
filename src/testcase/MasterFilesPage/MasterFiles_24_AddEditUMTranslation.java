@@ -183,6 +183,57 @@ public class MasterFiles_24_AddEditUMTranslation extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search UM Translation code by Code works")
+	public void AddEditUMTranslation_005_SearchUMTranslationByCode() {	
+		
+		log.info("Step AddEditUMTranslation_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditUMTranslation_005 - 02: Input correct username and password");
+		log.info("Step AddEditUMTranslation_005 - 03: Accept Alert message");
+		log.info("Step AddEditUMTranslation_005 - 04: Open Add labels page");
+		log.info("Step AddEditUMTranslation_005 - 05: Input new UM Translation code");
+		log.info("Step AddEditUMTranslation_005 - 06: Click on Add button");
+		log.info("Step AddEditUMTranslation_005 - 07: Input Description");
+		log.info("Step AddEditUMTranslation_005 - 08: Click on Save button");
+		log.info("Step AddEditUMTranslation_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_um_translation.php");
+		
+		log.info("Step AddEditUMTranslation_005 - 10: Input UM Translation Code");
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", itemCode);
+		
+		log.info("Step AddEditUMTranslation_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: UM Translation code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), itemCode, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search UM Translation code by Corporation works")
+	public void AddEditUMTranslation_006_SearchUMTranslationByCorporation() {	
+		
+		log.info("Step AddEditUMTranslation_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditUMTranslation_006 - 02: Input correct username and password");
+		log.info("Step AddEditUMTranslation_006 - 03: Accept Alert message");
+		log.info("Step AddEditUMTranslation_006 - 04: Open Add labels page");
+		log.info("Step AddEditUMTranslation_006 - 05: Input new UM Translation code");
+		log.info("Step AddEditUMTranslation_006 - 06: Click on Add button");
+		log.info("Step AddEditUMTranslation_006 - 07: Input Description");
+		log.info("Step AddEditUMTranslation_006 - 08: Click on Save button");
+		log.info("Step AddEditUMTranslation_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_um_translation.php");
+		
+		log.info("Step AddEditUMTranslation_006 - 10: Input UM Translation Code");
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", itemCode);
+		
+		log.info("Step AddEditUMTranslation_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditUMTranslation_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: UM Translation code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), itemCode, Constant.DefaultValue.CORPORATION));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

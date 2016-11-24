@@ -252,6 +252,53 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search User code by First name works")
+	public void AddEditUser_005_SearchUserByFirstName() {	
+		
+		log.info("Step AddEditUser_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditUser_005 - 02: Input correct username and password");
+		log.info("Step AddEditUser_005 - 03: Accept Alert message");
+		log.info("Step AddEditUser_005 - 04: Open Add labels page");
+		log.info("Step AddEditUser_005 - 05: Input new User code");
+		log.info("Step AddEditUser_005 - 06: Click on Add button");
+		log.info("Step AddEditUser_005 - 07: Input Description");
+		log.info("Step AddEditUser_005 - 08: Click on Save button");
+		log.info("Step AddEditUser_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_user.php");
+		
+		log.info("Step AddEditUser_005 - 10: Input User First name");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_FirstName", newUser);
+		
+		log.info("Step AddEditUser_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: User code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newUser, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search User code by Last name works")
+	public void AddEditUser_006_SearchUserByLastName() {	
+		
+		log.info("Step AddEditUser_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditUser_006 - 02: Input correct username and password");
+		log.info("Step AddEditUser_006 - 03: Accept Alert message");
+		log.info("Step AddEditUser_006 - 04: Open Add labels page");
+		log.info("Step AddEditUser_006 - 05: Input new User code");
+		log.info("Step AddEditUser_006 - 06: Click on Add button");
+		log.info("Step AddEditUser_006 - 07: Input Description");
+		log.info("Step AddEditUser_006 - 08: Click on Save button");
+		log.info("Step AddEditUser_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_user.php");
+		
+		log.info("Step AddEditUser_006 - 10: Input User Last name");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_LastName", newUser);
+		
+		log.info("Step AddEditUser_006 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: User code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newUser, newUser));
+	}
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

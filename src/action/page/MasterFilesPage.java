@@ -119,6 +119,20 @@ public class MasterFilesPage extends AbstractPage {
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	public void createNewCommodityCode(String codeID, String vendorName){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_commodity_code.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_CommodityCode", codeID);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", codeID);
+		inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_PVendor", vendorName);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
 	public void createNewTaxCode(String taxID){
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_tax_code.php");
 		sleep(2);
@@ -155,6 +169,21 @@ public class MasterFilesPage extends AbstractPage {
 			return;
 		}
 		selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", "um1");
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewItemCode(String itemName, String vendorName){
+		createNewUnitOfMeasure("um1");
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_material.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_ItemCode", itemName);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", "um1");
+		inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_PVendor", vendorName);
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
