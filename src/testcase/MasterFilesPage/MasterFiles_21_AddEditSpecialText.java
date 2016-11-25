@@ -42,9 +42,10 @@ public class MasterFiles_21_AddEditSpecialText extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TextCode", newSpecialText);
 		
 		log.info("Step AddEditSpecialText_001 - 06: Click on Add button");
+		masterFilesPage.sleep();
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add");
 		
-		log.info("Step AddEditSpecialText_001 - 07: Input Description");
+		log.info("Step AddEditSpecialText_001 - 07: Input all textfields");
 		masterFilesPage.inputTextareaByID(DriverManager.getDriver(), "txt_Text", "new description");
 		
 		log.info("Step AddEditSpecialText_001 - 08: Click on Save button");

@@ -258,6 +258,83 @@ public class MasterFilesPage extends AbstractPage {
 		}
 	}
 	
+	public void createNewBillToCode(String billToCode){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_bill_to_code.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_BillToCode", billToCode);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Company", billToCode);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewShipToCode(String shipToCode){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_ship_to_code.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_ShipToCode", shipToCode);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Company", shipToCode);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewPOType(String poType){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_po_type.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_PotypeCode", poType);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", poType);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewJobCode(String jobCode){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_job_numbers.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_JobCode", jobCode);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", jobCode);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewProjectCode(String projectCode){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_project_number.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_ProjCode", projectCode);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", projectCode);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewSpecialText(String text){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_project_number.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_TextCode", text);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextareaByID(DriverManager.getDriver(), "txt_Text", text);
+		clickOnElementByItsID(driver, "img_Save");
+	}
 	private WebDriver driver;
 	private String ipClient;
 }

@@ -140,6 +140,84 @@ public class MasterFiles_28_AddEditVendorType extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Vendor Type code by Code works")
+	public void AddEditVendorType_005_SearchVendorTypeByCode() {	
+		
+		log.info("Step AddEditVendorType_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditVendorType_005 - 02: Input correct username and password");
+		log.info("Step AddEditVendorType_005 - 03: Accept Alert message");
+		log.info("Step AddEditVendorType_005 - 04: Open Add labels page");
+		log.info("Step AddEditVendorType_005 - 05: Input new Vendor Type code");
+		log.info("Step AddEditVendorType_005 - 06: Click on Add button");
+		log.info("Step AddEditVendorType_005 - 07: Input Description");
+		log.info("Step AddEditVendorType_005 - 08: Click on Save button");
+		log.info("Step AddEditVendorType_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_vendor_type.php");
+		
+		log.info("Step AddEditVendorType_005 - 10: Input Vendor Type Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_SearchType", newVendorType);
+		
+		log.info("Step AddEditVendorType_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Vendor Type code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newVendorType, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Vendor Type code by Corporation works")
+	public void AddEditVendorType_006_SearchVendorTypeByCorporation() {	
+		
+		log.info("Step AddEditVendorType_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditVendorType_006 - 02: Input correct username and password");
+		log.info("Step AddEditVendorType_006 - 03: Accept Alert message");
+		log.info("Step AddEditVendorType_006 - 04: Open Add labels page");
+		log.info("Step AddEditVendorType_006 - 05: Input new Vendor Type code");
+		log.info("Step AddEditVendorType_006 - 06: Click on Add button");
+		log.info("Step AddEditVendorType_006 - 07: Input Description");
+		log.info("Step AddEditVendorType_006 - 08: Click on Save button");
+		log.info("Step AddEditVendorType_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_vendor_type.php");
+		
+		log.info("Step AddEditVendorType_006 - 10: Input Vendor Type Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_SearchType", newVendorType);
+		
+		log.info("Step AddEditVendorType_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditVendorType_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Vendor Type code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newVendorType, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Vendor Type code by Description works")
+	public void AddEditVendorType_007_SearchVendorTypeByDescription() {	
+		
+		log.info("Step AddEditVendorType_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditVendorType_007 - 02: Input correct username and password");
+		log.info("Step AddEditVendorType_007 - 03: Accept Alert message");
+		log.info("Step AddEditVendorType_007 - 04: Open Add labels page");
+		log.info("Step AddEditVendorType_007 - 05: Input new Vendor Type code");
+		log.info("Step AddEditVendorType_007 - 06: Click on Add button");
+		log.info("Step AddEditVendorType_007 - 07: Input Description");
+		log.info("Step AddEditVendorType_007 - 08: Click on Save button");
+		log.info("Step AddEditVendorType_007 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_vendor_type.php");
+		
+		log.info("Step AddEditVendorType_007 - 10: Input Vendor Type Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_SearchType", newVendorType);
+		
+		log.info("Step AddEditVendorType_007 - 11: Input Vendor Type Code description");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorTypeDesc", "new description 2");
+		
+		log.info("Step AddEditVendorType_007 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Vendor Type code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newVendorType, "new description 2"));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

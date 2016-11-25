@@ -31,7 +31,10 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		vType1 = vendorType1+ " : "+vendorType1;
 		vendorType2 = "ve2";
 		vType2 = vendorType2+ " : "+vendorType2;
-
+		comCode = getUniqueText(6);
+		commodityCode = comCode+ " : "+comCode;
+		itemCode = getUniqueText(6);
+		
 		log.info("Step Pre-condition - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step Pre-condition - 02: Input correct username and password");
 		loginPage.login(Constant.LoginData.USERNAME, Constant.LoginData.PASSWORD);
@@ -78,7 +81,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ShipVia", "DELIVERED VT");
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_VendorType", vType1);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PrePaidFreight", "Included in Price");
-		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermCode", terms1);
+//		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermCode", terms1);
 
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ContactFax", "12345");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PhoneNumber1", "123456789");
@@ -121,7 +124,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_ShipVia"), "DELIVERED VT");
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_VendorType"), vType1);
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PrePaidFreight"), "Included in Price");
-		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermCode"), terms1);
+//		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermCode"), terms1);
 
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_ContactFax"), "12345");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_PhoneNumber1"), "123456789");
@@ -162,7 +165,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ShipVia", "FEDEX");
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_VendorType", vType2);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PrePaidFreight", "Pre Paid by Vendor");
-		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermCode", terms2);
+//		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermCode", terms2);
 
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ContactFax", "12346");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PhoneNumber1", "123456780");
@@ -201,7 +204,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_ShipVia"), "FEDEX");
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_VendorType"), vType2);
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PrePaidFreight"), "Pre Paid by Vendor");
-		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermCode"), terms2);
+//		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermCode"), terms2);
 
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_ContactFax"), "12346");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_PhoneNumber1"), "123456780");
@@ -266,6 +269,117 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Vendor by Short name works")
+	public void AddEditVendor_005_SearchVendorByShortName() {	
+		
+		log.info("Step AddEditVendor_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditVendor_005 - 02: Input correct username and password");
+		log.info("Step AddEditVendor_005 - 03: Accept Alert message");
+		log.info("Step AddEditVendor_005 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_005 - 05: Input new Vendor code");
+		log.info("Step AddEditVendor_005 - 06: Click on Add button");
+		log.info("Step AddEditVendor_005 - 07: Input Description");
+		log.info("Step AddEditVendor_005 - 08: Click on Save button");
+		log.info("Step AddEditVendor_005 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_vendors.php");
+		
+		log.info("Step AddEditVendor_005 - 10: Input Vendor Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorName", newVendor+"second");
+		
+		log.info("Step AddEditVendor_005 - 11: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Vendor code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newVendor+"second", ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Vendor code by Corporation works")
+	public void AddEditVendor_006_SearchVendorByCorporation() {	
+		
+		log.info("Step AddEditVendor_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditVendor_006 - 02: Input correct username and password");
+		log.info("Step AddEditVendor_006 - 03: Accept Alert message");
+		log.info("Step AddEditVendor_006 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_006 - 05: Input new Vendor code");
+		log.info("Step AddEditVendor_006 - 06: Click on Add button");
+		log.info("Step AddEditVendor_006 - 07: Input Description");
+		log.info("Step AddEditVendor_006 - 08: Click on Save button");
+		log.info("Step AddEditVendor_006 - 09: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_vendors.php");
+		
+		log.info("Step AddEditVendor_006 - 10: Input Vendor Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorName", newVendor+"second");
+		
+		log.info("Step AddEditVendor_006 - 11: Select Corporation");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditVendor_006 - 12: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Vendor code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newVendor+"second", Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Vendor code by Item Code works")
+	public void AddEditVendor_007_SearchVendorByItemCode() {	
+		
+		log.info("Step AddEditVendor_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditVendor_007 - 02: Input correct username and password");
+		log.info("Step AddEditVendor_007 - 03: Accept Alert message");
+		log.info("Step AddEditVendor_007 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_007 - 05: Input new Vendor code");
+		log.info("Step AddEditVendor_007 - 06: Click on Add button");
+		log.info("Step AddEditVendor_007 - 07: Input Description");
+		log.info("Step AddEditVendor_007 - 08: Click on Save button");
+		log.info("Step AddEditVendor_007 - 09: Use this new Vendor to create Item code");
+		masterFilesPage.createNewItemCode(itemCode, newVendor+"second");
+		
+		log.info("Step AddEditVendor_007 - 10: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_vendors.php");
+		
+		log.info("Step AddEditVendor_007 - 11: Input Vendor Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorName", newVendor+"second");
+		
+		log.info("Step AddEditVendor_007 - 12: Input Item Code");
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Item", itemCode);
+		
+		log.info("Step AddEditVendor_007 - 13: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Vendor code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newVendor+"second", ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Vendor code by Description works")
+	public void AddEditVendor_008_SearchVendorByDescription() {	
+		
+		log.info("Step AddEditVendor_008 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditVendor_008 - 02: Input correct username and password");
+		log.info("Step AddEditVendor_008 - 03: Accept Alert message");
+		log.info("Step AddEditVendor_008 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_008 - 05: Input new Vendor code");
+		log.info("Step AddEditVendor_008 - 06: Click on Add button");
+		log.info("Step AddEditVendor_008 - 07: Input Description");
+		log.info("Step AddEditVendor_008 - 08: Click on Save button");
+		log.info("Step AddEditVendor_008 - 09: Click on Save button");
+		masterFilesPage.createNewCommodityCode(comCode, newVendor+"second");
+		
+		log.info("Step AddEditVendor_008 - 10: Open Manager page");
+		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_vendors.php");
+		
+		log.info("Step AddEditVendor_008 - 11: Input Vendor Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorName", newVendor+"second");
+		
+		log.info("Step AddEditVendor_008 - 12: Input Commodity code");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_CommCode", commodityCode);
+		
+		log.info("Step AddEditVendor_008 - 13: Click on Search button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Vendor code displayed correctly");
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newVendor+"second", ""));
+	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();
@@ -277,4 +391,5 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 	private String termsCode1, termsCode2;
 	private String vendorType1, vendorType2;
 	private String terms1, terms2, vType1, vType2;
+	private String commodityCode, itemCode, comCode;
 }

@@ -85,13 +85,22 @@ public class PageFactory {
 	}
 	
 	/**
-	 * get GlobalDictionaryPage
+	 * get MasterFilesPage
 	 * @param driver
 	 * @param ipClient
-	 * @return GlobalDictionaryPage object
+	 * @return MasterFilesPage object
 	 */
 	public static MasterFilesPage getMasterFilesPage(WebDriver driver, String ipClient) {
 		return new MasterFilesPage(driver, ipClient);
 	}
 	
+	/**
+	 * get POPage
+	 * @param driver
+	 * @param ipClient
+	 * @return POPage object
+	 */
+	public static POPage getPOPage(WebDriver driver, String ipClient) {
+		return new POPage(driver, ipClient);
+	}
 }
