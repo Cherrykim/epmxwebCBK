@@ -324,7 +324,7 @@ public class MasterFilesPage extends AbstractPage {
 	}
 	
 	public void createNewSpecialText(String text){
-		openLink(driver, "https://cherry.epmxweb.com/master_files/add_project_number.php");
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_special_text.php");
 		sleep(2);
 		inputTextfieldByID(DriverManager.getDriver(), "txt_TextCode", text);
 		clickOnElementByItsID(driver, "img_Add");
