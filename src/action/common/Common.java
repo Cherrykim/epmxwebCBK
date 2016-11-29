@@ -76,6 +76,18 @@ public class Common {
 	}
 	
 	/**
+	 * Return a random unique number
+	 * 
+	 * @return unique number
+	 */
+	public String getUniqueNumber(int index) {
+		Random rand = new Random();
+		int number = rand.nextInt(100000000) + 1;
+		String numberString = Integer.toString(number);
+		return numberString.substring(0, index);
+	}
+	
+	/**
 	 * Get date follow download template
 	 * 
 	 * @return unique number

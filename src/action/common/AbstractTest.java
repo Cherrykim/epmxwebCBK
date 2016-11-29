@@ -161,6 +161,10 @@ public abstract class AbstractTest extends BrowserManager {
 	    return Long.toString(date);
 	}
 	
+	public String getUniqueNumber(int index){
+	    return Common.getCommon().getUniqueNumber(index);
+	}
+	
 	public String getUniqueText(int index){
 		return Common.getCommon().getUniqueName(index);
 	}

@@ -430,7 +430,34 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
-	
+	@Test(groups = { "regression" }, description = "Check Delete Blanket PO works")
+	public void AddEditBlanketPO_005_CheckDeleteBlanketPOWorks() {	
+		
+		log.info("Step AddEditBlanketPO_004 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_004 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_004 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_004 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_004 - 05: Input new Blanket PO");
+		log.info("Step AddEditBlanketPO_004 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_004 - 07: Input Description");
+		log.info("Step AddEditBlanketPO_004 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_004 - 09: Input new Blanket PO");
+		log.info("Step AddEditBlanketPO_004 - 10: Click on Delete button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "delete");
+		masterFilesPage.acceptAlert(DriverManager.getDriver());
+		
+		log.info("Step AddEditBlanketPO_004 - 11: Input new Blanket PO");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONum", newBlanketPO);
+		
+		log.info("Step AddEditBlanketPO_004 - 12: Input Vendor");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
+		
+		log.info("Step AddEditBlanketPO_004 - 13: Click on Modify button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		
+		log.info("VP: Blanket PO is not displayed");
+		verifyFalse(masterFilesPage.isTextDisplayed(DriverManager.getDriver(), newBlanketPO));
+	}
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();

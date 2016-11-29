@@ -103,4 +103,14 @@ public class PageFactory {
 	public static POPage getPOPage(WebDriver driver, String ipClient) {
 		return new POPage(driver, ipClient);
 	}
+	
+	/**
+	 * get ReceivingPage
+	 * @param driver
+	 * @param ipClient
+	 * @return ReceivingPage object
+	 */
+	public static ReceivingPage getReceivingPage(WebDriver driver, String ipClient) {
+		return new ReceivingPage(driver, ipClient);
+	}
 }

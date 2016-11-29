@@ -2,9 +2,9 @@ package page;
 
 import org.openqa.selenium.WebDriver;
 
-public class POPage extends AbstractPage {
+public class ReceivingPage extends AbstractPage {
 
-	public POPage(WebDriver driver, String ipClient) {
+	public ReceivingPage(WebDriver driver, String ipClient) {
 		control.setPage(this.getClass().getSimpleName());
 		this.driver = driver;
 		this.ipClient = ipClient;
