@@ -113,4 +113,14 @@ public class PageFactory {
 	public static ReceivingPage getReceivingPage(WebDriver driver, String ipClient) {
 		return new ReceivingPage(driver, ipClient);
 	}
+	
+	/**
+	 * get RequisitionPage
+	 * @param driver
+	 * @param ipClient
+	 * @return RequisitionPage object
+	 */
+	public static RequisitionPage getRequisitionPage(WebDriver driver, String ipClient) {
+		return new RequisitionPage(driver, ipClient);
+	}
 }

@@ -114,11 +114,11 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		masterFilesPage.createNewGLAccount(glAccountCode1);
 		masterFilesPage.createNewGLAccount(glAccountCode2);
 		
-		log.info("Step Pre-condition - 05: Create new PO Type");
+		log.info("Step Pre-condition - 05: Create new Job Code");
 		masterFilesPage.createNewJobCode(job1);
 		masterFilesPage.createNewJobCode(job2);
 		
-		log.info("Step Pre-condition - 05: Create new PO Type");
+		log.info("Step Pre-condition - 05: Create new Project code");
 		masterFilesPage.createNewProjectCode(projectCode1);
 		masterFilesPage.createNewProjectCode(projectCode2);	
 		
