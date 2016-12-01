@@ -2,6 +2,7 @@ package page;
 
 import org.openqa.selenium.WebDriver;
 
+import common.Constant;
 import common.DriverManager;
 
 public class MasterFilesPage extends AbstractPage {
@@ -90,6 +91,15 @@ public class MasterFilesPage extends AbstractPage {
 		}
 		inputTextfieldByID(DriverManager.getDriver(), "txt_Desc", "new description");
 		clickOnElementByItsID(driver, "img_Save");
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_user.php");
+		inputTextfieldByID(DriverManager.getDriver(), "txt_UserName", Constant.LoginData.USERNAME);
+		clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		clickOnElementByItsID(DriverManager.getDriver(), "btn_GL");
+		inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_GlAccount", accountID);
+		clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add_field", "3");
+		clickOnImageButtonByItsSrc(DriverManager.getDriver(), "ok", "3");
+		clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
+		sleep(2);
 	}
 	
 	public void createNewGLAccount(String corpName, String accountID){
@@ -154,7 +164,7 @@ public class MasterFilesPage extends AbstractPage {
 			acceptAlert(driver);
 			return;
 		}
-		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", "new unit");
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", unitName);
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
