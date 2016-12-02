@@ -212,7 +212,7 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		
 		//Check saved correctly
 		
-		log.info("Step AddEditBlanketPO_001 - 15: Select all dropdowns");
+		log.info("Step AddEditBlanketPO_001 - VP: All dropdown displayed correctly");
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BillCode"), billToCode1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PPFreight"), "Included in Price");
@@ -221,7 +221,7 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode1"), taxCode1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode2"), taxCode2);
 		
-		log.info("Step AddEditBlanketPO_001 - 16: Input all selecter textfield");
+		log.info("Step AddEditBlanketPO_001 - VP: All textfield is displayed correctly");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_ShipVia"), "FEDEX");
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNum", jobCode1));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_ProjNum", projectCode1));

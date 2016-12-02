@@ -235,6 +235,19 @@ public class MasterFilesPage extends AbstractPage {
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	public void createNewBankCode(String bankCode){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_bank_code.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_BankCode", bankCode);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", bankCode);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
 	public void createNewCataloge(String itemCode, String description){
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_catalog.php");
 		sleep(2);

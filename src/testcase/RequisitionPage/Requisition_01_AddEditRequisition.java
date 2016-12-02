@@ -26,7 +26,6 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		requisitionPage = PageFactory.getRequisitionPage(DriverManager.getDriver(), ipClient);
 		newRequisition = getUniqueNumber(7);
 		itemCode1 = "item1";
-		itemCode2 = "item2";
 		unitOfMeasure1 = "um1";
 		unitOfMeasure2 = "um2";
 		unitOfMeasureName1= unitOfMeasure1+ " : "+unitOfMeasure1;
@@ -55,33 +54,32 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
 		
-//		log.info("Step Pre-condition - 04: Create Unit of measure");
-//		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
-//		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
+		log.info("Step Pre-condition - 04: Create Unit of measure");
+		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
+		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
 //		
-//		log.info("Step Pre-condition - 05: Create Item code");
-//		masterFilesPage.createNewItemCode(itemCode1);
-//		masterFilesPage.createNewItemCode(itemCode2);
+		log.info("Step Pre-condition - 05: Create Item code");
+		masterFilesPage.createNewItemCode(itemCode1);
 //		
-//		log.info("Step Pre-condition - 05: Create new Job code");
-//		masterFilesPage.createNewJobCode(job1);
-//		masterFilesPage.createNewJobCode(job2);
+		log.info("Step Pre-condition - 06: Create new Job code");
+		masterFilesPage.createNewJobCode(job1);
+		masterFilesPage.createNewJobCode(job2);
 //		
-		log.info("Step Pre-condition - 04: Create GL Account");
+		log.info("Step Pre-condition - 07: Create GL Account");
 		masterFilesPage.createNewGLAccount(glAccountCode1);
 		masterFilesPage.createNewGLAccount(glAccountCode2);
 //		
-//		log.info("Step Pre-condition - 05: Create new Project code");
-//		masterFilesPage.createNewProjectCode(projectCode1);
-//		masterFilesPage.createNewProjectCode(projectCode2);	
-//		
-//		log.info("Step Pre-condition - 05: Create new Ship-to Code");
-//		masterFilesPage.createNewShipToCode(ship1);
-//		masterFilesPage.createNewShipToCode(ship2);
-//		
-//		log.info("Step Pre-condition - 05: Create new Vendor");
-//		masterFilesPage.createNewVendor(vendorID1, vendorName1);
-//		masterFilesPage.createNewVendor(vendorID2, vendorName2);
+		log.info("Step Pre-condition - 08: Create new Project code");
+		masterFilesPage.createNewProjectCode(projectCode1);
+		masterFilesPage.createNewProjectCode(projectCode2);	
+		
+		log.info("Step Pre-condition - 09: Create new Ship-to Code");
+		masterFilesPage.createNewShipToCode(ship1);
+		masterFilesPage.createNewShipToCode(ship2);
+		
+		log.info("Step Pre-condition - 10: Create new Vendor");
+		masterFilesPage.createNewVendor(vendorID1, vendorName1);
+		masterFilesPage.createNewVendor(vendorID2, vendorName2);
 	}
 
 	@Test(groups = { "regression" }, description = "Check Add Requisition works")
@@ -155,7 +153,7 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		log.info("Step AddEditRequisition_002 - 09: Input new Requisition");
 		log.info("Step AddEditRequisition_002 - 10: Click on Modify button");
 		log.info("Step AddEditRequisition_002 - 11: Input All other textfields");
-		log.info("Step AddEditRequisition_001 - 04: Input All other textfields");
+		log.info("Step AddEditRequisition_001 - 12: Input All other textfields");
 		requisitionPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode2);
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName2);
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqDate", "12-12-2020");
@@ -164,21 +162,21 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ProjectNum", projectCode2);
 		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
 		
-		log.info("Step AddEditRequisition_001 - 05: Add Line Item to Requisition");
+		log.info("Step AddEditRequisition_001 - 13: Add Line Item to Requisition");
 		requisitionPage.inputTextareaByID(DriverManager.getDriver(), "txt_Desc0", "Item 2");
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_quantity0", "12.0000");
 		requisitionPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Um0", unitOfMeasureName2);
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Price0", "12.0000");
 		
-		log.info("Step AddEditRequisition_001 - 06: Click on Save button");
+		log.info("Step AddEditRequisition_001 - 14: Click on Save button");
 		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		requisitionPage.clickOnElementByItsID(DriverManager.getDriver(), "chk_UpType1");
 		requisitionPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_Save");
 		
-		log.info("Step AddEditRequisition_001 - 07: Input new Requisition");
+		log.info("Step AddEditRequisition_001 - 15: Input new Requisition");
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
 		
-		log.info("Step AddEditRequisition_001 - 08: Click on Modify button");
+		log.info("Step AddEditRequisition_001 - 16: Click on Modify button");
 		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("Step AddEditRequisition_001 - VP: All other textfields are saved correctly");
@@ -433,7 +431,7 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
 		
 		log.info("Step AddEditRequisition_011 - 11: Input Item code");
-		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", itemCode2);
+		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", itemCode1);
 		
 		log.info("Step AddEditRequisition_011 - 12: Click on Search button");
 		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -469,6 +467,32 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Delete Requisition works")
+	public void AddEditRequisition_013_DeleteRequisitionWorks() {	
+		log.info("Step AddEditRequisition_013 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_013 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_013 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_013 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_013 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_013 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_013 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_013 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_013 - 09: Open Add Requisition page");
+		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/add_requisition.php");
+
+		log.info("Step AddEditRequisition_013 - 10: Input new Requisition");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_013 - 11: Click on Manage button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		
+		log.info("Step AddEditRequisition_013 - 12: Click on Delete button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "delete");
+		requisitionPage.acceptAlert(DriverManager.getDriver());
+		
+		log.info("VP: Requisition is not displayed");
+		verifyFalse(requisitionPage.isTextDisplayed(DriverManager.getDriver(), newRequisition));
+	}
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();
@@ -479,7 +503,7 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 	private RequisitionPage requisitionPage;
 	private String newRequisition;
 	private String unitOfMeasure1, unitOfMeasure2, unitOfMeasureName1, unitOfMeasureName2;
-	private String itemCode1, itemCode2;
+	private String itemCode1;
 	private String glAccountCode1, glAccountCode2;
 	private String projectCode1, projectCode2;
 	private String job1, job2, jobCode1, jobCode2;
