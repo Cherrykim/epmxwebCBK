@@ -57,6 +57,21 @@ public class AddUserPage extends AbstractPage {
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	//temp
+	
+	public void selectRadioButtonByValue(String value){
+		click(driver, epmxweb.LicenseAgreementPage.dynamicRadioButton, value);
+		sleep();
+	}
+	
+	public void clickOnButtonByValue(String value){
+		click(driver, epmxweb.LicenseAgreementPage.dynamicButtonByValue, value);
+		sleep();
+	}
+	
+	public boolean isButtonByValueEnabled(String value){
+		return isControlEnabled(driver, epmxweb.LicenseAgreementPage.dynamicButtonByValue, value);
+	}
 	private WebDriver driver;
 	private String ipClient;
 }
