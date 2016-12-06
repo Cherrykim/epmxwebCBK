@@ -30,6 +30,30 @@
 			<class name="MasterFilesPage.MasterFiles_03_AddEditBankCode" />
 			<class name="MasterFilesPage.MasterFiles_04_AddEditBillToCode" />
 			<class name="MasterFilesPage.MasterFiles_05_AddEditCatalog" />
+			<class name="MasterFilesPage.MasterFiles_06_AddEditCommodityCode" />
+			<class name="MasterFilesPage.MasterFiles_08_AddEditCorporation" />
+			<class name="MasterFilesPage.MasterFiles_09_AddEditTranslationCurrency" />
+			<class name="MasterFilesPage.MasterFiles_10_AddEditGLAccount" />
+			<class name="MasterFilesPage.MasterFiles_13_AddEditJobNumber" />
+			<class name="MasterFilesPage.MasterFiles_15_AddEditMaterial" />
+			<class name="MasterFilesPage.MasterFiles_16_AddEditPOType" />
+			<class name="MasterFilesPage.MasterFiles_18_AddEditDivision" />
+			<class name="MasterFilesPage.MasterFiles_19_AddEditReceivingDept" />
+			<class name="MasterFilesPage.MasterFiles_20_AddEditShipToCode" />
+			<class name="MasterFilesPage.MasterFiles_21_AddEditSpecialText" />
+				<class name="MasterFilesPage.MasterFiles_22_AddEditTaxCode" />
+				<class name="MasterFilesPage.MasterFiles_23_AddEditTermsCode" />
+				<class name="MasterFilesPage.MasterFiles_24_AddEditUMTranslation" />
+				<class name="MasterFilesPage.MasterFiles_25_AddEditUnitOfMeasure" />
+				<class name="MasterFilesPage.MasterFiles_26_AddEditUser" />
+				<class name="MasterFilesPage.MasterFiles_27_AddEditVendorGroup" />
+				<class name="MasterFilesPage.MasterFiles_28_AddEditVendorType" />
+				<class name="MasterFilesPage.MasterFiles_29_AddEditVendor" />
+				<class name="MasterFilesPage.MasterFiles_30_GlobalDictionary" />
+				<class name="PurchaseOrderPage.PO_01_AddEditBlanketPO" />
+				<class name="ReceivingPage.Receiving_01_AddEditUnplannedReceipt" />
+				<class name="RequisitionPage.Requisition_01_AddEditRequisition" />
+<!-- 				<class name="InvoicesPage.Invoices_01_AddEditBatchInfo" /> -->
 		</classes>
 	</test>	
 </suite> 
