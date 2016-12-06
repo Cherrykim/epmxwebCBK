@@ -76,7 +76,7 @@ public class UrlsChecking extends AbstractTest {
 			verifyTrue(loginPage.isTextDisplayed(DriverManager.getDriver(), "Powered by"));
 			
 			log.info("VP : The text 'version' is showed in the page with Url: "+ baseUrl + urlList[i]);
-			verifyTrue(loginPage.isLinkByItsTextDisplayed(DriverManager.getDriver(), "version"));
+			verifyTrue(loginPage.isLinkByItsTextDisplayed(DriverManager.getDriver(), "version 16.12.5"));
 			
 			log.info("VP : The text 'There is an error on the page' is not showed in the page with Url: "+ baseUrl + urlList[i]);
 			verifyFalse(loginPage.isTextDisplayed(DriverManager.getDriver(), "There is an error on the page"));
