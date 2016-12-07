@@ -82,7 +82,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "add_alt_vendor");
 		
 		log.info("Step AddCommodityCode_001 - 10: Input Alternate vendor");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PVendorA", vendorName2);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_PVendorA", vendorName2);
 		
 		log.info("Step AddCommodityCode_001 - 11: Click on Save Alternate Vendor button");
 		masterFilesPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save Alternate Vendor");
@@ -144,15 +144,12 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "add_alt_vendor");
 		
 		log.info("Step AddCommodityCode_002 - 20: Input Alternate vendor");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PVendorA", vendorName1);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_PVendorA", vendorName1);
 		
 		log.info("Step AddCommodityCode_002 - 21: Click on Save Alternate Vendor button");
 		masterFilesPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save Alternate Vendor");
 		
 		log.info("Step AddCommodityCode_002 - 22: Click on Save button");
-		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
-		
-		log.info("Step AddCommodityCode_002 - 23: Click on Save button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		
 		log.info("Step AddCommodityCode_002 - 24: Input new Commodity");
@@ -162,7 +159,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: Description field is saved correctly");
-		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_CommodityCodeDescription"), "new description");
+		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_CommodityCodeDescription"), "new description 2");
 		
 		log.info("VP: Primary user is saved correctly");
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BuyerID"), primaryUserName2);

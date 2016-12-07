@@ -23,6 +23,7 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
 		masterFilesPage = PageFactory.getMasterFilesPage(DriverManager.getDriver(), ipClient);
 		newGLAccount = getUniqueText(7);
+		
 	}
 
 	@Test(groups = { "regression" }, description = "Check Add GL Account works")
@@ -133,7 +134,7 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: G/L Account Code is deactivated");
-		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "G/L Account Code is deactivated. Press OK to reactivate or Cancel to view record only.");
+		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "G/L Account is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check REactivate GL Account works")
@@ -197,11 +198,11 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		log.info("Step AddEditGLAccount_006 - 09: Open Manager page");
 		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_gl_account_code.php");
 		
-		log.info("Step AddEditGLAccount_006 - 10: Input GL Account Code");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", newGLAccount);
-		
-		log.info("Step AddEditGLAccount_006 - 11: Select Corporation");
+		log.info("Step AddEditGLAccount_006 - 10: Select Corporation");
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditGLAccount_006 - 11: Input GL Account Code");
+		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", newGLAccount);
 		
 		log.info("Step AddEditGLAccount_006 - 12: Click on Search button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -229,6 +230,7 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		
 		log.info("Step AddEditGLAccount_007 - 11: Input GL Account Code description");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAccDesc", "new description 2");
+		masterFilesPage.sleep(2);
 		
 		log.info("Step AddEditGLAccount_007 - 12: Click on Search button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -245,4 +247,5 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 	private LoginPage loginPage;
 	private MasterFilesPage masterFilesPage;
 	private String newGLAccount;
+
 }

@@ -114,7 +114,7 @@ public class AbstractPage extends AutomationAction {
 	public void inputSelecterTextfieldByID(WebDriver driver, String id, String text){
 		type(driver, epmxweb.AbstractPage.dynamicTextFieldByID, text, id);
 		sleep(2);
-		click(driver, epmxweb.AbstractPage.dynamicDiv, text);
+		if(isControlDisplayed(driver, epmxweb.AbstractPage.dynamicDiv, text)) click(driver, epmxweb.AbstractPage.dynamicDiv, text);
 		sleep(1);
 	}
 	/**

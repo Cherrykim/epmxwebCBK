@@ -133,4 +133,14 @@ public class PageFactory {
 	public static InvoicesPage getInvoicesPage(WebDriver driver, String ipClient) {
 		return new InvoicesPage(driver, ipClient);
 	}
+	
+	/**
+	 * get UltilitiesPage
+	 * @param driver
+	 * @param ipClient
+	 * @return UltilitiesPage object
+	 */
+	public static UltilitiesPage getUltilitiesPage(WebDriver driver, String ipClient) {
+		return new UltilitiesPage(driver, ipClient);
+	}
 }

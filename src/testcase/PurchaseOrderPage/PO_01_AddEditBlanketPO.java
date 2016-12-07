@@ -90,49 +90,49 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
 		
-		log.info("Step Pre-condition - 04: Create new Vendor");
-		masterFilesPage.createNewVendor(vendorID1, vendorName1);
-		masterFilesPage.createNewVendor(vendorID2, vendorName2);
-		
-		log.info("Pre-condition - 05: Create new Buyer");
-		addUserPage.createNewUserWithRole(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", primaryUserRole);
-		addUserPage.createNewUserWithRole(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", primaryUserRole2);
-		
-		log.info("Step Pre-condition - 05: Create new Bill-to Code");
-		masterFilesPage.createNewBillToCode(bill1);
-		masterFilesPage.createNewBillToCode(bill2);
-		
-		log.info("Step Pre-condition - 05: Create new Ship-to Code");
-		masterFilesPage.createNewShipToCode(ship1);
-		masterFilesPage.createNewShipToCode(ship2);
-		
-		log.info("Step Pre-condition - 05: Create new PO Type");
-		masterFilesPage.createNewPOType(po1);
-		masterFilesPage.createNewPOType(po2);
-		
-		log.info("Step Pre-condition - 04: Create GL Account");
-		masterFilesPage.createNewGLAccount(glAccountCode1);
-		masterFilesPage.createNewGLAccount(glAccountCode2);
-		
-		log.info("Step Pre-condition - 05: Create new Job Code");
-		masterFilesPage.createNewJobCode(job1);
-		masterFilesPage.createNewJobCode(job2);
-		
-		log.info("Step Pre-condition - 05: Create new Project code");
-		masterFilesPage.createNewProjectCode(projectCode1);
-		masterFilesPage.createNewProjectCode(projectCode2);	
-		
-		log.info("Step Pre-condition - 04: Create new Terms code");
-		masterFilesPage.createNewTermsCode(termsCode1);
-		masterFilesPage.createNewTermsCode(termsCode2);
-		
-		log.info("Step Pre-condition - 04: Create Tax Code");
-		masterFilesPage.createNewTaxCode(taxCode1);
-		masterFilesPage.createNewTaxCode(taxCode2);
-		
-		log.info("Step Pre-condition - 04: Create Special text");
-		masterFilesPage.createNewSpecialText(text1);
-		masterFilesPage.createNewSpecialText(text2);
+//		log.info("Step Pre-condition - 04: Create new Vendor");
+//		masterFilesPage.createNewVendor(vendorID1, vendorName1);
+//		masterFilesPage.createNewVendor(vendorID2, vendorName2);
+//		
+//		log.info("Pre-condition - 05: Create new Buyer");
+//		addUserPage.createNewUserWithRole(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", primaryUserRole);
+//		addUserPage.createNewUserWithRole(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", primaryUserRole2);
+//		
+//		log.info("Step Pre-condition - 05: Create new Bill-to Code");
+//		masterFilesPage.createNewBillToCode(bill1);
+//		masterFilesPage.createNewBillToCode(bill2);
+//		
+//		log.info("Step Pre-condition - 05: Create new Ship-to Code");
+//		masterFilesPage.createNewShipToCode(ship1);
+//		masterFilesPage.createNewShipToCode(ship2);
+//		
+//		log.info("Step Pre-condition - 05: Create new PO Type");
+//		masterFilesPage.createNewPOType(po1);
+//		masterFilesPage.createNewPOType(po2);
+//		
+//		log.info("Step Pre-condition - 04: Create GL Account");
+//		masterFilesPage.createNewGLAccount(glAccountCode1);
+//		masterFilesPage.createNewGLAccount(glAccountCode2);
+//		
+//		log.info("Step Pre-condition - 05: Create new Job Code");
+//		masterFilesPage.createNewJobCode(job1);
+//		masterFilesPage.createNewJobCode(job2);
+//		
+//		log.info("Step Pre-condition - 05: Create new Project code");
+//		masterFilesPage.createNewProjectCode(projectCode1);
+//		masterFilesPage.createNewProjectCode(projectCode2);	
+//		
+//		log.info("Step Pre-condition - 04: Create new Terms code");
+//		masterFilesPage.createNewTermsCode(termsCode1);
+//		masterFilesPage.createNewTermsCode(termsCode2);
+//		
+//		log.info("Step Pre-condition - 04: Create Tax Code");
+//		masterFilesPage.createNewTaxCode(taxCode1);
+//		masterFilesPage.createNewTaxCode(taxCode2);
+//		
+//		log.info("Step Pre-condition - 04: Create Special text");
+//		masterFilesPage.createNewSpecialText(text1);
+//		masterFilesPage.createNewSpecialText(text2);
 		
 	}
 

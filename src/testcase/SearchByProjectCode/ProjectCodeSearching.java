@@ -53,7 +53,7 @@ public class ProjectCodeSearching extends AbstractTest {
 		homePage.clickOnClearButton(DriverManager.getDriver());
 		
 		log.info("Step ProjectCodeSearching_01 - 07: Input Project code");
-		homePage.inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_Project", "Bacti");
+		homePage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Project", "Bacti");
 		
 		log.info("Step ProjectCodeSearching_01 - 08: Click on Search button");
 		homePage.clickOnSearchButton(DriverManager.getDriver());

@@ -17,6 +17,7 @@ public class Constant {
 		//Database: epmxdata_nydoh
 		public static final String USERNAME = "tls15";
 		public static final String PASSWORD = "password";
+		public static final String MASTER_PASSWORD = "minimax";
 		//Database: epmxdata_7dc
 //		public static final String USERNAME = "pnorcross";
 //		public static final String PASSWORD = "password";
