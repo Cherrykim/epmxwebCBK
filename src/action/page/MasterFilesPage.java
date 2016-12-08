@@ -92,7 +92,7 @@ public class MasterFilesPage extends AbstractPage {
 		inputTextfieldByID(DriverManager.getDriver(), "txt_Desc", "new description");
 		clickOnElementByItsID(driver, "img_Save");
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_user.php");
-		inputTextfieldByID(DriverManager.getDriver(), "txt_UserName", Constant.LoginData.USERNAME);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_UserName", Constant.LoginData.USERNAME_NYDOH);
 		clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		clickOnElementByItsID(DriverManager.getDriver(), "btn_GL");
 		inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_GlAccount", accountID);
@@ -358,6 +358,28 @@ public class MasterFilesPage extends AbstractPage {
 		inputTextareaByID(DriverManager.getDriver(), "txt_Text", text);
 		clickOnElementByItsID(driver, "img_Save");
 	}
+	
+	public void addLegalAgreement(String fileName){
+		clickOnElementByItsID(driver, "legal-uploader");
+		if(isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicAttachment, "datatest")){
+			clickOnImageButtonByItsSrc(driver, "delete.gif");
+			acceptAlert(driver);
+		}
+		switchToFrame(driver, epmxweb.MasterFilesPage.iframeAttachment);
+		uploadFile(driver, "fl_Attachment", fileName);
+		clickOnElementByItsID(driver, "fl_AddAttachment");
+		switchToTopWindowFrame(driver);
+		sleep();
+		clickOnImageButtonByItsSrc(driver, "close.jpg");
+	}
+	
+	public boolean isLegalAgreementAttachmentDisplayed(String fileName){
+		clickOnElementByItsID(driver, "legal-uploader");
+		boolean result = isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicAttachment, fileName);
+		clickOnImageButtonByItsSrc(driver, "close.jpg");
+		return result;
+	}
+	
 	private WebDriver driver;
 	private String ipClient;
 }

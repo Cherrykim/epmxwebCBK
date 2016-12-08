@@ -38,7 +38,7 @@ public class Admin_05_AddLabel extends AbstractTest {
 		
 		log.info("Step AddLabel_001 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddLabel_001 - 02: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
 		
 		log.info("Step AddLabel_001 - 03: Accept Alert message");
 		loginPage.acceptAlert();

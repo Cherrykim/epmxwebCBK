@@ -48,12 +48,31 @@ public class AddUserPage extends AbstractPage {
 			acceptAlert(driver);
 			return;
 		}
-		inputTextfieldByIDWithEnter(driver, "txt_Password", "12345678");
-		inputTextfieldByIDWithEnter(driver, "txt_Confirm", "12345678");
-		inputTextfieldByIDWithEnter(driver, "txt_FName", firstName);
-		inputTextfieldByIDWithEnter(driver, "txt_LName", lastName);
-		inputTextfieldByIDWithEnter(driver, "txt_Email1", emailAddress);
+		inputTextfieldByID(driver, "txt_Password", "12345678");
+		inputTextfieldByID(driver, "txt_Confirm", "12345678");
+		inputTextfieldByID(driver, "txt_FName", firstName);
+		inputTextfieldByID(driver, "txt_LName", lastName);
+		inputTextfieldByID(driver, "txt_Email1", emailAddress);
 		selectItemFromDropdownByID(driver, "sel_UserClass", userRole);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewUserWithRole(String userID, String firstName, String lastName, String emailAddress, String userRole, String corporation){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_user.php");
+		sleep(2);
+		inputTextfieldByID(driver, "txt_UserName", userID);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(driver, "txt_Password", "12345678");
+		inputTextfieldByID(driver, "txt_Confirm", "12345678");
+		inputTextfieldByID(driver, "txt_FName", firstName);
+		inputTextfieldByID(driver, "txt_LName", lastName);
+		inputTextfieldByID(driver, "txt_Email1", emailAddress);
+		selectItemFromDropdownByID(driver, "sel_UserClass", userRole);
+		selectItemFromDropdownByID(driver, "sel_Corporation", corporation);
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	

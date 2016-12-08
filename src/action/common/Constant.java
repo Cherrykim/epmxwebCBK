@@ -15,12 +15,13 @@ public class Constant {
 
 	public static class LoginData {
 		//Database: epmxdata_nydoh
-		public static final String USERNAME = "tls15";
+		public static final String USERNAME_NYDOH = "tls15";
 		public static final String PASSWORD = "password";
 		public static final String MASTER_PASSWORD = "minimax";
 		//Database: epmxdata_7dc
 //		public static final String USERNAME = "pnorcross";
-//		public static final String PASSWORD = "password";
+		//Database: epmxdata_aac
+		public static final String USERNAME_AAC = "cmulcahy";
 	}
 
 	public static class DefaultValue {
@@ -29,6 +30,7 @@ public class Constant {
 		public static final String URL_CSV_FILENAME = "ePMX UI Pages.csv";
 //		public static final String URL_CSV_FILENAME = "ePMX UI Pages - Copy.csv";
 		public static final String CURRENT_DATABASE = "cherry_nydoh_daily_02Nov16";
+		public static final String AAC_DATABASE = "cherry_aac_weekly_03Dec16";
 		public static final String CURRENT_BRANCH = "master";
 	}
 	

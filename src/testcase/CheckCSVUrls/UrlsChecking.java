@@ -40,7 +40,7 @@ public class UrlsChecking extends AbstractTest {
 		log.info("Step UrlsChecking_01 - 04: Click on Config button and get default Password");
 		log.info("Step UrlsChecking_01 - 05: Open the site https://cherry.epmxweb.com");
 		log.info("Step UrlsChecking_01 - 06: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
 		
 		log.info("Step UrlsChecking_01 - 07: Accept Alert message");
 		loginPage.acceptAlert();
@@ -56,7 +56,7 @@ public class UrlsChecking extends AbstractTest {
 				log.info("Step UrlsChecking_01 - 05: Open the site https://cherry.epmxweb.com");
 				log.info("Step UrlsChecking_01 - 06: Input correct username and password");
 				loginPage.openLink(DriverManager.getDriver(), baseUrl);
-				loginPage.login(Constant.LoginData.USERNAME, Constant.LoginData.PASSWORD);
+				loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
 				
 				log.info("Step UrlsChecking_01: Accept alert if it's displayed ");
 				loginPage.acceptAlert();

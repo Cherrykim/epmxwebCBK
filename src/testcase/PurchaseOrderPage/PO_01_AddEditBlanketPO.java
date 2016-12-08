@@ -85,7 +85,7 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		
 		log.info("Step Pre-condition - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step Pre-condition - 02: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
 		
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();

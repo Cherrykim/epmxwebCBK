@@ -326,7 +326,7 @@ public class AutomationAction {
 		element.clear();
 		element.sendKeys(value);
 	}
-
+	
 	/**
 	 * enter value into dynamic control
 	 * 
@@ -341,6 +341,8 @@ public class AutomationAction {
 		element.clear();
 		element.sendKeys(valueinput);
 	}
+	
+	
 
 	/**
 	 * get element
@@ -931,6 +933,41 @@ public class AutomationAction {
 		sdf.applyPattern(newDateType);
 		newDateString = sdf.format(d);
 		return newDateString.toString();
+	}
+	
+	/**
+	 * enter value into control
+	 * 
+	 * @param driver
+	 * @param controlName
+	 * @param value
+	 */
+	public void upload(WebDriver driver, By controlName, String value) {
+		waitForControl(driver, controlName, timeout);
+		element = control.findElement(driver, controlName);
+		element.sendKeys(value);
+	}
+
+	/**
+	 * enter value into dynamic control
+	 * 
+	 * @param driver
+	 * @param dynamicControlName
+	 * @param value
+	 * @param valueinput
+	 */
+	public void upload(WebDriver driver, String dynamicControlName, String valueinput, String... value) {
+		waitForControl(driver, dynamicControlName, timeout, value);
+		element = control.findElement(driver, dynamicControlName, value);
+		element.sendKeys(valueinput);
+	}
+	
+	/**
+	 * get full path of file
+	 */
+	public String getPathFile(String fileName) {
+		File file = new File(fileName);
+		return file.getAbsolutePath();
 	}
 	
 	protected int timeout = 15;

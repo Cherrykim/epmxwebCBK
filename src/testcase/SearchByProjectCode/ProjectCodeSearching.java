@@ -35,7 +35,7 @@ public class ProjectCodeSearching extends AbstractTest {
 	public void ProjectCodeSearching_01_SearchWithProjectCode() {	
 		
 		log.info("Step ProjectCodeSearching_01 - 01: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
 		
 		log.info("Step ProjectCodeSearching_01 - 02: Accept Alert message");
 		loginPage.acceptAlert();

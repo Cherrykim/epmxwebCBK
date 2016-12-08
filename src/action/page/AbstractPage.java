@@ -305,6 +305,10 @@ public class AbstractPage extends AutomationAction {
 		return isControlDisplayed(driver, epmxweb.AbstractPage.dynamicResultTableContainsText, value1, value2);
 	}
 	
+	public void uploadFile(WebDriver driver, String uploadButtonID, String fileName){
+		upload(driver, epmxweb.AbstractPage.dynamicUploadButton, getPathFile("src/resource/file/"+fileName), uploadButtonID);
+		sleep(3);
+	}
 	protected final Log log;
 	private String ipClient;
 }
