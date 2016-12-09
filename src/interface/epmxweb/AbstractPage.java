@@ -35,7 +35,8 @@ public class AbstractPage {
 	public static String dynamicRadioButtonByName = "//td[contains(.,'%s')]/input[@type='radio']";
 	public static String dynamicSelectedListByID = "//select[@id='%s']/option[contains(text(),'%s')]";
 	public static String dynamicSuggestionDropdownByID = "//div[@id='%s']/..//script";
-	public static String dynamicResultTableContainsText = "//tbody[tr[@class='TableTop']]/tr[td[contains(text(),'%s')] and td[contains(text(),'%s')]]";
+	public static String dynamicResultTableContainsText = "//tbody/tr[td[contains(text(),'%s')] and td[contains(text(),'%s')]]";
+//	public static String dynamicResultContractTableContainsText = "//tbody/tr[td[contains(text(),'%s')] and td[contains(text(),'%s')]]";
 	public static String dynamicUploadButton = "//input[@type='file' and @id='%s']";
 
 }

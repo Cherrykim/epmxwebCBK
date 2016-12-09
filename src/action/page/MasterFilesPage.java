@@ -182,6 +182,22 @@ public class MasterFilesPage extends AbstractPage {
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	public void createNewItemCodeHSW(String itemName){
+		createNewUnitOfMeasure("um1");
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_material.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_ItemCode", itemName);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", "um1");
+		clickOnElementByItsID(driver, "img_Save");
+		clickOnElementByItsID(driver, "btn_PromptYes");
+		sleep(2);
+	}
+	
 	public void createNewItemCode(String itemName, String vendorName){
 		createNewUnitOfMeasure("um1");
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_material.php");
