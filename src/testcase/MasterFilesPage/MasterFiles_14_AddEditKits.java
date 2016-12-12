@@ -27,7 +27,7 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		
 		newKits = getUniqueText(10);
 		itemCode1 = "item1";
-		itemCode2 = "item2";
+		itemCode2 = "item2"+ getUniqueText(5);
 		unitOfMeasure1 = "um1";
 		unitOfMeasure2 = "um2";
 		validDecimal1 = "11.1111";
@@ -233,7 +233,7 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_kits.php");
 		
 		log.info("Step AddEditKits_005 - 10: Input Kits");
-		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", newKits);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", itemCode2);
 		
 		log.info("Step AddEditKits_005 - 11: Click on Search button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -257,7 +257,7 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_kits.php");
 		
 		log.info("Step AddEditKits_006 - 10: Input Kits");
-		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", newKits);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", itemCode2);
 		
 		log.info("Step AddEditKits_006 - 11: Select Corporation");
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "HIGHBRIDGE SPRINGS");
@@ -284,7 +284,7 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_kits.php");
 		
 		log.info("Step AddEditKits_007 - 10: Input Kits");
-		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", newKits);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", itemCode2);
 		
 		log.info("Step AddEditKits_007 - 11: Input Kits description");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_KitDesc", validText2);
