@@ -81,7 +81,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ShipVia", "DELIVERED VT");
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_VendorType", vType1);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PrePaidFreight", "Included in Price");
-//		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermCode", terms1);
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermCode", terms1);
 
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ContactFax", "12345");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PhoneNumber1", "123456789");
@@ -124,7 +124,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_ShipVia"), "DELIVERED VT");
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_VendorType"), vType1);
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PrePaidFreight"), "Included in Price");
-//		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermCode"), terms1);
+		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermCode"), terms1);
 
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_ContactFax"), "12345");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_PhoneNumber1"), "123456789");
@@ -165,7 +165,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ShipVia", "FEDEX");
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_VendorType", vType2);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PrePaidFreight", "Pre Paid by Vendor");
-//		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermCode", terms2);
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermCode", terms2);
 
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ContactFax", "12346");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PhoneNumber1", "123456780");
@@ -204,7 +204,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_ShipVia"), "FEDEX");
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_VendorType"), vType2);
 		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PrePaidFreight"), "Pre Paid by Vendor");
-//		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermCode"), terms2);
+		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermCode"), terms2);
 
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_ContactFax"), "12346");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_PhoneNumber1"), "123456780");
