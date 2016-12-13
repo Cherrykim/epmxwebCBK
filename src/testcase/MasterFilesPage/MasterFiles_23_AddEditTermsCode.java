@@ -86,7 +86,7 @@ public class MasterFiles_23_AddEditTermsCode extends AbstractTest {
 		log.info("Step AddEditTermsCode_002 - 09: Input new Terms Code");
 		log.info("Step AddEditTermsCode_002 - 10: Click on Modify button");
 		log.info("Step AddEditTermsCode_002 - 11: Change Terms type");
-		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsId", "Proximo");
+		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsId", "Late Charge");
 		
 		log.info("Step AddEditTermsCode_001 - 08: Input all other textfields");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Description", "new description 2");
@@ -104,7 +104,7 @@ public class MasterFiles_23_AddEditTermsCode extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: Term type is selected");
-		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermsId"), "Proximo");
+		verifyEquals(masterFilesPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermsId"), "Late Charge");
 		
 		log.info("VP: All other textfields are saved correctly");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_Description"), "new description 2");
@@ -138,7 +138,7 @@ public class MasterFiles_23_AddEditTermsCode extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: Terms Code is deactivated correctly");
-		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Terms code is deactivated. Press OK to reactivate or Cancel to view record only.");
+		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Terms Code is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check REactivate Terms Code works")
@@ -239,7 +239,7 @@ public class MasterFiles_23_AddEditTermsCode extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
 		
 		log.info("VP: Terms Code code displayed correctly");
-		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newTermsCode, "Seller"));
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newTermsCode, "new description 2"));
 	}
 	
 	

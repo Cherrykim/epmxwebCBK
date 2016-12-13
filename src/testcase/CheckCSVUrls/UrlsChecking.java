@@ -66,24 +66,28 @@ public class UrlsChecking extends AbstractTest {
 			
 			loop++;
 			
-			log.info("Step UrlsChecking_01: Navigate to url: "+ baseUrl + urlList[i]);
-			loginPage.openLink(DriverManager.getDriver(), baseUrl +  urlList[i]);
+			if(!urlList[i].contains("pdf")){
+				
+				log.info("Step UrlsChecking_01: Navigate to url: "+ baseUrl + urlList[i]);
+				loginPage.openLink(DriverManager.getDriver(), baseUrl +  urlList[i]);
+				
+				log.info("Step UrlsChecking_01: Accept alert if it's displayed ");
+				loginPage.acceptAlert();
+				
+				log.info("VP : The text 'Powered by' is showed in the page with Url: "+ baseUrl + urlList[i]);
+				verifyTrue(loginPage.isTextDisplayed(DriverManager.getDriver(), "Powered by"));
+				
+				log.info("VP : The text 'version' is showed in the page with Url: "+ baseUrl + urlList[i]);
+				verifyTrue(loginPage.isLinkByItsTextDisplayed(DriverManager.getDriver(), "version"));
+				
+				log.info("VP : The text 'There is an error on the page' is not showed in the page with Url: "+ baseUrl + urlList[i]);
+				verifyFalse(loginPage.isTextDisplayed(DriverManager.getDriver(), "There is an error on the page"));
+				verifyFalse(loginPage.isTextDisplayed(DriverManager.getDriver(), "There is an error in the Page"));
+				
+				log.info("VP : The text 'Could not connect' is not showed in the page with Url: "+ baseUrl + urlList[i]);
+				verifyFalse(loginPage.isTextDisplayed(DriverManager.getDriver(), "Could not connect"));
+			}
 			
-			log.info("Step UrlsChecking_01: Accept alert if it's displayed ");
-			loginPage.acceptAlert();
-			
-			log.info("VP : The text 'Powered by' is showed in the page with Url: "+ baseUrl + urlList[i]);
-			verifyTrue(loginPage.isTextDisplayed(DriverManager.getDriver(), "Powered by"));
-			
-			log.info("VP : The text 'version' is showed in the page with Url: "+ baseUrl + urlList[i]);
-			verifyTrue(loginPage.isLinkByItsTextDisplayed(DriverManager.getDriver(), "version"));
-			
-			log.info("VP : The text 'There is an error on the page' is not showed in the page with Url: "+ baseUrl + urlList[i]);
-			verifyFalse(loginPage.isTextDisplayed(DriverManager.getDriver(), "There is an error on the page"));
-			verifyFalse(loginPage.isTextDisplayed(DriverManager.getDriver(), "There is an error in the Page"));
-			
-			log.info("VP : The text 'Could not connect' is not showed in the page with Url: "+ baseUrl + urlList[i]);
-			verifyFalse(loginPage.isTextDisplayed(DriverManager.getDriver(), "Could not connect"));
 		}
 		
 	}

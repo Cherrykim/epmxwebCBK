@@ -469,6 +469,8 @@ public class PO_02_AddEditReleasePO extends AbstractTest {
 	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
+		log.info("Post-condition - 01: Return database to default");
+		configPage.selectBranchAndDatabase(Constant.DefaultValue.CURRENT_BRANCH, Constant.DefaultValue.CURRENT_DATABASE);
 		closeBrowser();
 	}
 

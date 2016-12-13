@@ -65,7 +65,7 @@ public class ProjectCodeSearching extends AbstractTest {
 		homePage.clickOnClearButton(DriverManager.getDriver());
 		
 		log.info("Step ProjectCodeSearching_01 - 11: Input Project code");
-		homePage.inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_Project", "ARBO");
+		homePage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Project", "ARBO");
 		
 		log.info("Step ProjectCodeSearching_01 - 12: Click on Search button");
 		homePage.clickOnSearchButton(DriverManager.getDriver());

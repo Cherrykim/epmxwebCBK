@@ -23,8 +23,8 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		loginPage = PageFactory.getLoginPage(DriverManager.getDriver(), ipClient);
 		masterFilesPage = PageFactory.getMasterFilesPage(DriverManager.getDriver(), ipClient);
 		newUser = getUniqueText(12);
-		glAccountCode1 = "glNo1";
-		glAccountCode2 = "glNo2";
+		glAccountCode1 = "glNo3";
+		glAccountCode2 = "glNo4";
 		corp1 = "corpNo1";
 		corp2 = "corpNo2";
 		
@@ -164,7 +164,7 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		log.info("Step AddEditDivision_002 - 12: Input new data for GL Account code");
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_GL");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "removeall_field");
-		masterFilesPage.inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add_field", "3");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "ok", "3");
 		

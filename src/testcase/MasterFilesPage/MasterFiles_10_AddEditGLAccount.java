@@ -40,7 +40,7 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/add_gl_account_code.php");
 
 		log.info("Step AddEditGLAccount_001 - 05: Input new GL Account");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GLCode", newGLAccount);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GLCode", newGLAccount);
 		
 		log.info("Step AddEditGLAccount_001 - 06: Click on Add button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add");
@@ -58,7 +58,7 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		
 		log.info("Step AddEditGLAccount_001 - 10: Input new GL Account");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GLCode", newGLAccount);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GLCode", newGLAccount);
 		
 		log.info("Step AddEditGLAccount_001 - 11: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
@@ -97,7 +97,7 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		masterFilesPage.acceptAlert(DriverManager.getDriver());
 		
 		log.info("Step AddEditGLAccount_002 - 14: Input new GL Account");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GLCode", newGLAccount);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GLCode", newGLAccount);
 		
 		log.info("Step AddEditGLAccount_002 - 15: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
@@ -128,13 +128,13 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		masterFilesPage.acceptAlert(DriverManager.getDriver());
 		
 		log.info("Step AddEditGLAccount_003 - 12: Input new GL Account");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GLCode", newGLAccount);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GLCode", newGLAccount);
 		
 		log.info("Step AddEditGLAccount_003 - 13: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: G/L Account Code is deactivated");
-		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "G/L Account is deactivated. Press OK to reactivate or Cancel to view record only.");
+		verifyTrue(masterFilesPage.getAlertText(DriverManager.getDriver()).contains("is deactivated. Press OK to reactivate or Cancel to view record only."));
 	}
 	
 	@Test(groups = { "regression" }, description = "Check REactivate GL Account works")
