@@ -91,8 +91,11 @@ public class MasterFilesPage extends AbstractPage {
 		}
 		inputTextfieldByID(DriverManager.getDriver(), "txt_Desc", "new description");
 		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void assignGLAccount(String accountID, String userName){
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_user.php");
-		inputTextfieldByID(DriverManager.getDriver(), "txt_UserName", Constant.LoginData.USERNAME_NYDOH);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_UserName", userName);
 		clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		clickOnElementByItsID(DriverManager.getDriver(), "btn_GL");
 		inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_GlAccount", accountID);
@@ -321,6 +324,7 @@ public class MasterFilesPage extends AbstractPage {
 		}
 		inputTextfieldByID(DriverManager.getDriver(), "txt_Company", shipToCode);
 		clickOnElementByItsID(driver, "img_Save");
+		acceptAlert(driver);
 	}
 	
 	public void createNewPOType(String poType){

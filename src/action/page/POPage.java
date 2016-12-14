@@ -25,6 +25,9 @@ public class POPage extends AbstractPage {
 			return poNumber + " : " + currentDate + " : " +vendorName;
 		}
 		clickOnElementByItsID(driver, "img_Save");
+		clickOnElementByItsID(DriverManager.getDriver(), "chk_UpType1");
+		clickOnElementByItsID(DriverManager.getDriver(), "btn_Save");
+		sleep(3);
 		return poNumber + " : " + currentDate + " : " +vendorName;
 	}
 	

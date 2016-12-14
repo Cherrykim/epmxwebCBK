@@ -143,4 +143,14 @@ public class PageFactory {
 	public static UltilitiesPage getUltilitiesPage(WebDriver driver, String ipClient) {
 		return new UltilitiesPage(driver, ipClient);
 	}
+	
+	/**
+	 * get RfqPage
+	 * @param driver
+	 * @param ipClient
+	 * @return RfqPage object
+	 */
+	public static RfqPage getRfqPage(WebDriver driver, String ipClient) {
+		return new RfqPage(driver, ipClient);
+	}
 }
