@@ -1,5 +1,7 @@
 package RequestForQuotation;
 
+import javax.print.attribute.standard.PrinterMoreInfoManufacturer;
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -11,6 +13,7 @@ import common.DriverManager;
 import page.PageFactory;
 import page.RfqPage;
 import page.MasterFilesPage;
+import page.AddUserPage;
 import page.ConfigPage;
 import page.LoginPage;
 
@@ -26,7 +29,18 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		masterFilesPage = PageFactory.getMasterFilesPage(DriverManager.getDriver(), ipClient);
 		rfqPage = PageFactory.getRfqPage(DriverManager.getDriver(), ipClient);
 		configPage = PageFactory.getConfigPage(DriverManager.getDriver(), ipClient);
+		addUserPage = PageFactory.getAddUserPage(DriverManager.getDriver(), ipClient);
 		newRfq = getUniqueNumber(7);
+		validNumber1 = "111";
+		validNumber2 = "222";
+		validDecimal1 = "11.11";
+		validDecimal2 = "22.22";
+		validText1 = "!@#$text";
+		validText2 = "%^&*text";
+		validStartDate1 = "11-10-2020";
+		validStartDate2 = "12-11-2020";
+		validEndDate1 = "11-11-2020";
+		validEndDate2 = "12-12-2020";
 		itemCode1 = "item1";
 		itemCode2 = "item2";
 		unitOfMeasure1 = "um1";
@@ -49,6 +63,20 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		shipToCode1= ship1 + " : "+ ship1;
 		ship2 = "ShipCd2";
 		shipToCode2= ship2 + " : "+ ship2;
+		text1 = "tx1";
+		specialText1= text1 + " : "+ text1;
+		text2 = "tx2";
+		specialText2= text2 + " : "+ text2;
+		primaryBuyerID = "110320163";
+		primaryBuyerFirstName = "Primary";
+		primaryBuyerLastName = "Buyer";
+		primaryUserName = "Primary Buyer";
+		primaryUserRole = "Requesters";
+		primaryBuyerID2 = "110320162";
+		primaryBuyerFirstName2 = "Primary2";
+		primaryBuyerLastName2 = "Buyer2";
+		primaryUserName2 = "Primary2 Buyer2";
+		primaryUserRole2 = "Requesters";
 		
 		log.info("Pre-condition - 01: Open the site http://tool.cherry.epmxweb.com/");
 		log.info("Pre-condition - 02: Select Brand: 'master'");
@@ -91,6 +119,14 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step Pre-condition - 10: Create new Vendor");
 		masterFilesPage.createNewVendor(vendorID1, vendorName1);
 		masterFilesPage.createNewVendor(vendorID2, vendorName2);
+		
+		log.info("Step Pre-condition - 04: Create Special text");
+		masterFilesPage.createNewSpecialText(text1);
+		masterFilesPage.createNewSpecialText(text2);
+		
+		log.info("Pre-condition - 05: Create new Buyer");
+		addUserPage.createNewUser(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", "DN Tanks");
+		addUserPage.createNewUser(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", "DN Tanks");
 	}
 
 	@Test(groups = { "regression" }, description = "Check Add Rfq works")
@@ -99,27 +135,51 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_001 - 01: Open Add Rfq page");
 		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/add_request_for_quotation.php");
 
-		log.info("Step AddEditRfq_001 - 02: Input new Rfq");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		log.info("Step AddEditRfq_001 - 02: Select corporation");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "DN Tanks");
+		
+		log.info("Step AddEditRfq_001 - 03: Select corporation");
+		rfqPage.sleep(3);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQNum", newRfq);
 		
 		log.info("Step AddEditRfq_001 - 03: Click on Add button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add");
 		
 		log.info("Step AddEditRfq_001 - 04: Input All other textfields");
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode1);
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqDate", "11-11-2020");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DelDate", "11-11-2020");
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Replydate", validStartDate1);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DelDate", validEndDate1);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_FOBpt", validNumber1);
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ShipVia", "BEST  METHOD");
 		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_JobNum", jobCode1);
-		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ProjectNum", projectCode1);
-		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode1);
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", glAccountCode1);
+		
+		log.info("Step AddEditRfq_001 - 05: Select all other textfield");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PPFreight", "Included in Price");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", primaryUserName);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Req", primaryUserName);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Project", projectCode1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText1", text1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText2", text1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText3", text1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText4", text1);
 		
 		log.info("Step AddEditRfq_001 - 05: Add Line Item to Rfq");
-		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Items0", itemCode1);
-		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_Desc0", "Item 1");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_quantity0", "11.0000");
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Um0", unitOfMeasureName1);
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Price0", "11.0000");
+		rfqPage.clickOnDivByItsText(DriverManager.getDriver(), "Line Item Info");
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineItem0", itemCode1);
+		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_LineDesc10", "Item 1");
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_LineQty0", "11.0000");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_LineUm0", unitOfMeasureName1);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_LineRequiredDelivery1", validStartDate1);
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineJobNum0", jobCode1);
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineGlAccount0", glAccountCode1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_LineSpecialText0", text1);
+
+		log.info("Step AddEditRfq_001 - 05: Add Attachment");
+		rfqPage.addAttachment("datatest1");
+		
+		log.info("Step AddEditRfq_001 - 05: Add Vendor");
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendorName1);
 		
 		log.info("Step AddEditRfq_001 - 06: Click on Save button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
@@ -478,8 +538,35 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, ""));
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Rfq code by Ship-to code works")
+	public void AddEditRfq_013_SearchRfqByVendorName() {	
+		
+		log.info("Step AddEditRfq_012 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRfq_012 - 02: Input correct username and password");
+		log.info("Step AddEditRfq_012 - 03: Accept Alert message");
+		log.info("Step AddEditRfq_012 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_012 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_012 - 06: Click on Add button");
+		log.info("Step AddEditRfq_012 - 07: Input all other textfields");
+		log.info("Step AddEditRfq_012 - 08: Click on Save button");
+		log.info("Step AddEditRfq_012 - 09: Open Manager page");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		
+		log.info("Step AddEditRfq_012 - 10: Input Rfq Code");
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		
+		log.info("Step AddEditRfq_012 - 11: Input Ship-to code");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipToCode", shipToCode2);
+		
+		log.info("Step AddEditRfq_012 - 12: Click on Search button");
+		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Rfq code displayed correctly");
+		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, ""));
+	}
+	
 	@Test(groups = { "regression" }, description = "Check Delete Rfq works")
-	public void AddEditRfq_013_DeleteRfqWorks() {	
+	public void AddEditRfq_014_DeleteRfqWorks() {	
 		log.info("Step AddEditRfq_013 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_013 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_013 - 03: Accept Alert message");
@@ -513,6 +600,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 	private MasterFilesPage masterFilesPage;
 	private RfqPage rfqPage;
 	private ConfigPage configPage;
+	private AddUserPage addUserPage;
 	private String newRfq;
 	private String unitOfMeasure1, unitOfMeasure2, unitOfMeasureName1, unitOfMeasureName2;
 	private String itemCode1, itemCode2;
@@ -522,4 +610,8 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 	private String ship1, ship2, shipToCode1, shipToCode2;
 	private String vendorID1, vendorName1;
 	private String vendorID2, vendorName2;
+	private String validNumber1, validNumber2, validDecimal1, validDecimal2, validText1, validText2, validStartDate1, validStartDate2, validEndDate1, validEndDate2;
+	private String text1, text2, specialText1, specialText2;
+	private String primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, primaryUserRole, primaryUserName;
+	private String primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, primaryUserRole2, primaryUserName2;
 }
