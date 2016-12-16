@@ -38,5 +38,7 @@ public class AbstractPage {
 	public static String dynamicResultTableContainsText = "//tbody/tr[td[contains(text(),'%s')] and td[contains(text(),'%s')]]";
 //	public static String dynamicResultContractTableContainsText = "//tbody/tr[td[contains(text(),'%s')] and td[contains(text(),'%s')]]";
 	public static String dynamicUploadButton = "//input[@type='file' and @id='%s']";
+	public static String dynamicTab = "//td[contains(@id,'tabImg') and contains(.,'%s')]";
+	
 
 }

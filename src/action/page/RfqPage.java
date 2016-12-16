@@ -14,9 +14,9 @@ public class RfqPage extends AbstractPage {
 
 	// ==============================Action Methods===========================//
 	public void addAttachment(String fileName){
-		clickOnDivByItsText(driver, "Attachments");
+		openTab(driver, "Attachments");
 		if(isControlDisplayed(driver, epmxweb.RfqPage.dynamicAttachment, "datatest")){
-			clickOnImageButtonByItsSrc(driver, "delete.gif");
+			click(driver, epmxweb.RfqPage.deleteFirstAttachment);
 			acceptAlert(driver);
 		}
 		switchToFrame(driver, epmxweb.RfqPage.iframeAttachment);
@@ -27,9 +27,14 @@ public class RfqPage extends AbstractPage {
 	}
 	
 	public boolean isAttachmentDisplayed(String fileName){
-		clickOnDivByItsText(driver, "Attachments");
+		openTab(driver, "Attachments");
 		return isControlDisplayed(driver, epmxweb.RfqPage.dynamicAttachment, fileName);
 	}
+	
+	public boolean isVendorRecordDisplayed(String vendorID, String vendorName){
+		return isControlDisplayed(driver, epmxweb.RfqPage.dynamicVendorRecord, vendorID, vendorName);
+	}
+	
 	private WebDriver driver;
 	private String ipClient;
 }

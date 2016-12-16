@@ -113,7 +113,7 @@ public class AbstractPage extends AutomationAction {
 	 */
 	public void inputSelecterTextfieldByID(WebDriver driver, String id, String text){
 		type(driver, epmxweb.AbstractPage.dynamicTextFieldByID, text, id);
-		sleep(2);
+		sleep(3);
 		if(isControlDisplayed(driver, epmxweb.AbstractPage.dynamicDiv, text)) click(driver, epmxweb.AbstractPage.dynamicDiv, text);
 		sleep(1);
 	}
@@ -234,6 +234,11 @@ public class AbstractPage extends AutomationAction {
     	sleep(2);
     }
     
+    public void clickOnElementByItsText(WebDriver driver, String id){
+    	click(driver, epmxweb.AbstractPage.dynamicElementByText, id);
+    	sleep(2);
+    }
+    
     public void clickOnElementByItsTitle(WebDriver driver, String title){
     	click(driver, epmxweb.AbstractPage.dynamicElementByTitle, title);
     	sleep(2);
@@ -241,7 +246,7 @@ public class AbstractPage extends AutomationAction {
     
     public void clickOnDivByItsText(WebDriver driver, String divName){
     	click(driver, epmxweb.AbstractPage.dynamicDiv, divName);
-    	sleep(2);
+    	sleep(3);
     }
     
     public void clickOnCheckboxByName(WebDriver driver, String checkboxName){
@@ -309,6 +314,11 @@ public class AbstractPage extends AutomationAction {
 		upload(driver, epmxweb.AbstractPage.dynamicUploadButton, getPathFile("src/resource/file/"+fileName), uploadButtonID);
 		sleep(3);
 	}
+	
+    public void openTab(WebDriver driver, String id){
+    	click(driver, epmxweb.AbstractPage.dynamicTab, id);
+    	sleep(2);
+    }
 	protected final Log log;
 	private String ipClient;
 }

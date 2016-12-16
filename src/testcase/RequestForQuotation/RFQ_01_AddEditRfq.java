@@ -1,7 +1,5 @@
 package RequestForQuotation;
 
-import javax.print.attribute.standard.PrinterMoreInfoManufacturer;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -51,12 +49,17 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		vendorName1 = "Vendor 1";
 		vendorID2 = "110320162";
 		vendorName2 = "Vendor 2";
+		vendor1 = vendorID1 + " : "+ vendorName1;
+		vendor2 = vendorID2 + " : "+ vendorName2;
+		
 		job1 = "JobCode1";
 		jobCode1= job1 + " : "+ job1;
 		job2 = "JobCode2";
 		jobCode2= job2 + " : "+ job2;
 		projectCode1 = "Project1";
+		project1 = projectCode1+ " : "+ projectCode1;
 		projectCode2 = "Project2";
+		project2 = projectCode2+ " : "+ projectCode2;
 		glAccountCode1 = "glN01";
 		glAccountCode2 = "glN02";
 		ship1 = "ShipCd1";
@@ -77,6 +80,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		primaryBuyerLastName2 = "Buyer2";
 		primaryUserName2 = "Primary2 Buyer2";
 		primaryUserRole2 = "Requesters";
+		corporation = "DN Tanks";
 		
 		log.info("Pre-condition - 01: Open the site http://tool.cherry.epmxweb.com/");
 		log.info("Pre-condition - 02: Select Brand: 'master'");
@@ -92,41 +96,41 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
 		
-		log.info("Step Pre-condition - 04: Create Unit of measure");
-		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
-		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
-		
-		log.info("Step Pre-condition - 05: Create Item code");
-		masterFilesPage.createNewItemCode(itemCode1);
-		masterFilesPage.createNewItemCode(itemCode2);
-		
-		log.info("Step Pre-condition - 06: Create new Job code");
-		masterFilesPage.createNewJobCode(job1);
-		masterFilesPage.createNewJobCode(job2);
-		
-		log.info("Step Pre-condition - 07: Create GL Account");
-		masterFilesPage.createNewGLAccount(glAccountCode1);
-		masterFilesPage.createNewGLAccount(glAccountCode2);
-		
-		log.info("Step Pre-condition - 08: Create new Project code");
-		masterFilesPage.createNewProjectCode(projectCode1);
-		masterFilesPage.createNewProjectCode(projectCode2);	
-		
-		log.info("Step Pre-condition - 09: Create new Ship-to Code");
-		masterFilesPage.createNewShipToCode(ship1);
-		masterFilesPage.createNewShipToCode(ship2);
-		
-		log.info("Step Pre-condition - 10: Create new Vendor");
-		masterFilesPage.createNewVendor(vendorID1, vendorName1);
-		masterFilesPage.createNewVendor(vendorID2, vendorName2);
-		
-		log.info("Step Pre-condition - 04: Create Special text");
-		masterFilesPage.createNewSpecialText(text1);
-		masterFilesPage.createNewSpecialText(text2);
-		
-		log.info("Pre-condition - 05: Create new Buyer");
-		addUserPage.createNewUser(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", "DN Tanks");
-		addUserPage.createNewUser(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", "DN Tanks");
+//		log.info("Step Pre-condition - 04: Create Unit of measure");
+//		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
+//		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
+//		
+//		log.info("Step Pre-condition - 05: Create Item code");
+//		masterFilesPage.createNewItemCodeWithCorp(itemCode1, corporation);
+//		masterFilesPage.createNewItemCodeWithCorp(itemCode2, corporation);
+//		
+//		log.info("Step Pre-condition - 06: Create new Job code");
+//		masterFilesPage.createNewJobCode(job1, corporation);
+//		masterFilesPage.createNewJobCode(job2, corporation);
+//		
+//		log.info("Step Pre-condition - 07: Create GL Account");
+//		masterFilesPage.createNewGLAccountWithCorp(glAccountCode1, corporation);
+//		masterFilesPage.createNewGLAccountWithCorp(glAccountCode2, corporation);
+//		
+//		log.info("Step Pre-condition - 08: Create new Project code");
+//		masterFilesPage.createNewProjectCode(projectCode1, corporation);
+//		masterFilesPage.createNewProjectCode(projectCode2, corporation);	
+//		
+//		log.info("Step Pre-condition - 09: Create new Ship-to Code");
+//		masterFilesPage.createNewShipToCode(ship1, corporation);
+//		masterFilesPage.createNewShipToCode(ship2, corporation);
+//		
+//		log.info("Step Pre-condition - 10: Create new Vendor");
+//		masterFilesPage.createNewVendor(vendorID1, vendorName1, corporation);
+//		masterFilesPage.createNewVendor(vendorID2, vendorName2, corporation);
+//		
+//		log.info("Step Pre-condition - 04: Create Special text");
+//		masterFilesPage.createNewSpecialText(text1, corporation);
+//		masterFilesPage.createNewSpecialText(text2, corporation);
+//		
+//		log.info("Pre-condition - 05: Create new Buyer");
+//		addUserPage.createNewUser(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", corporation);
+//		addUserPage.createNewUser(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", corporation);
 	}
 
 	@Test(groups = { "regression" }, description = "Check Add Rfq works")
@@ -136,9 +140,6 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/add_request_for_quotation.php");
 
 		log.info("Step AddEditRfq_001 - 02: Select corporation");
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "DN Tanks");
-		
-		log.info("Step AddEditRfq_001 - 03: Select corporation");
 		rfqPage.sleep(3);
 		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQNum", newRfq);
 		
@@ -158,56 +159,88 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PPFreight", "Included in Price");
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", primaryUserName);
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Req", primaryUserName);
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Project", projectCode1);
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText1", text1);
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText2", text1);
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText3", text1);
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText4", text1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Project", project1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText1", specialText1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText2", specialText1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText3", specialText1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText4", specialText1);
 		
-		log.info("Step AddEditRfq_001 - 05: Add Line Item to Rfq");
-		rfqPage.clickOnDivByItsText(DriverManager.getDriver(), "Line Item Info");
+		log.info("Step AddEditRfq_001 - 06: Add Line Item to Rfq");
+		rfqPage.openTab(DriverManager.getDriver(), "Line Item Info");
 		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineItem0", itemCode1);
 		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_LineDesc10", "Item 1");
 		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_LineQty0", "11.0000");
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_LineUm0", unitOfMeasureName1);
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_LineRequiredDelivery1", validStartDate1);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_LineRequiredDelivery0", validStartDate1);
 		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineJobNum0", jobCode1);
 		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineGlAccount0", glAccountCode1);
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_LineSpecialText0", text1);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_LineSpecialText0", specialText1);
 
-		log.info("Step AddEditRfq_001 - 05: Add Attachment");
-		rfqPage.addAttachment("datatest1");
+		log.info("Step AddEditRfq_001 - 07: Add Attachment");
+		rfqPage.addAttachment("datatest1.pdf");
 		
-		log.info("Step AddEditRfq_001 - 05: Add Vendor");
-		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendorName1);
+		log.info("Step AddEditRfq_001 - 08: Add Vendor");
+		rfqPage.openTab(DriverManager.getDriver(), "RFQ Vendors");
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendor1);
+		rfqPage.clickOnElementByItsValue(DriverManager.getDriver(), "Add To Vendors List");
 		
-		log.info("Step AddEditRfq_001 - 06: Click on Save button");
+		log.info("Step AddEditRfq_001 - 09: Input Instructions");
+		rfqPage.openTab(DriverManager.getDriver(), "RFQ Instructions");
+		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_rfqInstructions", validText1);
+		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_rfqNotes", validText1);
+		
+		log.info("Step AddEditRfq_001 - 10: Click on Save button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
-		rfqPage.clickOnElementByItsID(DriverManager.getDriver(), "chk_UpType1");
 		rfqPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_Save");
 		
-		log.info("Step AddEditRfq_001 - 07: Input new Rfq");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		log.info("Step AddEditRfq_001 - 11: Select corporation");
+		rfqPage.sleep(3);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQNum", newRfq);
 		
-		log.info("Step AddEditRfq_001 - 08: Click on Modify button");
+		log.info("Step AddEditRfq_001 - 12: Click on Modify button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("Step AddEditRfq_001 - VP: All other textfields are saved correctly");
-		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode1);
-		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Vendor", vendorName1));
-		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_ReqDate"), "11-11-2020");
-		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_DelDate"), "11-11-2020");
+		log.info("Step AddEditRfq_001 - VP: Check All other textfields saved correctly");
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_Replydate"), validStartDate1);
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_DelDate"), validEndDate1);
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_FOBpt"), validNumber1);
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_ShipVia"), "BEST  METHOD");
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNum", jobCode1));
-		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_ProjectNum", projectCode1));
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAccount", glAccountCode1));
 		
-		log.info("Step AddEditRfq_001 - VP: Line Item is added to Rfq");
-		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_LineItem0", itemCode1));
-		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_Desc0"), "Item 1");
-		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_quantity0"), "11.0000");
-		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Um0"), unitOfMeasureName1);
-		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_Price0"), "11.0000");
-		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_EAmt0"), "121.00");
+		log.info("Step AddEditRfq_001 - 05: Check All other dropdown saved correctly");
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode1);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PPFreight"), "Included in Price");
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Buyer"), primaryUserName);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Req"), primaryUserName);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Project"), project1);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText1"), specialText1);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText2"), specialText1);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText3"), specialText1);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText4"), specialText1);
+		
+		log.info("Step AddEditRfq_001 - 05: Check Line Item displayed correctly");
+		rfqPage.openTab(DriverManager.getDriver(), "Line Item Info");
+		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "obj_LineItem0", itemCode1));
+		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_LineDesc10"), "Item 1");
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_LineQuantity0"), "11.0000");
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineUm0"), unitOfMeasureName1);
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_LineDelDateLineItem0"), validStartDate1);
+		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNum0", jobCode1));
+		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAcc0", glAccountCode1));
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineSpecialTextLineItem0"), specialText1);
+
+		log.info("Step AddEditRfq_001 - 05: Check Attachment displayed correctly");
+		verifyTrue(rfqPage.isAttachmentDisplayed("datatest1.pdf"));
+		
+		log.info("Step AddEditRfq_001 - 05: Check Vendor displayed correctly");
+		rfqPage.openTab(DriverManager.getDriver(), "RFQ Vendors");
+		verifyTrue(rfqPage.isVendorRecordDisplayed(vendorID1, vendorName1));
+		
+		log.info("Step AddEditRfq_001 - 05: Check Instructions saved correctly");
+		rfqPage.openTab(DriverManager.getDriver(), "RFQ Instructions");
+		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_rfqInstructions"), validText1);
+		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_rfqNotes"), validText1);
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Edit Rfq works")
@@ -223,49 +256,104 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_002 - 08: Click on Save button");
 		log.info("Step AddEditRfq_002 - 09: Input new Rfq");
 		log.info("Step AddEditRfq_002 - 10: Click on Modify button");
-		log.info("Step AddEditRfq_002 - 11: Input All other textfields");
-		log.info("Step AddEditRfq_001 - 12: Input All other textfields");
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode2);
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName2);
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqDate", "12-12-2020");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DelDate", "12-12-2020");
+		log.info("Step AddEditRfq_002 - 11: Edit All other textfields");
+		rfqPage.openTab(DriverManager.getDriver(), "Header Info");
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Replydate", validStartDate2);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DelDate", validEndDate2);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_FOBpt", validNumber2);
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ShipVia", "BEST FASTEST WAY");
 		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_JobNum", jobCode2);
-		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ProjectNum", projectCode2);
-		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", glAccountCode2);
 		
-		log.info("Step AddEditRfq_001 - 13: Add Line Item to Rfq");
-		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_Desc0", "Item 2");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_quantity0", "12.0000");
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Um0", unitOfMeasureName2);
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Price0", "12.0000");
+		log.info("Step AddEditRfq_001 - 05: Select all other textfield");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode2);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PPFreight", "Pre Paid by Vendor");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", primaryUserName2);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Req", primaryUserName2);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Project", project2);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText1", specialText2);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText2", specialText2);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText3", specialText2);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText4", specialText2);
 		
-		log.info("Step AddEditRfq_001 - 14: Click on Save button");
+		log.info("Step AddEditRfq_001 - 06: Add Line Item to Rfq");
+		rfqPage.openTab(DriverManager.getDriver(), "Line Item Info");
+		rfqPage.clickOnElementByItsID(DriverManager.getDriver(), "img_DelLine0");
+		rfqPage.acceptAlert(DriverManager.getDriver());
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineItem1", itemCode2);
+		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_LineDesc11", "Item 2");
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_LineQuantity1", "22.2222");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_LineUm1", unitOfMeasureName2);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_LineDelDateLineItem1", validStartDate2);
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineJobNumLineItem1", jobCode2);
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineGlAccount1", glAccountCode2);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_LineSpecialTextLineItem1", specialText2);
+
+		log.info("Step AddEditRfq_001 - 07: Add Attachment");
+		rfqPage.addAttachment("datatest2.pdf");
+		
+		log.info("Step AddEditRfq_001 - 08: Add Vendor");
+		rfqPage.openTab(DriverManager.getDriver(), "RFQ Vendors");
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendor2);
+		rfqPage.clickOnElementByItsValue(DriverManager.getDriver(), "Add To Vendors List");
+		
+		log.info("Step AddEditRfq_001 - 09: Input Instructions");
+		rfqPage.openTab(DriverManager.getDriver(), "RFQ Instructions");
+		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_rfqInstructions", validText2);
+		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_rfqNotes", validText2);
+		
+		log.info("Step AddEditRfq_001 - 10: Click on Save button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
-		rfqPage.clickOnElementByItsID(DriverManager.getDriver(), "chk_UpType1");
 		rfqPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_Save");
 		
-		log.info("Step AddEditRfq_001 - 15: Input new Rfq");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		log.info("Step AddEditRfq_001 - 11: Select corporation");
+		rfqPage.sleep(3);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQNum", newRfq);
 		
-		log.info("Step AddEditRfq_001 - 16: Click on Modify button");
+		log.info("Step AddEditRfq_001 - 12: Click on Modify button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("Step AddEditRfq_001 - VP: All other textfields are saved correctly");
-		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode2);
-		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Vendor", vendorName2));
-		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_ReqDate"), "12-12-2020");
-		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_DelDate"), "12-12-2020");
+		log.info("Step AddEditRfq_001 - VP: Check All other textfields saved correctly");
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_Replydate"), validStartDate2);
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_DelDate"), validEndDate2);
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_FOBpt"), validNumber2);
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_ShipVia"), "BEST FASTEST WAY");
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNum", jobCode2));
-		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_ProjectNum", projectCode2));
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAccount", glAccountCode2));
 		
-		log.info("Step AddEditRfq_001 - VP: Line Item is added to Rfq");
-		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_LineItem0", itemCode1));
-		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_Desc0"), "Item 2");
-		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_quantity0"), "12.0000");
-		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Um0"), unitOfMeasureName2);
-		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_Price0"), "12.0000");
-		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_EAmt0"), "144.00");
+		log.info("Step AddEditRfq_001 - 05: Check All other dropdown saved correctly");
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode2);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PPFreight"), "Pre Paid by Vendor");
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Buyer"), primaryUserName2);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Req"), primaryUserName2);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Project"), project2);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText1"), specialText2);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText2"), specialText2);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText3"), specialText2);
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText4"), specialText2);
+		
+		log.info("Step AddEditRfq_001 - 05: Check Line Item displayed correctly");
+		rfqPage.openTab(DriverManager.getDriver(), "Line Item Info");
+		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "obj_LineItem0", itemCode2));
+		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_LineDesc10"), "Item 2");
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_LineQuantity0"), "22.2222");
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineUm0"), unitOfMeasureName2);
+		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_LineDelDateLineItem0"), validStartDate2);
+		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNum0", jobCode2));
+		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAcc0", glAccountCode2));
+		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineSpecialTextLineItem0"), specialText2);
+
+		log.info("Step AddEditRfq_001 - 05: Check Attachment displayed correctly");
+		verifyTrue(rfqPage.isAttachmentDisplayed("datatest2.pdf"));
+		
+		log.info("Step AddEditRfq_001 - 05: Check Vendor displayed correctly");
+		rfqPage.openTab(DriverManager.getDriver(), "RFQ Vendors");
+		verifyTrue(rfqPage.isVendorRecordDisplayed(vendorID2, vendorName2));
+		
+		log.info("Step AddEditRfq_001 - 05: Check Instructions saved correctly");
+		rfqPage.openTab(DriverManager.getDriver(), "RFQ Instructions");
+		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_rfqInstructions"), validText2);
+		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_rfqNotes"), validText2);
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Rfq code by Rfq name works")
@@ -591,6 +679,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("VP: Rfq is not displayed");
 		verifyFalse(rfqPage.isTextDisplayed(DriverManager.getDriver(), newRfq));
 	}
+	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
 		closeBrowser();
@@ -605,13 +694,14 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 	private String unitOfMeasure1, unitOfMeasure2, unitOfMeasureName1, unitOfMeasureName2;
 	private String itemCode1, itemCode2;
 	private String glAccountCode1, glAccountCode2;
-	private String projectCode1, projectCode2;
+	private String projectCode1, projectCode2, project1, project2;
 	private String job1, job2, jobCode1, jobCode2;
 	private String ship1, ship2, shipToCode1, shipToCode2;
-	private String vendorID1, vendorName1;
-	private String vendorID2, vendorName2;
+	private String vendorID1, vendorName1, vendor1;
+	private String vendorID2, vendorName2, vendor2;
 	private String validNumber1, validNumber2, validDecimal1, validDecimal2, validText1, validText2, validStartDate1, validStartDate2, validEndDate1, validEndDate2;
 	private String text1, text2, specialText1, specialText2;
 	private String primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, primaryUserRole, primaryUserName;
 	private String primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, primaryUserRole2, primaryUserName2;
+	private String corporation;
 }

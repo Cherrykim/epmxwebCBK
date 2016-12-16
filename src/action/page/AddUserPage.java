@@ -91,6 +91,15 @@ public class AddUserPage extends AbstractPage {
 	public boolean isButtonByValueEnabled(String value){
 		return isControlEnabled(driver, epmxweb.LicenseAgreementPage.dynamicButtonByValue, value);
 	}
+	
+	public void changeDefaultCorporation(String userID, String corporation){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_user.php");
+		sleep(2);
+		inputTextfieldByIDWithEnter(driver, "txt_UserName", userID);
+		clickOnElementByItsID(driver, "img_Modify");
+		selectItemFromDropdownByID(driver, "sel_Corporation", corporation);
+		clickOnElementByItsID(driver, "img_Save");
+	}
 	private WebDriver driver;
 	private String ipClient;
 }

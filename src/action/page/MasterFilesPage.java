@@ -64,6 +64,22 @@ public class MasterFilesPage extends AbstractPage {
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	public void createNewVendor(String vendorID, String vendorName, String corporation){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_vendors.php");
+		sleep(2);
+		selectItemFromDropdownByID(driver, "sel_Corporation", corporation);
+		inputTextfieldByID(driver, "txt_VendorCode", vendorID);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(driver, "txt_VendorName", vendorName);
+		clickOnDivByItsText(driver, "Addl Vendor Info");
+		inputTextfieldByID(driver, "txt_TaxId", vendorName);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
 	public boolean isPrimaryVendorDisplayedCorrectly(String vendorName){
 //		return isControlDisplayed(driver, epmxweb.MasterFilesPage.dynamicFirstCatalogItem, itemName);
 //		System.out.println(getAttributeValue(driver, epmxweb.MasterFilesPage.primaryVendor, "innerHTML"));
@@ -83,6 +99,20 @@ public class MasterFilesPage extends AbstractPage {
 	public void createNewGLAccount(String accountID){
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_gl_account_code.php");
 		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_GLCode", accountID);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Desc", "new description");
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewGLAccountWithCorp(String accountID, String corporation){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_gl_account_code.php");
+		sleep(2);
+		selectItemFromDropdownByID(driver, "sel_Corporation", corporation);
 		inputTextfieldByID(DriverManager.getDriver(), "txt_GLCode", accountID);
 		clickOnElementByItsID(driver, "img_Add");
 		if(isAlertPresent(driver)) {
@@ -175,6 +205,21 @@ public class MasterFilesPage extends AbstractPage {
 		createNewUnitOfMeasure("um1");
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_material.php");
 		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_ItemCode", itemName);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", "um1");
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewItemCodeWithCorp(String itemName, String corporation){
+		createNewUnitOfMeasure("um1");
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_material.php");
+		sleep(2);
+		selectItemFromDropdownByID(driver, "sel_Corporation", corporation);
 		inputTextfieldByID(DriverManager.getDriver(), "txt_ItemCode", itemName);
 		clickOnElementByItsID(driver, "img_Add");
 		if(isAlertPresent(driver)) {
@@ -327,6 +372,21 @@ public class MasterFilesPage extends AbstractPage {
 		acceptAlert(driver);
 	}
 	
+	public void createNewShipToCode(String shipToCode, String corporation){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_ship_to_code.php");
+		sleep(2);
+		selectItemFromDropdownByID(driver, "sel_Corporation", corporation);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_ShipToCode", shipToCode);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Company", shipToCode);
+		clickOnElementByItsID(driver, "img_Save");
+		acceptAlert(driver);
+	}
+	
 	public void createNewPOType(String poType){
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_po_type.php");
 		sleep(2);
@@ -343,6 +403,21 @@ public class MasterFilesPage extends AbstractPage {
 	public void createNewJobCode(String jobCode){
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_job_numbers.php");
 		sleep(2);
+		
+		inputTextfieldByID(DriverManager.getDriver(), "txt_JobCode", jobCode);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", jobCode);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewJobCode(String jobCode, String corporation){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_job_numbers.php");
+		sleep(2);
+		selectItemFromDropdownByID(driver, "sel_Corporation", corporation);
 		inputTextfieldByID(DriverManager.getDriver(), "txt_JobCode", jobCode);
 		clickOnElementByItsID(driver, "img_Add");
 		if(isAlertPresent(driver)) {
@@ -366,9 +441,37 @@ public class MasterFilesPage extends AbstractPage {
 		clickOnElementByItsID(driver, "img_Save");
 	}
 	
+	public void createNewProjectCode(String projectCode, String corporation){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_project_number.php");
+		sleep(2);
+		selectItemFromDropdownByID(driver, "sel_Corporation", corporation);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_ProjCode", projectCode);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", projectCode);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
 	public void createNewSpecialText(String text){
 		openLink(driver, "https://cherry.epmxweb.com/master_files/add_special_text.php");
 		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_TextCode", text);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextareaByID(DriverManager.getDriver(), "txt_Text", text);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNewSpecialText(String text, String corporation){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_special_text.php");
+		sleep(2);
+		selectItemFromDropdownByID(driver, "sel_Corporation", corporation);
 		inputTextfieldByID(DriverManager.getDriver(), "txt_TextCode", text);
 		clickOnElementByItsID(driver, "img_Add");
 		if(isAlertPresent(driver)) {
