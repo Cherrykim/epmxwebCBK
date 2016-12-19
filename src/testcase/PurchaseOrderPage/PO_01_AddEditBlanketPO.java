@@ -66,8 +66,8 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		projectCode1 = "Project1";
 		projectCode2 = "Project2";
 		
-		glAccountCode1 = "glNo1";
-		glAccountCode2 = "glNo2";
+		glAccountCode1 = "glN01";
+		glAccountCode2 = "glN02";
 		
 		taxCode1 = "tax1";
 		taxCode2 = "tax2";
@@ -90,49 +90,51 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
 		
-		log.info("Step Pre-condition - 04: Create new Vendor");
-		masterFilesPage.createNewVendor(vendorID1, vendorName1);
-		masterFilesPage.createNewVendor(vendorID2, vendorName2);
-		
-		log.info("Pre-condition - 05: Create new Buyer");
-		addUserPage.createNewUserWithRole(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", primaryUserRole);
-		addUserPage.createNewUserWithRole(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", primaryUserRole2);
-		
-		log.info("Step Pre-condition - 05: Create new Bill-to Code");
-		masterFilesPage.createNewBillToCode(bill1);
-		masterFilesPage.createNewBillToCode(bill2);
-		
-		log.info("Step Pre-condition - 05: Create new Ship-to Code");
-		masterFilesPage.createNewShipToCode(ship1);
-		masterFilesPage.createNewShipToCode(ship2);
-		
-		log.info("Step Pre-condition - 05: Create new PO Type");
-		masterFilesPage.createNewPOType(po1);
-		masterFilesPage.createNewPOType(po2);
-		
+//		log.info("Step Pre-condition - 04: Create new Vendor");
+//		masterFilesPage.createNewVendor(vendorID1, vendorName1);
+//		masterFilesPage.createNewVendor(vendorID2, vendorName2);
+//		
+//		log.info("Pre-condition - 05: Create new Buyer");
+//		addUserPage.createNewUserWithRole(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", primaryUserRole);
+//		addUserPage.createNewUserWithRole(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", primaryUserRole2);
+//		
+//		log.info("Step Pre-condition - 05: Create new Bill-to Code");
+//		masterFilesPage.createNewBillToCode(bill1);
+//		masterFilesPage.createNewBillToCode(bill2);
+//		
+//		log.info("Step Pre-condition - 05: Create new Ship-to Code");
+//		masterFilesPage.createNewShipToCode(ship1);
+//		masterFilesPage.createNewShipToCode(ship2);
+//		
+//		log.info("Step Pre-condition - 05: Create new PO Type");
+//		masterFilesPage.createNewPOType(po1);
+//		masterFilesPage.createNewPOType(po2);
+//		
 		log.info("Step Pre-condition - 04: Create GL Account");
 		masterFilesPage.createNewGLAccount(glAccountCode1);
+		masterFilesPage.assignGLAccount(glAccountCode1, Constant.LoginData.USERNAME_NYDOH);
 		masterFilesPage.createNewGLAccount(glAccountCode2);
-		
-		log.info("Step Pre-condition - 05: Create new Job Code");
-		masterFilesPage.createNewJobCode(job1);
-		masterFilesPage.createNewJobCode(job2);
-		
-		log.info("Step Pre-condition - 05: Create new Project code");
-		masterFilesPage.createNewProjectCode(projectCode1);
-		masterFilesPage.createNewProjectCode(projectCode2);	
-		
-		log.info("Step Pre-condition - 04: Create new Terms code");
-		masterFilesPage.createNewTermsCode(termsCode1);
-		masterFilesPage.createNewTermsCode(termsCode2);
-		
-		log.info("Step Pre-condition - 04: Create Tax Code");
-		masterFilesPage.createNewTaxCode(taxCode1);
-		masterFilesPage.createNewTaxCode(taxCode2);
-		
-		log.info("Step Pre-condition - 04: Create Special text");
-		masterFilesPage.createNewSpecialText(text1);
-		masterFilesPage.createNewSpecialText(text2);
+		masterFilesPage.assignGLAccount(glAccountCode2, Constant.LoginData.USERNAME_NYDOH);
+//		
+//		log.info("Step Pre-condition - 05: Create new Job Code");
+//		masterFilesPage.createNewJobCode(job1);
+//		masterFilesPage.createNewJobCode(job2);
+//		
+//		log.info("Step Pre-condition - 05: Create new Project code");
+//		masterFilesPage.createNewProjectCode(projectCode1);
+//		masterFilesPage.createNewProjectCode(projectCode2);	
+//		
+//		log.info("Step Pre-condition - 04: Create new Terms code");
+//		masterFilesPage.createNewTermsCode(termsCode1);
+//		masterFilesPage.createNewTermsCode(termsCode2);
+//		
+//		log.info("Step Pre-condition - 04: Create Tax Code");
+//		masterFilesPage.createNewTaxCode(taxCode1);
+//		masterFilesPage.createNewTaxCode(taxCode2);
+//		
+//		log.info("Step Pre-condition - 04: Create Special text");
+//		masterFilesPage.createNewSpecialText(text1);
+//		masterFilesPage.createNewSpecialText(text2);
 	}
 
 	@Test(groups = { "regression" }, description = "Check Add Blanket PO works")
@@ -154,7 +156,7 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BillCode", billToCode1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PPFreight", "Included in Price");
-//		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsCode", termsCode1);
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsCode", terms1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PoType", poType1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TaxCode1", taxCode1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TaxCode2", taxCode2);
@@ -215,7 +217,7 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BillCode"), billToCode1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PPFreight"), "Included in Price");
-//		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermsCode"), termsCode1);
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermsCode"), terms1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PoType"), poType1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode1"), taxCode1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode2"), taxCode2);
@@ -273,7 +275,7 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BillCode", billToCode2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PPFreight", "Pre Paid by Vendor");
-//		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsCode", termsCode2);
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsCode", terms2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PoType", poType2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TaxCode1", taxCode2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TaxCode2", taxCode1);
@@ -334,7 +336,7 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BillCode"), billToCode2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PPFreight"), "Pre Paid by Vendor");
-//		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermsCode"), termsCode2);
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermsCode"), terms2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PoType"), poType2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode1"), taxCode2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode2"), taxCode1);
@@ -429,6 +431,276 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
+	@Test(groups = { "regression" }, description = "Check Search Blanket PO code by Blanket PO date works")
+	public void AddEditBlanketPO_003_SearchBlanketPOByBlanketPODate() {	
+		
+		log.info("Step AddEditBlanketPO_003 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_003 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_003 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_003 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_003 - 05: Input Blanket PO date code");
+		log.info("Step AddEditBlanketPO_003 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_003 - 07: Input all other textfields");
+		log.info("Step AddEditBlanketPO_003 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_003 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_po.php");
+		
+		log.info("Step AddEditBlanketPO_003 - 10: Input Blanket PO date");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", poDate);
+		
+		log.info("Step AddEditBlanketPO_003 - 11: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Blanket PO code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newBlanketPO, poDate));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Blanket PO code by Buyer works")
+	public void AddEditBlanketPO_004_SearchBlanketPOByBuyer() {	
+		
+		log.info("Step AddEditBlanketPO_004 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_004 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_004 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_004 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_004 - 05: Input Blanket PO date code");
+		log.info("Step AddEditBlanketPO_004 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_004 - 07: Input all other textfields");
+		log.info("Step AddEditBlanketPO_004 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_004 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_po.php");
+		
+		log.info("Step AddEditBlanketPO_004 - 10: Input Blanket PO Code");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", poDate);
+		
+		log.info("Step AddEditBlanketPO_004 - 11: Select Receiver");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", primaryUserName2);
+		
+		log.info("Step AddEditBlanketPO_004 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Blanket PO code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newBlanketPO, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Blanket PO code by Keywords works")
+	public void AddEditBlanketPO_005_SearchBlanketPOByKeywords() {	
+		
+		log.info("Step AddEditBlanketPO_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_005 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_005 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_005 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_005 - 05: Input Blanket PO date code");
+		log.info("Step AddEditBlanketPO_005 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_005 - 07: Input all other textfields");
+		log.info("Step AddEditBlanketPO_005 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_005 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_po.php");
+		
+		log.info("Step AddEditBlanketPO_005 - 10: Input Blanket PO Code");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", poDate);
+		
+		log.info("Step AddEditBlanketPO_005 - 11: Input Keyword");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Keyword", "Item 2");
+		
+		log.info("Step AddEditBlanketPO_005 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("Step AddEditBlanketPO_005 - 13: Click on OK button");
+		poPage.clickOnElementByItsValue(DriverManager.getDriver(), "OK");
+		
+		log.info("VP: Blanket PO code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newBlanketPO, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Blanket PO code by Corporation works")
+	public void AddEditBlanketPO_006_SearchBlanketPOByCorporation() {	
+		
+		log.info("Step AddEditBlanketPO_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_006 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_006 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_006 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_006 - 05: Input Blanket PO date code");
+		log.info("Step AddEditBlanketPO_006 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_006 - 07: Input all other textfields");
+		log.info("Step AddEditBlanketPO_006 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_006 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_po.php");
+		
+		log.info("Step AddEditBlanketPO_006 - 10: Input Blanket PO Code");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", poDate);
+		
+		log.info("Step AddEditBlanketPO_006 - 11: Select Corporation");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "Wadsworth Center");
+		
+		log.info("Step AddEditBlanketPO_006 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Blanket PO code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newBlanketPO, "Wadsworth Center"));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Blanket PO code by Job number works")
+	public void AddEditBlanketPO_007_SearchBlanketPOByJobNumber() {	
+		
+		log.info("Step AddEditBlanketPO_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_007 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_007 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_007 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_007 - 05: Input Blanket PO date code");
+		log.info("Step AddEditBlanketPO_007 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_007 - 07: Input all other textfields");
+		log.info("Step AddEditBlanketPO_007 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_007 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_po.php");
+		
+		log.info("Step AddEditBlanketPO_007 - 10: Input Blanket PO Code");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", poDate);
+		
+		log.info("Step AddEditBlanketPO_007 - 11: Input Job number");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_JobNumber", jobCode2);
+		
+		log.info("Step AddEditBlanketPO_007 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Blanket PO code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newBlanketPO, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Blanket PO code by Vendor works")
+	public void AddEditBlanketPO_008_SearchBlanketPOByVendor() {	
+		
+		log.info("Step AddEditBlanketPO_008 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_008 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_008 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_008 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_008 - 05: Input Blanket PO date code");
+		log.info("Step AddEditBlanketPO_008 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_008 - 07: Input all other textfields");
+		log.info("Step AddEditBlanketPO_008 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_008 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_po.php");
+		
+		log.info("Step AddEditBlanketPO_008 - 10: Input Blanket PO Code");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", poDate);
+		
+		log.info("Step AddEditBlanketPO_008 - 11: Input Vendor name");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendorName2);
+		
+		log.info("Step AddEditBlanketPO_008 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Blanket PO code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newBlanketPO, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Blanket PO code by Project Code works")
+	public void AddEditBlanketPO_009_SearchBlanketPOByProjectCode() {	
+		
+		log.info("Step AddEditBlanketPO_009 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_009 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_009 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_009 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_009 - 05: Input Blanket PO date code");
+		log.info("Step AddEditBlanketPO_009 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_009 - 07: Input all other textfields");
+		log.info("Step AddEditBlanketPO_009 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_009 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_po.php");
+		
+		log.info("Step AddEditBlanketPO_009 - 10: Input Blanket PO Code");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", poDate);
+		
+		log.info("Step AddEditBlanketPO_009 - 11: Input Project code");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ProjectNumber", projectCode2);
+		
+		log.info("Step AddEditBlanketPO_009 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Blanket PO code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newBlanketPO, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Blanket PO code by Request date works")
+	public void AddEditBlanketPO_010_SearchBlanketPOByBlanketPOStatus() {	
+		
+		log.info("Step AddEditBlanketPO_010 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_010 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_010 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_010 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_010 - 05: Input Blanket PO date code");
+		log.info("Step AddEditBlanketPO_010 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_010 - 07: Input all other textfields");
+		log.info("Step AddEditBlanketPO_010 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_010 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_po.php");
+		
+		log.info("Step AddEditBlanketPO_010 - 10: Input Blanket PO Code");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", poDate);
+		
+		log.info("Step AddEditBlanketPO_010 - 11: Input Blanket PO status");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BlanketPOStatus", "Open");
+		
+		log.info("Step AddEditBlanketPO_010 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Blanket PO code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newBlanketPO, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Blanket PO code by Item code works")
+	public void AddEditBlanketPO_011_SearchBlanketPOByItemCode() {	
+		
+		log.info("Step AddEditBlanketPO_011 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_011 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_011 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_011 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_011 - 05: Input Blanket PO date code");
+		log.info("Step AddEditBlanketPO_011 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_011 - 07: Input all other textfields");
+		log.info("Step AddEditBlanketPO_011 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_011 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_po.php");
+		
+		log.info("Step AddEditBlanketPO_011 - 10: Input Blanket PO Code");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", poDate);
+		
+		log.info("Step AddEditBlanketPO_011 - 11: Input Item code");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Item", itemCode2);
+		
+		log.info("Step AddEditBlanketPO_011 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Blanket PO code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newBlanketPO, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Blanket PO code by Reply-to code works")
+	public void AddEditBlanketPO_012_SearchBlanketPOByReplyToCode() {	
+		
+		log.info("Step AddEditBlanketPO_012 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditBlanketPO_012 - 02: Input correct username and password");
+		log.info("Step AddEditBlanketPO_012 - 03: Accept Alert message");
+		log.info("Step AddEditBlanketPO_012 - 04: Open Add labels page");
+		log.info("Step AddEditBlanketPO_012 - 05: Input Blanket PO date code");
+		log.info("Step AddEditBlanketPO_012 - 06: Click on Add button");
+		log.info("Step AddEditBlanketPO_012 - 07: Input all other textfields");
+		log.info("Step AddEditBlanketPO_012 - 08: Click on Save button");
+		log.info("Step AddEditBlanketPO_012 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_po.php");
+		
+		log.info("Step AddEditBlanketPO_012 - 10: Input Blanket PO Code");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", poDate);
+		
+		log.info("Step AddEditBlanketPO_012 - 11: Input Reply-to code");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipToCode", shipToCode2);
+		
+		log.info("Step AddEditBlanketPO_012 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Blanket PO code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newBlanketPO, ""));
+	}
+	
 	@Test(groups = { "regression" }, description = "Check Delete Blanket PO works")
 	public void AddEditBlanketPO_005_CheckDeleteBlanketPOWorks() {	
 		
@@ -477,4 +749,6 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 	private String terms1, terms2, termsCode1, termsCode2;
 	private String taxCode1, taxCode2;
 	private String text1, text2, specialText1, specialText2;
+	private String poDate;
+	private String itemCode1, itemCode2;
 }

@@ -31,8 +31,6 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		newRfq = getUniqueNumber(7);
 		validNumber1 = "111";
 		validNumber2 = "222";
-		validDecimal1 = "11.11";
-		validDecimal2 = "22.22";
 		validText1 = "!@#$text";
 		validText2 = "%^&*text";
 		validStartDate1 = "11-10-2020";
@@ -74,12 +72,10 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		primaryBuyerFirstName = "Primary";
 		primaryBuyerLastName = "Buyer";
 		primaryUserName = "Primary Buyer";
-		primaryUserRole = "Requesters";
 		primaryBuyerID2 = "110320162";
 		primaryBuyerFirstName2 = "Primary2";
 		primaryBuyerLastName2 = "Buyer2";
 		primaryUserName2 = "Primary2 Buyer2";
-		primaryUserRole2 = "Requesters";
 		corporation = "DN Tanks";
 		
 		log.info("Pre-condition - 01: Open the site http://tool.cherry.epmxweb.com/");
@@ -96,41 +92,41 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
 		
-//		log.info("Step Pre-condition - 04: Create Unit of measure");
-//		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
-//		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
-//		
-//		log.info("Step Pre-condition - 05: Create Item code");
-//		masterFilesPage.createNewItemCodeWithCorp(itemCode1, corporation);
-//		masterFilesPage.createNewItemCodeWithCorp(itemCode2, corporation);
-//		
-//		log.info("Step Pre-condition - 06: Create new Job code");
-//		masterFilesPage.createNewJobCode(job1, corporation);
-//		masterFilesPage.createNewJobCode(job2, corporation);
-//		
-//		log.info("Step Pre-condition - 07: Create GL Account");
-//		masterFilesPage.createNewGLAccountWithCorp(glAccountCode1, corporation);
-//		masterFilesPage.createNewGLAccountWithCorp(glAccountCode2, corporation);
-//		
-//		log.info("Step Pre-condition - 08: Create new Project code");
-//		masterFilesPage.createNewProjectCode(projectCode1, corporation);
-//		masterFilesPage.createNewProjectCode(projectCode2, corporation);	
-//		
-//		log.info("Step Pre-condition - 09: Create new Ship-to Code");
-//		masterFilesPage.createNewShipToCode(ship1, corporation);
-//		masterFilesPage.createNewShipToCode(ship2, corporation);
-//		
-//		log.info("Step Pre-condition - 10: Create new Vendor");
-//		masterFilesPage.createNewVendor(vendorID1, vendorName1, corporation);
-//		masterFilesPage.createNewVendor(vendorID2, vendorName2, corporation);
-//		
-//		log.info("Step Pre-condition - 04: Create Special text");
-//		masterFilesPage.createNewSpecialText(text1, corporation);
-//		masterFilesPage.createNewSpecialText(text2, corporation);
-//		
-//		log.info("Pre-condition - 05: Create new Buyer");
-//		addUserPage.createNewUser(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", corporation);
-//		addUserPage.createNewUser(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", corporation);
+		log.info("Step Pre-condition - 04: Create Unit of measure");
+		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
+		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
+		
+		log.info("Step Pre-condition - 05: Create Item code");
+		masterFilesPage.createNewItemCodeWithCorp(itemCode1, corporation);
+		masterFilesPage.createNewItemCodeWithCorp(itemCode2, corporation);
+		
+		log.info("Step Pre-condition - 06: Create new Job code");
+		masterFilesPage.createNewJobCode(job1, corporation);
+		masterFilesPage.createNewJobCode(job2, corporation);
+		
+		log.info("Step Pre-condition - 07: Create GL Account");
+		masterFilesPage.createNewGLAccountWithCorp(glAccountCode1, corporation);
+		masterFilesPage.createNewGLAccountWithCorp(glAccountCode2, corporation);
+		
+		log.info("Step Pre-condition - 08: Create new Project code");
+		masterFilesPage.createNewProjectCode(projectCode1, corporation);
+		masterFilesPage.createNewProjectCode(projectCode2, corporation);	
+		
+		log.info("Step Pre-condition - 09: Create new Ship-to Code");
+		masterFilesPage.createNewShipToCode(ship1, corporation);
+		masterFilesPage.createNewShipToCode(ship2, corporation);
+		
+		log.info("Step Pre-condition - 10: Create new Vendor");
+		masterFilesPage.createNewVendor(vendorID1, vendorName1, corporation);
+		masterFilesPage.createNewVendor(vendorID2, vendorName2, corporation);
+		
+		log.info("Step Pre-condition - 04: Create Special text");
+		masterFilesPage.createNewSpecialText(text1, corporation);
+		masterFilesPage.createNewSpecialText(text2, corporation);
+		
+		log.info("Pre-condition - 05: Create new Buyer");
+		addUserPage.createNewUser(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", corporation);
+		addUserPage.createNewUser(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", corporation);
 	}
 
 	@Test(groups = { "regression" }, description = "Check Add Rfq works")
@@ -199,6 +195,9 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		
 		log.info("Step AddEditRfq_001 - 12: Click on Modify button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		
+		log.info("Step AddEditRfq_001 - 12: Get RFQ date");
+		rfqDate = rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_rfqdate");
 		
 		log.info("Step AddEditRfq_001 - VP: Check All other textfields saved correctly");
 		verifyEquals(rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_Replydate"), validStartDate1);
@@ -356,28 +355,28 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_rfqNotes"), validText2);
 	}
 	
-	@Test(groups = { "regression" }, description = "Check Search Rfq code by Rfq name works")
-	public void AddEditRfq_003_SearchRfqByRfqNumber() {	
+	@Test(groups = { "regression" }, description = "Check Search Rfq code by Rfq date works")
+	public void AddEditRfq_003_SearchRfqByRfqDate() {	
 		
 		log.info("Step AddEditRfq_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_003 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_003 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_003 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_003 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_003 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_003 - 06: Click on Add button");
 		log.info("Step AddEditRfq_003 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_003 - 08: Click on Save button");
 		log.info("Step AddEditRfq_003 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/manage_rfq.php");
 		
-		log.info("Step AddEditRfq_003 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		log.info("Step AddEditRfq_003 - 10: Input Rfq date");
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", rfqDate);
 		
 		log.info("Step AddEditRfq_003 - 11: Click on Search button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
 		
 		log.info("VP: Rfq code displayed correctly");
-		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, ""));
+		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, rfqDate));
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Rfq code by Buyer works")
@@ -387,18 +386,18 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_004 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_004 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_004 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_004 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_004 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_004 - 06: Click on Add button");
 		log.info("Step AddEditRfq_004 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_004 - 08: Click on Save button");
 		log.info("Step AddEditRfq_004 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/manage_rfq.php");
 		
 		log.info("Step AddEditRfq_004 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", rfqDate);
 		
 		log.info("Step AddEditRfq_004 - 11: Select Receiver");
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", "Tammi Stock");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", primaryUserName2);
 		
 		log.info("Step AddEditRfq_004 - 12: Click on Search button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -414,15 +413,15 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_005 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_005 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_005 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_005 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_005 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_005 - 06: Click on Add button");
 		log.info("Step AddEditRfq_005 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_005 - 08: Click on Save button");
 		log.info("Step AddEditRfq_005 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/manage_rfq.php");
 		
 		log.info("Step AddEditRfq_005 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", rfqDate);
 		
 		log.info("Step AddEditRfq_005 - 11: Input Keyword");
 		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Keyword", "Item 2");
@@ -444,24 +443,24 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_006 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_006 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_006 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_006 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_006 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_006 - 06: Click on Add button");
 		log.info("Step AddEditRfq_006 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_006 - 08: Click on Save button");
 		log.info("Step AddEditRfq_006 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/manage_rfq.php");
 		
 		log.info("Step AddEditRfq_006 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", rfqDate);
 		
 		log.info("Step AddEditRfq_006 - 11: Select Corporation");
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "Wadsworth Center");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", corporation);
 		
 		log.info("Step AddEditRfq_006 - 12: Click on Search button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
 		
 		log.info("VP: Rfq code displayed correctly");
-		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, "Wadsworth Center"));
+		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, corporation));
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Rfq code by Job number works")
@@ -471,18 +470,18 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_007 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_007 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_007 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_007 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_007 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_007 - 06: Click on Add button");
 		log.info("Step AddEditRfq_007 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_007 - 08: Click on Save button");
 		log.info("Step AddEditRfq_007 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/manage_rfq.php");
 		
 		log.info("Step AddEditRfq_007 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", rfqDate);
 		
 		log.info("Step AddEditRfq_007 - 11: Input Job number");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "sel_JobNumber", jobCode2);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_JobNumber", jobCode2);
 		
 		log.info("Step AddEditRfq_007 - 12: Click on Search button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -491,31 +490,31 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, ""));
 	}
 	
-	@Test(groups = { "regression" }, description = "Check Search Rfq code by Suggesstion Vendor works")
-	public void AddEditRfq_008_SearchRfqBySuggestionVendor() {	
+	@Test(groups = { "regression" }, description = "Check Search Rfq code by Vendor works")
+	public void AddEditRfq_008_SearchRfqByVendor() {	
 		
 		log.info("Step AddEditRfq_008 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_008 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_008 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_008 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_008 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_008 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_008 - 06: Click on Add button");
 		log.info("Step AddEditRfq_008 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_008 - 08: Click on Save button");
 		log.info("Step AddEditRfq_008 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/manage_rfq.php");
 		
 		log.info("Step AddEditRfq_008 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", rfqDate);
 		
 		log.info("Step AddEditRfq_008 - 11: Input Vendor name");
-		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendorName2);
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendor2);
 		
 		log.info("Step AddEditRfq_008 - 12: Click on Search button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
 		
 		log.info("VP: Rfq code displayed correctly");
-		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, vendorName2));
+		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, ""));
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Rfq code by Project Code works")
@@ -525,18 +524,18 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_009 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_009 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_009 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_009 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_009 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_009 - 06: Click on Add button");
 		log.info("Step AddEditRfq_009 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_009 - 08: Click on Save button");
 		log.info("Step AddEditRfq_009 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/manage_rfq.php");
 		
 		log.info("Step AddEditRfq_009 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", rfqDate);
 		
 		log.info("Step AddEditRfq_009 - 11: Input Project code");
-		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ProjectNum", projectCode2);
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ProjectNumber", project2);
 		
 		log.info("Step AddEditRfq_009 - 12: Click on Search button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -546,30 +545,30 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Rfq code by Request date works")
-	public void AddEditRfq_010_SearchRfqByRequestDate() {	
+	public void AddEditRfq_010_SearchRfqByRfqStatus() {	
 		
 		log.info("Step AddEditRfq_010 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_010 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_010 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_010 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_010 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_010 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_010 - 06: Click on Add button");
 		log.info("Step AddEditRfq_010 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_010 - 08: Click on Save button");
 		log.info("Step AddEditRfq_010 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/manage_rfq.php");
 		
 		log.info("Step AddEditRfq_010 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", rfqDate);
 		
-		log.info("Step AddEditRfq_010 - 11: Input Request date");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqDateFrom", "12-12-2020");
+		log.info("Step AddEditRfq_010 - 11: Input Rfq status");
+		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_RfqStatus", "Open");
 		
 		log.info("Step AddEditRfq_010 - 12: Click on Search button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
 		
 		log.info("VP: Rfq code displayed correctly");
-		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, "12-12-2020"));
+		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, ""));
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Rfq code by Item code works")
@@ -579,18 +578,18 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_011 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_011 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_011 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_011 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_011 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_011 - 06: Click on Add button");
 		log.info("Step AddEditRfq_011 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_011 - 08: Click on Save button");
 		log.info("Step AddEditRfq_011 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/manage_rfq.php");
 		
 		log.info("Step AddEditRfq_011 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", rfqDate);
 		
 		log.info("Step AddEditRfq_011 - 11: Input Item code");
-		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", itemCode1);
+		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Item", itemCode2);
 		
 		log.info("Step AddEditRfq_011 - 12: Click on Search button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -599,51 +598,24 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, ""));
 	}
 	
-	@Test(groups = { "regression" }, description = "Check Search Rfq code by Ship-to code works")
-	public void AddEditRfq_012_SearchRfqByShipToCode() {	
+	@Test(groups = { "regression" }, description = "Check Search Rfq code by Reply-to code works")
+	public void AddEditRfq_012_SearchRfqByReplyToCode() {	
 		
 		log.info("Step AddEditRfq_012 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_012 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_012 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_012 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_012 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_012 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_012 - 06: Click on Add button");
 		log.info("Step AddEditRfq_012 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_012 - 08: Click on Save button");
 		log.info("Step AddEditRfq_012 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
+		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/manage_rfq.php");
 		
 		log.info("Step AddEditRfq_012 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQDateFrom", rfqDate);
 		
-		log.info("Step AddEditRfq_012 - 11: Input Ship-to code");
-		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipToCode", shipToCode2);
-		
-		log.info("Step AddEditRfq_012 - 12: Click on Search button");
-		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-		
-		log.info("VP: Rfq code displayed correctly");
-		verifyTrue(rfqPage.isResultTableContainsRecord(DriverManager.getDriver(), newRfq, ""));
-	}
-	
-	@Test(groups = { "regression" }, description = "Check Search Rfq code by Ship-to code works")
-	public void AddEditRfq_013_SearchRfqByVendorName() {	
-		
-		log.info("Step AddEditRfq_012 - 01: Open the site https://cherry.epmxweb.com");
-		log.info("Step AddEditRfq_012 - 02: Input correct username and password");
-		log.info("Step AddEditRfq_012 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_012 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_012 - 05: Input new Rfq code");
-		log.info("Step AddEditRfq_012 - 06: Click on Add button");
-		log.info("Step AddEditRfq_012 - 07: Input all other textfields");
-		log.info("Step AddEditRfq_012 - 08: Click on Save button");
-		log.info("Step AddEditRfq_012 - 09: Open Manager page");
-		rfqPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfqs/manage_rfq.php");
-		
-		log.info("Step AddEditRfq_012 - 10: Input Rfq Code");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
-		
-		log.info("Step AddEditRfq_012 - 11: Input Ship-to code");
+		log.info("Step AddEditRfq_012 - 11: Input Reply-to code");
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipToCode", shipToCode2);
 		
 		log.info("Step AddEditRfq_012 - 12: Click on Search button");
@@ -654,20 +626,20 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Delete Rfq works")
-	public void AddEditRfq_014_DeleteRfqWorks() {	
+	public void AddEditRfq_013_DeleteRfqWorks() {	
 		log.info("Step AddEditRfq_013 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_013 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_013 - 03: Accept Alert message");
 		log.info("Step AddEditRfq_013 - 04: Open Add labels page");
-		log.info("Step AddEditRfq_013 - 05: Input new Rfq code");
+		log.info("Step AddEditRfq_013 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_013 - 06: Click on Add button");
 		log.info("Step AddEditRfq_013 - 07: Input all other textfields");
 		log.info("Step AddEditRfq_013 - 08: Click on Save button");
 		log.info("Step AddEditRfq_013 - 09: Open Add Rfq page");
 		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/rfq/add_request_for_quotation.php");
 
-		log.info("Step AddEditRfq_013 - 10: Input new Rfq");
-		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRfq);
+		log.info("Step AddEditRfq_013 - 10: Input Rfq date");
+		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQNum", newRfq);
 		
 		log.info("Step AddEditRfq_013 - 11: Click on Manage button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
@@ -682,6 +654,8 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
+		log.info("Post-condition - 01: Return database to default");
+		configPage.selectBranchAndDatabase(Constant.DefaultValue.CURRENT_BRANCH, Constant.DefaultValue.CURRENT_DATABASE);
 		closeBrowser();
 	}
 
@@ -699,9 +673,10 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 	private String ship1, ship2, shipToCode1, shipToCode2;
 	private String vendorID1, vendorName1, vendor1;
 	private String vendorID2, vendorName2, vendor2;
-	private String validNumber1, validNumber2, validDecimal1, validDecimal2, validText1, validText2, validStartDate1, validStartDate2, validEndDate1, validEndDate2;
+	private String validNumber1, validNumber2, validText1, validText2, validStartDate1, validStartDate2, validEndDate1, validEndDate2;
 	private String text1, text2, specialText1, specialText2;
-	private String primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, primaryUserRole, primaryUserName;
-	private String primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, primaryUserRole2, primaryUserName2;
+	private String primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, primaryUserName;
+	private String primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, primaryUserName2;
 	private String corporation;
+	private String rfqDate;
 }
