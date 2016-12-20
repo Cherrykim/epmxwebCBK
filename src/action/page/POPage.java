@@ -31,6 +31,10 @@ public class POPage extends AbstractPage {
 		return poNumber + " : " + currentDate + " : " +vendorName;
 	}
 	
+	public String getOrderDate(){
+		openTab(driver, "P.O. Review");
+		return getText(driver, epmxweb.POPage.orderDate);
+	}
 	private WebDriver driver;
 	private String ipClient;
 }

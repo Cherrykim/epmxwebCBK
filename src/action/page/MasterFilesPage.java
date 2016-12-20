@@ -128,6 +128,7 @@ public class MasterFilesPage extends AbstractPage {
 		inputTextfieldByID(DriverManager.getDriver(), "txt_UserName", userName);
 		clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		clickOnElementByItsID(DriverManager.getDriver(), "btn_GL");
+		if(isItemInSelectedList(driver, "sel_Gl", accountID)) return;
 		inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_GlAccount", accountID);
 		clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add_field", "3");
 		clickOnImageButtonByItsSrc(DriverManager.getDriver(), "ok", "3");

@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class POPage {
 
 	//==================================Static Controls========================================//
-	public static By welcomeMessage = By.xpath("//tr/td[@class='SmallText']/div");
+	public static By orderDate = By.xpath("//span[@id='PoDate']");
 	
 	// ==================================Dynamic Controls========================================//
 	public static String dynamicSubMenuButton = "//div[@id='%s']//li/a[text()=\"%s\"]";
