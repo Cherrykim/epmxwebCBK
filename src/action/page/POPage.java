@@ -35,6 +35,25 @@ public class POPage extends AbstractPage {
 		openTab(driver, "P.O. Review");
 		return getText(driver, epmxweb.POPage.orderDate);
 	}
+	
+	public void addAttachment(String fileName){
+		openTab(driver, "Attachments");
+		if(isControlDisplayed(driver, epmxweb.RfqPage.dynamicAttachment, "datatest")){
+			click(driver, epmxweb.RfqPage.deleteFirstAttachment);
+			acceptAlert(driver);
+		}
+		switchToFrame(driver, epmxweb.RfqPage.iframeAttachment);
+		uploadFile(driver, "fl_Attachment", fileName);
+		clickOnElementByItsValue(driver, "Add Attachment");
+		switchToTopWindowFrame(driver);
+		sleep();
+	}
+	
+	public boolean isAttachmentDisplayed(String fileName){
+		openTab(driver, "Attachments");
+		return isControlDisplayed(driver, epmxweb.RfqPage.dynamicAttachment, fileName);
+	}
+	
 	private WebDriver driver;
 	private String ipClient;
 }
