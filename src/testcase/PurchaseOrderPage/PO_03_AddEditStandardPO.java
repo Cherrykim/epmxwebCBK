@@ -12,6 +12,7 @@ import page.PageFactory;
 import page.MasterFilesPage;
 import page.POPage;
 import page.AddUserPage;
+import page.ConfigPage;
 import page.LoginPage;
 
 public class PO_03_AddEditStandardPO extends AbstractTest {
@@ -25,11 +26,13 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		masterFilesPage = PageFactory.getMasterFilesPage(DriverManager.getDriver(), ipClient);
 		poPage = PageFactory.getPOPage(DriverManager.getDriver(), ipClient);
 		addUserPage = PageFactory.getAddUserPage(DriverManager.getDriver(), ipClient);
+		configPage = PageFactory.getConfigPage(DriverManager.getDriver(), ipClient);
 		
 		newStandardPO = getUniqueText(7);
 		
 		vendorID1 = "110320161";
 		vendorName1 = "Vendor 1";
+		vendor1 = vendorID1 + " : "+ vendorName1;
 		vendorID2 = "110320162";
 		vendorName2 = "Vendor 2";
 		
@@ -96,72 +99,79 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		unitOfMeasure2 = "um2";
 		um2 = unitOfMeasure2 + " : " +unitOfMeasure2;
 		
+		log.info("Pre-condition - 01: Open the site http://tool.cherry.epmxweb.com/");
+		log.info("Pre-condition - 02: Select Brand: 'master'");
+		log.info("Pre-condition - 03: Choose available MySQL database and get an Username");
+		log.info("Pre-condition - 04: Click on Config button and get default Password");
+		log.info("Pre-condition - 05: Open the site https://cherry.epmxweb.com");
+		configPage.selectBranchAndDatabase(Constant.DefaultValue.CURRENT_BRANCH, Constant.DefaultValue.HSW_DATABASE);
+		
 		log.info("Step Pre-condition - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step Pre-condition - 02: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_HSW, Constant.LoginData.PASSWORD);
 		
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
 		
-//		log.info("Step Pre-condition - 04: Create new Vendor");
-//		masterFilesPage.createNewVendor(vendorID1, vendorName1);
-//		masterFilesPage.createNewVendor(vendorID2, vendorName2);
-//		
-//		log.info("Pre-condition - 05: Create new Buyer");
-//		addUserPage.createNewUserWithRole(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", primaryUserRole);
-//		addUserPage.createNewUserWithRole(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", primaryUserRole2);
-//		
-//		log.info("Step Pre-condition - 05: Create new Bill-to Code");
-//		masterFilesPage.createNewBillToCode(bill1);
-//		masterFilesPage.createNewBillToCode(bill2);
-//		
-//		log.info("Step Pre-condition - 05: Create new Ship-to Code");
-//		masterFilesPage.createNewShipToCode(ship1);
-//		masterFilesPage.createNewShipToCode(ship2);
-//		
-//		log.info("Step Pre-condition - 05: Create new PO Type");
-//		masterFilesPage.createNewPOType(po1);
-//		masterFilesPage.createNewPOType(po2);
-//		
-//		log.info("Step Pre-condition - 04: Create GL Account");
-//		masterFilesPage.createNewGLAccount(glAccountCode1);
-//		masterFilesPage.assignGLAccount(glAccountCode1, Constant.LoginData.USERNAME_NYDOH);
-//		masterFilesPage.createNewGLAccount(glAccountCode2);
-//		masterFilesPage.assignGLAccount(glAccountCode2, Constant.LoginData.USERNAME_NYDOH);
-//		
-//		log.info("Step Pre-condition - 05: Create new Job Code");
-//		masterFilesPage.createNewJobCode(job1);
-//		masterFilesPage.createNewJobCode(job2);
-//		
-//		log.info("Step Pre-condition - 05: Create new Project code");
-//		masterFilesPage.createNewProjectCode(projectCode1);
-//		masterFilesPage.createNewProjectCode(projectCode2);	
-//		
-//		log.info("Step Pre-condition - 04: Create new Terms code");
-//		masterFilesPage.createNewTermsCode(termsCode1);
-//		masterFilesPage.createNewTermsCode(termsCode2);
-//		
-//		log.info("Step Pre-condition - 04: Create Tax Code");
-//		masterFilesPage.createNewTaxCode(taxCode1);
-//		masterFilesPage.createNewTaxCode(taxCode2);
-//		
-//		log.info("Step Pre-condition - 04: Create Special text");
-//		masterFilesPage.createNewSpecialText(text1);
-//		masterFilesPage.createNewSpecialText(text2);
-//		
-//		log.info("Step Pre-condition - 05: Create Item code");
-//		masterFilesPage.createNewItemCode(itemCode1);
-//		masterFilesPage.createNewItemCode(itemCode2);
-//		
-//		log.info("Pre-condition - 06: Create new Vendor");
-//		masterFilesPage.createNewVendor(vendorID1, vendorName1);
-//		masterFilesPage.createNewVendor(vendorID2, vendorName2);
-//		
-//		log.info("Pre-condition - 09: Create Unit of measure");
-//		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
-//		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
+		log.info("Step Pre-condition - 04: Create new Vendor");
+		masterFilesPage.createNewVendor(vendorID1, vendorName1);
+		masterFilesPage.createNewVendor(vendorID2, vendorName2);
 		
-		log.info("Pre-condition - 07: Create new Commodity code");
+		log.info("Step Pre-condition - 05: Create new Buyer");
+		addUserPage.createNewUserWithRole(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", primaryUserRole);
+		addUserPage.createNewUserWithRole(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", primaryUserRole2);
+		
+		log.info("Step Pre-condition - 06: Create new Bill-to Code");
+		masterFilesPage.createNewBillToCode(bill1);
+		masterFilesPage.createNewBillToCode(bill2);
+		
+		log.info("Step Pre-condition - 07: Create new Ship-to Code");
+		masterFilesPage.createNewShipToCode(ship1);
+		masterFilesPage.createNewShipToCode(ship2);
+		
+		log.info("Step Pre-condition - 08: Create new PO Type");
+		masterFilesPage.createNewPOType(po1);
+		masterFilesPage.createNewPOType(po2);
+		
+		log.info("Step Pre-condition - 09: Create GL Account");
+		masterFilesPage.createNewGLAccount(glAccountCode1);
+		masterFilesPage.assignGLAccount(glAccountCode1, Constant.LoginData.USERNAME_HSW);
+		masterFilesPage.createNewGLAccount(glAccountCode2);
+		masterFilesPage.assignGLAccount(glAccountCode2, Constant.LoginData.USERNAME_HSW);
+		
+		log.info("Step Pre-condition - 10: Create new Job Code");
+		masterFilesPage.createNewJobCode(job1);
+		masterFilesPage.createNewJobCode(job2);
+		
+		log.info("Step Pre-condition - 11: Create new Project code");
+		masterFilesPage.createNewProjectCode(projectCode1);
+		masterFilesPage.createNewProjectCode(projectCode2);	
+		
+		log.info("Step Pre-condition - 12: Create new Terms code");
+		masterFilesPage.createNewTermsCode(termsCode1);
+		masterFilesPage.createNewTermsCode(termsCode2);
+		
+		log.info("Step Pre-condition - 13: Create Tax Code");
+		masterFilesPage.createNewTaxCode(taxCode1);
+		masterFilesPage.createNewTaxCode(taxCode2);
+		
+		log.info("Step Pre-condition - 14: Create Special text");
+		masterFilesPage.createNewSpecialText(text1);
+		masterFilesPage.createNewSpecialText(text2);
+		
+		log.info("Step Pre-condition - 15: Create Item code");
+		masterFilesPage.createNewItemCode(itemCode1);
+		masterFilesPage.createNewItemCode(itemCode2);
+		
+		log.info("Step Pre-condition - 16: Create new Vendor");
+		masterFilesPage.createNewVendor(vendorID1, vendorName1);
+		masterFilesPage.createNewVendor(vendorID2, vendorName2);
+		
+		log.info("Step Pre-condition - 17: Create Unit of measure");
+		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
+		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
+		
+		log.info("Step Pre-condition - 18: Create new Commodity code");
 		masterFilesPage.createNewCommodityCode(commodCode1);
 		masterFilesPage.createNewCommodityCode(commodCode2);
 	}
@@ -176,7 +186,7 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONum", newStandardPO);
 		
 		log.info("Step AddEditStandardPO_001 - 03: Input Vendor");
-		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendor1);
 		
 		log.info("Step AddEditStandardPO_001 - 04: Click on Add button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add.gif");
@@ -185,6 +195,7 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BillCode", billToCode1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PPFreight", "Included in Price");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", primaryUserName);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsCode", terms1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PoType", poType1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TaxCode1", taxCode1);
@@ -197,10 +208,9 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode1);
 		
 		log.info("Step AddEditStandardPO_001 - 07: Input all textfields");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ExpDate", "11-11-2016");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DelDate", "11-11-2016");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_FOBpt", "Point 1");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorCont", "Vendor 1");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PoChange", "11");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent1", "11.0000");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent2", "11.0000");
 		
@@ -225,10 +235,10 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.clickOnElementByItsValue(DriverManager.getDriver(), "Save");
 		
 		//Input for Catalogue tab
-		log.info("Step AddEditStandardPO_001 - 18: Open Catalog item tab");
+		log.info("Step AddEditStandardPO_001 - 11: Open Catalog item tab");
 		poPage.openTab(DriverManager.getDriver(), "Catalog Items");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Input all textfields");
+		log.info("Step AddEditStandardPO_001 - 12: Input all textfields");
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Items", itemCode1);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccountLineItem", glAccountCode1);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ProjectLineItem", projectCode1);
@@ -238,39 +248,39 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_EAmt", "100.00");
 		poPage.inputTextareaByID(DriverManager.getDriver(), "txt_Desc", "validtext");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Select all dropdown");
+		log.info("Step AddEditStandardPO_001 - 13: Select all dropdown");
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_CommCode", commodity1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Um", um1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCodeLineItem", shipToCode1);
 		
-		log.info("Step AddEditStandardPO_001 - 18: Click on Add button");
+		log.info("Step AddEditStandardPO_001 - 14: Click on Add button");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_AddItem");
 
 		//Input for P.O. Instructions tab
-		log.info("Step AddEditStandardPO_001 - 18: Open P.O. Instructions tab");
+		log.info("Step AddEditStandardPO_001 - 15: Open P.O. Instructions tab");
 		poPage.openTab(DriverManager.getDriver(), "P.O. Instructions");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Input all textfields");
+		log.info("Step AddEditStandardPO_001 - 16: Input all textfields");
 		poPage.inputTextareaByID(DriverManager.getDriver(), "txt_PoInstructions", "validtext");
 		poPage.inputTextareaByID(DriverManager.getDriver(), "txt_PoIntrNotes", "validtext");
 		
 		//Input for Attachments tab
-		log.info("Step AddEditStandardPO_001 - 18: Open Attachments tab");
+		log.info("Step AddEditStandardPO_001 - 17: Open Attachments tab");
 		poPage.addAttachment("datatest1.pdf");
 		
-		log.info("Step AddEditStandardPO_002 - 11: Click on Save button");
+		log.info("Step AddEditStandardPO_002 - 18: Click on Save button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "chk_UpType1");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_Save");
 		poPage.sleep(3);
 		
-		log.info("Step AddEditStandardPO_001 - 12: Input new Standard PO");
+		log.info("Step AddEditStandardPO_001 - 19: Input new Standard PO");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONum", newStandardPO);
 		
-		log.info("Step AddEditStandardPO_001 - 13: Input Vendor");
-		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
+		log.info("Step AddEditStandardPO_001 - 20: Input Vendor");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendor1);
 		
-		log.info("Step AddEditStandardPO_001 - 14: Click on Modify button");
+		log.info("Step AddEditStandardPO_001 - 21: Click on Modify button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		//Check saved correctly
@@ -279,6 +289,7 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BillCode"), billToCode1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PPFreight"), "Included in Price");
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Buyer"), primaryUserName);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermsCode"), terms1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PoType"), poType1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode1"), taxCode1);
@@ -287,21 +298,20 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		log.info("Step AddEditStandardPO_001 - VP: All textfield is displayed correctly");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_ShipVia"), "FEDEX");
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNum", jobCode1));
-		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_ProjNum", projectCode1));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Project", projectCode1));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAccount", glAccountCode1));
 		
-		log.info("Step AddEditStandardPO_001 - 17: Input all textfields");
-		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_ExpDate"), "11-11-2016");
+		log.info("Step AddEditStandardPO_001 - 22: Input all textfields");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_DelDate"), "11-11-2016");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_FOBpt"), "Point 1");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_VendorCont"), "Vendor 1");
-		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PoChange"), "11");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent1"), "11.0000");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent2"), "11.0000");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Open Addl Head info");
+		log.info("Step AddEditStandardPO_001 - 23: Open Addl Head info");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_AddlHeadInfo");
 		
-		log.info("Step AddEditStandardPO_001 - 19: Input all Addl head info");
+		log.info("Step AddEditStandardPO_001 - 24: Input all Addl head info");
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Req"), primaryUserName);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Exped"), primaryUserName);
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_DiscAmt"), "11.00");
@@ -315,15 +325,15 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText3"), specialText1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText4"), specialText1);
 		
-		log.info("Step AddEditStandardPO_001 - 20: Click on Save button");
+		log.info("Step AddEditStandardPO_001 - 25: Click on Save button");
 		poPage.clickOnElementByItsValue(DriverManager.getDriver(), "Save");
 		
 		//Check for Catalogue tab
-		log.info("Step AddEditStandardPO_001 - 18: Open Catalog item tab");
+		log.info("Step AddEditStandardPO_001 - 26: Open Catalog item tab");
 		poPage.openTab(DriverManager.getDriver(), "Catalog Items");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "img_Edit0");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Input all textfields");
+		log.info("Step AddEditStandardPO_001 - 27: Input all textfields");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_LineItems0"), itemCode1);
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectlyByScript(DriverManager.getDriver(), "div_LineGlAccountLineItem0", glAccountCode1));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectlyByScript(DriverManager.getDriver(), "div_LineProjectLineItem0", projectCode1));
@@ -333,21 +343,21 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_LineEAmt0"), "100.00");
 		verifyEquals(poPage.getTextareaByID(DriverManager.getDriver(), "txt_LineDesc0"), "validtext");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Select all dropdown");
+		log.info("Step AddEditStandardPO_001 - 28: Select all dropdown");
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineCommCode0"), commodity1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineUm0"), um1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineShipCodeLineItem0"), shipToCode1);
 
 		//Check for P.O. Instructions tab
-		log.info("Step AddEditStandardPO_001 - 18: Open P.O. Instructions tab");
+		log.info("Step AddEditStandardPO_001 - 29: Open P.O. Instructions tab");
 		poPage.openTab(DriverManager.getDriver(), "P.O. Instructions");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Input all textfields");
+		log.info("Step AddEditStandardPO_001 - 30: Input all textfields");
 		verifyEquals(poPage.getTextareaByID(DriverManager.getDriver(), "txt_PoInstructions"), "validtext");
 		verifyEquals(poPage.getTextareaByID(DriverManager.getDriver(), "txt_PoIntrNotes"), "validtext");
 		
 		//Check for Attachments tab
-		log.info("Step AddEditStandardPO_001 - 18: Open Attachments tab");
+		log.info("Step AddEditStandardPO_001 - 31: Open Attachments tab");
 		verifyTrue(poPage.isAttachmentDisplayed("datatest1.pdf"));
 	}
 	
@@ -365,34 +375,33 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		log.info("Step AddEditStandardPO_002 - 09: Input new Standard PO");
 		log.info("Step AddEditStandardPO_002 - 10: Click on Modify button");
 		log.info("Step AddEditStandardPO_002 - 11: Select all dropdowns");
-		log.info("Step AddEditStandardPO_001 - 18: Open CBlk Header Info tab");
-		poPage.openTab(DriverManager.getDriver(), "Blk Header Info");
+		log.info("Step AddEditStandardPO_001 - 12: Open CHeader Info tab");
+		poPage.openTab(DriverManager.getDriver(), "Header Info");
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BillCode", billToCode2);
-		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PPFreight", "Pre Paid by Vendor");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", primaryUserName2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsCode", terms2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PoType", poType2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TaxCode1", taxCode2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TaxCode2", taxCode1);
 		
-		log.info("Step AddEditStandardPO_002 - 08: Input all selecter textfield");
+		log.info("Step AddEditStandardPO_002 - 13: Input all selecter textfield");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ShipVia", "DELIVERED VT");
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_JobNum", jobCode2);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Project", projectCode2);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
 		
-		log.info("Step AddEditStandardPO_002 - 09: Input all textfields");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ExpDate", "12-12-2016");
+		log.info("Step AddEditStandardPO_002 - 14: Input all textfields");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DelDate", "12-12-2016");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_FOBpt", "Point 2");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorCont", "Vendor 2");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PoChange", "12");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent1", "12.0000");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent2", "12.0000");
 		
-		log.info("Step AddEditStandardPO_002 - 10: Open Addl Head info");
+		log.info("Step AddEditStandardPO_002 - 15: Open Addl Head info");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_AddlHeadInfo");
 		
-		log.info("Step AddEditStandardPO_002 - 11: Input all Addl head info");
+		log.info("Step AddEditStandardPO_002 - 16: Input all Addl head info");
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Req", primaryUserName2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Exped", primaryUserName2);
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DiscAmt", "12.00");
@@ -406,14 +415,14 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText3", specialText2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText4", specialText2);
 		
-		log.info("Step AddEditStandardPO_002 - 10: Click on Save button");
+		log.info("Step AddEditStandardPO_002 - 17: Click on Save button");
 		poPage.clickOnElementByItsValue(DriverManager.getDriver(), "Save");
 		
 		//Input for Catalogue tab
 		log.info("Step AddEditStandardPO_001 - 18: Open Catalog item tab");
 		poPage.openTab(DriverManager.getDriver(), "Catalog Items");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Input all textfields");
+		log.info("Step AddEditStandardPO_001 - 19: Input all textfields");
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Items", itemCode2);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccountLineItem", glAccountCode2);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ProjectLineItem", projectCode2);
@@ -423,70 +432,69 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_EAmt", "400.00");
 		poPage.inputTextareaByID(DriverManager.getDriver(), "txt_Desc", "validtext2");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Select all dropdown");
+		log.info("Step AddEditStandardPO_001 - 20: Select all dropdown");
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_CommCode", commodity2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Um", um2);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCodeLineItem", shipToCode2);
 		
-		log.info("Step AddEditStandardPO_001 - 18: Click on Add button");
+		log.info("Step AddEditStandardPO_001 - 21: Click on Add button");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_AddItem");
 
 		//Input for P.O. Instructions tab
-		log.info("Step AddEditStandardPO_001 - 18: Open P.O. Instructions tab");
+		log.info("Step AddEditStandardPO_001 - 22: Open P.O. Instructions tab");
 		poPage.openTab(DriverManager.getDriver(), "P.O. Instructions");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Input all textfields");
+		log.info("Step AddEditStandardPO_001 - 23: Input all textfields");
 		poPage.inputTextareaByID(DriverManager.getDriver(), "txt_PoInstructions", "validtext2");
 		poPage.inputTextareaByID(DriverManager.getDriver(), "txt_PoIntrNotes", "validtext2");
 		
 		//Input for Attachments tab
-		log.info("Step AddEditStandardPO_001 - 18: Open Attachments tab");
+		log.info("Step AddEditStandardPO_001 - 24: Open Attachments tab");
 		poPage.addAttachment("datatest2.pdf");
 
-		log.info("Step AddEditStandardPO_002 - 12: Click on Save button");
+		log.info("Step AddEditStandardPO_002 - 25: Click on Save button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "chk_UpType1");
-		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_Save");
+		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_PrintSave");
 		poPage.sleep(3);
 		
-		log.info("Step AddEditStandardPO_002 - 05: Input new Standard PO");
+		log.info("Step AddEditStandardPO_002 - 26: Input new Standard PO");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONum", newStandardPO);
 		
-		log.info("Step AddEditStandardPO_002 - 05: Input Vendor");
-		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
+		log.info("Step AddEditStandardPO_002 - 27: Input Vendor");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendor1);
 		
-		log.info("Step AddEditStandardPO_002 - 10: Click on Modify button");
+		log.info("Step AddEditStandardPO_002 - 28: Click on Modify button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		//Check saved correctly
 		
-		log.info("Step AddEditStandardPO_002 - 07: All dropdowns are displayed correctly");
+		log.info("Step AddEditStandardPO_002 - 29: All dropdowns are displayed correctly");
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BillCode"), billToCode2);
-		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PPFreight"), "Pre Paid by Vendor");
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Buyer"), primaryUserName2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermsCode"), terms2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PoType"), poType2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode1"), taxCode2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode2"), taxCode1);
 		
-		log.info("Step AddEditStandardPO_002 - 08: All selecter textfields are displayed correctly");
+		log.info("Step AddEditStandardPO_002 - 30: All selecter textfields are displayed correctly");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_ShipVia"), "DELIVERED VT");
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNum", jobCode2));
-		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_ProjNum", projectCode2));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Project", projectCode2));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAccount", glAccountCode2));
 		
-		log.info("Step AddEditStandardPO_002 - 09: All textfields are displayed correctly");
-		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_ExpDate"), "12-12-2016");
+		log.info("Step AddEditStandardPO_002 - 31: All textfields are displayed correctly");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_DelDate"), "12-12-2016");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_FOBpt"), "Point 2");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_VendorCont"), "Vendor 2");
-		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PoChange"), "12");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent1"), "12.0000");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent2"), "12.0000");
 		
-		log.info("Step AddEditStandardPO_002 - 10: Open Addl Head info");
+		log.info("Step AddEditStandardPO_002 - 32: Open Addl Head info");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_AddlHeadInfo");
 		
-		log.info("Step AddEditStandardPO_002 - 11: All Addl head info displayed correctly");
+		log.info("Step AddEditStandardPO_002 - 33: All Addl head info displayed correctly");
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Req"), primaryUserName2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Exped"), primaryUserName2);
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_DiscAmt"), "12.00");
@@ -500,15 +508,15 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText3"), specialText2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText4"), specialText2);
 		
-		log.info("Step AddEditStandardPO_001 - 20: Click on Save button");
+		log.info("Step AddEditStandardPO_001 - 34: Click on Save button");
 		poPage.clickOnElementByItsValue(DriverManager.getDriver(), "Save");
 		
 		//Check for Catalogue tab
-		log.info("Step AddEditStandardPO_001 - 18: Open Catalog item tab");
+		log.info("Step AddEditStandardPO_001 - 35: Open Catalog item tab");
 		poPage.openTab(DriverManager.getDriver(), "Catalog Items");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "img_Edit1");
 		
-		log.info("Step AddEditStandardPO_001 - 18: All catalog textfields displayed correctly");
+		log.info("Step AddEditStandardPO_001 - 36: All catalog textfields displayed correctly");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_LineItems1"), itemCode2);
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectlyByScript(DriverManager.getDriver(), "div_LineGlAccountLineItem1", glAccountCode2));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectlyByScript(DriverManager.getDriver(), "div_LineProjectLineItem1", projectCode2));
@@ -518,21 +526,21 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_LineEAmt1"), "400.00");
 		verifyEquals(poPage.getTextareaByID(DriverManager.getDriver(), "txt_LineDesc1"), "validtext2");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Select all dropdown");
+		log.info("Step AddEditStandardPO_001 - 37: Select all dropdown");
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineCommCode1"), commodity2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineUm1"), um2);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineShipCodeLineItem1"), shipToCode2);
 
 		//Check for P.O. Instructions tab
-		log.info("Step AddEditStandardPO_001 - 18: Open P.O. Instructions tab");
+		log.info("Step AddEditStandardPO_001 - 38: Open P.O. Instructions tab");
 		poPage.openTab(DriverManager.getDriver(), "P.O. Instructions");
 		
-		log.info("Step AddEditStandardPO_001 - 18: Input all textfields");
+		log.info("Step AddEditStandardPO_001 - 39: Input all textfields");
 		verifyEquals(poPage.getTextareaByID(DriverManager.getDriver(), "txt_PoInstructions"), "validtext2");
 		verifyEquals(poPage.getTextareaByID(DriverManager.getDriver(), "txt_PoIntrNotes"), "validtext2");
 		
 		//Check for Attachments tab
-		log.info("Step AddEditStandardPO_001 - 18: Open Attachments tab");
+		log.info("Step AddEditStandardPO_001 - 40: Open Attachments tab");
 		verifyTrue(poPage.isAttachmentDisplayed("datatest2.pdf"));
 	}
 	
@@ -549,10 +557,10 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		log.info("Step AddEditStandardPO_003 - 08: Click on Save button");
 		log.info("Step AddEditStandardPO_003 - 09: Input new Standard PO");
 		log.info("Step AddEditStandardPO_003 - 10: Click on Void button");
-		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "void.gif");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "void.gif");
 		
 		log.info("Step AddEditStandardPO_003 - 11: Accept alert");
-		masterFilesPage.acceptAlert(DriverManager.getDriver());
+		poPage.acceptAlert(DriverManager.getDriver());
 		
 		log.info("Step AddEditStandardPO_001 - 01: Open Add Standard PO page");
 		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/add_standard_po.php");
@@ -561,13 +569,10 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONum", newStandardPO);
 		
 		log.info("Step AddEditStandardPO_003 - 13: Input Vendor");
-		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
-		
-		log.info("Step AddEditStandardPO_003 - 14: Click on Modify button");
-		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendor1);
 		
 		log.info("VP: Standard PO is voidd");
-		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "This Standard P.O. has been voided. Press OK to reactivate or Cancel to view record only.");
+		verifyEquals(poPage.getAlertText(DriverManager.getDriver()), "This P.O. has been voided. Press OK to reactivate or Cancel to view record only.");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check REactivate Standard PO works")
@@ -587,10 +592,10 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		log.info("Step AddEditStandardPO_004 - 12: Input new Standard PO");
 		log.info("Step AddEditStandardPO_004 - 13: Click on Modify button");
 		log.info("Step AddEditStandardPO_004 - 14: Accept alert");
-		masterFilesPage.acceptAlert(DriverManager.getDriver());
+		poPage.acceptAlert(DriverManager.getDriver());
 		
 		log.info("VP: Save button is clickable");
-		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
+		verifyEquals(poPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Standard PO code by Standard PO date works")
@@ -636,7 +641,7 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
 		
 		log.info("Step AddEditStandardPO_006 - 11: Select Receiver");
-		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", "Tammi Stock");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", primaryUserName2);
 		
 		log.info("Step AddEditStandardPO_006 - 12: Click on Search button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -663,7 +668,7 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
 		
 		log.info("Step AddEditStandardPO_007 - 11: Input Keyword");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Keyword", "Item 2");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Keyword", "validtext");
 		
 		log.info("Step AddEditStandardPO_007 - 12: Click on Search button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -693,13 +698,13 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
 		
 		log.info("Step AddEditStandardPO_008 - 11: Select Corporation");
-		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "Wadsworth Center");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "HIGHBRIDGE SPRINGS");
 		
 		log.info("Step AddEditStandardPO_008 - 12: Click on Search button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
 		
 		log.info("VP: Standard PO code displayed correctly");
-		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newStandardPO, "Wadsworth Center"));
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newStandardPO, "HIGHBRIDGE SPRINGS"));
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Standard PO code by Job number works")
@@ -747,7 +752,7 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
 		
 		log.info("Step AddEditStandardPO_010 - 11: Input Vendor name");
-		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendorName1);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendor1);
 		
 		log.info("Step AddEditStandardPO_010 - 12: Click on Search button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -801,7 +806,7 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
 		
 		log.info("Step AddEditStandardPO_012 - 11: Input Standard PO status");
-		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_POStatus", "P.O.s On Hold");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_POStatus", "Open");
 		
 		log.info("Step AddEditStandardPO_012 - 12: Click on Search button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -875,7 +880,7 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		
 		log.info("Step AddEditStandardPO_015 - 05: Input new Standard PO");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONum", newStandardPO);
-		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendor1);
 		
 		log.info("Step AddEditStandardPO_015 - 06: Click on Add button");
 		log.info("Step AddEditStandardPO_015 - 07: Input Description");
@@ -891,7 +896,7 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONum", newStandardPO);
 		
 		log.info("Step AddEditStandardPO_015 - 12: Input Vendor");
-		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendor1);
 		
 		log.info("Step AddEditStandardPO_015 - 13: Click on Modify button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
@@ -902,6 +907,8 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
+		log.info("Post-condition - 01: Return database to default");
+		configPage.selectBranchAndDatabase(Constant.DefaultValue.CURRENT_BRANCH, Constant.DefaultValue.CURRENT_DATABASE);
 		closeBrowser();
 	}
 
@@ -909,6 +916,7 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 	private MasterFilesPage masterFilesPage;
 	private POPage poPage;
 	private AddUserPage addUserPage;
+	private ConfigPage configPage;
 	private String newStandardPO;
 	private String bill1, bill2, billToCode1, billToCode2, ship1, ship2, shipToCode1, shipToCode2, vendorID1, vendorName1, vendorID2, vendorName2;
 	private String po1, po2, poType1, poType2;
@@ -924,4 +932,5 @@ public class PO_03_AddEditStandardPO extends AbstractTest {
 	private String orderDate;
 	private String commodCode1, commodCode2, commodity1, commodity2;
 	private String unitOfMeasure1, unitOfMeasure2, um1, um2;
+	private String vendor1;
 }

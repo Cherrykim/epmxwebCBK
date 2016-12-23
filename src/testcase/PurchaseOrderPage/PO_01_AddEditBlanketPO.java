@@ -103,63 +103,63 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
 		
-//		log.info("Step Pre-condition - 04: Create new Vendor");
-//		masterFilesPage.createNewVendor(vendorID1, vendorName1);
-//		masterFilesPage.createNewVendor(vendorID2, vendorName2);
-//		
-//		log.info("Pre-condition - 05: Create new Buyer");
-//		addUserPage.createNewUserWithRole(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", primaryUserRole);
-//		addUserPage.createNewUserWithRole(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", primaryUserRole2);
-//		
-//		log.info("Step Pre-condition - 05: Create new Bill-to Code");
-//		masterFilesPage.createNewBillToCode(bill1);
-//		masterFilesPage.createNewBillToCode(bill2);
-//		
-//		log.info("Step Pre-condition - 05: Create new Ship-to Code");
-//		masterFilesPage.createNewShipToCode(ship1);
-//		masterFilesPage.createNewShipToCode(ship2);
-//		
-//		log.info("Step Pre-condition - 05: Create new PO Type");
-//		masterFilesPage.createNewPOType(po1);
-//		masterFilesPage.createNewPOType(po2);
-//		
-//		log.info("Step Pre-condition - 04: Create GL Account");
-//		masterFilesPage.createNewGLAccount(glAccountCode1);
-//		masterFilesPage.assignGLAccount(glAccountCode1, Constant.LoginData.USERNAME_NYDOH);
-//		masterFilesPage.createNewGLAccount(glAccountCode2);
-//		masterFilesPage.assignGLAccount(glAccountCode2, Constant.LoginData.USERNAME_NYDOH);
-//		
-//		log.info("Step Pre-condition - 05: Create new Job Code");
-//		masterFilesPage.createNewJobCode(job1);
-//		masterFilesPage.createNewJobCode(job2);
-//		
-//		log.info("Step Pre-condition - 05: Create new Project code");
-//		masterFilesPage.createNewProjectCode(projectCode1);
-//		masterFilesPage.createNewProjectCode(projectCode2);	
-//		
-//		log.info("Step Pre-condition - 04: Create new Terms code");
-//		masterFilesPage.createNewTermsCode(termsCode1);
-//		masterFilesPage.createNewTermsCode(termsCode2);
-//		
-//		log.info("Step Pre-condition - 04: Create Tax Code");
-//		masterFilesPage.createNewTaxCode(taxCode1);
-//		masterFilesPage.createNewTaxCode(taxCode2);
-//		
-//		log.info("Step Pre-condition - 04: Create Special text");
-//		masterFilesPage.createNewSpecialText(text1);
-//		masterFilesPage.createNewSpecialText(text2);
-//		
-//		log.info("Step Pre-condition - 05: Create Item code");
-//		masterFilesPage.createNewItemCode(itemCode1);
-//		masterFilesPage.createNewItemCode(itemCode2);
-//		
-//		log.info("Pre-condition - 06: Create new Vendor");
-//		masterFilesPage.createNewVendor(vendorID1, vendorName1);
-//		masterFilesPage.createNewVendor(vendorID2, vendorName2);
-//		
-//		log.info("Pre-condition - 09: Create Unit of measure");
-//		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
-//		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
+		log.info("Step Pre-condition - 04: Create new Vendor");
+		masterFilesPage.createNewVendor(vendorID1, vendorName1);
+		masterFilesPage.createNewVendor(vendorID2, vendorName2);
+		
+		log.info("Pre-condition - 05: Create new Buyer");
+		addUserPage.createNewUserWithRole(primaryBuyerID, primaryBuyerFirstName, primaryBuyerLastName, "qa1@mailinator.com", primaryUserRole);
+		addUserPage.createNewUserWithRole(primaryBuyerID2, primaryBuyerFirstName2, primaryBuyerLastName2, "qa1@mailinator.com", primaryUserRole2);
+		
+		log.info("Step Pre-condition - 05: Create new Bill-to Code");
+		masterFilesPage.createNewBillToCode(bill1);
+		masterFilesPage.createNewBillToCode(bill2);
+		
+		log.info("Step Pre-condition - 05: Create new Ship-to Code");
+		masterFilesPage.createNewShipToCode(ship1);
+		masterFilesPage.createNewShipToCode(ship2);
+		
+		log.info("Step Pre-condition - 05: Create new PO Type");
+		masterFilesPage.createNewPOType(po1);
+		masterFilesPage.createNewPOType(po2);
+		
+		log.info("Step Pre-condition - 04: Create GL Account");
+		masterFilesPage.createNewGLAccount(glAccountCode1);
+		masterFilesPage.assignGLAccount(glAccountCode1, Constant.LoginData.USERNAME_NYDOH);
+		masterFilesPage.createNewGLAccount(glAccountCode2);
+		masterFilesPage.assignGLAccount(glAccountCode2, Constant.LoginData.USERNAME_NYDOH);
+		
+		log.info("Step Pre-condition - 05: Create new Job Code");
+		masterFilesPage.createNewJobCode(job1);
+		masterFilesPage.createNewJobCode(job2);
+		
+		log.info("Step Pre-condition - 05: Create new Project code");
+		masterFilesPage.createNewProjectCode(projectCode1);
+		masterFilesPage.createNewProjectCode(projectCode2);	
+		
+		log.info("Step Pre-condition - 04: Create new Terms code");
+		masterFilesPage.createNewTermsCode(termsCode1);
+		masterFilesPage.createNewTermsCode(termsCode2);
+		
+		log.info("Step Pre-condition - 04: Create Tax Code");
+		masterFilesPage.createNewTaxCode(taxCode1);
+		masterFilesPage.createNewTaxCode(taxCode2);
+		
+		log.info("Step Pre-condition - 04: Create Special text");
+		masterFilesPage.createNewSpecialText(text1);
+		masterFilesPage.createNewSpecialText(text2);
+		
+		log.info("Step Pre-condition - 05: Create Item code");
+		masterFilesPage.createNewItemCode(itemCode1);
+		masterFilesPage.createNewItemCode(itemCode2);
+		
+		log.info("Pre-condition - 06: Create new Vendor");
+		masterFilesPage.createNewVendor(vendorID1, vendorName1);
+		masterFilesPage.createNewVendor(vendorID2, vendorName2);
+		
+		log.info("Pre-condition - 09: Create Unit of measure");
+		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure1);
+		masterFilesPage.createNewUnitOfMeasure(unitOfMeasure2);
 		
 		log.info("Pre-condition - 07: Create new Commodity code");
 		masterFilesPage.createNewCommodityCode(commodCode1);
@@ -663,7 +663,7 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
 		
 		log.info("Step AddEditBlanketPO_007 - 11: Input Keyword");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Keyword", "Item 2");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Keyword", "validtext");
 		
 		log.info("Step AddEditBlanketPO_007 - 12: Click on Search button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
@@ -801,7 +801,7 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
 		
 		log.info("Step AddEditBlanketPO_012 - 11: Input Blanket PO status");
-		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_POStatus", "P.O.s On Hold");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_POStatus", "Open");
 		
 		log.info("Step AddEditBlanketPO_012 - 12: Click on Search button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");

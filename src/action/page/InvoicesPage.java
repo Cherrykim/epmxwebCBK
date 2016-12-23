@@ -11,9 +11,6 @@ public class InvoicesPage extends AbstractPage {
 	}
 
 	// ==============================Action Methods===========================//
-	public boolean isWelcomeMessageDisplayed(){
-		return getText(driver, epmxweb.MainPage.welcomeMessage).contains("Welcome");
-	}
 	
 	private WebDriver driver;
 	private String ipClient;
