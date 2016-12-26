@@ -504,6 +504,31 @@ public class MasterFilesPage extends AbstractPage {
 		return result;
 	}
 	
+	public void createNewBatchNumber(String number){
+		openLink(driver, "https://cherry.epmxweb.com/invoice/add_batch_info.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_BatchNum", number);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
+	public void createNew1099Code(String number){
+		openLink(driver, "https://cherry.epmxweb.com/master_files/add_1099_code.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_1099Code", number);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextfieldByID(DriverManager.getDriver(), "txt_Description", number);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
 	private WebDriver driver;
 	private String ipClient;
 }

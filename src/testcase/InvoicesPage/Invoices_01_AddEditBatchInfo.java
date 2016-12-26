@@ -179,7 +179,7 @@ public class Invoices_01_AddEditBatchInfo extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
 		
 		log.info("VP: Batch info displayed correctly");
-		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBatchInfo, "Tammy Stock"));
+		verifyTrue(masterFilesPage.isResultTableContainsRecord(DriverManager.getDriver(), newBatchInfo, "Tammi Stock"));
 	}
 	
 	@Test(groups = { "regression" }, description = "Check Delete Batch Info works")
