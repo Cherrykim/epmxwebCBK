@@ -1,5 +1,6 @@
 package InvoicesPage;
 
+import org.openqa.selenium.remote.server.handler.ClickElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -26,7 +27,7 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		poPage = PageFactory.getPOPage(DriverManager.getDriver(), ipClient);
 		addUserPage = PageFactory.getAddUserPage(DriverManager.getDriver(), ipClient);
 		
-		newVoucherNumber = getUniqueText(6);
+		newVoucherNumber = getUniqueNumber(6);
 		
 		vendorID1 = "110320161";
 		vendorName1 = "Vendor 1";
@@ -100,7 +101,9 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		batchNumber2 = "batN2";
 		
 		_1099Code1 = "1099Cod1";
+		code1 = _1099Code1  + " : " + _1099Code1;
 		_1099Code2 = "1099Cod1";
+		code2 = _1099Code2  + " : " + _1099Code2;
 		
 		bankCode1 = "te1";
 		bank1 = bankCode1+ " : "+bankCode1;
@@ -201,43 +204,42 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		log.info("Step AddEditInvoiceEntry_001 - 04: Click on Add button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add.gif");
 		
-		log.info("Step AddEditInvoiceEntry_001 - 05: Select all dropdowns");
+		log.info("Step AddEditInvoiceEntry_001 - 05: Input all selecter textfield");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
+		
+		log.info("Step AddEditInvoiceEntry_001 - 06: Select all dropdowns");
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BatchNumber", batchNumber1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsCode", terms1);
+		poPage.acceptAlert(DriverManager.getDriver());
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TaxCode", taxCode1);
-		
-		log.info("Step AddEditInvoiceEntry_001 - 06: Input all selecter textfield");
-		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_PoNum", projectCode1);
-		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
-		
-		log.info("Step AddEditInvoiceEntry_001 - 07: Input all textfields");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent", "11.00");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DiscAmt", "11.00");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DiscDate", "11-11-2020");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InvoiceNum", "11");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InvoiceDate", "11-11-2020");
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_NetDate", "11-11-2020");
 		
 		log.info("Step AddEditInvoiceEntry_001 - 18: Input line item");
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineItem0", itemCode1);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineGlAccountItem0", glAccountCode1);
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VItem0", vendorName1);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_JobNumLineItem0", jobCode1);
-		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Um0", unitOfMeasure1);
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Um0", um1);
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Qty0", "11.0000");
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_NetAmt0", "11.00");
 		poPage.inputTextareaByID(DriverManager.getDriver(), "txt_Desc10", "validtext");
 		
-		log.info("Step AddEditInvoiceEntry_001 - 08: Open Addl Head info");
-		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btnAddlHeadInfo");
+		log.info("Step AddEditInvoiceEntry_001 - 07: Input all textfields");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InvoiceNum", newVoucherNumber);
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InvoiceDate", "11-11-2020");
+		poPage.clickOnElementByItsID(DriverManager.getDriver(), "txt_NetDate");
+		poPage.acceptAlert(DriverManager.getDriver());
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent", "11.00");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DiscDate", "11-11-2020");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_NetDate", "11-11-2020");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DiscAmt", "11.00");
 		
 		//Input for Addl Header Info tab
 		log.info("Step AddEditInvoiceEntry_001 - 18: Open Addl Header Info tab");
 		poPage.openTab(DriverManager.getDriver(), "Addl Header Info");
 		
 		log.info("Step AddEditInvoiceEntry_001 - 05: Select all dropdowns");
-		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_1099Code", _1099Code1);
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_1099Code", code1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PaymentType", "Bank Draft");
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BankCode", bank1);
 		
@@ -269,9 +271,7 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		poPage.addAttachment("datatest1.pdf");
 		
 		log.info("Step AddEditInvoiceEntry_002 - 11: Click on Save button");
-		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
-		poPage.clickOnElementByItsID(DriverManager.getDriver(), "chk_UpType1");
-		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_Save");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save.gif");
 		poPage.sleep(3);
 		
 		log.info("Step AddEditInvoiceEntry_001 - 02: Input new Invoice Entry");
@@ -280,32 +280,6 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		log.info("Step AddEditInvoiceEntry_001 - 14: Click on Modify button");
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		//Check saved correctly
-		
-		log.info("Step AddEditInvoiceEntry_001 - VP: All dropdown displayed correctly");
-		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode1);
-		
-		log.info("Step AddEditInvoiceEntry_001 - VP: All textfield is displayed correctly");
-		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_ShipVia"), "FEDEX");
-		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNum", jobCode1));
-		
-		log.info("Step AddEditInvoiceEntry_001 - 17: Input all textfields");
-		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_ExpDate"), "11-11-2016");
-		
-		log.info("Step AddEditInvoiceEntry_001 - 18: Open Addl Head info");
-		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_AddlHeadInfo");
-		
-		
-		//Check for Catalogue tab
-		log.info("Step AddEditInvoiceEntry_001 - 18: Open Catalog item tab");
-		poPage.openTab(DriverManager.getDriver(), "Catalog Items");
-		poPage.clickOnElementByItsID(DriverManager.getDriver(), "img_Edit0");
-		
-		log.info("Step AddEditInvoiceEntry_001 - 18: Input all textfields");
-		verifyEquals(poPage.getTextareaByID(DriverManager.getDriver(), "txt_LineDesc0"), "validtext");
-		
-		
-		
 		log.info("Step AddEditInvoiceEntry_001 - 05: Select all dropdowns");
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BatchNumber"), batchNumber1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode1);
@@ -313,14 +287,13 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode"), taxCode1);
 		
 		log.info("Step AddEditInvoiceEntry_001 - 06: Input all selecter textfield");
-		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_PoNum", projectCode1));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Vendor", vendorName1));
 		
 		log.info("Step AddEditInvoiceEntry_001 - 07: Input all textfields");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent"), "11.00");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_DiscAmt"), "11.00");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_DiscDate"), "11-11-2020");
-		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_InvoiceNum"), "11");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_InvoiceNum"), newVoucherNumber);
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_InvoiceDate"), "11-11-2020");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_NetDate"), "11-11-2020");
 		
@@ -328,30 +301,27 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "obj_LineItem0", itemCode1));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_LineGlAccountLineItem0", glAccountCode1));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNumLineItem0", jobCode1));
-		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Um0"), unitOfMeasure1);
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Um0"), um1);
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_VItem0"), vendorName1);
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_Qty0"), "11.0000");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_NetAmt0"), "11.00");
 		verifyEquals(poPage.getTextareaByID(DriverManager.getDriver(), "txt_Desc10"), "validtext");
-		
-		log.info("Step AddEditInvoiceEntry_001 - 08: Open Addl Head info");
-		poPage.clickOnElementByItsID(DriverManager.getDriver(), "btnAddlHeadInfo");
 		
 		//Input for Addl Header Info tab
 		log.info("Step AddEditInvoiceEntry_001 - 18: Open Addl Header Info tab");
 		poPage.openTab(DriverManager.getDriver(), "Addl Header Info");
 		
 		log.info("Step AddEditInvoiceEntry_001 - 05: Select all dropdowns");
-		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_1099Code"), _1099Code1);
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_1099Code"), code1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PaymentType"), "Bank Draft");
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BankCode"), bank1);
 		
 		log.info("Step AddEditInvoiceEntry_001 - 06: Input all selecter textfield");
-		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AltPayee", vendorName1));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AltVendor", vendorName1));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_InvAccount", glAccountCode1));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_DiscAccount", glAccountCode1));
 		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_TaxAccount", glAccountCode1));
-		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_FreightAccount", glAccountCode1));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_FrtAccount", glAccountCode1));
 		
 		log.info("Step AddEditInvoiceEntry_001 - 07: Input all textfields");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_1099Amt"), "11.00");
@@ -363,7 +333,7 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PaymentRef"), "validtext");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PaymentDate"), "11-11-2020");
-		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PaymentAmount"), "11");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PaymentAmount"), "11.00");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_ChkDesc"), "11");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_RptPmntStartDate"), "11-11-2020");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_RptPmntTotalNoOfPmnts"), "11");
@@ -374,28 +344,160 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		verifyTrue(poPage.isAttachmentDisplayed("datatest1.pdf"));
 	}
 	
-//	@Test(groups = { "regression" }, description = "Check Add Invoice Entry works")
-//	public void AddEditInvoiceEntry_002_CheckEditInvoiceEntryWorks() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_002 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_002 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_002 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_002 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_002 - 05: Input new Invoice Entry");
-//		log.info("Step AddEditInvoiceEntry_002 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_002 - 07: Input Description");
-//		log.info("Step AddEditInvoiceEntry_002 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_002 - 09: Input new Invoice Entry");
-//		log.info("Step AddEditInvoiceEntry_002 - 10: Click on Modify button");
-//		log.info("Step AddEditInvoiceEntry_002 - 11: Select all dropdowns");
-//		log.info("Step AddEditInvoiceEntry_001 - 18: Open CBlk Header Info tab");
-//		poPage.openTab(DriverManager.getDriver(), "Blk Header Info");
-//		
-//		//Check for Attachments tab
-//		log.info("Step AddEditInvoiceEntry_001 - 18: Open Attachments tab");
-//		verifyTrue(poPage.isAttachmentDisplayed("datatest2.pdf"));
-//	}
-//	
+	@Test(groups = { "regression" }, description = "Check Add Invoice Entry works")
+	public void AddEditInvoiceEntry_002_CheckEditInvoiceEntryWorks() {	
+		
+		log.info("Step AddEditInvoiceEntry_002 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditInvoiceEntry_002 - 02: Input correct username and password");
+		log.info("Step AddEditInvoiceEntry_002 - 03: Accept Alert message");
+		log.info("Step AddEditInvoiceEntry_002 - 04: Open Add Invoice Entry page");
+		log.info("Step AddEditInvoiceEntry_002 - 05: Input new Invoice Entry");
+		log.info("Step AddEditInvoiceEntry_002 - 06: Click on Add button");
+		log.info("Step AddEditInvoiceEntry_002 - 07: Input Description");
+		log.info("Step AddEditInvoiceEntry_002 - 08: Click on Save button");
+		log.info("Step AddEditInvoiceEntry_002 - 09: Input new Invoice Entry");
+		log.info("Step AddEditInvoiceEntry_002 - 10: Click on Modify button");
+		log.info("Step AddEditInvoiceEntry_002 - 11: Select all dropdowns");
+		log.info("Step AddEditInvoiceEntry_001 - 18: Open Header / Line Info tab");
+		poPage.openTab(DriverManager.getDriver(), "Header / Line Info");
+		
+		log.info("Step AddEditInvoiceEntry_001 - 05: Input all selecter textfield");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName2);
+		
+		log.info("Step AddEditInvoiceEntry_001 - 06: Select all dropdowns");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsCode", terms2);
+		poPage.acceptAlert(DriverManager.getDriver());
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TaxCode", taxCode2);
+		
+		log.info("Step AddEditInvoiceEntry_001 - 18: Input line item");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineItem1", itemCode2);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineGlAccountItem1", glAccountCode2);
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VItem1", vendorName2);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_JobNumLineItem1", jobCode2);
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Um1", um2);
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Qty1", "12.0000");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_NetAmt1", "12.00");
+		poPage.inputTextareaByID(DriverManager.getDriver(), "txt_Desc11", "validtext2");
+		
+		log.info("Step AddEditInvoiceEntry_001 - 07: Input all textfields");
+		newVoucherNumber = newVoucherNumber+"new";
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InvoiceNum", newVoucherNumber);
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InvoiceDate", "12-12-2020");
+		poPage.clickOnElementByItsID(DriverManager.getDriver(), "txt_NetDate");
+		poPage.acceptAlert(DriverManager.getDriver());
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent", "12.00");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DiscDate", "12-12-2020");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_NetDate", "12-12-2020");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DiscAmt", "12.00");
+		
+		//Input for Addl Header Info tab
+		log.info("Step AddEditInvoiceEntry_001 - 18: Open Addl Header Info tab");
+		poPage.openTab(DriverManager.getDriver(), "Addl Header Info");
+		
+		log.info("Step AddEditInvoiceEntry_001 - 05: Select all dropdowns");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_1099Code", code2);
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PaymentType", "Check");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BankCode", bank2);
+		
+		log.info("Step AddEditInvoiceEntry_001 - 06: Input all selecter textfield");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AltPayee", vendorName2);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_InvAccount", glAccountCode2);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_DiscAccount", glAccountCode2);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_TaxAccount", glAccountCode2);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_FreightAccount", glAccountCode2);
+		
+		log.info("Step AddEditInvoiceEntry_001 - 07: Input all textfields");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_1099Amt", "12.00");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PrepaidChkNum", "12");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PrepaidChkDate", "12-12-2020");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PaymentDesc", "validtext2");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AccPeriod", "02/2020");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_HoldCode", "12");
+		
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PaymentRef", "validtext2");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PaymentDate", "12-12-2020");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PaymentAmount", "12");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ChkDesc", "12");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RptPmntStartDate", "12-12-2020");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RptPmntTotalNoOfPmnts", "12");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RptPmntPerYr", "12");
+		
+		//Input for Attachments tab
+		log.info("Step AddEditInvoiceEntry_001 - 18: Add Attachment");
+		poPage.addAttachment("datatest2.pdf");
+		
+		log.info("Step AddEditInvoiceEntry_002 - 11: Click on Save button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save.gif");
+		poPage.sleep(3);
+		
+		log.info("Step AddEditInvoiceEntry_001 - 02: Input new Invoice Entry");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VoucherNum", newVoucherNumber);
+		
+		log.info("Step AddEditInvoiceEntry_001 - 14: Click on Modify button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		
+		log.info("Step AddEditInvoiceEntry_001 - 05: Select all dropdowns");
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermsCode"), terms2);
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode"), taxCode2);
+		
+		log.info("Step AddEditInvoiceEntry_001 - 06: Input all selecter textfield");
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Vendor", vendorName1));
+		
+		log.info("Step AddEditInvoiceEntry_001 - 07: Input all textfields");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent"), "12.00");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_DiscAmt"), "12.00");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_DiscDate"), "12-12-2020");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_InvoiceNum"), newVoucherNumber);
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_InvoiceDate"), "12-12-2020");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_NetDate"), "12-12-2020");
+		
+		log.info("Step AddEditInvoiceEntry_001 - 18: Input line item");
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "obj_LineItem1", itemCode2));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_LineGlAccountLineItem1", glAccountCode2));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNumLineItem1", jobCode2));
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Um1"), um2);
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_VItem1"), vendorName2);
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_Qty1"), "12.0000");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_NetAmt1"), "12.00");
+		verifyEquals(poPage.getTextareaByID(DriverManager.getDriver(), "txt_Desc11"), "validtext2");
+		
+		//Input for Addl Header Info tab
+		log.info("Step AddEditInvoiceEntry_001 - 18: Open Addl Header Info tab");
+		poPage.openTab(DriverManager.getDriver(), "Addl Header Info");
+		
+		log.info("Step AddEditInvoiceEntry_001 - 05: Select all dropdowns");
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_1099Code"), code2);
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PaymentType"), "Check");
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BankCode"), bank2);
+		
+		log.info("Step AddEditInvoiceEntry_001 - 06: Input all selecter textfield");
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AltVendor", vendorName2));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_InvAccount", glAccountCode2));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_DiscAccount", glAccountCode2));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_TaxAccount", glAccountCode2));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_FrtAccount", glAccountCode2));
+		
+		log.info("Step AddEditInvoiceEntry_001 - 07: Input all textfields");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_1099Amt"), "12.00");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PrepaidChkNum"), "12");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PrepaidChkDate"), "12-12-2020");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PaymentDesc"), "validtext");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_AccPeriod"), "02/2020");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_HoldCode"), "12");
+		
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PaymentRef"), "validtext2");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PaymentDate"), "12-12-2020");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PaymentAmount"), "12.00");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_ChkDesc"), "12");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_RptPmntStartDate"), "12-12-2020");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_RptPmntTotalNoOfPmnts"), "12");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_RptPmntPerYr"), "12");
+		
+		//Check for Attachments tab
+		log.info("Step AddEditInvoiceEntry_001 - 18: Open Attachments tab");
+		verifyTrue(poPage.isAttachmentDisplayed("datatest2.pdf"));
+	}
+	
 //	@Test(groups = { "regression" }, description = "Check Void Invoice Entry works")
 //	public void AddEditInvoiceEntry_003_CheckVoidInvoiceEntryWorks() {	
 //		
@@ -784,6 +886,6 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 	private String orderDate;
 	private String commodCode1, commodCode2, commodity1, commodity2;
 	private String unitOfMeasure1, unitOfMeasure2, um1, um2;
-	private String batchNumber1, batchNumber2, _1099Code1, _1099Code2;
+	private String batchNumber1, batchNumber2, _1099Code1, _1099Code2, code1, code2;
 	private String bank1, bank2, bankCode1, bankCode2;
 }
