@@ -97,8 +97,7 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		unitOfMeasure2 = "um2";
 		um2 = unitOfMeasure2 + " : " +unitOfMeasure2;
 		
-		batchNumber1 = "batN1";
-		batchNumber2 = "batN2";
+		batchNumber =getUniqueText(5);
 		
 		_1099Code1 = "1099Cod1";
 		code1 = _1099Code1  + " : " + _1099Code1;
@@ -179,9 +178,8 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 //		masterFilesPage.createNewCommodityCode(commodCode1);
 //		masterFilesPage.createNewCommodityCode(commodCode2);
 //		
-//		log.info("Pre-condition - 07: Create new Batch number");
-//		masterFilesPage.createNewBatchNumber(batchNumber1);
-//		masterFilesPage.createNewBatchNumber(batchNumber2);
+		log.info("Pre-condition - 07: Create new Batch number");
+		masterFilesPage.createNewBatchNumber(batchNumber);
 //		
 //		log.info("Pre-condition - 07: Create new 1099 code");
 //		masterFilesPage.createNew1099Code(_1099Code1);
@@ -208,7 +206,7 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
 		
 		log.info("Step AddEditInvoiceEntry_001 - 06: Select all dropdowns");
-		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BatchNumber", batchNumber1);
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BatchNumber", batchNumber);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode1);
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_TermsCode", terms1);
 		poPage.acceptAlert(DriverManager.getDriver());
@@ -281,7 +279,7 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("Step AddEditInvoiceEntry_001 - 05: Select all dropdowns");
-		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BatchNumber"), batchNumber1);
+		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_BatchNumber"), batchNumber);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TermsCode"), terms1);
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode"), taxCode1);
@@ -380,8 +378,8 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		poPage.inputTextareaByID(DriverManager.getDriver(), "txt_Desc11", "validtext2");
 		
 		log.info("Step AddEditInvoiceEntry_001 - 07: Input all textfields");
-		newVoucherNumber = newVoucherNumber+"new";
-		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InvoiceNum", newVoucherNumber);
+		newVoucherNumberNew = newVoucherNumber+"new";
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InvoiceNum", newVoucherNumberNew);
 		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InvoiceDate", "12-12-2020");
 		poPage.clickOnElementByItsID(DriverManager.getDriver(), "txt_NetDate");
 		poPage.acceptAlert(DriverManager.getDriver());
@@ -400,7 +398,7 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BankCode", bank2);
 		
 		log.info("Step AddEditInvoiceEntry_001 - 06: Input all selecter textfield");
-		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AltPayee", vendorName2);
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AltVendor", vendorName2);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_InvAccount", glAccountCode2);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_DiscAccount", glAccountCode2);
 		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_TaxAccount", glAccountCode2);
@@ -441,13 +439,13 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		verifyEquals(poPage.getSelectedItemByID(DriverManager.getDriver(), "sel_TaxCode"), taxCode2);
 		
 		log.info("Step AddEditInvoiceEntry_001 - 06: Input all selecter textfield");
-		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Vendor", vendorName1));
+		verifyTrue(poPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Vendor", vendorName2));
 		
 		log.info("Step AddEditInvoiceEntry_001 - 07: Input all textfields");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_TaxPercent"), "12.00");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_DiscAmt"), "12.00");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_DiscDate"), "12-12-2020");
-		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_InvoiceNum"), newVoucherNumber);
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_InvoiceNum"), newVoucherNumberNew);
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_InvoiceDate"), "12-12-2020");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_NetDate"), "12-12-2020");
 		
@@ -481,7 +479,7 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_1099Amt"), "12.00");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PrepaidChkNum"), "12");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PrepaidChkDate"), "12-12-2020");
-		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PaymentDesc"), "validtext");
+		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_PaymentDesc"), "validtext2");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_AccPeriod"), "02/2020");
 		verifyEquals(poPage.getTextfieldByID(DriverManager.getDriver(), "txt_HoldCode"), "12");
 		
@@ -498,226 +496,142 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		verifyTrue(poPage.isAttachmentDisplayed("datatest2.pdf"));
 	}
 	
-//	@Test(groups = { "regression" }, description = "Check Void Invoice Entry works")
-//	public void AddEditInvoiceEntry_003_CheckVoidInvoiceEntryWorks() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_003 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_003 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_003 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_003 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_003 - 05: Input new Invoice Entry");
-//		log.info("Step AddEditInvoiceEntry_003 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_003 - 07: Input Description");
-//		log.info("Step AddEditInvoiceEntry_003 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_003 - 09: Input new Invoice Entry");
-//		log.info("Step AddEditInvoiceEntry_003 - 10: Click on Void button");
-//		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "void.gif");
-//		
-//		log.info("Step AddEditInvoiceEntry_003 - 11: Accept alert");
-//		masterFilesPage.acceptAlert(DriverManager.getDriver());
-//		
-//		log.info("Step AddEditInvoiceEntry_001 - 01: Open Add Invoice Entry page");
-//		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/invoice/invoice_entry.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_003 - 12: Input new Invoice Entry");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONum", newVoucherNumber);
-//		
-//		log.info("Step AddEditInvoiceEntry_003 - 13: Input Vendor");
-//		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
-//		
-//		log.info("Step AddEditInvoiceEntry_003 - 14: Click on Modify button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
-//		
-//		log.info("VP: Invoice Entry is voidd");
-//		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "This Blanket P.O. has been voided. Press OK to reactivate or Cancel to view record only.");
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check REactivate Invoice Entry works")
-//	public void AddEditInvoiceEntry_004_CheckReactivateInvoiceEntryWorks() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_004 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_004 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_004 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_004 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_004 - 05: Input new Invoice Entry");
-//		log.info("Step AddEditInvoiceEntry_004 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_004 - 07: Input Description");
-//		log.info("Step AddEditInvoiceEntry_004 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_004 - 09: Input new Invoice Entry");
-//		log.info("Step AddEditInvoiceEntry_004 - 10: Click on Void button");
-//		log.info("Step AddEditInvoiceEntry_004 - 11: Accept alert");
-//		log.info("Step AddEditInvoiceEntry_004 - 12: Input new Invoice Entry");
-//		log.info("Step AddEditInvoiceEntry_004 - 13: Click on Modify button");
-//		log.info("Step AddEditInvoiceEntry_004 - 14: Accept alert");
-//		masterFilesPage.acceptAlert(DriverManager.getDriver());
-//		
-//		log.info("VP: Save button is clickable");
-//		verifyEquals(masterFilesPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Invoice Entry date works")
-//	public void AddEditInvoiceEntry_005_SearchInvoiceEntryByInvoiceEntryDate() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_005 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_005 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_005 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_005 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_005 - 05: Input Invoice Entry date code");
-//		log.info("Step AddEditInvoiceEntry_005 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_005 - 07: Input all other textfields");
-//		log.info("Step AddEditInvoiceEntry_005 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_005 - 09: Open Manager page");
-//		orderDate = poPage.getOrderDate();
-//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_blanket_po.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_005 - 10: Input Invoice Entry date");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
-//		
-//		log.info("Step AddEditInvoiceEntry_005 - 11: Click on Search button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Invoice Entry code displayed correctly");
-//		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, orderDate));
-//	}
-////	
-//	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Buyer works")
-//	public void AddEditInvoiceEntry_006_SearchInvoiceEntryByBuyer() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_006 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_006 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_006 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_006 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_006 - 05: Input Invoice Entry date code");
-//		log.info("Step AddEditInvoiceEntry_006 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_006 - 07: Input all other textfields");
-//		log.info("Step AddEditInvoiceEntry_006 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_006 - 09: Open Manager page");
-//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_blanket_po.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_006 - 10: Input Invoice Entry Order date");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
-//		
-//		log.info("Step AddEditInvoiceEntry_006 - 11: Select Receiver");
-//		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", "Tammi Stock");
-//		
-//		log.info("Step AddEditInvoiceEntry_006 - 12: Click on Search button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Invoice Entry code displayed correctly");
-//		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Keywords works")
-//	public void AddEditInvoiceEntry_007_SearchInvoiceEntryByKeywords() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_007 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_007 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_007 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_007 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_007 - 05: Input Invoice Entry date code");
-//		log.info("Step AddEditInvoiceEntry_007 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_007 - 07: Input all other textfields");
-//		log.info("Step AddEditInvoiceEntry_007 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_007 - 09: Open Manager page");
-//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_blanket_po.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_007 - 10: Input Invoice Entry Order date");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
-//		
-//		log.info("Step AddEditInvoiceEntry_007 - 11: Input Keyword");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Keyword", "validtext");
-//		
-//		log.info("Step AddEditInvoiceEntry_007 - 12: Click on Search button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("Step AddEditInvoiceEntry_007 - 13: Click on OK button");
-//		poPage.clickOnElementByItsValue(DriverManager.getDriver(), "OK");
-//		
-//		log.info("VP: Invoice Entry code displayed correctly");
-//		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Corporation works")
-//	public void AddEditInvoiceEntry_008_SearchInvoiceEntryByCorporation() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_008 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_008 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_008 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_008 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_008 - 05: Input Invoice Entry date code");
-//		log.info("Step AddEditInvoiceEntry_008 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_008 - 07: Input all other textfields");
-//		log.info("Step AddEditInvoiceEntry_008 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_008 - 09: Open Manager page");
-//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_blanket_po.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_008 - 10: Input Invoice Entry Order date");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
-//		
-//		log.info("Step AddEditInvoiceEntry_008 - 11: Select Corporation");
-//		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "Wadsworth Center");
-//		
-//		log.info("Step AddEditInvoiceEntry_008 - 12: Click on Search button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Invoice Entry code displayed correctly");
-//		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, "Wadsworth Center"));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Job number works")
-//	public void AddEditInvoiceEntry_009_SearchInvoiceEntryByJobNumber() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_009 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_009 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_009 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_009 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_009 - 05: Input Invoice Entry date code");
-//		log.info("Step AddEditInvoiceEntry_009 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_009 - 07: Input all other textfields");
-//		log.info("Step AddEditInvoiceEntry_009 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_009 - 09: Open Manager page");
-//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_blanket_po.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_009 - 10: Input Invoice Entry Order date");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
-//		
-//		log.info("Step AddEditInvoiceEntry_009 - 11: Input Job number");
-//		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Job", jobCode2);
-//		
-//		log.info("Step AddEditInvoiceEntry_009 - 12: Click on Search button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Invoice Entry code displayed correctly");
-//		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Vendor works")
-//	public void AddEditInvoiceEntry_010_SearchInvoiceEntryByVendor() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_010 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_010 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_010 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_010 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_010 - 05: Input Invoice Entry date code");
-//		log.info("Step AddEditInvoiceEntry_010 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_010 - 07: Input all other textfields");
-//		log.info("Step AddEditInvoiceEntry_010 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_010 - 09: Open Manager page");
-//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_blanket_po.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_010 - 10: Input Invoice Entry Order date");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
-//		
-//		log.info("Step AddEditInvoiceEntry_010 - 11: Input Vendor name");
-//		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendorName1);
-//		
-//		log.info("Step AddEditInvoiceEntry_010 - 12: Click on Search button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Invoice Entry code displayed correctly");
-//		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, ""));
-//	}
-//	
+@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Batch Number works")
+public void AddEditInvoiceEntry_003_SearchInvoiceEntryByBatchNumber() {	
+	
+	log.info("Step AddEditInvoiceEntry_003 - 01: Open the site https://cherry.epmxweb.com");
+	log.info("Step AddEditInvoiceEntry_003 - 02: Input correct username and password");
+	log.info("Step AddEditInvoiceEntry_003 - 03: Accept Alert message");
+	log.info("Step AddEditInvoiceEntry_003 - 04: Open Add Invoice Entry page");
+	log.info("Step AddEditInvoiceEntry_003 - 05: Input Invoice Entry voucher number");
+	log.info("Step AddEditInvoiceEntry_003 - 06: Click on Add button");
+	log.info("Step AddEditInvoiceEntry_003 - 07: Input all other textfields");
+	log.info("Step AddEditInvoiceEntry_003 - 08: Click on Save button");
+	log.info("Step AddEditInvoiceEntry_003 - 09: Open Manager page");
+	poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/invoice/manage_invoice.php");
+	
+	log.info("Step AddEditInvoiceEntry_003 - 10: Input Invoice Entry Batch Number");
+	poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BatchNumber", batchNumber);
+	
+	log.info("Step AddEditInvoiceEntry_003 - 11: Click on Search button");
+	poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+	
+	log.info("VP: Invoice Entry code displayed correctly");
+	verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, batchNumber));
+}
+
+	
+	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Invoice Entry date works")
+	public void AddEditInvoiceEntry_004_SearchInvoiceEntryByInvoiceEntryDate() {	
+		
+		log.info("Step AddEditInvoiceEntry_004 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditInvoiceEntry_004 - 02: Input correct username and password");
+		log.info("Step AddEditInvoiceEntry_004 - 03: Accept Alert message");
+		log.info("Step AddEditInvoiceEntry_004 - 04: Open Add Invoice Entry page");
+		log.info("Step AddEditInvoiceEntry_004 - 05: Input Invoice Entry voucher number");
+		log.info("Step AddEditInvoiceEntry_004 - 06: Click on Add button");
+		log.info("Step AddEditInvoiceEntry_004 - 07: Input all other textfields");
+		log.info("Step AddEditInvoiceEntry_004 - 08: Click on Save button");
+		log.info("Step AddEditInvoiceEntry_004 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/invoice/manage_invoice.php");
+		
+		log.info("Step AddEditInvoiceEntry_004 - 10: Input Invoice Entry Batch Number");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BatchNumber", batchNumber);
+		
+		log.info("Step AddEditInvoiceEntry_004 - 11: Input Invoice Date");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_InvoiceDateF", "12-12-2020");
+		
+		log.info("Step AddEditInvoiceEntry_004 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Invoice Entry code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, "12-12-2020"));
+	}
+
+	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Keywords works")
+	public void AddEditInvoiceEntry_005_SearchInvoiceEntryByKeywords() {	
+		
+		log.info("Step AddEditInvoiceEntry_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditInvoiceEntry_005 - 02: Input correct username and password");
+		log.info("Step AddEditInvoiceEntry_005 - 03: Accept Alert message");
+		log.info("Step AddEditInvoiceEntry_005 - 04: Open Add Invoice Entry page");
+		log.info("Step AddEditInvoiceEntry_005 - 05: Input Invoice Entry voucher number");
+		log.info("Step AddEditInvoiceEntry_005 - 06: Click on Add button");
+		log.info("Step AddEditInvoiceEntry_005 - 07: Input all other textfields");
+		log.info("Step AddEditInvoiceEntry_005 - 08: Click on Save button");
+		log.info("Step AddEditInvoiceEntry_005 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/invoice/manage_invoice.php");
+		
+		log.info("Step AddEditInvoiceEntry_005 - 10: Input Invoice Entry Batch Number");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BatchNumber", batchNumber);
+		
+		log.info("Step AddEditInvoiceEntry_005 - 11: Input Keyword");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Keyword", "validtext2");
+		
+		log.info("Step AddEditInvoiceEntry_005 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("Step AddEditInvoiceEntry_005 - 13: Click on OK button");
+		poPage.clickOnElementByItsValue(DriverManager.getDriver(), "OK");
+		
+		log.info("VP: Invoice Entry code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Corporation works")
+	public void AddEditInvoiceEntry_006_SearchInvoiceEntryByCorporation() {	
+		
+		log.info("Step AddEditInvoiceEntry_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditInvoiceEntry_006 - 02: Input correct username and password");
+		log.info("Step AddEditInvoiceEntry_006 - 03: Accept Alert message");
+		log.info("Step AddEditInvoiceEntry_006 - 04: Open Add Invoice Entry page");
+		log.info("Step AddEditInvoiceEntry_006 - 05: Input Invoice Entry voucher number");
+		log.info("Step AddEditInvoiceEntry_006 - 06: Click on Add button");
+		log.info("Step AddEditInvoiceEntry_006 - 07: Input all other textfields");
+		log.info("Step AddEditInvoiceEntry_006 - 08: Click on Save button");
+		log.info("Step AddEditInvoiceEntry_006 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/invoice/manage_invoice.php");
+		
+		log.info("Step AddEditInvoiceEntry_006 - 10: Input Invoice Entry Batch Number");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BatchNumber", batchNumber);
+		
+		log.info("Step AddEditInvoiceEntry_006 - 11: Select Corporation");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "Wadsworth Center");
+		
+		log.info("Step AddEditInvoiceEntry_006 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Invoice Entry code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, "Wadsworth Center"));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Vendor works")
+	public void AddEditInvoiceEntry_007_SearchInvoiceEntryByVendor() {	
+		
+		log.info("Step AddEditInvoiceEntry_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditInvoiceEntry_007 - 02: Input correct username and password");
+		log.info("Step AddEditInvoiceEntry_007 - 03: Accept Alert message");
+		log.info("Step AddEditInvoiceEntry_007 - 04: Open Add Invoice Entry page");
+		log.info("Step AddEditInvoiceEntry_007 - 05: Input Invoice Entry voucher number");
+		log.info("Step AddEditInvoiceEntry_007 - 06: Click on Add button");
+		log.info("Step AddEditInvoiceEntry_007 - 07: Input all other textfields");
+		log.info("Step AddEditInvoiceEntry_007 - 08: Click on Save button");
+		log.info("Step AddEditInvoiceEntry_007 - 09: Open Manager page");
+		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/invoice/manage_invoice.php");
+		
+		log.info("Step AddEditInvoiceEntry_007 - 10: Input Invoice Entry Batch Number");
+		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BatchNumber", batchNumber);
+		
+		log.info("Step AddEditInvoiceEntry_007 - 11: Input Vendor name");
+		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName2);
+		
+		log.info("Step AddEditInvoiceEntry_007 - 12: Click on Search button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Invoice Entry code displayed correctly");
+		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, vendorName2));
+	}
+	
 //	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Project Code works")
 //	public void AddEditInvoiceEntry_011_SearchInvoiceEntryByProjectCode() {	
 //		
@@ -725,15 +639,15 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 //		log.info("Step AddEditInvoiceEntry_011 - 02: Input correct username and password");
 //		log.info("Step AddEditInvoiceEntry_011 - 03: Accept Alert message");
 //		log.info("Step AddEditInvoiceEntry_011 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_011 - 05: Input Invoice Entry date code");
+//		log.info("Step AddEditInvoiceEntry_011 - 05: Input Invoice Entry voucher number");
 //		log.info("Step AddEditInvoiceEntry_011 - 06: Click on Add button");
 //		log.info("Step AddEditInvoiceEntry_011 - 07: Input all other textfields");
 //		log.info("Step AddEditInvoiceEntry_011 - 08: Click on Save button");
 //		log.info("Step AddEditInvoiceEntry_011 - 09: Open Manager page");
-//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_blanket_po.php");
+//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/invoice/manage_invoice.php");
 //		
-//		log.info("Step AddEditInvoiceEntry_011 - 10: Input Invoice Entry Order date");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
+//		log.info("Step AddEditInvoiceEntry_011 - 10: Input Invoice Entry Batch Number");
+//		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_BatchNumber", batchNumber);
 //		
 //		log.info("Step AddEditInvoiceEntry_011 - 11: Input Project code");
 //		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Proj", projectCode2);
@@ -744,123 +658,38 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 //		log.info("VP: Invoice Entry code displayed correctly");
 //		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, ""));
 //	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Request date works")
-//	public void AddEditInvoiceEntry_012_SearchInvoiceEntryByInvoiceEntryStatus() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_012 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_012 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_012 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_012 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_012 - 05: Input Invoice Entry date code");
-//		log.info("Step AddEditInvoiceEntry_012 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_012 - 07: Input all other textfields");
-//		log.info("Step AddEditInvoiceEntry_012 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_012 - 09: Open Manager page");
-//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_blanket_po.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_012 - 10: Input Invoice Entry Order date");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
-//		
-//		log.info("Step AddEditInvoiceEntry_012 - 11: Input Invoice Entry status");
-//		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_POStatus", "Open");
-//		
-//		log.info("Step AddEditInvoiceEntry_012 - 12: Click on Search button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Invoice Entry code displayed correctly");
-//		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Item code works")
-//	public void AddEditInvoiceEntry_013_SearchInvoiceEntryByItemCode() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_013 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_013 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_013 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_013 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_013 - 05: Input Invoice Entry date code");
-//		log.info("Step AddEditInvoiceEntry_013 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_013 - 07: Input all other textfields");
-//		log.info("Step AddEditInvoiceEntry_013 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_013 - 09: Open Manager page");
-//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_blanket_po.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_013 - 10: Input Invoice Entry Order date");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
-//		
-//		log.info("Step AddEditInvoiceEntry_013 - 11: Input Item code");
-//		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Item", itemCode2);
-//		
-//		log.info("Step AddEditInvoiceEntry_013 - 12: Click on Search button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Invoice Entry code displayed correctly");
-//		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Invoice Entry code by Ship-to code works")
-//	public void AddEditInvoiceEntry_014_SearchInvoiceEntryByShipToCode() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_014 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_014 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_014 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_014 - 04: Open Add Invoice Entry page");
-//		log.info("Step AddEditInvoiceEntry_014 - 05: Input Invoice Entry date code");
-//		log.info("Step AddEditInvoiceEntry_014 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_014 - 07: Input all other textfields");
-//		log.info("Step AddEditInvoiceEntry_014 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_014 - 09: Open Manager page");
-//		poPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/po/manage_blanket_po.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_014 - 10: Input Invoice Entry Order date");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_OrderDateFrom", orderDate);
-//		
-//		log.info("Step AddEditInvoiceEntry_014 - 11: Input Ship-to code");
-//		poPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Ship", shipToCode2);
-//		
-//		log.info("Step AddEditInvoiceEntry_014 - 12: Click on Search button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Invoice Entry code displayed correctly");
-//		verifyTrue(poPage.isResultTableContainsRecord(DriverManager.getDriver(), newVoucherNumber, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Delete Invoice Entry works")
-//	public void AddEditInvoiceEntry_015_CheckDeleteInvoiceEntryWorks() {	
-//		
-//		log.info("Step AddEditInvoiceEntry_015 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditInvoiceEntry_015 - 02: Input correct username and password");
-//		log.info("Step AddEditInvoiceEntry_015 - 03: Accept Alert message");
-//		log.info("Step AddEditInvoiceEntry_015 - 04: Open Add Invoice Entry page");
-//		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/invoice/invoice_entry.php");
-//		
-//		log.info("Step AddEditInvoiceEntry_015 - 05: Input new Invoice Entry");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONum", newVoucherNumber);
-//		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
-//		
-//		log.info("Step AddEditInvoiceEntry_015 - 06: Click on Add button");
-//		log.info("Step AddEditInvoiceEntry_015 - 07: Input Description");
-//		log.info("Step AddEditInvoiceEntry_015 - 08: Click on Save button");
-//		log.info("Step AddEditInvoiceEntry_015 - 09: Input new Invoice Entry");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
-//		
-//		log.info("Step AddEditInvoiceEntry_015 - 10: Click on Delete button");
-//		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "delete");
-//		masterFilesPage.acceptAlert(DriverManager.getDriver());
-//		
-//		log.info("Step AddEditInvoiceEntry_015 - 11: Input new Invoice Entry");
-//		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONum", newVoucherNumber);
-//		
-//		log.info("Step AddEditInvoiceEntry_015 - 12: Input Vendor");
-//		poPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
-//		
-//		log.info("Step AddEditInvoiceEntry_015 - 13: Click on Modify button");
-//		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
-//		
-//		log.info("VP: Invoice Entry is not displayed");
-//		verifyFalse(masterFilesPage.isTextDisplayed(DriverManager.getDriver(), newVoucherNumber));
-//	}
+	
+	@Test(groups = { "regression" }, description = "Check Delete Invoice Entry works")
+	public void AddEditInvoiceEntry_008_CheckDeleteInvoiceEntryWorks() {	
+		
+		log.info("Step AddEditInvoiceEntry_008 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditInvoiceEntry_008 - 02: Input correct username and password");
+		log.info("Step AddEditInvoiceEntry_008 - 03: Accept Alert message");
+		log.info("Step AddEditInvoiceEntry_008 - 04: Open Add Invoice Entry page");
+		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/invoice/invoice_entry.php");
+		
+		log.info("Step AddEditInvoiceEntry_008 - 05: Input new Invoice Entry");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VoucherNum", newVoucherNumber);
+		
+		log.info("Step AddEditInvoiceEntry_008 - 06: Click on Add button");
+		log.info("Step AddEditInvoiceEntry_008 - 07: Input Description");
+		log.info("Step AddEditInvoiceEntry_008 - 08: Click on Save button");
+		log.info("Step AddEditInvoiceEntry_008 - 09: Input new Invoice Entry");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		
+		log.info("Step AddEditInvoiceEntry_008 - 10: Click on Delete button");
+		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "delete");
+		masterFilesPage.acceptAlert(DriverManager.getDriver());
+		
+		log.info("Step AddEditInvoiceEntry_008 - 11: Input new Invoice Entry");
+		poPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VoucherNum", newVoucherNumber);
+		
+		log.info("Step AddEditInvoiceEntry_008 - 12: Click on Modify button");
+		poPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		
+		log.info("VP: Invoice Entry is not displayed");
+		verifyFalse(masterFilesPage.isTextDisplayed(DriverManager.getDriver(), newVoucherNumber));
+	}
 	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
@@ -871,7 +700,7 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 	private MasterFilesPage masterFilesPage;
 	private POPage poPage;
 	private AddUserPage addUserPage;
-	private String newVoucherNumber;
+	private String newVoucherNumber, newVoucherNumberNew;
 	private String bill1, bill2, billToCode1, billToCode2, ship1, ship2, shipToCode1, shipToCode2, vendorID1, vendorName1, vendorID2, vendorName2;
 	private String po1, po2, poType1, poType2;
 	private String job1, job2, jobCode1, jobCode2;
@@ -886,6 +715,6 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 	private String orderDate;
 	private String commodCode1, commodCode2, commodity1, commodity2;
 	private String unitOfMeasure1, unitOfMeasure2, um1, um2;
-	private String batchNumber1, batchNumber2, _1099Code1, _1099Code2, code1, code2;
+	private String batchNumber, _1099Code1, _1099Code2, code1, code2;
 	private String bank1, bank2, bankCode1, bankCode2;
 }
