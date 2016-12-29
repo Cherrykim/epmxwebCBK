@@ -119,22 +119,22 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Step AddEditMaterial_001 - 10: Click on Add Alternate vendor button");
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "add_alt_vendor");
 		
-		log.info("Step AddEditMaterial_001 - 10: Input Alternate vendor");
+		log.info("Step AddEditMaterial_001 - 11: Input Alternate vendor");
 		masterFilesPage.inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_AVendor", vendorName2);
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AVendorItemNum", "11");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AVendorItemPrice", "11.0000");
 		masterFilesPage.sleep();
 		
-		log.info("Step AddEditMaterial_001 - 11: Click on Save Alternate Vendor button");
+		log.info("Step AddEditMaterial_001 - 12: Click on Save Alternate Vendor button");
 		masterFilesPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save Alternate Vendor");
 		
-		log.info("Step AddEditMaterial_001 - 12: Click on Save button");
+		log.info("Step AddEditMaterial_001 - 13: Click on Save button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		
-		log.info("Step AddEditMaterial_001 - 13: Input new Material");
+		log.info("Step AddEditMaterial_001 - 14: Input new Material");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ItemCode", newMaterial);
 		
-		log.info("Step AddEditMaterial_001 - 14: Click on Modify button");
+		log.info("Step AddEditMaterial_001 - 15: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: Description field is saved correctly");
@@ -171,26 +171,26 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Step AddEditMaterial_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditMaterial_002 - 02: Input correct username and password");
 		log.info("Step AddEditMaterial_002 - 03: Accept Alert message");
-		log.info("Step AddEditMaterial_002 - 04: Open Add labels page");
+		log.info("Step AddEditMaterial_002 - 04: Open Add Material page");
 		log.info("Step AddEditMaterial_002 - 05: Input new Material");
 		log.info("Step AddEditMaterial_002 - 06: Click on Add button");
 		log.info("Step AddEditMaterial_002 - 07: Input Description");
 		log.info("Step AddEditMaterial_002 - 08: Select Primary user");
 		log.info("Step AddEditMaterial_002 - 09: Input Primary vendor");
 		log.info("Step AddEditMaterial_002 - 10: Click on Add Alternate vendor button");
-		log.info("Step AddEditMaterial_002 - 10: Input Alternate vendor");
+		log.info("Step AddEditMaterial_002 - 11: Input Alternate vendor");
 		log.info("Step AddEditMaterial_002 - 12: Click on Save Alternate Vendor button");
-		log.info("Step AddEditMaterial_002 - 12: Click on Save button");
-		log.info("Step AddEditMaterial_002 - 13: Input new Material");
-		log.info("Step AddEditMaterial_002 - 14: Click on Modify button");
-		log.info("Step AddEditMaterial_002 - 15: Change description");
+		log.info("Step AddEditMaterial_002 - 13: Click on Save button");
+		log.info("Step AddEditMaterial_002 - 14: Input new Material");
+		log.info("Step AddEditMaterial_002 - 15: Click on Modify button");
+		log.info("Step AddEditMaterial_002 - 16: Change description");
 		masterFilesPage.inputTextareaByID(DriverManager.getDriver(), "txt_MaterialDescription", "new description 2");
 		
-		log.info("Step AddEditMaterial_002 - 16: Remove Alternate");
+		log.info("Step AddEditMaterial_002 - 17: Remove Alternate");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "delete");
 		masterFilesPage.acceptAlert(DriverManager.getDriver());
 		
-		log.info("Step AddEditMaterial_002 - 08: Select all dropdowns");
+		log.info("Step AddEditMaterial_002 - 18: Select all dropdowns");
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_CommodityCode", commodity2);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UnitMeasure", unitOfMeasure2);
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ExpeditorID", primaryUserName2);
@@ -199,7 +199,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PVendor", vendorName2);
 		
-		log.info("Step AddEditMaterial_002 - 09: Input all textfield");
+		log.info("Step AddEditMaterial_002 - 19: Input all textfield");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_EconomicOrderQty", "12.0000");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_StandardUnitCost", "12.0000");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RoutingCode", "rocode2");
@@ -211,26 +211,26 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorItemNum", "12");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorItemPrice", "12.0000");
 		
-		log.info("Step AddEditMaterial_002 - 10: Click on Add Alternate vendor button");
+		log.info("Step AddEditMaterial_002 - 20: Click on Add Alternate vendor button");
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "add_alt_vendor");
 		
-		log.info("Step AddEditMaterial_002 - 10: Input Alternate vendor");
+		log.info("Step AddEditMaterial_002 - 21: Input Alternate vendor");
 		masterFilesPage.inputTextfieldByIDWithEnter(DriverManager.getDriver(), "txt_AVendor", vendorName1);
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AVendorItemNum", "12");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AVendorItemPrice", "12.0000");
 		masterFilesPage.sleep();
 		
-		log.info("Step AddEditMaterial_002 - 12: Click on Save Alternate Vendor button");
+		log.info("Step AddEditMaterial_002 - 22: Click on Save Alternate Vendor button");
 		masterFilesPage.clickOnElementByItsTitle(DriverManager.getDriver(), "Save Alternate Vendor");
 		
-		log.info("Step AddEditMaterial_002 - 12: Click on Save button");
+		log.info("Step AddEditMaterial_002 - 23: Click on Save button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		masterFilesPage.acceptAlert(DriverManager.getDriver());
 		
-		log.info("Step AddEditMaterial_002 - 13: Input new Material");
+		log.info("Step AddEditMaterial_002 - 24: Input new Material");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ItemCode", newMaterial);
 		
-		log.info("Step AddEditMaterial_002 - 14: Click on Modify button");
+		log.info("Step AddEditMaterial_002 - 25: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: Description field is saved correctly");
@@ -267,7 +267,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Step AddEditMaterial_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditMaterial_003 - 02: Input correct username and password");
 		log.info("Step AddEditMaterial_003 - 03: Accept Alert message");
-		log.info("Step AddEditMaterial_003 - 04: Open Add labels page");
+		log.info("Step AddEditMaterial_003 - 04: Open Add Material page");
 		log.info("Step AddEditMaterial_003 - 05: Input new Material");
 		log.info("Step AddEditMaterial_003 - 06: Click on Add button");
 		log.info("Step AddEditMaterial_003 - 07: Input Description");
@@ -295,7 +295,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Step AddEditMaterial_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditMaterial_004 - 02: Input correct username and password");
 		log.info("Step AddEditMaterial_004 - 03: Accept Alert message");
-		log.info("Step AddEditMaterial_004 - 04: Open Add labels page");
+		log.info("Step AddEditMaterial_004 - 04: Open Add Material page");
 		log.info("Step AddEditMaterial_004 - 05: Input new Material");
 		log.info("Step AddEditMaterial_004 - 06: Click on Add button");
 		log.info("Step AddEditMaterial_004 - 07: Input Description");
@@ -318,7 +318,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Step AddEditMaterial_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditMaterial_005 - 02: Input correct username and password");
 		log.info("Step AddEditMaterial_005 - 03: Accept Alert message");
-		log.info("Step AddEditMaterial_005 - 04: Open Add labels page");
+		log.info("Step AddEditMaterial_005 - 04: Open Add Material page");
 		log.info("Step AddEditMaterial_005 - 05: Input new Material code");
 		log.info("Step AddEditMaterial_005 - 06: Click on Add button");
 		log.info("Step AddEditMaterial_005 - 07: Input Description");
@@ -345,7 +345,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Step AddEditMaterial_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditMaterial_006 - 02: Input correct username and password");
 		log.info("Step AddEditMaterial_006 - 03: Accept Alert message");
-		log.info("Step AddEditMaterial_006 - 04: Open Add labels page");
+		log.info("Step AddEditMaterial_006 - 04: Open Add Material page");
 		log.info("Step AddEditMaterial_006 - 05: Input new Material code");
 		log.info("Step AddEditMaterial_006 - 06: Click on Add button");
 		log.info("Step AddEditMaterial_006 - 07: Input Description");
@@ -372,7 +372,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Step AddEditMaterial_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditMaterial_007 - 02: Input correct username and password");
 		log.info("Step AddEditMaterial_007 - 03: Accept Alert message");
-		log.info("Step AddEditMaterial_007 - 04: Open Add labels page");
+		log.info("Step AddEditMaterial_007 - 04: Open Add Material page");
 		log.info("Step AddEditMaterial_007 - 05: Input new Material code");
 		log.info("Step AddEditMaterial_007 - 06: Click on Add button");
 		log.info("Step AddEditMaterial_007 - 07: Input Description");
@@ -399,7 +399,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Step AddEditMaterial_008 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditMaterial_008 - 02: Input correct username and password");
 		log.info("Step AddEditMaterial_008 - 03: Accept Alert message");
-		log.info("Step AddEditMaterial_008 - 04: Open Add labels page");
+		log.info("Step AddEditMaterial_008 - 04: Open Add Material page");
 		log.info("Step AddEditMaterial_008 - 05: Input new Material code");
 		log.info("Step AddEditMaterial_008 - 06: Click on Add button");
 		log.info("Step AddEditMaterial_008 - 07: Input Description");
@@ -426,7 +426,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Step AddEditMaterial_009 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditMaterial_009 - 02: Input correct username and password");
 		log.info("Step AddEditMaterial_009 - 03: Accept Alert message");
-		log.info("Step AddEditMaterial_009 - 04: Open Add labels page");
+		log.info("Step AddEditMaterial_009 - 04: Open Add Material page");
 		log.info("Step AddEditMaterial_009 - 05: Input new Material code");
 		log.info("Step AddEditMaterial_009 - 06: Click on Add button");
 		log.info("Step AddEditMaterial_009 - 07: Input Description");
@@ -453,7 +453,7 @@ public class MasterFiles_15_AddEditMaterial extends AbstractTest {
 		log.info("Step AddEditMaterial_010 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditMaterial_010 - 02: Input correct username and password");
 		log.info("Step AddEditMaterial_010 - 03: Accept Alert message");
-		log.info("Step AddEditMaterial_010 - 04: Open Add labels page");
+		log.info("Step AddEditMaterial_010 - 04: Open Add Material page");
 		log.info("Step AddEditMaterial_010 - 05: Input new Material code");
 		log.info("Step AddEditMaterial_010 - 06: Click on Add button");
 		log.info("Step AddEditMaterial_010 - 07: Input Description");

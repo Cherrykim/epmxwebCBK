@@ -115,7 +115,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		log.info("Step AddCommodityCode_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddCommodityCode_002 - 02: Input correct username and password");
 		log.info("Step AddCommodityCode_002 - 03: Accept Alert message");
-		log.info("Step AddCommodityCode_002 - 04: Open Add labels page");
+		log.info("Step AddCommodityCode_002 - 04: Open Add Commodity page");
 		log.info("Step AddCommodityCode_002 - 05: Input new Commodity");
 		log.info("Step AddCommodityCode_002 - 06: Click on Add button");
 		log.info("Step AddCommodityCode_002 - 07: Input Description");
@@ -177,7 +177,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		log.info("Step AddCommodityCode_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddCommodityCode_003 - 02: Input correct username and password");
 		log.info("Step AddCommodityCode_003 - 03: Accept Alert message");
-		log.info("Step AddCommodityCode_003 - 04: Open Add labels page");
+		log.info("Step AddCommodityCode_003 - 04: Open Add Commodity page");
 		log.info("Step AddCommodityCode_003 - 05: Input new Commodity");
 		log.info("Step AddCommodityCode_003 - 06: Click on Add button");
 		log.info("Step AddCommodityCode_003 - 07: Input Description");
@@ -205,7 +205,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		log.info("Step AddCommodityCode_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddCommodityCode_004 - 02: Input correct username and password");
 		log.info("Step AddCommodityCode_004 - 03: Accept Alert message");
-		log.info("Step AddCommodityCode_004 - 04: Open Add labels page");
+		log.info("Step AddCommodityCode_004 - 04: Open Add Commodity page");
 		log.info("Step AddCommodityCode_004 - 05: Input new Commodity");
 		log.info("Step AddCommodityCode_004 - 06: Click on Add button");
 		log.info("Step AddCommodityCode_004 - 07: Input Description");
@@ -228,7 +228,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		log.info("Step AddEditCommodityCode_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditCommodityCode_005 - 02: Input correct username and password");
 		log.info("Step AddEditCommodityCode_005 - 03: Accept Alert message");
-		log.info("Step AddEditCommodityCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditCommodityCode_005 - 04: Open Add Commodity page");
 		log.info("Step AddEditCommodityCode_005 - 05: Input new Commodity code");
 		log.info("Step AddEditCommodityCode_005 - 06: Click on Add button");
 		log.info("Step AddEditCommodityCode_005 - 07: Input Description");
@@ -252,7 +252,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		log.info("Step AddEditCommodityCode_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditCommodityCode_006 - 02: Input correct username and password");
 		log.info("Step AddEditCommodityCode_006 - 03: Accept Alert message");
-		log.info("Step AddEditCommodityCode_006 - 04: Open Add labels page");
+		log.info("Step AddEditCommodityCode_006 - 04: Open Add Commodity page");
 		log.info("Step AddEditCommodityCode_006 - 05: Input new Commodity code");
 		log.info("Step AddEditCommodityCode_006 - 06: Click on Add button");
 		log.info("Step AddEditCommodityCode_006 - 07: Input Description");
@@ -279,7 +279,7 @@ public class MasterFiles_06_AddEditCommodityCode extends AbstractTest {
 		log.info("Step AddEditCommodityCode_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditCommodityCode_007 - 02: Input correct username and password");
 		log.info("Step AddEditCommodityCode_007 - 03: Accept Alert message");
-		log.info("Step AddEditCommodityCode_007 - 04: Open Add labels page");
+		log.info("Step AddEditCommodityCode_007 - 04: Open Add Commodity page");
 		log.info("Step AddEditCommodityCode_007 - 05: Input new Commodity code");
 		log.info("Step AddEditCommodityCode_007 - 06: Click on Add button");
 		log.info("Step AddEditCommodityCode_007 - 07: Input Description");

@@ -83,7 +83,7 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		log.info("Step AddTranslationCurrency_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddTranslationCurrency_002 - 02: Input correct username and password");
 		log.info("Step AddTranslationCurrency_002 - 03: Accept Alert message");
-		log.info("Step AddTranslationCurrency_002 - 04: Open Add labels page");
+		log.info("Step AddTranslationCurrency_002 - 04: Open Add Translation Currency page");
 		log.info("Step AddTranslationCurrency_002 - 05: Input new Translation Currency");
 		log.info("Step AddTranslationCurrency_002 - 06: Click on Add button");
 		log.info("Step AddTranslationCurrency_002 - 07: Input Description");
@@ -93,17 +93,17 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		log.info("Step AddTranslationCurrency_002 - 11: Input new Translation Currency");
 		log.info("Step AddTranslationCurrency_002 - 12: Click on Modify button");
 		
-		log.info("Step AddTranslationCurrency_002 - 14: Remove first record");
+		log.info("Step AddTranslationCurrency_002 - 13: Remove first record");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "delete");
 		masterFilesPage.acceptAlert(DriverManager.getDriver());
 		
-		log.info("Step AddTranslationCurrency_001 - 15: Click on Translation Currency item textfield button");
+		log.info("Step AddTranslationCurrency_001 - 14: Click on Translation Currency item textfield button");
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "txt_TransCurCode1");
 		
-		log.info("Step AddTranslationCurrency_001 - 16: Select  Translation Currency item");
+		log.info("Step AddTranslationCurrency_001 - 15: Select  Translation Currency item");
 		masterFilesPage.clickOnDivByItsText(DriverManager.getDriver(), newBaseCurrencyCode);
 		
-		log.info("Step AddTranslationCurrency_001 - 10: Input new Translation Currency");
+		log.info("Step AddTranslationCurrency_001 - 16: Input new Translation Currency");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_TransRate1", "12.000000");
 		
 		log.info("Step AddTranslationCurrency_001 - 17: Click on Save button");
@@ -125,7 +125,7 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		log.info("Step AddTranslationCurrency_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddTranslationCurrency_003 - 02: Input correct username and password");
 		log.info("Step AddTranslationCurrency_003 - 03: Accept Alert message");
-		log.info("Step AddTranslationCurrency_003 - 04: Open Add labels page");
+		log.info("Step AddTranslationCurrency_003 - 04: Open Add Translation Currency page");
 		log.info("Step AddTranslationCurrency_003 - 05: Input new Translation Currency");
 		log.info("Step AddTranslationCurrency_003 - 06: Click on Add button");
 		log.info("Step AddTranslationCurrency_003 - 07: Input Description");
@@ -153,7 +153,7 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		log.info("Step AddTranslationCurrency_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddTranslationCurrency_004 - 02: Input correct username and password");
 		log.info("Step AddTranslationCurrency_004 - 03: Accept Alert message");
-		log.info("Step AddTranslationCurrency_004 - 04: Open Add labels page");
+		log.info("Step AddTranslationCurrency_004 - 04: Open Add Translation Currency page");
 		log.info("Step AddTranslationCurrency_004 - 05: Input new Translation Currency");
 		log.info("Step AddTranslationCurrency_004 - 06: Click on Add button");
 		log.info("Step AddTranslationCurrency_004 - 07: Input Description");
@@ -176,7 +176,7 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		log.info("Step AddTranslationCurrency_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddTranslationCurrency_005 - 02: Input correct username and password");
 		log.info("Step AddTranslationCurrency_005 - 03: Accept Alert message");
-		log.info("Step AddTranslationCurrency_005 - 04: Open Add labels page");
+		log.info("Step AddTranslationCurrency_005 - 04: Open Add Translation Currency page");
 		log.info("Step AddTranslationCurrency_005 - 05: Input new Base Currency code");
 		log.info("Step AddTranslationCurrency_005 - 06: Click on Add button");
 		log.info("Step AddTranslationCurrency_005 - 07: Input Description");
@@ -200,7 +200,7 @@ public class MasterFiles_09_AddEditTranslationCurrency extends AbstractTest {
 		log.info("Step AddTranslationCurrency_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddTranslationCurrency_006 - 02: Input correct username and password");
 		log.info("Step AddTranslationCurrency_006 - 03: Accept Alert message");
-		log.info("Step AddTranslationCurrency_006 - 04: Open Add labels page");
+		log.info("Step AddTranslationCurrency_006 - 04: Open Add Translation Currency page");
 		log.info("Step AddTranslationCurrency_006 - 05: Input new Base Currency code");
 		log.info("Step AddTranslationCurrency_006 - 06: Click on Add button");
 		log.info("Step AddTranslationCurrency_006 - 07: Input Description");

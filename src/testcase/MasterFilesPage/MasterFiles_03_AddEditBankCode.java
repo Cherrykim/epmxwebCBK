@@ -66,7 +66,7 @@ public class MasterFiles_03_AddEditBankCode extends AbstractTest {
 		log.info("Step AddEditBankCode_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditBankCode_002 - 02: Input correct username and password");
 		log.info("Step AddEditBankCode_002 - 03: Accept Alert message");
-		log.info("Step AddEditBankCode_002 - 04: Open Add labels page");
+		log.info("Step AddEditBankCode_002 - 04: Open Add Bank Code page");
 		log.info("Step AddEditBankCode_002 - 05: Input new Bank code");
 		log.info("Step AddEditBankCode_002 - 06: Click on Add button");
 		log.info("Step AddEditBankCode_002 - 07: Input Description");
@@ -95,7 +95,7 @@ public class MasterFiles_03_AddEditBankCode extends AbstractTest {
 		log.info("Step AddEditBankCode_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditBankCode_003 - 02: Input correct username and password");
 		log.info("Step AddEditBankCode_003 - 03: Accept Alert message");
-		log.info("Step AddEditBankCode_003 - 04: Open Add labels page");
+		log.info("Step AddEditBankCode_003 - 04: Open Add Bank Code page");
 		log.info("Step AddEditBankCode_003 - 05: Input new Bank code");
 		log.info("Step AddEditBankCode_003 - 06: Click on Add button");
 		log.info("Step AddEditBankCode_003 - 07: Input Description");
@@ -123,7 +123,7 @@ public class MasterFiles_03_AddEditBankCode extends AbstractTest {
 		log.info("Step AddEditBankCode_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditBankCode_004 - 02: Input correct username and password");
 		log.info("Step AddEditBankCode_004 - 03: Accept Alert message");
-		log.info("Step AddEditBankCode_004 - 04: Open Add labels page");
+		log.info("Step AddEditBankCode_004 - 04: Open Add Bank Code page");
 		log.info("Step AddEditBankCode_004 - 05: Input new Bank code");
 		log.info("Step AddEditBankCode_004 - 06: Click on Add button");
 		log.info("Step AddEditBankCode_004 - 07: Input Description");
@@ -146,7 +146,7 @@ public class MasterFiles_03_AddEditBankCode extends AbstractTest {
 		log.info("Step AddEditBankCode_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditBankCode_005 - 02: Input correct username and password");
 		log.info("Step AddEditBankCode_005 - 03: Accept Alert message");
-		log.info("Step AddEditBankCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditBankCode_005 - 04: Open Add Bank Code page");
 		log.info("Step AddEditBankCode_005 - 05: Input new Bank code");
 		log.info("Step AddEditBankCode_005 - 06: Click on Add button");
 		log.info("Step AddEditBankCode_005 - 07: Input Description");
@@ -170,7 +170,7 @@ public class MasterFiles_03_AddEditBankCode extends AbstractTest {
 		log.info("Step AddEditBankCode_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditBankCode_006 - 02: Input correct username and password");
 		log.info("Step AddEditBankCode_006 - 03: Accept Alert message");
-		log.info("Step AddEditBankCode_006 - 04: Open Add labels page");
+		log.info("Step AddEditBankCode_006 - 04: Open Add Bank Code page");
 		log.info("Step AddEditBankCode_006 - 05: Input new Bank code");
 		log.info("Step AddEditBankCode_006 - 06: Click on Add button");
 		log.info("Step AddEditBankCode_006 - 07: Input Description");
@@ -197,7 +197,7 @@ public class MasterFiles_03_AddEditBankCode extends AbstractTest {
 		log.info("Step AddEditBankCode_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditBankCode_007 - 02: Input correct username and password");
 		log.info("Step AddEditBankCode_007 - 03: Accept Alert message");
-		log.info("Step AddEditBankCode_007 - 04: Open Add labels page");
+		log.info("Step AddEditBankCode_007 - 04: Open Add Bank Code page");
 		log.info("Step AddEditBankCode_007 - 05: Input new Bank code");
 		log.info("Step AddEditBankCode_007 - 06: Click on Add button");
 		log.info("Step AddEditBankCode_007 - 07: Input Description");

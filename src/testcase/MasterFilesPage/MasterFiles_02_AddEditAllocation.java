@@ -51,7 +51,7 @@ public class MasterFiles_02_AddEditAllocation extends AbstractTest {
 		masterFilesPage.createNewJobCode(job1);
 		masterFilesPage.createNewJobCode(job2);
 		
-		log.info("Step Pre-condition - 05: Create new Project code");
+		log.info("Step Pre-condition - 07: Create new Project code");
 		masterFilesPage.createNewProjectCode(projectCode1);
 		masterFilesPage.createNewProjectCode(projectCode2);
 
@@ -115,7 +115,7 @@ public class MasterFiles_02_AddEditAllocation extends AbstractTest {
 		log.info("Step AddEditAllocation_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditAllocation_002 - 02: Input correct username and password");
 		log.info("Step AddEditAllocation_002 - 03: Accept Alert message");
-		log.info("Step AddEditAllocation_002 - 04: Open Add labels page");
+		log.info("Step AddEditAllocation_002 - 04: Open Add Allocation page");
 		log.info("Step AddEditAllocation_002 - 05: Input new Allocation");
 		log.info("Step AddEditAllocation_002 - 06: Click on Add button");
 		log.info("Step AddEditAllocation_002 - 07: Input Description");
@@ -169,7 +169,7 @@ public class MasterFiles_02_AddEditAllocation extends AbstractTest {
 		log.info("Step AddEditAllocation_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditAllocation_003 - 02: Input correct username and password");
 		log.info("Step AddEditAllocation_003 - 03: Accept Alert message");
-		log.info("Step AddEditAllocation_003 - 04: Open Add labels page");
+		log.info("Step AddEditAllocation_003 - 04: Open Add Allocation page");
 		log.info("Step AddEditAllocation_003 - 05: Input new Allocation");
 		log.info("Step AddEditAllocation_003 - 06: Click on Add button");
 		log.info("Step AddEditAllocation_003 - 07: Input Description");
@@ -197,7 +197,7 @@ public class MasterFiles_02_AddEditAllocation extends AbstractTest {
 		log.info("Step AddEditAllocation_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditAllocation_004 - 02: Input correct username and password");
 		log.info("Step AddEditAllocation_004 - 03: Accept Alert message");
-		log.info("Step AddEditAllocation_004 - 04: Open Add labels page");
+		log.info("Step AddEditAllocation_004 - 04: Open Add Allocation page");
 		log.info("Step AddEditAllocation_004 - 05: Input new Allocation");
 		log.info("Step AddEditAllocation_004 - 06: Click on Add button");
 		log.info("Step AddEditAllocation_004 - 07: Input Description");
@@ -220,7 +220,7 @@ public class MasterFiles_02_AddEditAllocation extends AbstractTest {
 		log.info("Step AddEditAllocation_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditAllocation_005 - 02: Input correct username and password");
 		log.info("Step AddEditAllocation_005 - 03: Accept Alert message");
-		log.info("Step AddEditAllocation_005 - 04: Open Add labels page");
+		log.info("Step AddEditAllocation_005 - 04: Open Add Allocation page");
 		log.info("Step AddEditAllocation_005 - 05: Input new Allocation");
 		log.info("Step AddEditAllocation_005 - 06: Click on Add button");
 		log.info("Step AddEditAllocation_005 - 07: Input Description");
@@ -244,7 +244,7 @@ public class MasterFiles_02_AddEditAllocation extends AbstractTest {
 		log.info("Step AddEditAllocation_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditAllocation_006 - 02: Input correct username and password");
 		log.info("Step AddEditAllocation_006 - 03: Accept Alert message");
-		log.info("Step AddEditAllocation_006 - 04: Open Add labels page");
+		log.info("Step AddEditAllocation_006 - 04: Open Add Allocation page");
 		log.info("Step AddEditAllocation_006 - 05: Input new Allocation");
 		log.info("Step AddEditAllocation_006 - 06: Click on Add button");
 		log.info("Step AddEditAllocation_006 - 07: Input Description");
@@ -271,7 +271,7 @@ public class MasterFiles_02_AddEditAllocation extends AbstractTest {
 		log.info("Step AddEditAllocation_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditAllocation_007 - 02: Input correct username and password");
 		log.info("Step AddEditAllocation_007 - 03: Accept Alert message");
-		log.info("Step AddEditAllocation_007 - 04: Open Add labels page");
+		log.info("Step AddEditAllocation_007 - 04: Open Add Allocation page");
 		log.info("Step AddEditAllocation_007 - 05: Input new Allocation");
 		log.info("Step AddEditAllocation_007 - 06: Click on Add button");
 		log.info("Step AddEditAllocation_007 - 07: Input Description");

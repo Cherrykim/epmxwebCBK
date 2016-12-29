@@ -109,7 +109,7 @@ public class MasterFiles_07_AddEditContract extends AbstractTest {
 		log.info("Step AddContract_001 - 11: Add Legal agreement");
 		masterFilesPage.addLegalAgreement("datatest1.pdf");
 		
-		log.info("Step AddContract_001 - 11: Input all other fields");
+		log.info("Step AddContract_001 - 12: Input all other fields");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "str_contract_name", validText1);
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "str_contract_number", validNumber1);
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "str_start_date", validStartDate1);
@@ -120,13 +120,13 @@ public class MasterFiles_07_AddEditContract extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "flt_disc_contracted_percent", validDecimal1);
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "int_expiration_days", validNumber1);
 		
-		log.info("Step AddContract_001 - 12: Click on Save button");
+		log.info("Step AddContract_001 - 13: Click on Save button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		
-		log.info("Step AddContract_001 - 13: Input new Contract");
+		log.info("Step AddContract_001 - 14: Input new Contract");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "int_contract_code", newContract);
 		
-		log.info("Step AddContract_001 - 14: Click on Modify button");
+		log.info("Step AddContract_001 - 15: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		////
@@ -159,7 +159,7 @@ public class MasterFiles_07_AddEditContract extends AbstractTest {
 		log.info("Step AddContract_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddContract_002 - 02: Input correct username and password");
 		log.info("Step AddContract_002 - 03: Accept Alert message");
-		log.info("Step AddContract_002 - 04: Open Add labels page");
+		log.info("Step AddContract_002 - 04: Open Add Contract page");
 		log.info("Step AddContract_002 - 05: Input new Contract");
 		log.info("Step AddContract_002 - 06: Click on Add button");
 		log.info("Step AddContract_002 - 07: Select all dropdown");
@@ -232,7 +232,7 @@ public class MasterFiles_07_AddEditContract extends AbstractTest {
 		log.info("Step AddContract_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddContract_003 - 02: Input correct username and password");
 		log.info("Step AddContract_003 - 03: Accept Alert message");
-		log.info("Step AddContract_003 - 04: Open Add labels page");
+		log.info("Step AddContract_003 - 04: Open Add Contract page");
 		log.info("Step AddContract_003 - 05: Input new Contract");
 		log.info("Step AddContract_003 - 06: Click on Add button");
 		log.info("Step AddContract_003 - 07: Input VendorShortName");
@@ -261,7 +261,7 @@ public class MasterFiles_07_AddEditContract extends AbstractTest {
 		log.info("Step AddContract_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddContract_004 - 02: Input correct username and password");
 		log.info("Step AddContract_004 - 03: Accept Alert message");
-		log.info("Step AddContract_004 - 04: Open Add labels page");
+		log.info("Step AddContract_004 - 04: Open Add Contract page");
 		log.info("Step AddContract_004 - 05: Input new Contract");
 		log.info("Step AddContract_004 - 06: Click on Add button");
 		log.info("Step AddContract_004 - 07: Input VendorShortName");
@@ -284,7 +284,7 @@ public class MasterFiles_07_AddEditContract extends AbstractTest {
 		log.info("Step AddEditContract_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditContract_005 - 02: Input correct username and password");
 		log.info("Step AddEditContract_005 - 03: Accept Alert message");
-		log.info("Step AddEditContract_005 - 04: Open Add labels page");
+		log.info("Step AddEditContract_005 - 04: Open Add Contract page");
 		log.info("Step AddEditContract_005 - 05: Input new Contract");
 		log.info("Step AddEditContract_005 - 06: Click on Add button");
 		log.info("Step AddEditContract_005 - 07: Input VendorShortName");
@@ -309,7 +309,7 @@ public class MasterFiles_07_AddEditContract extends AbstractTest {
 		log.info("Step AddEditContract_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditContract_006 - 02: Input correct username and password");
 		log.info("Step AddEditContract_006 - 03: Accept Alert message");
-		log.info("Step AddEditContract_006 - 04: Open Add labels page");
+		log.info("Step AddEditContract_006 - 04: Open Add Contract page");
 		log.info("Step AddEditContract_006 - 05: Input new Contract");
 		log.info("Step AddEditContract_006 - 06: Click on Add button");
 		log.info("Step AddEditContract_006 - 07: Input VendorShortName");
@@ -337,7 +337,7 @@ public class MasterFiles_07_AddEditContract extends AbstractTest {
 		log.info("Step AddEditContract_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditContract_007 - 02: Input correct username and password");
 		log.info("Step AddEditContract_007 - 03: Accept Alert message");
-		log.info("Step AddEditContract_007 - 04: Open Add labels page");
+		log.info("Step AddEditContract_007 - 04: Open Add Contract page");
 		log.info("Step AddEditContract_007 - 05: Input new Contract");
 		log.info("Step AddEditContract_007 - 06: Click on Add button");
 		log.info("Step AddEditContract_007 - 07: Input Vendor Short Name");
@@ -365,7 +365,7 @@ public class MasterFiles_07_AddEditContract extends AbstractTest {
 		log.info("Step AddEditContract_008 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditContract_008 - 02: Input correct username and password");
 		log.info("Step AddEditContract_008 - 03: Accept Alert message");
-		log.info("Step AddEditContract_008 - 04: Open Add labels page");
+		log.info("Step AddEditContract_008 - 04: Open Add Contract page");
 		log.info("Step AddEditContract_008 - 05: Input new Contract");
 		log.info("Step AddEditContract_008 - 06: Click on Add button");
 		log.info("Step AddEditContract_008 - 07: Input Vendor Short Name");
@@ -393,7 +393,7 @@ public class MasterFiles_07_AddEditContract extends AbstractTest {
 		log.info("Step AddEditContract_009 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditContract_009 - 02: Input correct usernumber and password");
 		log.info("Step AddEditContract_009 - 03: Accept Alert message");
-		log.info("Step AddEditContract_009 - 04: Open Add labels page");
+		log.info("Step AddEditContract_009 - 04: Open Add Contract page");
 		log.info("Step AddEditContract_009 - 05: Input new Contract");
 		log.info("Step AddEditContract_009 - 06: Click on Add button");
 		log.info("Step AddEditContract_009 - 07: Input Vendor Short Number");

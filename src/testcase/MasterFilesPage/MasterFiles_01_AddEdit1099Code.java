@@ -65,7 +65,7 @@ public class MasterFiles_01_AddEdit1099Code extends AbstractTest {
 		log.info("Step AddEdit1099Code_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEdit1099Code_002 - 02: Input correct username and password");
 		log.info("Step AddEdit1099Code_002 - 03: Accept Alert message");
-		log.info("Step AddEdit1099Code_002 - 04: Open Add labels page");
+		log.info("Step AddEdit1099Code_002 - 04: Open Add 1099 Code page");
 		log.info("Step AddEdit1099Code_002 - 05: Input new 1099 code");
 		log.info("Step AddEdit1099Code_002 - 06: Click on Add button");
 		log.info("Step AddEdit1099Code_002 - 07: Input Description");
@@ -94,7 +94,7 @@ public class MasterFiles_01_AddEdit1099Code extends AbstractTest {
 		log.info("Step AddEdit1099Code_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEdit1099Code_003 - 02: Input correct username and password");
 		log.info("Step AddEdit1099Code_003 - 03: Accept Alert message");
-		log.info("Step AddEdit1099Code_003 - 04: Open Add labels page");
+		log.info("Step AddEdit1099Code_003 - 04: Open Add 1099 Code page");
 		log.info("Step AddEdit1099Code_003 - 05: Input new 1099 code");
 		log.info("Step AddEdit1099Code_003 - 06: Click on Add button");
 		log.info("Step AddEdit1099Code_003 - 07: Input Description");
@@ -122,7 +122,7 @@ public class MasterFiles_01_AddEdit1099Code extends AbstractTest {
 		log.info("Step AddEdit1099Code_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEdit1099Code_004 - 02: Input correct username and password");
 		log.info("Step AddEdit1099Code_004 - 03: Accept Alert message");
-		log.info("Step AddEdit1099Code_004 - 04: Open Add labels page");
+		log.info("Step AddEdit1099Code_004 - 04: Open Add 1099 Code page");
 		log.info("Step AddEdit1099Code_004 - 05: Input new 1099 code");
 		log.info("Step AddEdit1099Code_004 - 06: Click on Add button");
 		log.info("Step AddEdit1099Code_004 - 07: Input Description");
@@ -145,7 +145,7 @@ public class MasterFiles_01_AddEdit1099Code extends AbstractTest {
 		log.info("Step AddEdit1099Code_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEdit1099Code_005 - 02: Input correct username and password");
 		log.info("Step AddEdit1099Code_005 - 03: Accept Alert message");
-		log.info("Step AddEdit1099Code_005 - 04: Open Add labels page");
+		log.info("Step AddEdit1099Code_005 - 04: Open Add 1099 Code page");
 		log.info("Step AddEdit1099Code_005 - 05: Input new 1099 code");
 		log.info("Step AddEdit1099Code_005 - 06: Click on Add button");
 		log.info("Step AddEdit1099Code_005 - 07: Input Description");
@@ -169,7 +169,7 @@ public class MasterFiles_01_AddEdit1099Code extends AbstractTest {
 		log.info("Step AddEdit1099Code_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEdit1099Code_006 - 02: Input correct username and password");
 		log.info("Step AddEdit1099Code_006 - 03: Accept Alert message");
-		log.info("Step AddEdit1099Code_006 - 04: Open Add labels page");
+		log.info("Step AddEdit1099Code_006 - 04: Open Add 1099 Code page");
 		log.info("Step AddEdit1099Code_006 - 05: Input new 1099 code");
 		log.info("Step AddEdit1099Code_006 - 06: Click on Add button");
 		log.info("Step AddEdit1099Code_006 - 07: Input Description");
@@ -196,7 +196,7 @@ public class MasterFiles_01_AddEdit1099Code extends AbstractTest {
 		log.info("Step AddEdit1099Code_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEdit1099Code_007 - 02: Input correct username and password");
 		log.info("Step AddEdit1099Code_007 - 03: Accept Alert message");
-		log.info("Step AddEdit1099Code_007 - 04: Open Add labels page");
+		log.info("Step AddEdit1099Code_007 - 04: Open Add 1099 Code page");
 		log.info("Step AddEdit1099Code_007 - 05: Input new 1099 code");
 		log.info("Step AddEdit1099Code_007 - 06: Click on Add button");
 		log.info("Step AddEdit1099Code_007 - 07: Input Description");

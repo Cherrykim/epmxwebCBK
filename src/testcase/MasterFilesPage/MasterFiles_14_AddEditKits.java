@@ -151,8 +151,6 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		log.info("Step AddEditKits_002 - 21: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		////
-		
 		log.info("Step AddEditKits_002 - VP: Description is saved correctly");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_Description"), validText2);
 		
@@ -172,7 +170,7 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		log.info("Step AddEditKits_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditKits_003 - 02: Input correct username and password");
 		log.info("Step AddEditKits_003 - 03: Accept Alert message");
-		log.info("Step AddEditKits_003 - 04: Open Add labels page");
+		log.info("Step AddEditKits_003 - 04: Open Add Kits page");
 		log.info("Step AddEditKits_003 - 05: Input new Kits");
 		log.info("Step AddEditKits_003 - 06: Click on Add button");
 		log.info("Step AddEditKits_003 - 07: Input VendorShortName");
@@ -201,7 +199,7 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		log.info("Step AddEditKits_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditKits_004 - 02: Input correct username and password");
 		log.info("Step AddEditKits_004 - 03: Accept Alert message");
-		log.info("Step AddEditKits_004 - 04: Open Add labels page");
+		log.info("Step AddEditKits_004 - 04: Open Add Kits page");
 		log.info("Step AddEditKits_004 - 05: Input new Kits");
 		log.info("Step AddEditKits_004 - 06: Click on Add button");
 		log.info("Step AddEditKits_004 - 07: Input VendorShortName");
@@ -224,7 +222,7 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		log.info("Step AddEditKits_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditKits_005 - 02: Input correct username and password");
 		log.info("Step AddEditKits_005 - 03: Accept Alert message");
-		log.info("Step AddEditKits_005 - 04: Open Add labels page");
+		log.info("Step AddEditKits_005 - 04: Open Add Kits page");
 		log.info("Step AddEditKits_005 - 05: Input new Commodity code");
 		log.info("Step AddEditKits_005 - 06: Click on Add button");
 		log.info("Step AddEditKits_005 - 07: Input Description");
@@ -248,7 +246,7 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		log.info("Step AddEditKits_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditKits_006 - 02: Input correct username and password");
 		log.info("Step AddEditKits_006 - 03: Accept Alert message");
-		log.info("Step AddEditKits_006 - 04: Open Add labels page");
+		log.info("Step AddEditKits_006 - 04: Open Add Kits page");
 		log.info("Step AddEditKits_006 - 05: Input new Commodity code");
 		log.info("Step AddEditKits_006 - 06: Click on Add button");
 		log.info("Step AddEditKits_006 - 07: Input Description");
@@ -275,7 +273,7 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		log.info("Step AddEditKits_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditKits_007 - 02: Input correct username and password");
 		log.info("Step AddEditKits_007 - 03: Accept Alert message");
-		log.info("Step AddEditKits_007 - 04: Open Add labels page");
+		log.info("Step AddEditKits_007 - 04: Open Add Kits page");
 		log.info("Step AddEditKits_007 - 05: Input new Commodity code");
 		log.info("Step AddEditKits_007 - 06: Click on Add button");
 		log.info("Step AddEditKits_007 - 07: Input Description");

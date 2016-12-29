@@ -78,7 +78,7 @@ public class MasterFiles_08_AddEditCorporation extends AbstractTest {
 		log.info("Step AddCorporation_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddCorporation_002 - 02: Input correct username and password");
 		log.info("Step AddCorporation_002 - 03: Accept Alert message");
-		log.info("Step AddCorporation_002 - 04: Open Add labels page");
+		log.info("Step AddCorporation_002 - 04: Open Add Corporation page");
 		log.info("Step AddCorporation_002 - 05: Input new Corporation");
 		log.info("Step AddCorporation_002 - 06: Click on Add button");
 		log.info("Step AddCorporation_002 - 07: Click on Save button");
@@ -94,10 +94,10 @@ public class MasterFiles_08_AddEditCorporation extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		masterFilesPage.acceptAlert(DriverManager.getDriver());
 		
-		log.info("Step AddCorporation_002 - 24: Input new Corporation");
+		log.info("Step AddCorporation_002 - 13: Input new Corporation");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_CompName", newCorporation);
 		
-		log.info("Step AddCorporation_002 - 25: Click on Modify button");
+		log.info("Step AddCorporation_002 - 14: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: Buyer is saved correctly");
@@ -114,7 +114,7 @@ public class MasterFiles_08_AddEditCorporation extends AbstractTest {
 		log.info("Step AddCorporation_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddCorporation_003 - 02: Input correct username and password");
 		log.info("Step AddCorporation_003 - 03: Accept Alert message");
-		log.info("Step AddCorporation_003 - 04: Open Add labels page");
+		log.info("Step AddCorporation_003 - 04: Open Add Corporation page");
 		log.info("Step AddCorporation_003 - 05: Input new Corporation");
 		log.info("Step AddCorporation_003 - 06: Click on Add button");
 		log.info("Step AddCorporation_003 - 07: Input Description");
@@ -142,7 +142,7 @@ public class MasterFiles_08_AddEditCorporation extends AbstractTest {
 		log.info("Step AddCorporation_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddCorporation_004 - 02: Input correct username and password");
 		log.info("Step AddCorporation_004 - 03: Accept Alert message");
-		log.info("Step AddCorporation_004 - 04: Open Add labels page");
+		log.info("Step AddCorporation_004 - 04: Open Add Corporation page");
 		log.info("Step AddCorporation_004 - 05: Input new Corporation");
 		log.info("Step AddCorporation_004 - 06: Click on Add button");
 		log.info("Step AddCorporation_004 - 07: Input Description");
@@ -165,7 +165,7 @@ public class MasterFiles_08_AddEditCorporation extends AbstractTest {
 		log.info("Step AddEditCorporationCode_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditCorporationCode_005 - 02: Input correct username and password");
 		log.info("Step AddEditCorporationCode_005 - 03: Accept Alert message");
-		log.info("Step AddEditCorporationCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditCorporationCode_005 - 04: Open Add Corporation page");
 		log.info("Step AddEditCorporationCode_005 - 05: Input new Corporation code");
 		log.info("Step AddEditCorporationCode_005 - 06: Click on Add button");
 		log.info("Step AddEditCorporationCode_005 - 07: Input Description");
