@@ -87,7 +87,7 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		log.info("Step AddEditReceivingDept_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditReceivingDept_002 - 02: Input correct username and password");
 		log.info("Step AddEditReceivingDept_002 - 03: Accept Alert message");
-		log.info("Step AddEditReceivingDept_002 - 04: Open Add labels page");
+		log.info("Step AddEditReceivingDept_002 - 04: Open Add Receiving Dept page");
 		log.info("Step AddEditReceivingDept_002 - 05: Input new Receiving Dept");
 		log.info("Step AddEditReceivingDept_002 - 06: Click on Add button");
 		log.info("Step AddEditReceivingDept_002 - 07: Input Description");
@@ -128,7 +128,7 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		log.info("Step AddEditReceivingDept_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditReceivingDept_003 - 02: Input correct username and password");
 		log.info("Step AddEditReceivingDept_003 - 03: Accept Alert message");
-		log.info("Step AddEditReceivingDept_003 - 04: Open Add labels page");
+		log.info("Step AddEditReceivingDept_003 - 04: Open Add Receiving Dept page");
 		log.info("Step AddEditReceivingDept_003 - 05: Input new Receiving Dept");
 		log.info("Step AddEditReceivingDept_003 - 06: Click on Add button");
 		log.info("Step AddEditReceivingDept_003 - 07: Input Description");
@@ -156,7 +156,7 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		log.info("Step AddEditReceivingDept_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditReceivingDept_004 - 02: Input correct username and password");
 		log.info("Step AddEditReceivingDept_004 - 03: Accept Alert message");
-		log.info("Step AddEditReceivingDept_004 - 04: Open Add labels page");
+		log.info("Step AddEditReceivingDept_004 - 04: Open Add Receiving Dept page");
 		log.info("Step AddEditReceivingDept_004 - 05: Input new Receiving Dept");
 		log.info("Step AddEditReceivingDept_004 - 06: Click on Add button");
 		log.info("Step AddEditReceivingDept_004 - 07: Input Description");
@@ -179,7 +179,7 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		log.info("Step AddEditReceivingDept_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditReceivingDept_005 - 02: Input correct username and password");
 		log.info("Step AddEditReceivingDept_005 - 03: Accept Alert message");
-		log.info("Step AddEditReceivingDept_005 - 04: Open Add labels page");
+		log.info("Step AddEditReceivingDept_005 - 04: Open Add Receiving Dept page");
 		log.info("Step AddEditReceivingDept_005 - 05: Input new Receiving Dept code");
 		log.info("Step AddEditReceivingDept_005 - 06: Click on Add button");
 		log.info("Step AddEditReceivingDept_005 - 07: Input Description");
@@ -203,7 +203,7 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		log.info("Step AddEditReceivingDept_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditReceivingDept_006 - 02: Input correct username and password");
 		log.info("Step AddEditReceivingDept_006 - 03: Accept Alert message");
-		log.info("Step AddEditReceivingDept_006 - 04: Open Add labels page");
+		log.info("Step AddEditReceivingDept_006 - 04: Open Add Receiving Dept page");
 		log.info("Step AddEditReceivingDept_006 - 05: Input new Receiving Dept code");
 		log.info("Step AddEditReceivingDept_006 - 06: Click on Add button");
 		log.info("Step AddEditReceivingDept_006 - 07: Input Description");
@@ -230,7 +230,7 @@ public class MasterFiles_19_AddEditReceivingDept extends AbstractTest {
 		log.info("Step AddEditReceivingDept_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditReceivingDept_007 - 02: Input correct username and password");
 		log.info("Step AddEditReceivingDept_007 - 03: Accept Alert message");
-		log.info("Step AddEditReceivingDept_007 - 04: Open Add labels page");
+		log.info("Step AddEditReceivingDept_007 - 04: Open Add Receiving Dept page");
 		log.info("Step AddEditReceivingDept_007 - 05: Input new Receiving Dept code");
 		log.info("Step AddEditReceivingDept_007 - 06: Click on Add button");
 		log.info("Step AddEditReceivingDept_007 - 07: Input Description");

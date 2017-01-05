@@ -41,7 +41,9 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		
 		log.info("Step Pre-condition - 05: Create GL Account");
 		masterFilesPage.createNewGLAccount(corp1, glAccountCode1);
+		masterFilesPage.assignGLAccount(glAccountCode1, Constant.LoginData.USERNAME_NYDOH);
 		masterFilesPage.createNewGLAccount(corp2, glAccountCode2);
+		masterFilesPage.assignGLAccount(glAccountCode2, Constant.LoginData.USERNAME_NYDOH);
 
 	}
 
@@ -133,7 +135,7 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		log.info("Step AddEditUser_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUser_002 - 02: Input correct username and password");
 		log.info("Step AddEditUser_002 - 03: Accept Alert message");
-		log.info("Step AddEditUser_002 - 04: Open Add labels page");
+		log.info("Step AddEditUser_002 - 04: Open Add User page");
 		log.info("Step AddEditUser_002 - 05: Input new User");
 		log.info("Step AddEditUser_002 - 06: Click on Add button");
 		log.info("Step AddEditUser_002 - 07: Input all fields");
@@ -161,20 +163,20 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Zip", "12346");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ZipFour", "1235");
 		
-		log.info("Step AddEditDivision_002 - 12: Input new data for GL Account code");
+		log.info("Step AddEditUser_002 - 12: Input new data for GL Account code");
 		masterFilesPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_GL");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "removeall_field");
 		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add_field", "3");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "ok", "3");
 		
-		log.info("Step AddEditUser_002 - 14: Click on Save button");
+		log.info("Step AddEditUser_002 - 13: Click on Save button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		
-		log.info("Step AddEditUser_002 - 15: Input new User");
+		log.info("Step AddEditUser_002 - 14: Input new User");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_UserName", newUser);
 		
-		log.info("Step AddEditUser_002 - 16: Click on Modify button");
+		log.info("Step AddEditUser_002 - 15: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: All field saved correctly");
@@ -207,7 +209,7 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		log.info("Step AddEditUser_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUser_003 - 02: Input correct username and password");
 		log.info("Step AddEditUser_003 - 03: Accept Alert message");
-		log.info("Step AddEditUser_003 - 04: Open Add labels page");
+		log.info("Step AddEditUser_003 - 04: Open Add User page");
 		log.info("Step AddEditUser_003 - 05: Input new User");
 		log.info("Step AddEditUser_003 - 06: Click on Add button");
 		log.info("Step AddEditUser_003 - 07: Input all information");
@@ -235,7 +237,7 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		log.info("Step AddEditUser_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUser_004 - 02: Input correct username and password");
 		log.info("Step AddEditUser_004 - 03: Accept Alert message");
-		log.info("Step AddEditUser_004 - 04: Open Add labels page");
+		log.info("Step AddEditUser_004 - 04: Open Add User page");
 		log.info("Step AddEditUser_004 - 05: Input new User");
 		log.info("Step AddEditUser_004 - 06: Click on Add button");
 		log.info("Step AddEditUser_004 - 07: Input all information");
@@ -258,7 +260,7 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		log.info("Step AddEditUser_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUser_005 - 02: Input correct username and password");
 		log.info("Step AddEditUser_005 - 03: Accept Alert message");
-		log.info("Step AddEditUser_005 - 04: Open Add labels page");
+		log.info("Step AddEditUser_005 - 04: Open Add User page");
 		log.info("Step AddEditUser_005 - 05: Input new User code");
 		log.info("Step AddEditUser_005 - 06: Click on Add button");
 		log.info("Step AddEditUser_005 - 07: Input Description");
@@ -282,7 +284,7 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		log.info("Step AddEditUser_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUser_006 - 02: Input correct username and password");
 		log.info("Step AddEditUser_006 - 03: Accept Alert message");
-		log.info("Step AddEditUser_006 - 04: Open Add labels page");
+		log.info("Step AddEditUser_006 - 04: Open Add User page");
 		log.info("Step AddEditUser_006 - 05: Input new User code");
 		log.info("Step AddEditUser_006 - 06: Click on Add button");
 		log.info("Step AddEditUser_006 - 07: Input Description");

@@ -189,7 +189,7 @@ public class MasterFiles_24_AddEditUMTranslation extends AbstractTest {
 		log.info("Step AddEditUMTranslation_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUMTranslation_005 - 02: Input correct username and password");
 		log.info("Step AddEditUMTranslation_005 - 03: Accept Alert message");
-		log.info("Step AddEditUMTranslation_005 - 04: Open Add labels page");
+		log.info("Step AddEditUMTranslation_005 - 04: Open Add UM Translation page");
 		log.info("Step AddEditUMTranslation_005 - 05: Input new UM Translation code");
 		log.info("Step AddEditUMTranslation_005 - 06: Click on Add button");
 		log.info("Step AddEditUMTranslation_005 - 07: Input Description");
@@ -213,7 +213,7 @@ public class MasterFiles_24_AddEditUMTranslation extends AbstractTest {
 		log.info("Step AddEditUMTranslation_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUMTranslation_006 - 02: Input correct username and password");
 		log.info("Step AddEditUMTranslation_006 - 03: Accept Alert message");
-		log.info("Step AddEditUMTranslation_006 - 04: Open Add labels page");
+		log.info("Step AddEditUMTranslation_006 - 04: Open Add UM Translation page");
 		log.info("Step AddEditUMTranslation_006 - 05: Input new UM Translation code");
 		log.info("Step AddEditUMTranslation_006 - 06: Click on Add button");
 		log.info("Step AddEditUMTranslation_006 - 07: Input Description");

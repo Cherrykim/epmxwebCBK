@@ -34,7 +34,7 @@ public class MasterFiles_01_AddEdit1099Code extends AbstractTest {
 		log.info("Step AddEdit1099Code_001 - 03: Accept Alert message");
 		loginPage.acceptAlert();
 		
-		log.info("Step AddEdit1099Code_001 - 04: Open Add 1009 code page");
+		log.info("Step AddEdit1099Code_001 - 04: Open Add 1099 code page");
 		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/add_1099_code.php");
 
 		log.info("Step AddEdit1099Code_001 - 05: Input new 1099 code");

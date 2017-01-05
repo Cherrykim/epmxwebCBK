@@ -90,7 +90,7 @@ public class MasterFiles_20_AddEditShipToCode extends AbstractTest {
 		log.info("Step AddEditShipToCode_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditShipToCode_002 - 02: Input correct username and password");
 		log.info("Step AddEditShipToCode_002 - 03: Accept Alert message");
-		log.info("Step AddEditShipToCode_002 - 04: Open Add labels page");
+		log.info("Step AddEditShipToCode_002 - 04: Open Add Ship-To Code page");
 		log.info("Step AddEditShipToCode_002 - 05: Input new Ship-to code");
 		log.info("Step AddEditShipToCode_002 - 06: Click on Add button");
 		log.info("Step AddEditShipToCode_002 - 07: Input Description");
@@ -132,7 +132,7 @@ public class MasterFiles_20_AddEditShipToCode extends AbstractTest {
 		log.info("Step AddEditShipToCode_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditShipToCode_003 - 02: Input correct username and password");
 		log.info("Step AddEditShipToCode_003 - 03: Accept Alert message");
-		log.info("Step AddEditShipToCode_003 - 04: Open Add labels page");
+		log.info("Step AddEditShipToCode_003 - 04: Open Add Ship-To Code page");
 		log.info("Step AddEditShipToCode_003 - 05: Input new Ship-to code");
 		log.info("Step AddEditShipToCode_003 - 06: Click on Add button");
 		log.info("Step AddEditShipToCode_003 - 07: Input Description");
@@ -160,7 +160,7 @@ public class MasterFiles_20_AddEditShipToCode extends AbstractTest {
 		log.info("Step AddEditShipToCode_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditShipToCode_004 - 02: Input correct username and password");
 		log.info("Step AddEditShipToCode_004 - 03: Accept Alert message");
-		log.info("Step AddEditShipToCode_004 - 04: Open Add labels page");
+		log.info("Step AddEditShipToCode_004 - 04: Open Add Ship-To Code page");
 		log.info("Step AddEditShipToCode_004 - 05: Input new Ship-to code");
 		log.info("Step AddEditShipToCode_004 - 06: Click on Add button");
 		log.info("Step AddEditShipToCode_004 - 07: Input Description");
@@ -183,7 +183,7 @@ public class MasterFiles_20_AddEditShipToCode extends AbstractTest {
 		log.info("Step AddEditShipToCode_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditShipToCode_005 - 02: Input correct username and password");
 		log.info("Step AddEditShipToCode_005 - 03: Accept Alert message");
-		log.info("Step AddEditShipToCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditShipToCode_005 - 04: Open Add Ship-To Code page");
 		log.info("Step AddEditShipToCode_005 - 05: Input new Ship-to Code code");
 		log.info("Step AddEditShipToCode_005 - 06: Click on Add button");
 		log.info("Step AddEditShipToCode_005 - 07: Input Description");
@@ -207,7 +207,7 @@ public class MasterFiles_20_AddEditShipToCode extends AbstractTest {
 		log.info("Step AddEditShipToCode_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditShipToCode_006 - 02: Input correct username and password");
 		log.info("Step AddEditShipToCode_006 - 03: Accept Alert message");
-		log.info("Step AddEditShipToCode_006 - 04: Open Add labels page");
+		log.info("Step AddEditShipToCode_006 - 04: Open Add Ship-To Code page");
 		log.info("Step AddEditShipToCode_006 - 05: Input new Ship-to Code code");
 		log.info("Step AddEditShipToCode_006 - 06: Click on Add button");
 		log.info("Step AddEditShipToCode_006 - 07: Input Description");
@@ -234,7 +234,7 @@ public class MasterFiles_20_AddEditShipToCode extends AbstractTest {
 		log.info("Step AddEditShipToCode_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditShipToCode_007 - 02: Input correct username and password");
 		log.info("Step AddEditShipToCode_007 - 03: Accept Alert message");
-		log.info("Step AddEditShipToCode_007 - 04: Open Add labels page");
+		log.info("Step AddEditShipToCode_007 - 04: Open Add Ship-To Code page");
 		log.info("Step AddEditShipToCode_007 - 05: Input new Ship-to Code code");
 		log.info("Step AddEditShipToCode_007 - 06: Click on Add button");
 		log.info("Step AddEditShipToCode_007 - 07: Input Description");

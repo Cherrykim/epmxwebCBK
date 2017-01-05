@@ -108,7 +108,7 @@ public class MasterFiles_18_AddEditDivision extends AbstractTest {
 		log.info("Step AddEditDivision_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditDivision_002 - 02: Input correct username and password");
 		log.info("Step AddEditDivision_002 - 03: Accept Alert message");
-		log.info("Step AddEditDivision_002 - 04: Open Add labels page");
+		log.info("Step AddEditDivision_002 - 04: Open Add Division page");
 		log.info("Step AddEditDivision_002 - 05: Input new Division");
 		log.info("Step AddEditDivision_002 - 06: Click on Add button");
 		log.info("Step AddEditDivision_002 - 07: Input Description");
@@ -155,7 +155,7 @@ public class MasterFiles_18_AddEditDivision extends AbstractTest {
 		log.info("Step AddEditDivision_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditDivision_003 - 02: Input correct username and password");
 		log.info("Step AddEditDivision_003 - 03: Accept Alert message");
-		log.info("Step AddEditDivision_003 - 04: Open Add labels page");
+		log.info("Step AddEditDivision_003 - 04: Open Add Division page");
 		log.info("Step AddEditDivision_003 - 05: Input new Division");
 		log.info("Step AddEditDivision_003 - 06: Click on Add button");
 		log.info("Step AddEditDivision_003 - 07: Input Description");
@@ -183,7 +183,7 @@ public class MasterFiles_18_AddEditDivision extends AbstractTest {
 		log.info("Step AddEditDivision_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditDivision_004 - 02: Input correct username and password");
 		log.info("Step AddEditDivision_004 - 03: Accept Alert message");
-		log.info("Step AddEditDivision_004 - 04: Open Add labels page");
+		log.info("Step AddEditDivision_004 - 04: Open Add Division page");
 		log.info("Step AddEditDivision_004 - 05: Input new Division");
 		log.info("Step AddEditDivision_004 - 06: Click on Add button");
 		log.info("Step AddEditDivision_004 - 07: Input Description");
@@ -206,7 +206,7 @@ public class MasterFiles_18_AddEditDivision extends AbstractTest {
 		log.info("Step AddEditDivision_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditDivision_005 - 02: Input correct username and password");
 		log.info("Step AddEditDivision_005 - 03: Accept Alert message");
-		log.info("Step AddEditDivision_005 - 04: Open Add labels page");
+		log.info("Step AddEditDivision_005 - 04: Open Add Division page");
 		log.info("Step AddEditDivision_005 - 05: Input new Division code");
 		log.info("Step AddEditDivision_005 - 06: Click on Add button");
 		log.info("Step AddEditDivision_005 - 07: Input Description");
@@ -230,7 +230,7 @@ public class MasterFiles_18_AddEditDivision extends AbstractTest {
 		log.info("Step AddEditDivision_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditDivision_006 - 02: Input correct username and password");
 		log.info("Step AddEditDivision_006 - 03: Accept Alert message");
-		log.info("Step AddEditDivision_006 - 04: Open Add labels page");
+		log.info("Step AddEditDivision_006 - 04: Open Add Division page");
 		log.info("Step AddEditDivision_006 - 05: Input new Division code");
 		log.info("Step AddEditDivision_006 - 06: Click on Add button");
 		log.info("Step AddEditDivision_006 - 07: Input Description");
@@ -257,7 +257,7 @@ public class MasterFiles_18_AddEditDivision extends AbstractTest {
 		log.info("Step AddEditDivision_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditDivision_007 - 02: Input correct username and password");
 		log.info("Step AddEditDivision_007 - 03: Accept Alert message");
-		log.info("Step AddEditDivision_007 - 04: Open Add labels page");
+		log.info("Step AddEditDivision_007 - 04: Open Add Division page");
 		log.info("Step AddEditDivision_007 - 05: Input new Division code");
 		log.info("Step AddEditDivision_007 - 06: Click on Add button");
 		log.info("Step AddEditDivision_007 - 07: Input Description");

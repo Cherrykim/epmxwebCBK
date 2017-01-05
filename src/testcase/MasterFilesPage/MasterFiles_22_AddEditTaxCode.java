@@ -69,7 +69,7 @@ public class MasterFiles_22_AddEditTaxCode extends AbstractTest {
 		log.info("Step AddEditTaxCode_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditTaxCode_002 - 02: Input correct username and password");
 		log.info("Step AddEditTaxCode_002 - 03: Accept Alert message");
-		log.info("Step AddEditTaxCode_002 - 04: Open Add labels page");
+		log.info("Step AddEditTaxCode_002 - 04: Open Add Tax Code page");
 		log.info("Step AddEditTaxCode_002 - 05: Input new Tax Code");
 		log.info("Step AddEditTaxCode_002 - 06: Click on Add button");
 		log.info("Step AddEditTaxCode_002 - 07: Input Description");
@@ -100,7 +100,7 @@ public class MasterFiles_22_AddEditTaxCode extends AbstractTest {
 		log.info("Step AddEditTaxCode_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditTaxCode_003 - 02: Input correct username and password");
 		log.info("Step AddEditTaxCode_003 - 03: Accept Alert message");
-		log.info("Step AddEditTaxCode_003 - 04: Open Add labels page");
+		log.info("Step AddEditTaxCode_003 - 04: Open Add Tax Code page");
 		log.info("Step AddEditTaxCode_003 - 05: Input new Tax Code");
 		log.info("Step AddEditTaxCode_003 - 06: Click on Add button");
 		log.info("Step AddEditTaxCode_003 - 07: Input Description");
@@ -128,7 +128,7 @@ public class MasterFiles_22_AddEditTaxCode extends AbstractTest {
 		log.info("Step AddEditTaxCode_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditTaxCode_004 - 02: Input correct username and password");
 		log.info("Step AddEditTaxCode_004 - 03: Accept Alert message");
-		log.info("Step AddEditTaxCode_004 - 04: Open Add labels page");
+		log.info("Step AddEditTaxCode_004 - 04: Open Add Tax Code page");
 		log.info("Step AddEditTaxCode_004 - 05: Input new Tax Code");
 		log.info("Step AddEditTaxCode_004 - 06: Click on Add button");
 		log.info("Step AddEditTaxCode_004 - 07: Input Description");
@@ -151,7 +151,7 @@ public class MasterFiles_22_AddEditTaxCode extends AbstractTest {
 		log.info("Step AddEditTaxCode_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditTaxCode_005 - 02: Input correct username and password");
 		log.info("Step AddEditTaxCode_005 - 03: Accept Alert message");
-		log.info("Step AddEditTaxCode_005 - 04: Open Add labels page");
+		log.info("Step AddEditTaxCode_005 - 04: Open Add Tax Code page");
 		log.info("Step AddEditTaxCode_005 - 05: Input new Tax Code code");
 		log.info("Step AddEditTaxCode_005 - 06: Click on Add button");
 		log.info("Step AddEditTaxCode_005 - 07: Input Description");
@@ -175,7 +175,7 @@ public class MasterFiles_22_AddEditTaxCode extends AbstractTest {
 		log.info("Step AddEditTaxCode_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditTaxCode_006 - 02: Input correct username and password");
 		log.info("Step AddEditTaxCode_006 - 03: Accept Alert message");
-		log.info("Step AddEditTaxCode_006 - 04: Open Add labels page");
+		log.info("Step AddEditTaxCode_006 - 04: Open Add Tax Code page");
 		log.info("Step AddEditTaxCode_006 - 05: Input new Tax Code code");
 		log.info("Step AddEditTaxCode_006 - 06: Click on Add button");
 		log.info("Step AddEditTaxCode_006 - 07: Input Description");
@@ -202,7 +202,7 @@ public class MasterFiles_22_AddEditTaxCode extends AbstractTest {
 		log.info("Step AddEditTaxCode_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditTaxCode_007 - 02: Input correct username and password");
 		log.info("Step AddEditTaxCode_007 - 03: Accept Alert message");
-		log.info("Step AddEditTaxCode_007 - 04: Open Add labels page");
+		log.info("Step AddEditTaxCode_007 - 04: Open Add Tax Code page");
 		log.info("Step AddEditTaxCode_007 - 05: Input new Tax Code code");
 		log.info("Step AddEditTaxCode_007 - 06: Click on Add button");
 		log.info("Step AddEditTaxCode_007 - 07: Input Description");

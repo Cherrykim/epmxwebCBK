@@ -153,4 +153,14 @@ public class PageFactory {
 	public static RfqPage getRfqPage(WebDriver driver, String ipClient) {
 		return new RfqPage(driver, ipClient);
 	}
+	
+	/**
+	 * get AssetManagerPage
+	 * @param driver
+	 * @param ipClient
+	 * @return AssetManagerPage object
+	 */
+	public static AssetManagerPage getAssetManagerPage(WebDriver driver, String ipClient) {
+		return new AssetManagerPage(driver, ipClient);
+	}
 }

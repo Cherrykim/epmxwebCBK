@@ -66,7 +66,7 @@ public class MasterFiles_27_AddEditVendorGroup extends AbstractTest {
 		log.info("Step AddEditVendorGroup_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendorGroup_002 - 02: Input correct username and password");
 		log.info("Step AddEditVendorGroup_002 - 03: Accept Alert message");
-		log.info("Step AddEditVendorGroup_002 - 04: Open Add labels page");
+		log.info("Step AddEditVendorGroup_002 - 04: Open Add Vendor Group page");
 		log.info("Step AddEditVendorGroup_002 - 05: Input new Vendor Group");
 		log.info("Step AddEditVendorGroup_002 - 06: Click on Add button");
 		log.info("Step AddEditVendorGroup_002 - 07: Input Description");
@@ -95,7 +95,7 @@ public class MasterFiles_27_AddEditVendorGroup extends AbstractTest {
 		log.info("Step AddEditVendorGroup_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendorGroup_003 - 02: Input correct username and password");
 		log.info("Step AddEditVendorGroup_003 - 03: Accept Alert message");
-		log.info("Step AddEditVendorGroup_003 - 04: Open Add labels page");
+		log.info("Step AddEditVendorGroup_003 - 04: Open Add Vendor Group page");
 		log.info("Step AddEditVendorGroup_003 - 05: Input new Vendor Group");
 		log.info("Step AddEditVendorGroup_003 - 06: Click on Add button");
 		log.info("Step AddEditVendorGroup_003 - 07: Input Description");
@@ -123,7 +123,7 @@ public class MasterFiles_27_AddEditVendorGroup extends AbstractTest {
 		log.info("Step AddEditVendorGroup_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendorGroup_004 - 02: Input correct username and password");
 		log.info("Step AddEditVendorGroup_004 - 03: Accept Alert message");
-		log.info("Step AddEditVendorGroup_004 - 04: Open Add labels page");
+		log.info("Step AddEditVendorGroup_004 - 04: Open Add Vendor Group page");
 		log.info("Step AddEditVendorGroup_004 - 05: Input new Vendor Group");
 		log.info("Step AddEditVendorGroup_004 - 06: Click on Add button");
 		log.info("Step AddEditVendorGroup_004 - 07: Input Description");
@@ -146,7 +146,7 @@ public class MasterFiles_27_AddEditVendorGroup extends AbstractTest {
 		log.info("Step AddEditVendorGroup_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendorGroup_005 - 02: Input correct username and password");
 		log.info("Step AddEditVendorGroup_005 - 03: Accept Alert message");
-		log.info("Step AddEditVendorGroup_005 - 04: Open Add labels page");
+		log.info("Step AddEditVendorGroup_005 - 04: Open Add Vendor Group page");
 		log.info("Step AddEditVendorGroup_005 - 05: Input new Vendor Group code");
 		log.info("Step AddEditVendorGroup_005 - 06: Click on Add button");
 		log.info("Step AddEditVendorGroup_005 - 07: Input Description");
@@ -170,7 +170,7 @@ public class MasterFiles_27_AddEditVendorGroup extends AbstractTest {
 		log.info("Step AddEditVendorGroup_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendorGroup_006 - 02: Input correct username and password");
 		log.info("Step AddEditVendorGroup_006 - 03: Accept Alert message");
-		log.info("Step AddEditVendorGroup_006 - 04: Open Add labels page");
+		log.info("Step AddEditVendorGroup_006 - 04: Open Add Vendor Group page");
 		log.info("Step AddEditVendorGroup_006 - 05: Input new Vendor Group code");
 		log.info("Step AddEditVendorGroup_006 - 06: Click on Add button");
 		log.info("Step AddEditVendorGroup_006 - 07: Input Description");
@@ -197,7 +197,7 @@ public class MasterFiles_27_AddEditVendorGroup extends AbstractTest {
 		log.info("Step AddEditVendorGroup_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendorGroup_007 - 02: Input correct username and password");
 		log.info("Step AddEditVendorGroup_007 - 03: Accept Alert message");
-		log.info("Step AddEditVendorGroup_007 - 04: Open Add labels page");
+		log.info("Step AddEditVendorGroup_007 - 04: Open Add Vendor Group page");
 		log.info("Step AddEditVendorGroup_007 - 05: Input new Vendor Group code");
 		log.info("Step AddEditVendorGroup_007 - 06: Click on Add button");
 		log.info("Step AddEditVendorGroup_007 - 07: Input Description");

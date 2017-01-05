@@ -144,7 +144,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		log.info("Step AddEditVendor_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendor_002 - 02: Input correct username and password");
 		log.info("Step AddEditVendor_002 - 03: Accept Alert message");
-		log.info("Step AddEditVendor_002 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_002 - 04: Open Add Vendor code page");
 		log.info("Step AddEditVendor_002 - 05: Input new Vendor");
 		log.info("Step AddEditVendor_002 - 06: Click on Add button");
 		log.info("Step AddEditVendor_002 - 07: Input all fields");
@@ -224,7 +224,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		log.info("Step AddEditVendor_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendor_003 - 02: Input correct username and password");
 		log.info("Step AddEditVendor_003 - 03: Accept Alert message");
-		log.info("Step AddEditVendor_003 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_003 - 04: Open Add Vendor code page");
 		log.info("Step AddEditVendor_003 - 05: Input new Vendor");
 		log.info("Step AddEditVendor_003 - 06: Click on Add button");
 		log.info("Step AddEditVendor_003 - 07: Input all information");
@@ -252,7 +252,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		log.info("Step AddEditVendor_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendor_004 - 02: Input correct username and password");
 		log.info("Step AddEditVendor_004 - 03: Accept Alert message");
-		log.info("Step AddEditVendor_004 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_004 - 04: Open Add Vendor code page");
 		log.info("Step AddEditVendor_004 - 05: Input new Vendor");
 		log.info("Step AddEditVendor_004 - 06: Click on Add button");
 		log.info("Step AddEditVendor_004 - 07: Input all information");
@@ -275,7 +275,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		log.info("Step AddEditVendor_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendor_005 - 02: Input correct username and password");
 		log.info("Step AddEditVendor_005 - 03: Accept Alert message");
-		log.info("Step AddEditVendor_005 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_005 - 04: Open Add Vendor code page");
 		log.info("Step AddEditVendor_005 - 05: Input new Vendor code");
 		log.info("Step AddEditVendor_005 - 06: Click on Add button");
 		log.info("Step AddEditVendor_005 - 07: Input Description");
@@ -299,7 +299,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		log.info("Step AddEditVendor_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendor_006 - 02: Input correct username and password");
 		log.info("Step AddEditVendor_006 - 03: Accept Alert message");
-		log.info("Step AddEditVendor_006 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_006 - 04: Open Add Vendor code page");
 		log.info("Step AddEditVendor_006 - 05: Input new Vendor code");
 		log.info("Step AddEditVendor_006 - 06: Click on Add button");
 		log.info("Step AddEditVendor_006 - 07: Input Description");
@@ -326,7 +326,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		log.info("Step AddEditVendor_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendor_007 - 02: Input correct username and password");
 		log.info("Step AddEditVendor_007 - 03: Accept Alert message");
-		log.info("Step AddEditVendor_007 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_007 - 04: Open Add Vendor code page");
 		log.info("Step AddEditVendor_007 - 05: Input new Vendor code");
 		log.info("Step AddEditVendor_007 - 06: Click on Add button");
 		log.info("Step AddEditVendor_007 - 07: Input Description");
@@ -356,7 +356,7 @@ public class MasterFiles_29_AddEditVendor extends AbstractTest {
 		log.info("Step AddEditVendor_008 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditVendor_008 - 02: Input correct username and password");
 		log.info("Step AddEditVendor_008 - 03: Accept Alert message");
-		log.info("Step AddEditVendor_008 - 04: Open Add labels page");
+		log.info("Step AddEditVendor_008 - 04: Open Add Vendor code page");
 		log.info("Step AddEditVendor_008 - 05: Input new Vendor code");
 		log.info("Step AddEditVendor_008 - 06: Click on Add button");
 		log.info("Step AddEditVendor_008 - 07: Input Description");

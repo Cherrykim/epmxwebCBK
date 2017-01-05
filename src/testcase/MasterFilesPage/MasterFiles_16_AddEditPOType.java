@@ -66,7 +66,7 @@ public class MasterFiles_16_AddEditPOType extends AbstractTest {
 		log.info("Step AddEditPOType_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditPOType_002 - 02: Input correct username and password");
 		log.info("Step AddEditPOType_002 - 03: Accept Alert message");
-		log.info("Step AddEditPOType_002 - 04: Open Add labels page");
+		log.info("Step AddEditPOType_002 - 04: Open Add PO Type page");
 		log.info("Step AddEditPOType_002 - 05: Input new PO Type");
 		log.info("Step AddEditPOType_002 - 06: Click on Add button");
 		log.info("Step AddEditPOType_002 - 07: Input Description");
@@ -95,7 +95,7 @@ public class MasterFiles_16_AddEditPOType extends AbstractTest {
 		log.info("Step AddEditPOType_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditPOType_003 - 02: Input correct username and password");
 		log.info("Step AddEditPOType_003 - 03: Accept Alert message");
-		log.info("Step AddEditPOType_003 - 04: Open Add labels page");
+		log.info("Step AddEditPOType_003 - 04: Open Add PO Type page");
 		log.info("Step AddEditPOType_003 - 05: Input new PO Type");
 		log.info("Step AddEditPOType_003 - 06: Click on Add button");
 		log.info("Step AddEditPOType_003 - 07: Input Description");
@@ -123,7 +123,7 @@ public class MasterFiles_16_AddEditPOType extends AbstractTest {
 		log.info("Step AddEditPOType_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditPOType_004 - 02: Input correct username and password");
 		log.info("Step AddEditPOType_004 - 03: Accept Alert message");
-		log.info("Step AddEditPOType_004 - 04: Open Add labels page");
+		log.info("Step AddEditPOType_004 - 04: Open Add PO Type page");
 		log.info("Step AddEditPOType_004 - 05: Input new PO Type");
 		log.info("Step AddEditPOType_004 - 06: Click on Add button");
 		log.info("Step AddEditPOType_004 - 07: Input Description");
@@ -146,7 +146,7 @@ public class MasterFiles_16_AddEditPOType extends AbstractTest {
 		log.info("Step AddEditPOType_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditPOType_005 - 02: Input correct username and password");
 		log.info("Step AddEditPOType_005 - 03: Accept Alert message");
-		log.info("Step AddEditPOType_005 - 04: Open Add labels page");
+		log.info("Step AddEditPOType_005 - 04: Open Add PO Type page");
 		log.info("Step AddEditPOType_005 - 05: Input new PO Type code");
 		log.info("Step AddEditPOType_005 - 06: Click on Add button");
 		log.info("Step AddEditPOType_005 - 07: Input Description");
@@ -170,7 +170,7 @@ public class MasterFiles_16_AddEditPOType extends AbstractTest {
 		log.info("Step AddEditPOType_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditPOType_006 - 02: Input correct username and password");
 		log.info("Step AddEditPOType_006 - 03: Accept Alert message");
-		log.info("Step AddEditPOType_006 - 04: Open Add labels page");
+		log.info("Step AddEditPOType_006 - 04: Open Add PO Type page");
 		log.info("Step AddEditPOType_006 - 05: Input new PO Type code");
 		log.info("Step AddEditPOType_006 - 06: Click on Add button");
 		log.info("Step AddEditPOType_006 - 07: Input Description");
@@ -197,7 +197,7 @@ public class MasterFiles_16_AddEditPOType extends AbstractTest {
 		log.info("Step AddEditPOType_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditPOType_007 - 02: Input correct username and password");
 		log.info("Step AddEditPOType_007 - 03: Accept Alert message");
-		log.info("Step AddEditPOType_007 - 04: Open Add labels page");
+		log.info("Step AddEditPOType_007 - 04: Open Add PO Type page");
 		log.info("Step AddEditPOType_007 - 05: Input new PO Type code");
 		log.info("Step AddEditPOType_007 - 06: Click on Add button");
 		log.info("Step AddEditPOType_007 - 07: Input Description");

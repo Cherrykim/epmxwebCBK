@@ -66,7 +66,7 @@ public class MasterFiles_25_AddEditUnitOfMeasure extends AbstractTest {
 		log.info("Step AddEditUnitOfMeasure_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUnitOfMeasure_002 - 02: Input correct username and password");
 		log.info("Step AddEditUnitOfMeasure_002 - 03: Accept Alert message");
-		log.info("Step AddEditUnitOfMeasure_002 - 04: Open Add labels page");
+		log.info("Step AddEditUnitOfMeasure_002 - 04: Open Add Unit of measure page");
 		log.info("Step AddEditUnitOfMeasure_002 - 05: Input new Unit of measure");
 		log.info("Step AddEditUnitOfMeasure_002 - 06: Click on Add button");
 		log.info("Step AddEditUnitOfMeasure_002 - 07: Input Description");
@@ -95,7 +95,7 @@ public class MasterFiles_25_AddEditUnitOfMeasure extends AbstractTest {
 		log.info("Step AddEditUnitOfMeasure_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUnitOfMeasure_003 - 02: Input correct username and password");
 		log.info("Step AddEditUnitOfMeasure_003 - 03: Accept Alert message");
-		log.info("Step AddEditUnitOfMeasure_003 - 04: Open Add labels page");
+		log.info("Step AddEditUnitOfMeasure_003 - 04: Open Add Unit of measure page");
 		log.info("Step AddEditUnitOfMeasure_003 - 05: Input new Unit of measure");
 		log.info("Step AddEditUnitOfMeasure_003 - 06: Click on Add button");
 		log.info("Step AddEditUnitOfMeasure_003 - 07: Input Description");
@@ -123,7 +123,7 @@ public class MasterFiles_25_AddEditUnitOfMeasure extends AbstractTest {
 		log.info("Step AddEditUnitOfMeasure_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUnitOfMeasure_004 - 02: Input correct username and password");
 		log.info("Step AddEditUnitOfMeasure_004 - 03: Accept Alert message");
-		log.info("Step AddEditUnitOfMeasure_004 - 04: Open Add labels page");
+		log.info("Step AddEditUnitOfMeasure_004 - 04: Open Add Unit of measure page");
 		log.info("Step AddEditUnitOfMeasure_004 - 05: Input new Unit of measure");
 		log.info("Step AddEditUnitOfMeasure_004 - 06: Click on Add button");
 		log.info("Step AddEditUnitOfMeasure_004 - 07: Input Description");
@@ -146,7 +146,7 @@ public class MasterFiles_25_AddEditUnitOfMeasure extends AbstractTest {
 		log.info("Step AddEditUnitOfMeasure_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUnitOfMeasure_005 - 02: Input correct username and password");
 		log.info("Step AddEditUnitOfMeasure_005 - 03: Accept Alert message");
-		log.info("Step AddEditUnitOfMeasure_005 - 04: Open Add labels page");
+		log.info("Step AddEditUnitOfMeasure_005 - 04: Open Add Unit of measure page");
 		log.info("Step AddEditUnitOfMeasure_005 - 05: Input new Unit of Measure code");
 		log.info("Step AddEditUnitOfMeasure_005 - 06: Click on Add button");
 		log.info("Step AddEditUnitOfMeasure_005 - 07: Input Description");
@@ -170,7 +170,7 @@ public class MasterFiles_25_AddEditUnitOfMeasure extends AbstractTest {
 		log.info("Step AddEditUnitOfMeasure_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditUnitOfMeasure_006 - 02: Input correct username and password");
 		log.info("Step AddEditUnitOfMeasure_006 - 03: Accept Alert message");
-		log.info("Step AddEditUnitOfMeasure_006 - 04: Open Add labels page");
+		log.info("Step AddEditUnitOfMeasure_006 - 04: Open Add Unit of measure page");
 		log.info("Step AddEditUnitOfMeasure_006 - 05: Input new Unit of Measure code");
 		log.info("Step AddEditUnitOfMeasure_006 - 06: Click on Add button");
 		log.info("Step AddEditUnitOfMeasure_006 - 07: Input Description");

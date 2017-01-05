@@ -120,7 +120,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		masterFilesPage.createNewVendor(vendorID1, vendorName1, corporation);
 		masterFilesPage.createNewVendor(vendorID2, vendorName2, corporation);
 		
-		log.info("Step Pre-condition - 04: Create Special text");
+		log.info("Step Pre-condition - 11: Create Special text");
 		masterFilesPage.createNewSpecialText(text1, corporation);
 		masterFilesPage.createNewSpecialText(text2, corporation);
 		
@@ -196,7 +196,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_001 - 12: Click on Modify button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("Step AddEditRfq_001 - 12: Get RFQ date");
+		log.info("Step AddEditRfq_001 - 13: Get RFQ date");
 		rfqDate = rfqPage.getTextfieldByID(DriverManager.getDriver(), "txt_rfqdate");
 		
 		log.info("Step AddEditRfq_001 - VP: Check All other textfields saved correctly");
@@ -207,7 +207,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNum", jobCode1));
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAccount", glAccountCode1));
 		
-		log.info("Step AddEditRfq_001 - 05: Check All other dropdown saved correctly");
+		log.info("Step AddEditRfq_001 - 14: Check All other dropdown saved correctly");
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode1);
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PPFreight"), "Included in Price");
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Buyer"), primaryUserName);
@@ -218,7 +218,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText3"), specialText1);
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText4"), specialText1);
 		
-		log.info("Step AddEditRfq_001 - 05: Check Line Item displayed correctly");
+		log.info("Step AddEditRfq_001 - 15: Check Line Item displayed correctly");
 		rfqPage.openTab(DriverManager.getDriver(), "Line Item Info");
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "obj_LineItem0", itemCode1));
 		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_LineDesc10"), "Item 1");
@@ -229,14 +229,14 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAcc0", glAccountCode1));
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineSpecialTextLineItem0"), specialText1);
 
-		log.info("Step AddEditRfq_001 - 05: Check Attachment displayed correctly");
+		log.info("Step AddEditRfq_001 - 16: Check Attachment displayed correctly");
 		verifyTrue(rfqPage.isAttachmentDisplayed("datatest1.pdf"));
 		
-		log.info("Step AddEditRfq_001 - 05: Check Vendor displayed correctly");
+		log.info("Step AddEditRfq_001 - 17: Check Vendor displayed correctly");
 		rfqPage.openTab(DriverManager.getDriver(), "RFQ Vendors");
 		verifyTrue(rfqPage.isVendorRecordDisplayed(vendorID1, vendorName1));
 		
-		log.info("Step AddEditRfq_001 - 05: Check Instructions saved correctly");
+		log.info("Step AddEditRfq_001 - 18: Check Instructions saved correctly");
 		rfqPage.openTab(DriverManager.getDriver(), "RFQ Instructions");
 		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_rfqInstructions"), validText1);
 		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_rfqNotes"), validText1);
@@ -248,7 +248,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_002 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_002 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_002 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_002 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_002 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_002 - 05: Input new Rfq");
 		log.info("Step AddEditRfq_002 - 06: Click on Add button");
 		log.info("Step AddEditRfq_002 - 07: Input all other textfields");
@@ -264,7 +264,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_JobNum", jobCode2);
 		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", glAccountCode2);
 		
-		log.info("Step AddEditRfq_001 - 05: Select all other textfield");
+		log.info("Step AddEditRfq_001 - 12: Select all other textfield");
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode2);
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_PPFreight", "Pre Paid by Vendor");
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", primaryUserName2);
@@ -275,7 +275,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText3", specialText2);
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_SpecialText4", specialText2);
 		
-		log.info("Step AddEditRfq_001 - 06: Add Line Item to Rfq");
+		log.info("Step AddEditRfq_001 - 13: Add Line Item to Rfq");
 		rfqPage.openTab(DriverManager.getDriver(), "Line Item Info");
 		rfqPage.clickOnElementByItsID(DriverManager.getDriver(), "img_DelLine0");
 		rfqPage.acceptAlert(DriverManager.getDriver());
@@ -288,28 +288,28 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_LineGlAccount1", glAccountCode2);
 		rfqPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_LineSpecialTextLineItem1", specialText2);
 
-		log.info("Step AddEditRfq_001 - 07: Add Attachment");
+		log.info("Step AddEditRfq_001 - 14: Add Attachment");
 		rfqPage.addAttachment("datatest2.pdf");
 		
-		log.info("Step AddEditRfq_001 - 08: Add Vendor");
+		log.info("Step AddEditRfq_001 - 15: Add Vendor");
 		rfqPage.openTab(DriverManager.getDriver(), "RFQ Vendors");
 		rfqPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendor2);
 		rfqPage.clickOnElementByItsValue(DriverManager.getDriver(), "Add To Vendors List");
 		
-		log.info("Step AddEditRfq_001 - 09: Input Instructions");
+		log.info("Step AddEditRfq_001 - 16: Input Instructions");
 		rfqPage.openTab(DriverManager.getDriver(), "RFQ Instructions");
 		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_rfqInstructions", validText2);
 		rfqPage.inputTextareaByID(DriverManager.getDriver(), "txt_rfqNotes", validText2);
 		
-		log.info("Step AddEditRfq_001 - 10: Click on Save button");
+		log.info("Step AddEditRfq_001 - 17: Click on Save button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		rfqPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_Save");
 		
-		log.info("Step AddEditRfq_001 - 11: Select corporation");
+		log.info("Step AddEditRfq_001 - 18: Select corporation");
 		rfqPage.sleep(3);
 		rfqPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RFQNum", newRfq);
 		
-		log.info("Step AddEditRfq_001 - 12: Click on Modify button");
+		log.info("Step AddEditRfq_001 - 19: Click on Modify button");
 		rfqPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("Step AddEditRfq_001 - VP: Check All other textfields saved correctly");
@@ -320,7 +320,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_JobNum", jobCode2));
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAccount", glAccountCode2));
 		
-		log.info("Step AddEditRfq_001 - 05: Check All other dropdown saved correctly");
+		log.info("Step AddEditRfq_001 - 20: Check All other dropdown saved correctly");
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode2);
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_PPFreight"), "Pre Paid by Vendor");
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_Buyer"), primaryUserName2);
@@ -331,7 +331,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText3"), specialText2);
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_SpecialText4"), specialText2);
 		
-		log.info("Step AddEditRfq_001 - 05: Check Line Item displayed correctly");
+		log.info("Step AddEditRfq_001 - 21: Check Line Item displayed correctly");
 		rfqPage.openTab(DriverManager.getDriver(), "Line Item Info");
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "obj_LineItem0", itemCode2));
 		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_LineDesc10"), "Item 2");
@@ -342,14 +342,14 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		verifyTrue(rfqPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAcc0", glAccountCode2));
 		verifyEquals(rfqPage.getSelectedItemByID(DriverManager.getDriver(), "sel_LineSpecialTextLineItem0"), specialText2);
 
-		log.info("Step AddEditRfq_001 - 05: Check Attachment displayed correctly");
+		log.info("Step AddEditRfq_001 - 22: Check Attachment displayed correctly");
 		verifyTrue(rfqPage.isAttachmentDisplayed("datatest2.pdf"));
 		
-		log.info("Step AddEditRfq_001 - 05: Check Vendor displayed correctly");
+		log.info("Step AddEditRfq_001 - 23: Check Vendor displayed correctly");
 		rfqPage.openTab(DriverManager.getDriver(), "RFQ Vendors");
 		verifyTrue(rfqPage.isVendorRecordDisplayed(vendorID2, vendorName2));
 		
-		log.info("Step AddEditRfq_001 - 05: Check Instructions saved correctly");
+		log.info("Step AddEditRfq_001 - 24: Check Instructions saved correctly");
 		rfqPage.openTab(DriverManager.getDriver(), "RFQ Instructions");
 		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_rfqInstructions"), validText2);
 		verifyEquals(rfqPage.getTextareaByID(DriverManager.getDriver(), "txt_rfqNotes"), validText2);
@@ -361,7 +361,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_003 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_003 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_003 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_003 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_003 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_003 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_003 - 06: Click on Add button");
 		log.info("Step AddEditRfq_003 - 07: Input all other textfields");
@@ -385,7 +385,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_004 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_004 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_004 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_004 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_004 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_004 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_004 - 06: Click on Add button");
 		log.info("Step AddEditRfq_004 - 07: Input all other textfields");
@@ -412,7 +412,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_005 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_005 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_005 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_005 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_005 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_005 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_005 - 06: Click on Add button");
 		log.info("Step AddEditRfq_005 - 07: Input all other textfields");
@@ -442,7 +442,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_006 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_006 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_006 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_006 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_006 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_006 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_006 - 06: Click on Add button");
 		log.info("Step AddEditRfq_006 - 07: Input all other textfields");
@@ -469,7 +469,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_007 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_007 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_007 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_007 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_007 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_007 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_007 - 06: Click on Add button");
 		log.info("Step AddEditRfq_007 - 07: Input all other textfields");
@@ -496,7 +496,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_008 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_008 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_008 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_008 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_008 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_008 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_008 - 06: Click on Add button");
 		log.info("Step AddEditRfq_008 - 07: Input all other textfields");
@@ -523,7 +523,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_009 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_009 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_009 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_009 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_009 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_009 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_009 - 06: Click on Add button");
 		log.info("Step AddEditRfq_009 - 07: Input all other textfields");
@@ -550,7 +550,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_010 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_010 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_010 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_010 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_010 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_010 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_010 - 06: Click on Add button");
 		log.info("Step AddEditRfq_010 - 07: Input all other textfields");
@@ -577,7 +577,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_011 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_011 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_011 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_011 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_011 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_011 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_011 - 06: Click on Add button");
 		log.info("Step AddEditRfq_011 - 07: Input all other textfields");
@@ -604,7 +604,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_012 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_012 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_012 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_012 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_012 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_012 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_012 - 06: Click on Add button");
 		log.info("Step AddEditRfq_012 - 07: Input all other textfields");
@@ -630,7 +630,7 @@ public class RFQ_01_AddEditRfq extends AbstractTest {
 		log.info("Step AddEditRfq_013 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditRfq_013 - 02: Input correct username and password");
 		log.info("Step AddEditRfq_013 - 03: Accept Alert message");
-		log.info("Step AddEditRfq_013 - 04: Open Add labels page");
+		log.info("Step AddEditRfq_013 - 04: Open Add Rfq page");
 		log.info("Step AddEditRfq_013 - 05: Input Rfq date code");
 		log.info("Step AddEditRfq_013 - 06: Click on Add button");
 		log.info("Step AddEditRfq_013 - 07: Input all other textfields");

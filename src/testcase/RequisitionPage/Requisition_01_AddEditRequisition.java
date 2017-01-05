@@ -153,7 +153,7 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		log.info("Step AddEditRequisition_002 - 09: Input new Requisition");
 		log.info("Step AddEditRequisition_002 - 10: Click on Modify button");
 		log.info("Step AddEditRequisition_002 - 11: Input All other textfields");
-		log.info("Step AddEditRequisition_001 - 12: Input All other textfields");
+		log.info("Step AddEditRequisition_002 - 12: Input All other textfields");
 		requisitionPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipCode", shipToCode2);
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName2);
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqDate", "12-12-2020");
@@ -162,24 +162,24 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ProjectNum", projectCode2);
 		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAccount", glAccountCode2);
 		
-		log.info("Step AddEditRequisition_001 - 13: Add Line Item to Requisition");
+		log.info("Step AddEditRequisition_002 - 13: Add Line Item to Requisition");
 		requisitionPage.inputTextareaByID(DriverManager.getDriver(), "txt_Desc0", "Item 2");
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_quantity0", "12.0000");
 		requisitionPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Um0", unitOfMeasureName2);
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Price0", "12.0000");
 		
-		log.info("Step AddEditRequisition_001 - 14: Click on Save button");
+		log.info("Step AddEditRequisition_002 - 14: Click on Save button");
 		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		requisitionPage.clickOnElementByItsID(DriverManager.getDriver(), "chk_UpType1");
 		requisitionPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_Save");
 		
-		log.info("Step AddEditRequisition_001 - 15: Input new Requisition");
+		log.info("Step AddEditRequisition_002 - 15: Input new Requisition");
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
 		
-		log.info("Step AddEditRequisition_001 - 16: Click on Modify button");
+		log.info("Step AddEditRequisition_002 - 16: Click on Modify button");
 		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("Step AddEditRequisition_001 - VP: All other textfields are saved correctly");
+		log.info("Step AddEditRequisition_002 - VP: All other textfields are saved correctly");
 		verifyEquals(requisitionPage.getSelectedItemByID(DriverManager.getDriver(), "sel_ShipCode"), shipToCode2);
 		verifyTrue(requisitionPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Vendor", vendorName2));
 		verifyEquals(requisitionPage.getTextfieldByID(DriverManager.getDriver(), "txt_ReqDate"), "12-12-2020");
@@ -188,7 +188,7 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		verifyTrue(requisitionPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_ProjectNum", projectCode2));
 		verifyTrue(requisitionPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAccount", glAccountCode2));
 		
-		log.info("Step AddEditRequisition_001 - VP: Line Item is added to Requisition");
+		log.info("Step AddEditRequisition_002 - VP: Line Item is added to Requisition");
 		verifyTrue(requisitionPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_LineItem0", itemCode1));
 		verifyEquals(requisitionPage.getTextareaByID(DriverManager.getDriver(), "txt_Desc0"), "Item 2");
 		verifyEquals(requisitionPage.getTextfieldByID(DriverManager.getDriver(), "txt_quantity0"), "12.0000");
@@ -221,32 +221,32 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
 	}
 	
-	@Test(groups = { "regression" }, description = "Check Search Requisition code by Buyer works")
-	public void AddEditRequisition_004_SearchRequisitionByBuyer() {	
-		
-		log.info("Step AddEditRequisition_004 - 01: Open the site https://cherry.epmxweb.com");
-		log.info("Step AddEditRequisition_004 - 02: Input correct username and password");
-		log.info("Step AddEditRequisition_004 - 03: Accept Alert message");
-		log.info("Step AddEditRequisition_004 - 04: Open Add labels page");
-		log.info("Step AddEditRequisition_004 - 05: Input new Requisition code");
-		log.info("Step AddEditRequisition_004 - 06: Click on Add button");
-		log.info("Step AddEditRequisition_004 - 07: Input all other textfields");
-		log.info("Step AddEditRequisition_004 - 08: Click on Save button");
-		log.info("Step AddEditRequisition_004 - 09: Open Manager page");
-		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
-		
-		log.info("Step AddEditRequisition_004 - 10: Input Requisition Code");
-		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-		
-		log.info("Step AddEditRequisition_004 - 11: Select Receiver");
-		requisitionPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", "Tammi Stock");
-		
-		log.info("Step AddEditRequisition_004 - 12: Click on Search button");
-		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-		
-		log.info("VP: Requisition code displayed correctly");
-		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
-	}
+//	@Test(groups = { "regression" }, description = "Check Search Requisition code by Buyer works")
+//	public void AddEditRequisition_004_SearchRequisitionByBuyer() {	
+//		
+//		log.info("Step AddEditRequisition_004 - 01: Open the site https://cherry.epmxweb.com");
+//		log.info("Step AddEditRequisition_004 - 02: Input correct username and password");
+//		log.info("Step AddEditRequisition_004 - 03: Accept Alert message");
+//		log.info("Step AddEditRequisition_004 - 04: Open Add labels page");
+//		log.info("Step AddEditRequisition_004 - 05: Input new Requisition code");
+//		log.info("Step AddEditRequisition_004 - 06: Click on Add button");
+//		log.info("Step AddEditRequisition_004 - 07: Input all other textfields");
+//		log.info("Step AddEditRequisition_004 - 08: Click on Save button");
+//		log.info("Step AddEditRequisition_004 - 09: Open Manager page");
+//		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
+//		
+//		log.info("Step AddEditRequisition_004 - 10: Input Requisition Code");
+//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+//		
+//		log.info("Step AddEditRequisition_004 - 11: Select Receiver");
+//		requisitionPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Buyer", "Tammi Stock");
+//		
+//		log.info("Step AddEditRequisition_004 - 12: Click on Search button");
+//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+//		
+//		log.info("VP: Requisition code displayed correctly");
+//		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
+//	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Requisition code by Keywords works")
 	public void AddEditRequisition_005_SearchRequisitionByKeywords() {	
