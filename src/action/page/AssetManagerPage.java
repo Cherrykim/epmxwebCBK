@@ -31,7 +31,7 @@ public class AssetManagerPage extends AbstractPage {
 	}
 	
 	public void createNewAssetDepartment(String value){
-		openLink(driver, "https://cherry.epmxweb.com/asset_manager/add_asset_category.php");
+		openLink(driver, "https://cherry.epmxweb.com/asset_manager/add_asset_department.php");
 		sleep(2);
 		inputTextfieldByID(DriverManager.getDriver(), "txt_DepartmentCode", value);
 		clickOnElementByItsID(driver, "img_Add");
@@ -44,7 +44,7 @@ public class AssetManagerPage extends AbstractPage {
 	}
 	
 	public void createNewAssetStatus(String value){
-		openLink(driver, "https://cherry.epmxweb.com/asset_manager/add_asset_category.php");
+		openLink(driver, "https://cherry.epmxweb.com/asset_manager/add_asset_status.php");
 		sleep(2);
 		inputTextfieldByID(DriverManager.getDriver(), "txt_StatusCode", value);
 		clickOnElementByItsID(driver, "img_Add");
@@ -57,7 +57,7 @@ public class AssetManagerPage extends AbstractPage {
 	}
 	
 	public void createNewAssetType(String value){
-		openLink(driver, "https://cherry.epmxweb.com/asset_manager/add_asset_category.php");
+		openLink(driver, "https://cherry.epmxweb.com/asset_manager/add_asset_type.php");
 		sleep(2);
 		inputTextfieldByID(DriverManager.getDriver(), "txt_TypeCode", value);
 		clickOnElementByItsID(driver, "img_Add");
@@ -70,7 +70,7 @@ public class AssetManagerPage extends AbstractPage {
 	}
 	
 	public void createNewAssetUnit(String value){
-		openLink(driver, "https://cherry.epmxweb.com/asset_manager/add_asset_category.php");
+		openLink(driver, "https://cherry.epmxweb.com/asset_manager/add_asset_unit.php");
 		sleep(2);
 		inputTextfieldByID(DriverManager.getDriver(), "txt_UnitCode", value);
 		clickOnElementByItsID(driver, "img_Add");
