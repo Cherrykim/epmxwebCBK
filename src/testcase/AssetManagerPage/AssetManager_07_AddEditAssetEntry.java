@@ -33,7 +33,7 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 		newDepartment1= newAssetDepartment1 + " : " + newAssetDepartment1;
 		newAssetStatus1 = "status1";
 		newStatus1= newAssetStatus1 + " : " + newAssetStatus1;
-		newAssetType1 = "type1";
+		newAssetType1 = getUniqueText(5);
 		newType1= newAssetType1 + " : " + newAssetType1;
 		newAssetUnit1 = "unit1";
 		newUnit1= newAssetUnit1 + " : " + newAssetUnit1;
@@ -47,7 +47,7 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 		newDepartment2= newAssetDepartment2 + " : " + newAssetDepartment2;
 		newAssetStatus2 = "status2";
 		newStatus2= newAssetStatus2 + " : " + newAssetStatus2;
-		newAssetType2 = "type2";
+		newAssetType2 = getUniqueText(5);
 		newType2= newAssetType2 + " : " + newAssetType2;
 		newAssetUnit2 = "unit2";
 		newUnit2= newAssetUnit2 + " : " + newAssetUnit2;
@@ -126,16 +126,16 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 	@Test(groups = { "regression" }, description = "Check Add Asset entry works")
 	public void AddEditAssetEntry_001_CheckAddAssetEntryWorks() {	
 		
-		log.info("Step AddEditAssetEntry_001 - 04: Open Add Asset entry page");
+		log.info("Step AddEditAssetEntry_001 - 01: Open Add Asset entry page");
 		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/asset_manager/add_asset.php");
 
-		log.info("Step AddEditAssetEntry_001 - 05: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_001 - 02: Input new Asset entry");
 		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetNum", newAssetEntry);
 		
-		log.info("Step AddEditAssetEntry_001 - 06: Click on Add button");
+		log.info("Step AddEditAssetEntry_001 - 03: Click on Add button");
 		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "add");
 		
-		log.info("Step AddEditAssetEntry_001 - 06: Input all selecter textfield");
+		log.info("Step AddEditAssetEntry_001 - 04: Input all selecter textfield");
 		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ItemCode", itemCode1);
 		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AssetType", newType1);
 		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AssetCategory", newCategory1);
@@ -147,7 +147,7 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName1);
 		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AssetLocation", newLocation1);
 		
-		log.info("Step AddEditAssetEntry_001 - 07: Input all textfields");
+		log.info("Step AddEditAssetEntry_001 - 05: Input all textfields");
 		assetManagerPage.inputTextareaByID(DriverManager.getDriver(), "txt_AssetDesc", "new desciption");
 		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AcquisitionDate", "11-11-2016");
 		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AcquisitionCost", "11.11");
@@ -158,7 +158,7 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Misc", "Miscellaneous");
 		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorContact", vendorName1);
 		
-		log.info("Step AddEditBlanketPO_001 - 18: Open Addl Asset Info tab");
+		log.info("Step AddEditAssetEntry_001 - 06: Open Addl Asset Info tab");
 		assetManagerPage.openTab(DriverManager.getDriver(), "Addl Asset Info");
 		
 		log.info("Step AddEditAssetEntry_001 - 07: Input all textfields");
@@ -192,7 +192,7 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 		log.info("Step AddEditAssetEntry_001 - 12: Click on Modify button");
 		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
-		log.info("Step AddEditAssetEntry_001 - 06: Input all selecter textfield");
+		log.info("Step AddEditAssetEntry_001 - VP: Check fields saved correctly: all selecter textfield");
 		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Item", itemCode1));
 		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssetType", newType1));
 		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssetCat", newCategory1));
@@ -204,7 +204,7 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Vendor", vendorName1));
 		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssetLoco", newLocation1));
 		
-		log.info("Step AddEditAssetEntry_001 - 07: Input all textfields");
+		log.info("Step AddEditAssetEntry_001 - VP:  Check fields saved correctly: all textfields");
 		verifyEquals(assetManagerPage.getTextareaByID(DriverManager.getDriver(), "txt_AssetDesc"), "new desciption");
 		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_AcquisitionDate"), "11-11-2016");
 		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_AcquisitionCost"), "11.11");
@@ -215,10 +215,10 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_Misc"), "Miscellaneous");
 		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_VendorContact"), vendorName1);
 		
-		log.info("Step AddEditBlanketPO_001 - 18: Open Addl Asset Info tab");
+		log.info("Step AddEditAssetEntry_001 - VP: Open Addl Asset Info tab");
 		assetManagerPage.openTab(DriverManager.getDriver(), "Addl Asset Info");
 		
-		log.info("Step AddEditAssetEntry_001 - 07: Input all textfields");
+		log.info("Step AddEditAssetEntry_001 - VP:  Check fields saved correctly: all textfields");
 		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_PONumber"), "11");
 		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_ReqNumber"), "11");
 		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_RfqNumber"), "11");
@@ -234,42 +234,133 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 		verifyEquals(assetManagerPage.getTextareaByID(DriverManager.getDriver(), "txt_AssetNotes"), "11");
 		verifyEquals(assetManagerPage.getTextareaByID(DriverManager.getDriver(), "txt_DisposalNotes"), "11");
 		
-		log.info("Step AddEditAssetEntry_001 - 08: Input all selecter textfield");
-		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssgnEmpBy", itemCode1));
+		log.info("Step AddEditAssetEntry_001 - VP:  Check fields saved correctly:  all selecter textfield");
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssgnEmpBy", primaryUserName));
 		
-		log.info("Step AddEditAssetEntry_001 - 09: Add Attachment");
+		log.info("Step AddEditAssetEntry_001 - VP:  Check fields saved correctly:  Attachment");
 		verifyTrue(assetManagerPage.isAttachmentDisplayed("datatest1.pdf"));
 	}
 	
-//	@Test(groups = { "regression" }, description = "Check Add Asset entry works")
-//	public void AddEditAssetEntry_002_CheckEditAssetEntryWorks() {	
-//		
-//		log.info("Step AddEditAssetEntry_002 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditAssetEntry_002 - 02: Input correct username and password");
-//		log.info("Step AddEditAssetEntry_002 - 03: Accept Alert message");
-//		log.info("Step AddEditAssetEntry_002 - 04: Open Add Asset Entry page");
-//		log.info("Step AddEditAssetEntry_002 - 05: Input new Asset entry");
-//		log.info("Step AddEditAssetEntry_002 - 06: Click on Add button");
-//		log.info("Step AddEditAssetEntry_002 - 07: Input Description");
-//		log.info("Step AddEditAssetEntry_002 - 08: Click on Save button");
-//		log.info("Step AddEditAssetEntry_002 - 09: Input new Asset entry");
-//		log.info("Step AddEditAssetEntry_002 - 10: Click on Modify button");
-//		log.info("Step AddEditAssetEntry_002 - 11: Input new Description");
-//		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Description", "new description 2");
-//		
-//		log.info("Step AddEditAssetEntry_002 - 12: Click on Save button");
-//		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
-//		
-//		log.info("Step AddEditAssetEntry_002 - 13: Input new Asset entry");
-//		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetNum", newAssetEntry);
-//		
-//		log.info("Step AddEditAssetEntry_002 - 14: Click on Modify button");
-//		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
-//		
-//		log.info("VP: Description field is saved correctly");
-//		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_Description"), "new description 2");
-//	}
-//	
+	@Test(groups = { "regression" }, description = "Check Add Asset entry works")
+	public void AddEditAssetEntry_002_CheckEditAssetEntryWorks() {	
+		
+		log.info("Step AddEditAssetEntry_002 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditAssetEntry_002 - 02: Input correct username and password");
+		log.info("Step AddEditAssetEntry_002 - 03: Accept Alert message");
+		log.info("Step AddEditAssetEntry_002 - 04: Open Add Asset Entry page");
+		log.info("Step AddEditAssetEntry_002 - 05: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_002 - 06: Click on Add button");
+		log.info("Step AddEditAssetEntry_002 - 07: Input Description");
+		log.info("Step AddEditAssetEntry_002 - 08: Click on Save button");
+		log.info("Step AddEditAssetEntry_002 - 09: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_002 - 10: Click on Modify button");
+		log.info("Step AddEditAssetEntry_002 - 11: Input all selecter textfield");
+		assetManagerPage.openTab(DriverManager.getDriver(), "Asset Info");
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ItemCode", itemCode2);
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AssetType", newType2);
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AssetCategory", newCategory2);
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AssetStatus", newStatus2);
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AsgndDept", newDepartment2);
+//		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AsgndUnit", newUnit2);
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AsgndEmp", primaryUserName2);
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", glAccountCode2);
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Vendor", vendorName2);
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AssetLocation", newLocation2);
+		
+		log.info("Step AddEditAssetEntry_002 - 11: Input all textfields");
+		assetManagerPage.inputTextareaByID(DriverManager.getDriver(), "txt_AssetDesc", "new desciption 2");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AcquisitionDate", "12-12-2016");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AcquisitionCost", "12.12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AccumulatedDepreciation", "12.12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_NetValue", "12.12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_NbrLicenses", "12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DateAssigned", "12-12-2016");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Misc", "Miscellaneous 2");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_VendorContact", vendorName2);
+		
+		log.info("Step AddEditAssetEntry_002 - 12: Open Addl Asset Info tab");
+		assetManagerPage.openTab(DriverManager.getDriver(), "Addl Asset Info");
+		
+		log.info("Step AddEditAssetEntry_002 - 13: Input all textfields");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_PONumber", "12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNumber", "12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_RfqNumber", "12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DisposalMethod", "12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DisposalExpense", "12.12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_SalvageValue", "12.12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Manufacturer", "12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ModelNumber", "12");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DisposalDate", "12-12-2016");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DisposalValue", "12.12");
+		assetManagerPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_UsefulLifeTerm", "Months");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_UsefulLifeLength", "12");
+		assetManagerPage.inputTextareaByID(DriverManager.getDriver(), "txt_AssetNotes", "12");
+		assetManagerPage.inputTextareaByID(DriverManager.getDriver(), "txt_DisposalNotes", "12");
+		
+		log.info("Step AddEditAssetEntry_002 - 14: Input all selecter textfield");
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AsgndByEmp", primaryUserName2);
+		
+		log.info("Step AddEditAssetEntry_002 - 15: Add Attachment");
+		assetManagerPage.addAttachment("datatest2.pdf");
+		
+		log.info("Step AddEditAssetEntry_002 - 16: Click on Save button");
+		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
+		
+		log.info("Step AddEditAssetEntry_002 - 17: Input new Asset entry");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetNum", newAssetEntry);
+		
+		log.info("Step AddEditAssetEntry_002 - 18: Click on Modify button");
+		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		
+		log.info("Step AddEditAssetEntry_002 - VP: Check fields saved correctly: all selecter textfield");
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Item", itemCode2));
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssetType", newType2));
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssetCat", newCategory2));
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssetStat", newStatus2));
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssgnDept", newDepartment2));
+//		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssetUnit", newUnit2));
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssetEmp", primaryUserName2));
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_GlAccount", glAccountCode2));
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_Vendor", vendorName2));
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssetLoco", newLocation2));
+		
+		log.info("Step AddEditAssetEntry_002 - VP:  Check fields saved correctly: all textfields");
+		verifyEquals(assetManagerPage.getTextareaByID(DriverManager.getDriver(), "txt_AssetDesc"), "new desciption 2");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_AcquisitionDate"), "12-12-2016");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_AcquisitionCost"), "12.12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_AccumulatedDepreciation"), "12.12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_NetValue"), "12.12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_NbrLicenses"), "12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_DateAssigned"), "12-12-2016");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_Misc"), "Miscellaneous 2");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_VendorContact"), vendorName2);
+		
+		log.info("Step AddEditAssetEntry_002 - VP: Open Addl Asset Info tab");
+		assetManagerPage.openTab(DriverManager.getDriver(), "Addl Asset Info");
+		
+		log.info("Step AddEditAssetEntry_002 - VP:  Check fields saved correctly: all textfields");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_PONumber"), "12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_ReqNumber"), "12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_RfqNumber"), "12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_DisposalMethod"), "12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_DisposalExpense"), "12.12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_SalvageValue"), "12.12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_Manufacturer"), "12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_ModelNumber"), "12");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_DisposalDate"), "12-12-2016");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_DisposalValue"), "12.12");
+		verifyEquals(assetManagerPage.getSelectedItemByID(DriverManager.getDriver(), "sel_UsefulLifeTerm"), "Months");
+		verifyEquals(assetManagerPage.getTextfieldByID(DriverManager.getDriver(), "txt_UsefulLifeLength"), "12");
+		verifyEquals(assetManagerPage.getTextareaByID(DriverManager.getDriver(), "txt_AssetNotes"), "12");
+		verifyEquals(assetManagerPage.getTextareaByID(DriverManager.getDriver(), "txt_DisposalNotes"), "12");
+		
+		log.info("Step AddEditAssetEntry_002 - VP:  Check fields saved correctly:  all selecter textfield");
+		verifyTrue(assetManagerPage.isSuggestionDropdownDisplayedCorrectly(DriverManager.getDriver(), "div_AssgnEmpBy", primaryUserName2));
+		
+		log.info("Step AddEditAssetEntry_002 - VP:  Check fields saved correctly:  Attachment");
+		verifyTrue(assetManagerPage.isAttachmentDisplayed("datatest2.pdf"));
+	}
+	
 //	@Test(groups = { "regression" }, description = "Check Deactivate Asset entry works")
 //	public void AddEditAssetEntry_003_CheckDeactivateAssetEntryWorks() {	
 //		
@@ -295,7 +386,7 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 //		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 //		
 //		log.info("VP: Asset entry is deactivated");
-//		verifyEquals(assetManagerPage.getAlertText(DriverManager.getDriver()), "Asset Entry is deactivated. Press OK to reactivate or Cancel to view record only.");
+//		verifyEquals(assetManagerPage.getAlertText(DriverManager.getDriver()), "Asset Number is deactivated. Press OK to reactivate or Cancel to view record only.");
 //	}
 //	
 //	@Test(groups = { "regression" }, description = "Check REactivate Asset entry works")
@@ -320,84 +411,138 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 //		log.info("VP: Save button is clickable");
 //		verifyEquals(assetManagerPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
 //	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Asset entry by Code works")
-//	public void AddEditAssetEntry_005_SearchAssetEntryByCode() {	
-//		
-//		log.info("Step AddEditAssetEntry_005 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditAssetEntry_005 - 02: Input correct username and password");
-//		log.info("Step AddEditAssetEntry_005 - 03: Accept Alert message");
-//		log.info("Step AddEditAssetEntry_005 - 04: Open Add Asset Entry page");
-//		log.info("Step AddEditAssetEntry_005 - 05: Input new Asset entry");
-//		log.info("Step AddEditAssetEntry_005 - 06: Click on Add button");
-//		log.info("Step AddEditAssetEntry_005 - 07: Input Description");
-//		log.info("Step AddEditAssetEntry_005 - 08: Click on Save button");
-//		log.info("Step AddEditAssetEntry_005 - 09: Open Manager page");
-//		assetManagerPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/asset_manager/manage_asset.php");
-//		
-//		log.info("Step AddEditAssetEntry_005 - 10: Input Asset Entry");
-//		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetEntry", newAssetEntry);
-//		
-//		log.info("Step AddEditAssetEntry_005 - 11: Click on Search button");
-//		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Asset entry displayed correctly");
-//		verifyTrue(assetManagerPage.isResultTableContainsRecord(DriverManager.getDriver(), newAssetEntry, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Asset entry by Corporation works")
-//	public void AddEditAssetEntry_006_SearchAssetEntryByCorporation() {	
-//		
-//		log.info("Step AddEditAssetEntry_006 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditAssetEntry_006 - 02: Input correct username and password");
-//		log.info("Step AddEditAssetEntry_006 - 03: Accept Alert message");
-//		log.info("Step AddEditAssetEntry_006 - 04: Open Add Asset Entry page");
-//		log.info("Step AddEditAssetEntry_006 - 05: Input new Asset entry");
-//		log.info("Step AddEditAssetEntry_006 - 06: Click on Add button");
-//		log.info("Step AddEditAssetEntry_006 - 07: Input Description");
-//		log.info("Step AddEditAssetEntry_006 - 08: Click on Save button");
-//		log.info("Step AddEditAssetEntry_006 - 09: Open Manager page");
-//		assetManagerPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/asset_manager/manage_asset.php");
-//		
-//		log.info("Step AddEditAssetEntry_006 - 10: Input Asset Entry");
-//		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetEntry", newAssetEntry);
-//		
-//		log.info("Step AddEditAssetEntry_006 - 11: Select Corporation");
-//		assetManagerPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
-//		
-//		log.info("Step AddEditAssetEntry_006 - 12: Click on Search button");
-//		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Asset entry displayed correctly");
-//		verifyTrue(assetManagerPage.isResultTableContainsRecord(DriverManager.getDriver(), newAssetEntry, Constant.DefaultValue.CORPORATION));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Asset entry by Description works")
-//	public void AddEditAssetEntry_007_SearchAssetEntryByDescription() {	
-//		
-//		log.info("Step AddEditAssetEntry_007 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditAssetEntry_007 - 02: Input correct username and password");
-//		log.info("Step AddEditAssetEntry_007 - 03: Accept Alert message");
-//		log.info("Step AddEditAssetEntry_007 - 04: Open Add Asset Entry page");
-//		log.info("Step AddEditAssetEntry_007 - 05: Input new Asset entry");
-//		log.info("Step AddEditAssetEntry_007 - 06: Click on Add button");
-//		log.info("Step AddEditAssetEntry_007 - 07: Input Description");
-//		log.info("Step AddEditAssetEntry_007 - 08: Click on Save button");
-//		log.info("Step AddEditAssetEntry_007 - 09: Open Manager page");
-//		assetManagerPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/asset_manager/manage_asset.php");
-//		
-//		log.info("Step AddEditAssetEntry_007 - 10: Input Asset Entry");
-//		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetEntry", newAssetEntry);
-//		
-//		log.info("Step AddEditAssetEntry_007 - 11: Input Asset Entry description");
-//		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_EntryDesc", "new description 2");
-//		
-//		log.info("Step AddEditAssetEntry_007 - 12: Click on Search button");
-//		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Asset entry displayed correctly");
-//		verifyTrue(assetManagerPage.isResultTableContainsRecord(DriverManager.getDriver(), newAssetEntry, "new description 2"));
-//	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Asset entry by Type works")
+	public void AddEditAssetEntry_005_SearchAssetEntryByType() {	
+		
+		log.info("Step AddEditAssetEntry_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditAssetEntry_005 - 02: Input correct username and password");
+		log.info("Step AddEditAssetEntry_005 - 03: Accept Alert message");
+		log.info("Step AddEditAssetEntry_005 - 04: Open Add Asset Entry page");
+		log.info("Step AddEditAssetEntry_005 - 05: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_005 - 06: Click on Add button");
+		log.info("Step AddEditAssetEntry_005 - 07: Input Description");
+		log.info("Step AddEditAssetEntry_005 - 08: Click on Save button");
+		log.info("Step AddEditAssetEntry_005 - 09: Open Manager page");
+		assetManagerPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/asset_manager/manage_asset.php");
+		
+		log.info("Step AddEditAssetEntry_005 - 10: Input Asset Type");
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AssetType", newType2);
+		
+		log.info("Step AddEditAssetEntry_005 - 11: Click on Search button");
+		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Asset entry displayed correctly");
+		verifyTrue(assetManagerPage.isResultTableContainsRecord(DriverManager.getDriver(), newAssetEntry, newType2));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Asset entry by Corporation works")
+	public void AddEditAssetEntry_006_SearchAssetEntryByCorporation() {	
+		
+		log.info("Step AddEditAssetEntry_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditAssetEntry_006 - 02: Input correct username and password");
+		log.info("Step AddEditAssetEntry_006 - 03: Accept Alert message");
+		log.info("Step AddEditAssetEntry_006 - 04: Open Add Asset Entry page");
+		log.info("Step AddEditAssetEntry_006 - 05: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_006 - 06: Click on Add button");
+		log.info("Step AddEditAssetEntry_006 - 07: Input Description");
+		log.info("Step AddEditAssetEntry_006 - 08: Click on Save button");
+		log.info("Step AddEditAssetEntry_006 - 09: Open Manager page");
+		assetManagerPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/asset_manager/manage_asset.php");
+		
+		log.info("Step AddEditAssetEntry_006 - 10: Input Asset Type");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetType", newType2);
+		
+		log.info("Step AddEditAssetEntry_006 - 11: Select Corporation");
+		assetManagerPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", Constant.DefaultValue.CORPORATION);
+		
+		log.info("Step AddEditAssetEntry_006 - 12: Click on Search button");
+		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Asset entry displayed correctly");
+		verifyTrue(assetManagerPage.isResultTableContainsRecord(DriverManager.getDriver(), newAssetEntry, Constant.DefaultValue.CORPORATION));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Asset entry by Description works")
+	public void AddEditAssetEntry_007_SearchAssetEntryByDescription() {	
+		
+		log.info("Step AddEditAssetEntry_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditAssetEntry_007 - 02: Input correct username and password");
+		log.info("Step AddEditAssetEntry_007 - 03: Accept Alert message");
+		log.info("Step AddEditAssetEntry_007 - 04: Open Add Asset Entry page");
+		log.info("Step AddEditAssetEntry_007 - 05: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_007 - 06: Click on Add button");
+		log.info("Step AddEditAssetEntry_007 - 07: Input Description");
+		log.info("Step AddEditAssetEntry_007 - 08: Click on Save button");
+		log.info("Step AddEditAssetEntry_007 - 09: Open Manager page");
+		assetManagerPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/asset_manager/manage_asset.php");
+		
+		log.info("Step AddEditAssetEntry_007 - 10: Input Asset Type");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetType", newType2);
+		
+		log.info("Step AddEditAssetEntry_007 - 11: Input Asset Entry description");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetDesc", "new description 2");
+		
+		log.info("Step AddEditAssetEntry_007 - 12: Click on Search button");
+		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Asset entry displayed correctly");
+		verifyTrue(assetManagerPage.isResultTableContainsRecord(DriverManager.getDriver(), newAssetEntry, "new description 2"));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Asset entry by Item Code works")
+	public void AddEditAssetEntry_008_SearchAssetEntryByItemCode() {	
+		
+		log.info("Step AddEditAssetEntry_008 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditAssetEntry_008 - 02: Input correct username and password");
+		log.info("Step AddEditAssetEntry_008 - 03: Accept Alert message");
+		log.info("Step AddEditAssetEntry_008 - 04: Open Add Asset Entry page");
+		log.info("Step AddEditAssetEntry_008 - 05: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_008 - 06: Click on Add button");
+		log.info("Step AddEditAssetEntry_008 - 07: Input Description");
+		log.info("Step AddEditAssetEntry_008 - 08: Click on Save button");
+		log.info("Step AddEditAssetEntry_008 - 09: Open Manager page");
+		assetManagerPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/asset_manager/manage_asset.php");
+		
+		log.info("Step AddEditAssetEntry_008 - 10: Input Asset Type");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetType", newType2);
+		
+		log.info("Step AddEditAssetEntry_008 - 11: Input Item Code");
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ItemCode", itemCode2);
+		
+		log.info("Step AddEditAssetEntry_008 - 12: Click on Search button");
+		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Asset entry displayed correctly");
+		verifyTrue(assetManagerPage.isResultTableContainsRecord(DriverManager.getDriver(), newAssetEntry, itemCode2));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Asset entry by Asset Status works")
+	public void AddEditAssetEntry_009_SearchAssetEntryByAssetStatus() {	
+		
+		log.info("Step AddEditAssetEntry_009 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditAssetEntry_009 - 02: Input correct username and password");
+		log.info("Step AddEditAssetEntry_009 - 03: Accept Alert message");
+		log.info("Step AddEditAssetEntry_009 - 04: Open Add Asset Entry page");
+		log.info("Step AddEditAssetEntry_009 - 05: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_009 - 06: Click on Add button");
+		log.info("Step AddEditAssetEntry_009 - 07: Input Description");
+		log.info("Step AddEditAssetEntry_009 - 08: Click on Save button");
+		log.info("Step AddEditAssetEntry_009 - 09: Open Manager page");
+		assetManagerPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/asset_manager/manage_asset.php");
+		
+		log.info("Step AddEditAssetEntry_009 - 10: Input Asset Type");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetType", newType2);
+		
+		log.info("Step AddEditAssetEntry_009 - 11: Input Item Code");
+		assetManagerPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_AssetStatus", newStatus2);
+		
+		log.info("Step AddEditAssetEntry_009 - 12: Click on Search button");
+		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Asset entry displayed correctly");
+		verifyTrue(assetManagerPage.isResultTableContainsRecord(DriverManager.getDriver(), newAssetEntry, newStatus2));
+	}
 	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
