@@ -108,6 +108,19 @@ public class AssetManagerPage extends AbstractPage {
 		sleep();
 	}
 	
+	public void createNewAssetEntry(String value){
+		openLink(driver, "https://cherry.epmxweb.com/asset_manager/add_asset.php");
+		sleep(2);
+		inputTextfieldByID(DriverManager.getDriver(), "txt_AssetNum", value);
+		clickOnElementByItsID(driver, "img_Add");
+		if(isAlertPresent(driver)) {
+			acceptAlert(driver);
+			return;
+		}
+		inputTextareaByID(DriverManager.getDriver(), "txt_AssetDesc", value);
+		clickOnElementByItsID(driver, "img_Save");
+	}
+	
 	public boolean isAttachmentDisplayed(String fileName){
 		openTab(driver, "Attachments");
 		return isControlDisplayed(driver, epmxweb.RfqPage.dynamicAttachment, fileName);

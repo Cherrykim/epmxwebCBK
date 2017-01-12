@@ -361,56 +361,56 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 		verifyTrue(assetManagerPage.isAttachmentDisplayed("datatest2.pdf"));
 	}
 	
-//	@Test(groups = { "regression" }, description = "Check Deactivate Asset entry works")
-//	public void AddEditAssetEntry_003_CheckDeactivateAssetEntryWorks() {	
-//		
-//		log.info("Step AddEditAssetEntry_003 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditAssetEntry_003 - 02: Input correct username and password");
-//		log.info("Step AddEditAssetEntry_003 - 03: Accept Alert message");
-//		log.info("Step AddEditAssetEntry_003 - 04: Open Add Asset Entry page");
-//		log.info("Step AddEditAssetEntry_003 - 05: Input new Asset entry");
-//		log.info("Step AddEditAssetEntry_003 - 06: Click on Add button");
-//		log.info("Step AddEditAssetEntry_003 - 07: Input Description");
-//		log.info("Step AddEditAssetEntry_003 - 08: Click on Save button");
-//		log.info("Step AddEditAssetEntry_003 - 09: Input new Asset entry");
-//		log.info("Step AddEditAssetEntry_003 - 10: Click on Deactivate button");
-//		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "deactivate");
-//		
-//		log.info("Step AddEditAssetEntry_003 - 11: Accept alert");
-//		assetManagerPage.acceptAlert(DriverManager.getDriver());
-//		
-//		log.info("Step AddEditAssetEntry_003 - 12: Input new Asset entry");
-//		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetNum", newAssetEntry);
-//		
-//		log.info("Step AddEditAssetEntry_003 - 13: Click on Modify button");
-//		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
-//		
-//		log.info("VP: Asset entry is deactivated");
-//		verifyEquals(assetManagerPage.getAlertText(DriverManager.getDriver()), "Asset Number is deactivated. Press OK to reactivate or Cancel to view record only.");
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check REactivate Asset entry works")
-//	public void AddEditAssetEntry_004_CheckReactivateAssetEntryWorks() {	
-//		
-//		log.info("Step AddEditAssetEntry_004 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditAssetEntry_004 - 02: Input correct username and password");
-//		log.info("Step AddEditAssetEntry_004 - 03: Accept Alert message");
-//		log.info("Step AddEditAssetEntry_004 - 04: Open Add Asset Entry page");
-//		log.info("Step AddEditAssetEntry_004 - 05: Input new Asset entry");
-//		log.info("Step AddEditAssetEntry_004 - 06: Click on Add button");
-//		log.info("Step AddEditAssetEntry_004 - 07: Input Description");
-//		log.info("Step AddEditAssetEntry_004 - 08: Click on Save button");
-//		log.info("Step AddEditAssetEntry_004 - 09: Input new Asset entry");
-//		log.info("Step AddEditAssetEntry_004 - 10: Click on Deactivate button");
-//		log.info("Step AddEditAssetEntry_004 - 11: Accept alert");
-//		log.info("Step AddEditAssetEntry_004 - 12: Input new Asset entry");
-//		log.info("Step AddEditAssetEntry_004 - 13: Click on Modify button");
-//		log.info("Step AddEditAssetEntry_004 - 14: Accept alert");
-//		assetManagerPage.acceptAlert(DriverManager.getDriver());
-//		
-//		log.info("VP: Save button is clickable");
-//		verifyEquals(assetManagerPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
-//	}
+	@Test(groups = { "regression" }, description = "Check Deactivate Asset entry works")
+	public void AddEditAssetEntry_003_CheckDeactivateAssetEntryWorks() {	
+		
+		log.info("Step AddEditAssetEntry_003 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditAssetEntry_003 - 02: Input correct username and password");
+		log.info("Step AddEditAssetEntry_003 - 03: Accept Alert message");
+		log.info("Step AddEditAssetEntry_003 - 04: Open Add Asset Entry page");
+		log.info("Step AddEditAssetEntry_003 - 05: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_003 - 06: Click on Add button");
+		log.info("Step AddEditAssetEntry_003 - 07: Input Description");
+		log.info("Step AddEditAssetEntry_003 - 08: Click on Save button");
+		log.info("Step AddEditAssetEntry_003 - 09: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_003 - 10: Click on Deactivate button");
+		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "deactivate");
+		
+		log.info("Step AddEditAssetEntry_003 - 11: Accept alert");
+		assetManagerPage.acceptAlert(DriverManager.getDriver());
+		
+		log.info("Step AddEditAssetEntry_003 - 12: Input new Asset entry");
+		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_AssetNum", newAssetEntry);
+		
+		log.info("Step AddEditAssetEntry_003 - 13: Click on Modify button");
+		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		
+		log.info("VP: Asset entry is deactivated");
+		verifyEquals(assetManagerPage.getAlertText(DriverManager.getDriver()), "Asset Number is deactivated. Press OK to reactivate or Cancel to view record only.");
+	}
+	
+	@Test(groups = { "regression" }, description = "Check REactivate Asset entry works")
+	public void AddEditAssetEntry_004_CheckReactivateAssetEntryWorks() {	
+		
+		log.info("Step AddEditAssetEntry_004 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditAssetEntry_004 - 02: Input correct username and password");
+		log.info("Step AddEditAssetEntry_004 - 03: Accept Alert message");
+		log.info("Step AddEditAssetEntry_004 - 04: Open Add Asset Entry page");
+		log.info("Step AddEditAssetEntry_004 - 05: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_004 - 06: Click on Add button");
+		log.info("Step AddEditAssetEntry_004 - 07: Input Description");
+		log.info("Step AddEditAssetEntry_004 - 08: Click on Save button");
+		log.info("Step AddEditAssetEntry_004 - 09: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_004 - 10: Click on Deactivate button");
+		log.info("Step AddEditAssetEntry_004 - 11: Accept alert");
+		log.info("Step AddEditAssetEntry_004 - 12: Input new Asset entry");
+		log.info("Step AddEditAssetEntry_004 - 13: Click on Modify button");
+		log.info("Step AddEditAssetEntry_004 - 14: Accept alert");
+		assetManagerPage.acceptAlert(DriverManager.getDriver());
+		
+		log.info("VP: Save button is clickable");
+		verifyEquals(assetManagerPage.getElementAttributeByID(DriverManager.getDriver(), "img_Save", "class"), "Button");
+	}
 	
 	@Test(groups = { "regression" }, description = "Check Search Asset entry by Type works")
 	public void AddEditAssetEntry_005_SearchAssetEntryByType() {	
