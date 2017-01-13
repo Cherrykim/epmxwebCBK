@@ -54,10 +54,44 @@
 				<class name="MasterFilesPage.MasterFiles_29_AddEditVendor" />
 				<class name="MasterFilesPage.MasterFiles_30_GlobalDictionary" />
 				<class name="PurchaseOrderPage.PO_01_AddEditBlanketPO" />
-					<class name="PurchaseOrderPage.PO_02_AddEditReleasePO" />
+				<class name="PurchaseOrderPage.PO_02_AddEditReleasePO" />
+				<class name="PurchaseOrderPage.PO_03_AddEditStandardPO" />
 				<class name="ReceivingPage.Receiving_01_AddEditUnplannedReceipt" />
 				<class name="RequisitionPage.Requisition_01_AddEditRequisition" />
 				<class name="InvoicesPage.Invoices_01_AddEditBatchInfo" />
+				<class name="InvoicesPage.Invoices_02_AddEditInvoiceEntry" />
+				<class name="RequestForQuotation.RFQ_01_AddEditRfq" />
+				<class name="AssetManagerPage.AssetManager_01_AddEditAssetCategory" />
+				<class name="AssetManagerPage.AssetManager_02_AddEditAssetDepartment" />
+				<class name="AssetManagerPage.AssetManager_03_AddEditAssetLocation" />
+				<class name="AssetManagerPage.AssetManager_04_AddEditAssetStatus" />
+				<class name="AssetManagerPage.AssetManager_05_AddEditAssetType" />
+				<class name="AssetManagerPage.AssetManager_06_AddEditAssetUnit" />
+				<class name="AssetManagerPage.AssetManager_07_AddEditAssetEntry" />
+				<class name="AssetManagerPage.AssetManager_08_AddEditAssetWarranty" />
+				<class name="AssetManagerPage.AssetManager_09_AddServiceInformation" />
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 		</classes>
 	</test>	
 </suite> 
