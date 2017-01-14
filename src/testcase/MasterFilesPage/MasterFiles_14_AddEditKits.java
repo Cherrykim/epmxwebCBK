@@ -82,19 +82,17 @@ public class MasterFiles_14_AddEditKits extends AbstractTest {
 		log.info("Step AddEditKits_001 - 09: Input Quantity");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Quantity0", validDecimal1);
 		
-		log.info("Step AddEditKits_001 - 07: Select Unit measure");
+		log.info("Step AddEditKits_001 - 10: Select Unit measure");
 		masterFilesPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Measure0", unitOfMeasure1);
 		
-		log.info("Step AddEditKits_001 - 12: Click on Save button");
+		log.info("Step AddEditKits_001 - 11: Click on Save button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		
-		log.info("Step AddEditKits_001 - 13: Input new Kits");
+		log.info("Step AddEditKits_001 - 12: Input new Kits");
 		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_KitNumber", newKits);
 		
-		log.info("Step AddEditKits_001 - 14: Click on Modify button");
+		log.info("Step AddEditKits_001 - 13: Click on Modify button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
-		
-		////
 		
 		log.info("Step AddEditKits_001 - VP: Description is saved correctly");
 		verifyEquals(masterFilesPage.getTextfieldByID(DriverManager.getDriver(), "txt_Description"), validText1);

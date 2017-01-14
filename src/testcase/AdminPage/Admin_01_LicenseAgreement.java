@@ -79,7 +79,7 @@ public class Admin_01_LicenseAgreement extends AbstractTest {
 		currentTab = licenseAgreementPage.switchTab(DriverManager.getDriver());
 		
 		log.info("VP: User agreement pdf page is displayed");
-		verifyEquals(licenseAgreementPage.getPageTitle(DriverManager.getDriver()), "pdf_user_agreement.php");
+		verifyFalse(licenseAgreementPage.isTextDisplayed(DriverManager.getDriver(), "error"));
 		licenseAgreementPage.switchWindowBackAndCloseCurrentWindow(DriverManager.getDriver(), currentTab);
 	}
 	

@@ -35,7 +35,7 @@ public class Constant {
 		public static final String AAC_DATABASE = "cherry_aac_weekly_03Dec16";
 		public static final String HSW_DATABASE = "cherry_hsw_daily_09Dec16";
 		public static final String NG_DATABASE = "cherry_ng_weekly_10Dec16";
-		public static final String CURRENT_BRANCH = "staging";
+		public static final String CURRENT_BRANCH = "master";
 	}
 	
 	public static class PageUrl {

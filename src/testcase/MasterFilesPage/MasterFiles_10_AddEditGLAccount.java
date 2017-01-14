@@ -175,7 +175,7 @@ public class MasterFiles_10_AddEditGLAccount extends AbstractTest {
 		masterFilesPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/master_files/manage_gl_account_code.php");
 		
 		log.info("Step AddEditGLAccount_005 - 10: Input GL Account Code");
-		masterFilesPage.inputTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", newGLAccount);
+		masterFilesPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_GlAcc", newGLAccount);
 		
 		log.info("Step AddEditGLAccount_005 - 11: Click on Search button");
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");

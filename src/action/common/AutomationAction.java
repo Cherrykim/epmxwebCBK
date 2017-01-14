@@ -2,6 +2,8 @@ package common;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.DataFlavor;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
@@ -968,6 +970,18 @@ public class AutomationAction {
 	public String getPathFile(String fileName) {
 		File file = new File(fileName);
 		return file.getAbsolutePath();
+	}
+	
+	public String getClipboardData(){
+		try{
+			String data = (String) Toolkit.getDefaultToolkit()
+	                .getSystemClipboard().getData(DataFlavor.stringFlavor); 
+			return data;
+		}
+		catch(Exception e){
+			return "Null";
+		}
+		
 	}
 	
 	protected int timeout = 15;

@@ -1,5 +1,9 @@
 package page;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.jetty.html.Page;
@@ -323,6 +327,28 @@ public class AbstractPage extends AutomationAction {
     	click(driver, epmxweb.AbstractPage.dynamicTab, id);
     	sleep(2);
     }
+    
+    public String getPdfText(){
+//		type(driver, Mailosaur.MailinatorPage.messageBody, message);
+		sleep();
+		Robot robot;
+		try {
+			robot = new Robot();
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_A);
+			robot.keyRelease(KeyEvent.VK_A);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_C);
+			robot.keyRelease(KeyEvent.VK_C);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(getClipboardData());
+		return getClipboardData();
+	}
 	protected final Log log;
 	private String ipClient;
 }

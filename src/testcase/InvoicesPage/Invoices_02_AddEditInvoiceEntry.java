@@ -34,6 +34,7 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		ship1 = "ShipCd1";
 		shipToCode1= ship1 + " : "+ ship1;
 		
+		
 		job1 = "JobCode1";
 		jobCode1= job1 + " : "+ job1;
 		job2 = "JobCode2";
@@ -88,7 +89,6 @@ public class Invoices_02_AddEditInvoiceEntry extends AbstractTest {
 		
 		log.info("Step Pre-condition - 05: Create new Ship-to Code");
 		masterFilesPage.createNewShipToCode(ship1);
-		masterFilesPage.createNewShipToCode(ship2);
 		
 		log.info("Step Pre-condition - 06: Create GL Account");
 		masterFilesPage.createNewGLAccount(glAccountCode1);
@@ -619,7 +619,7 @@ public void AddEditInvoiceEntry_003_SearchInvoiceEntryByBatchNumber() {
 	private MasterFilesPage masterFilesPage;
 	private POPage poPage;
 	private String newVoucherNumber, newVoucherNumberNew;
-	private String ship1, ship2, shipToCode1, vendorID1, vendorName1, vendorID2, vendorName2;
+	private String ship1, shipToCode1, vendorID1, vendorName1, vendorID2, vendorName2;
 	private String job1, job2, jobCode1, jobCode2;
 	private String glAccountCode1, glAccountCode2;
 	private String projectCode1, projectCode2;

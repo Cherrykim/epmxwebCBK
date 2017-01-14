@@ -61,15 +61,12 @@ public class AssetManager_09_AddServiceInformation extends AbstractTest {
 		assetManagerPage.inputTextfieldByID(DriverManager.getDriver(), "txt_totalServiceCost", "11.11");
 		assetManagerPage.inputTextareaByID(DriverManager.getDriver(), "txt_ServiceNotes", "Notes 1");
 		
-		log.info("Step AddEditServiceInformation_001 - 07: Click on Save button");
+		log.info("Step AddEditServiceInformation_001 - 05: Click on Save button");
 		assetManagerPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
-		
 		
 		log.info("Step AddEditServiceInformation_001 - VP: Check data saved correctly: Warranty period");
 		verifyEquals(assetManagerPage.getAlertText(DriverManager.getDriver()), "A new service has been recorded.");
 	}
-	
-	
 	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
