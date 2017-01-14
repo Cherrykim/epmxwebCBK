@@ -18,8 +18,8 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="Login.Login_01" />
 			<class name="CheckCSVUrls.UrlsChecking" />
+			<class name="Login.Login_01" />
 			<class name="SearchByProjectCode.ProjectCodeSearching" />
 			<class name="AdminPage.Admin_01_LicenseAgreement" />
 			<class name="AdminPage.Admin_02_ForgotPassword" />
