@@ -150,14 +150,8 @@ master_files,manage_vendors.php
 master_files,reset_user_password.php
 master_files,system_info.php
 master_files,third_party_erp.php
-master_files,edit_corporation.php
-master_files,edit_gl_level.php
-master_files,edit_material.php
-master_files,edit_vendors.php
 master_files,reset_vendor_password.php
 master_files,add_warehouse_layout.php
-master_files,edit_job_numbers.php
-master_files,edit_warehouse_layout.php
 master_files,manage_warehouse_layout.php
 master_files_reports,report_bankcode.php
 master_files_reports,report_billcode.php
@@ -198,9 +192,7 @@ po,add_blanket_release.php
 po,add_standard_po.php
 po,automated_history_card.php
 po,copy_standard_po.php
-po,create_bpo_from_rfq.php
 po,create_rel_from_req.php
-po,create_spo_from_rfq.php
 po,duplicate_pos.php
 po,edit_blanket_po.php
 po,edit_standard_po.php
@@ -223,7 +215,6 @@ po,po_punch_log.php
 po,po_review.php
 po,create_bpo_from_req.php
 po,create_spo_from_req.php
-po,edit_blanket_release.php
 po,manage_blanket_po.php
 po_reports,accrual_report.php
 po_reports,export_po_audit_rep.php
@@ -257,7 +248,6 @@ receiving_reports,report_receiving.php
 receiving_reports,report_vendor_performance.php
 requisitions,add_item_requisition.php
 requisitions,add_requisition.php
-requisitions,add_requisition_new.php
 requisitions,attachment_iframe.php
 requisitions,create_req_from_rfq.php
 requisitions,edit_item_requisition.php
