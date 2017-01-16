@@ -198,248 +198,248 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		verifyEquals(requisitionPage.getTextfieldByID(DriverManager.getDriver(), "txt_EAmt0"), "144.00");
 	}
 	
-//	@Test(groups = { "regression" }, description = "Check Search Requisition code by Requisition name works")
-//	public void AddEditRequisition_003_SearchRequisitionByRequisitionNumber() {	
-//		
-//		log.info("Step AddEditRequisition_003 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditRequisition_003 - 02: Input correct username and password");
-//		log.info("Step AddEditRequisition_003 - 03: Accept Alert message");
-//		log.info("Step AddEditRequisition_003 - 04: Open Add labels page");
-//		log.info("Step AddEditRequisition_003 - 05: Input new Requisition code");
-//		log.info("Step AddEditRequisition_003 - 06: Click on Add button");
-//		log.info("Step AddEditRequisition_003 - 07: Input all other textfields");
-//		log.info("Step AddEditRequisition_003 - 08: Click on Save button");
-//		log.info("Step AddEditRequisition_003 - 09: Open Manager page");
-//		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
-//		
-//		log.info("Step AddEditRequisition_003 - 10: Input Requisition Code");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-//		
-//		log.info("Step AddEditRequisition_003 - 11: Click on Search button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Requisition code displayed correctly");
-//		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
-//	}
+	@Test(groups = { "regression" }, description = "Check Search Requisition code by Requisition name works")
+	public void AddEditRequisition_003_SearchRequisitionByRequisitionNumber() {	
+		
+		log.info("Step AddEditRequisition_003 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_003 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_003 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_003 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_003 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_003 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_003 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_003 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_003 - 09: Open Manager page");
+		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
+		
+		log.info("Step AddEditRequisition_003 - 10: Input Requisition Code");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_003 - 11: Click on Search button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Requisition code displayed correctly");
+		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
+	}
 	
-//	@Test(groups = { "regression" }, description = "Check Search Requisition code by Keywords works")
-//	public void AddEditRequisition_005_SearchRequisitionByKeywords() {	
-//		
-//		log.info("Step AddEditRequisition_005 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditRequisition_005 - 02: Input correct username and password");
-//		log.info("Step AddEditRequisition_005 - 03: Accept Alert message");
-//		log.info("Step AddEditRequisition_005 - 04: Open Add labels page");
-//		log.info("Step AddEditRequisition_005 - 05: Input new Requisition code");
-//		log.info("Step AddEditRequisition_005 - 06: Click on Add button");
-//		log.info("Step AddEditRequisition_005 - 07: Input all other textfields");
-//		log.info("Step AddEditRequisition_005 - 08: Click on Save button");
-//		log.info("Step AddEditRequisition_005 - 09: Open Manager page");
-//		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
-//		
-//		log.info("Step AddEditRequisition_005 - 10: Input Requisition Code");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-//		
-//		log.info("Step AddEditRequisition_005 - 11: Input Keyword");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Keyword", "Item 2");
-//		
-//		log.info("Step AddEditRequisition_005 - 12: Click on Search button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("Step AddEditRequisition_005 - 13: Click on OK button");
-//		requisitionPage.clickOnElementByItsValue(DriverManager.getDriver(), "OK");
-//		
-//		log.info("VP: Requisition code displayed correctly");
-//		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Requisition code by Corporation works")
-//	public void AddEditRequisition_006_SearchRequisitionByCorporation() {	
-//		
-//		log.info("Step AddEditRequisition_006 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditRequisition_006 - 02: Input correct username and password");
-//		log.info("Step AddEditRequisition_006 - 03: Accept Alert message");
-//		log.info("Step AddEditRequisition_006 - 04: Open Add labels page");
-//		log.info("Step AddEditRequisition_006 - 05: Input new Requisition code");
-//		log.info("Step AddEditRequisition_006 - 06: Click on Add button");
-//		log.info("Step AddEditRequisition_006 - 07: Input all other textfields");
-//		log.info("Step AddEditRequisition_006 - 08: Click on Save button");
-//		log.info("Step AddEditRequisition_006 - 09: Open Manager page");
-//		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
-//		
-//		log.info("Step AddEditRequisition_006 - 10: Input Requisition Code");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-//		
-//		log.info("Step AddEditRequisition_006 - 11: Select Corporation");
-//		requisitionPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "Wadsworth Center");
-//		
-//		log.info("Step AddEditRequisition_006 - 12: Click on Search button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Requisition code displayed correctly");
-//		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, "Wadsworth Center"));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Requisition code by Job number works")
-//	public void AddEditRequisition_007_SearchRequisitionByJobNumber() {	
-//		
-//		log.info("Step AddEditRequisition_007 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditRequisition_007 - 02: Input correct username and password");
-//		log.info("Step AddEditRequisition_007 - 03: Accept Alert message");
-//		log.info("Step AddEditRequisition_007 - 04: Open Add labels page");
-//		log.info("Step AddEditRequisition_007 - 05: Input new Requisition code");
-//		log.info("Step AddEditRequisition_007 - 06: Click on Add button");
-//		log.info("Step AddEditRequisition_007 - 07: Input all other textfields");
-//		log.info("Step AddEditRequisition_007 - 08: Click on Save button");
-//		log.info("Step AddEditRequisition_007 - 09: Open Manager page");
-//		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
-//		
-//		log.info("Step AddEditRequisition_007 - 10: Input Requisition Code");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-//		
-//		log.info("Step AddEditRequisition_007 - 11: Input Job number");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "sel_JobNumber", jobCode2);
-//		
-//		log.info("Step AddEditRequisition_007 - 12: Click on Search button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Requisition code displayed correctly");
-//		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Requisition code by Suggesstion Vendor works")
-//	public void AddEditRequisition_008_SearchRequisitionBySuggestionVendor() {	
-//		
-//		log.info("Step AddEditRequisition_008 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditRequisition_008 - 02: Input correct username and password");
-//		log.info("Step AddEditRequisition_008 - 03: Accept Alert message");
-//		log.info("Step AddEditRequisition_008 - 04: Open Add labels page");
-//		log.info("Step AddEditRequisition_008 - 05: Input new Requisition code");
-//		log.info("Step AddEditRequisition_008 - 06: Click on Add button");
-//		log.info("Step AddEditRequisition_008 - 07: Input all other textfields");
-//		log.info("Step AddEditRequisition_008 - 08: Click on Save button");
-//		log.info("Step AddEditRequisition_008 - 09: Open Manager page");
-//		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
-//		
-//		log.info("Step AddEditRequisition_008 - 10: Input Requisition Code");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-//		
-//		log.info("Step AddEditRequisition_008 - 11: Input Vendor name");
-//		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendorName2);
-//		
-//		log.info("Step AddEditRequisition_008 - 12: Click on Search button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Requisition code displayed correctly");
-//		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, vendorName2));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Requisition code by Project Code works")
-//	public void AddEditRequisition_009_SearchRequisitionByProjectCode() {	
-//		
-//		log.info("Step AddEditRequisition_009 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditRequisition_009 - 02: Input correct username and password");
-//		log.info("Step AddEditRequisition_009 - 03: Accept Alert message");
-//		log.info("Step AddEditRequisition_009 - 04: Open Add labels page");
-//		log.info("Step AddEditRequisition_009 - 05: Input new Requisition code");
-//		log.info("Step AddEditRequisition_009 - 06: Click on Add button");
-//		log.info("Step AddEditRequisition_009 - 07: Input all other textfields");
-//		log.info("Step AddEditRequisition_009 - 08: Click on Save button");
-//		log.info("Step AddEditRequisition_009 - 09: Open Manager page");
-//		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
-//		
-//		log.info("Step AddEditRequisition_009 - 10: Input Requisition Code");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-//		
-//		log.info("Step AddEditRequisition_009 - 11: Input Project code");
-//		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ProjectNum", projectCode2);
-//		
-//		log.info("Step AddEditRequisition_009 - 12: Click on Search button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Requisition code displayed correctly");
-//		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Requisition code by Request date works")
-//	public void AddEditRequisition_010_SearchRequisitionByRequestDate() {	
-//		
-//		log.info("Step AddEditRequisition_010 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditRequisition_010 - 02: Input correct username and password");
-//		log.info("Step AddEditRequisition_010 - 03: Accept Alert message");
-//		log.info("Step AddEditRequisition_010 - 04: Open Add labels page");
-//		log.info("Step AddEditRequisition_010 - 05: Input new Requisition code");
-//		log.info("Step AddEditRequisition_010 - 06: Click on Add button");
-//		log.info("Step AddEditRequisition_010 - 07: Input all other textfields");
-//		log.info("Step AddEditRequisition_010 - 08: Click on Save button");
-//		log.info("Step AddEditRequisition_010 - 09: Open Manager page");
-//		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
-//		
-//		log.info("Step AddEditRequisition_010 - 10: Input Requisition Code");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-//		
-//		log.info("Step AddEditRequisition_010 - 11: Input Request date");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqDateFrom", "12-12-2020");
-//		
-//		log.info("Step AddEditRequisition_010 - 12: Click on Search button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Requisition code displayed correctly");
-//		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, "12-12-2020"));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Requisition code by Item code works")
-//	public void AddEditRequisition_011_SearchRequisitionByItemCode() {	
-//		
-//		log.info("Step AddEditRequisition_011 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditRequisition_011 - 02: Input correct username and password");
-//		log.info("Step AddEditRequisition_011 - 03: Accept Alert message");
-//		log.info("Step AddEditRequisition_011 - 04: Open Add labels page");
-//		log.info("Step AddEditRequisition_011 - 05: Input new Requisition code");
-//		log.info("Step AddEditRequisition_011 - 06: Click on Add button");
-//		log.info("Step AddEditRequisition_011 - 07: Input all other textfields");
-//		log.info("Step AddEditRequisition_011 - 08: Click on Save button");
-//		log.info("Step AddEditRequisition_011 - 09: Open Manager page");
-//		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
-//		
-//		log.info("Step AddEditRequisition_011 - 10: Input Requisition Code");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-//		
-//		log.info("Step AddEditRequisition_011 - 11: Input Item code");
-//		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", itemCode1);
-//		
-//		log.info("Step AddEditRequisition_011 - 12: Click on Search button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Requisition code displayed correctly");
-//		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
-//	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Search Requisition code by Ship-to code works")
-//	public void AddEditRequisition_012_SearchRequisitionByShipToCode() {	
-//		
-//		log.info("Step AddEditRequisition_012 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditRequisition_012 - 02: Input correct username and password");
-//		log.info("Step AddEditRequisition_012 - 03: Accept Alert message");
-//		log.info("Step AddEditRequisition_012 - 04: Open Add labels page");
-//		log.info("Step AddEditRequisition_012 - 05: Input new Requisition code");
-//		log.info("Step AddEditRequisition_012 - 06: Click on Add button");
-//		log.info("Step AddEditRequisition_012 - 07: Input all other textfields");
-//		log.info("Step AddEditRequisition_012 - 08: Click on Save button");
-//		log.info("Step AddEditRequisition_012 - 09: Open Manager page");
-//		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
-//		
-//		log.info("Step AddEditRequisition_012 - 10: Input Requisition Code");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-//		
-//		log.info("Step AddEditRequisition_012 - 11: Input Ship-to code");
-//		requisitionPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipToCode", shipToCode2);
-//		
-//		log.info("Step AddEditRequisition_012 - 12: Click on Search button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
-//		
-//		log.info("VP: Requisition code displayed correctly");
-//		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
-//	}
+	@Test(groups = { "regression" }, description = "Check Search Requisition code by Keywords works")
+	public void AddEditRequisition_005_SearchRequisitionByKeywords() {	
+		
+		log.info("Step AddEditRequisition_005 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_005 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_005 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_005 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_005 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_005 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_005 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_005 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_005 - 09: Open Manager page");
+		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
+		
+		log.info("Step AddEditRequisition_005 - 10: Input Requisition Code");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_005 - 11: Input Keyword");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_Keyword", "Item 2");
+		
+		log.info("Step AddEditRequisition_005 - 12: Click on Search button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("Step AddEditRequisition_005 - 13: Click on OK button");
+		requisitionPage.clickOnElementByItsValue(DriverManager.getDriver(), "OK");
+		
+		log.info("VP: Requisition code displayed correctly");
+		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Requisition code by Corporation works")
+	public void AddEditRequisition_006_SearchRequisitionByCorporation() {	
+		
+		log.info("Step AddEditRequisition_006 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_006 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_006 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_006 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_006 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_006 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_006 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_006 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_006 - 09: Open Manager page");
+		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
+		
+		log.info("Step AddEditRequisition_006 - 10: Input Requisition Code");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_006 - 11: Select Corporation");
+		requisitionPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_Corporation", "Wadsworth Center");
+		
+		log.info("Step AddEditRequisition_006 - 12: Click on Search button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Requisition code displayed correctly");
+		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, "Wadsworth Center"));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Requisition code by Job number works")
+	public void AddEditRequisition_007_SearchRequisitionByJobNumber() {	
+		
+		log.info("Step AddEditRequisition_007 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_007 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_007 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_007 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_007 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_007 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_007 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_007 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_007 - 09: Open Manager page");
+		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
+		
+		log.info("Step AddEditRequisition_007 - 10: Input Requisition Code");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_007 - 11: Input Job number");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "sel_JobNumber", jobCode2);
+		
+		log.info("Step AddEditRequisition_007 - 12: Click on Search button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Requisition code displayed correctly");
+		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Requisition code by Suggesstion Vendor works")
+	public void AddEditRequisition_008_SearchRequisitionBySuggestionVendor() {	
+		
+		log.info("Step AddEditRequisition_008 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_008 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_008 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_008 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_008 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_008 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_008 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_008 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_008 - 09: Open Manager page");
+		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
+		
+		log.info("Step AddEditRequisition_008 - 10: Input Requisition Code");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_008 - 11: Input Vendor name");
+		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "sel_Vendor", vendorName2);
+		
+		log.info("Step AddEditRequisition_008 - 12: Click on Search button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Requisition code displayed correctly");
+		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, vendorName2));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Requisition code by Project Code works")
+	public void AddEditRequisition_009_SearchRequisitionByProjectCode() {	
+		
+		log.info("Step AddEditRequisition_009 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_009 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_009 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_009 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_009 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_009 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_009 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_009 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_009 - 09: Open Manager page");
+		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
+		
+		log.info("Step AddEditRequisition_009 - 10: Input Requisition Code");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_009 - 11: Input Project code");
+		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_ProjectNum", projectCode2);
+		
+		log.info("Step AddEditRequisition_009 - 12: Click on Search button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Requisition code displayed correctly");
+		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Requisition code by Request date works")
+	public void AddEditRequisition_010_SearchRequisitionByRequestDate() {	
+		
+		log.info("Step AddEditRequisition_010 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_010 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_010 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_010 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_010 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_010 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_010 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_010 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_010 - 09: Open Manager page");
+		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
+		
+		log.info("Step AddEditRequisition_010 - 10: Input Requisition Code");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_010 - 11: Input Request date");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqDateFrom", "12-12-2020");
+		
+		log.info("Step AddEditRequisition_010 - 12: Click on Search button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Requisition code displayed correctly");
+		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, "12-12-2020"));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Requisition code by Item code works")
+	public void AddEditRequisition_011_SearchRequisitionByItemCode() {	
+		
+		log.info("Step AddEditRequisition_011 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_011 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_011 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_011 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_011 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_011 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_011 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_011 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_011 - 09: Open Manager page");
+		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
+		
+		log.info("Step AddEditRequisition_011 - 10: Input Requisition Code");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_011 - 11: Input Item code");
+		requisitionPage.inputSelecterTextfieldByID(DriverManager.getDriver(), "txt_Item", itemCode1);
+		
+		log.info("Step AddEditRequisition_011 - 12: Click on Search button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Requisition code displayed correctly");
+		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
+	}
+	
+	@Test(groups = { "regression" }, description = "Check Search Requisition code by Ship-to code works")
+	public void AddEditRequisition_012_SearchRequisitionByShipToCode() {	
+		
+		log.info("Step AddEditRequisition_012 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_012 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_012 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_012 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_012 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_012 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_012 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_012 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_012 - 09: Open Manager page");
+		requisitionPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/manage_requisition.php");
+		
+		log.info("Step AddEditRequisition_012 - 10: Input Requisition Code");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_012 - 11: Input Ship-to code");
+		requisitionPage.selectItemFromDropdownByID(DriverManager.getDriver(), "sel_ShipToCode", shipToCode2);
+		
+		log.info("Step AddEditRequisition_012 - 12: Click on Search button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
+		
+		log.info("VP: Requisition code displayed correctly");
+		verifyTrue(requisitionPage.isResultTableContainsRecord(DriverManager.getDriver(), newRequisition, ""));
+	}
 	
 	@Test(groups = { "regression" }, description = "Check Edit Requisition works")
 	public void AddEditRequisition_013_CheckCopyRequisitionWorks() {	
@@ -459,32 +459,35 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
 		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "search.gif");
 		
-		log.info("Step AddEditRequisition_013 - 10: Select Requisition");
+		log.info("Step AddEditRequisition_013 - 11: Select Requisition");
 		requisitionPage.clickOnElementByItsText(DriverManager.getDriver(), newRequisition);
 		
-		log.info("Step AddEditRequisition_013 - 10: Click on Copy Req button");
+		log.info("Step AddEditRequisition_013 - 12: Click on Copy Req button");
 		requisitionPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_CreatReq");
 		
-		log.info("Step AddEditRequisition_013 - 10: Input Requisition number and Delivery date");
+		log.info("Step AddEditRequisition_013 - 13: Input Requisition number and Delivery date");
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DivReqNumber", copyRequisition);
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_DivDlvDate", "12-12-2020");
 		
-		log.info("Step AddEditRequisition_013 - 13: Click on Ok button");
+		log.info("Step AddEditRequisition_013 - 14: Click on Ok button");
 		requisitionPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_OkReq");
 		requisitionPage.sleep(2);
 		
-		log.info("Step AddEditRequisition_013 - 10: Input Requisition date");
+		log.info("Step AddEditRequisition_013 - 15: Input Requisition date");
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqDate", "12-12-2020");
 		
-		log.info("Step AddEditRequisition_013 - 14: Click on Save button");
+		log.info("Step AddEditRequisition_013 - 16: Click on Save button");
 		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "save");
 		requisitionPage.clickOnElementByItsID(DriverManager.getDriver(), "chk_UpType1");
 		requisitionPage.clickOnElementByItsID(DriverManager.getDriver(), "btn_Save");
 		
-		log.info("Step AddEditRequisition_013 - 15: Input new Requisition");
+		log.info("Step AddEditRequisition_001 - 17: Open Add Requisition page");
+		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/add_requisition.php");
+		
+		log.info("Step AddEditRequisition_013 - 18: Input new Requisition");
 		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", copyRequisition);
 		
-		log.info("Step AddEditRequisition_013 - 16: Click on Modify button");
+		log.info("Step AddEditRequisition_013 - 19: Click on Modify button");
 		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("Step AddEditRequisition_013 - VP: All other textfields are saved correctly");
@@ -504,33 +507,33 @@ public class Requisition_01_AddEditRequisition extends AbstractTest {
 		verifyEquals(requisitionPage.getTextfieldByID(DriverManager.getDriver(), "txt_Price0"), "12.0000");
 		verifyEquals(requisitionPage.getTextfieldByID(DriverManager.getDriver(), "txt_EAmt0"), "144.00");
 	}
-//	
-//	@Test(groups = { "regression" }, description = "Check Delete Requisition works")
-//	public void AddEditRequisition_014_DeleteRequisitionWorks() {	
-//		log.info("Step AddEditRequisition_014 - 01: Open the site https://cherry.epmxweb.com");
-//		log.info("Step AddEditRequisition_014 - 02: Input correct username and password");
-//		log.info("Step AddEditRequisition_014 - 03: Accept Alert message");
-//		log.info("Step AddEditRequisition_014 - 04: Open Add labels page");
-//		log.info("Step AddEditRequisition_014 - 05: Input new Requisition code");
-//		log.info("Step AddEditRequisition_014 - 06: Click on Add button");
-//		log.info("Step AddEditRequisition_014 - 07: Input all other textfields");
-//		log.info("Step AddEditRequisition_014 - 08: Click on Save button");
-//		log.info("Step AddEditRequisition_014 - 09: Open Add Requisition page");
-//		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/add_requisition.php");
-//
-//		log.info("Step AddEditRequisition_014 - 10: Input new Requisition");
-//		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
-//		
-//		log.info("Step AddEditRequisition_014 - 11: Click on Manage button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
-//		
-//		log.info("Step AddEditRequisition_014 - 12: Click on Delete button");
-//		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "delete");
-//		requisitionPage.acceptAlert(DriverManager.getDriver());
-//		
-//		log.info("VP: Requisition is not displayed");
-//		verifyFalse(requisitionPage.isTextDisplayed(DriverManager.getDriver(), newRequisition));
-//	}
+	
+	@Test(groups = { "regression" }, description = "Check Delete Requisition works")
+	public void AddEditRequisition_014_DeleteRequisitionWorks() {	
+		log.info("Step AddEditRequisition_014 - 01: Open the site https://cherry.epmxweb.com");
+		log.info("Step AddEditRequisition_014 - 02: Input correct username and password");
+		log.info("Step AddEditRequisition_014 - 03: Accept Alert message");
+		log.info("Step AddEditRequisition_014 - 04: Open Add labels page");
+		log.info("Step AddEditRequisition_014 - 05: Input new Requisition code");
+		log.info("Step AddEditRequisition_014 - 06: Click on Add button");
+		log.info("Step AddEditRequisition_014 - 07: Input all other textfields");
+		log.info("Step AddEditRequisition_014 - 08: Click on Save button");
+		log.info("Step AddEditRequisition_014 - 09: Open Add Requisition page");
+		loginPage.openLink(DriverManager.getDriver(), "https://cherry.epmxweb.com/requisitions/add_requisition.php");
+
+		log.info("Step AddEditRequisition_014 - 10: Input new Requisition");
+		requisitionPage.inputTextfieldByID(DriverManager.getDriver(), "txt_ReqNum", newRequisition);
+		
+		log.info("Step AddEditRequisition_014 - 11: Click on Manage button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
+		
+		log.info("Step AddEditRequisition_014 - 12: Click on Delete button");
+		requisitionPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "delete");
+		requisitionPage.acceptAlert(DriverManager.getDriver());
+		
+		log.info("VP: Requisition is not displayed");
+		verifyFalse(requisitionPage.isTextDisplayed(DriverManager.getDriver(), newRequisition));
+	}
 	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
