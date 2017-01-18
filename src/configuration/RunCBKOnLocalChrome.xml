@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="epmxweb" parallel="tests" thread-count="1">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="config.MethodListener" />		
+	</listeners>
+
+	<test name="Run on Chrome">
+		<parameter name="browser" value="chrome" />
+		<parameter name="ipClient" value="192.168.189.156"/>
+		<parameter name="port" value="6666"/>
+		<groups>
+			<run>
+				<include name="regression" />
+			</run>
+		</groups>
+		<classes>
+			<class name="MasterFilesPage.MasterFiles_10_AddEditGLAccount" />
+						<class name="MasterFilesPage.MasterFiles_15_AddEditMaterial" />
+				<class name="MasterFilesPage.MasterFiles_22_AddEditTaxCode" />
+				<class name="MasterFilesPage.MasterFiles_23_AddEditTermsCode" />
+				<class name="MasterFilesPage.MasterFiles_24_AddEditUMTranslation" />
+				<class name="PurchaseOrderPage.PO_03_AddEditStandardPO" />
+				<class name="InvoicesPage.Invoices_02_AddEditInvoiceEntry" />
+				<class name="AssetManagerPage.AssetManager_07_AddEditAssetEntry" />
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+		</classes>
+	</test>	
+</suite> 
