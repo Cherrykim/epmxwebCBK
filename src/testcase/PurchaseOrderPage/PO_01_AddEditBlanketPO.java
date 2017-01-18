@@ -98,7 +98,7 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		
 		log.info("Step Pre-condition - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step Pre-condition - 02: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_CBK, Constant.LoginData.PASSWORD);
 		
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
@@ -125,9 +125,9 @@ public class PO_01_AddEditBlanketPO extends AbstractTest {
 		
 		log.info("Step Pre-condition - 04: Create GL Account");
 		masterFilesPage.createNewGLAccount(glAccountCode1);
-		masterFilesPage.assignGLAccount(glAccountCode1, Constant.LoginData.USERNAME_NYDOH);
+		masterFilesPage.assignGLAccount(glAccountCode1, Constant.LoginData.USERNAME_CBK);
 		masterFilesPage.createNewGLAccount(glAccountCode2);
-		masterFilesPage.assignGLAccount(glAccountCode2, Constant.LoginData.USERNAME_NYDOH);
+		masterFilesPage.assignGLAccount(glAccountCode2, Constant.LoginData.USERNAME_CBK);
 		
 		log.info("Step Pre-condition - 05: Create new Job Code");
 		masterFilesPage.createNewJobCode(job1);

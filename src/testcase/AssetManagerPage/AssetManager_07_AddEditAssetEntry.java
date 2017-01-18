@@ -77,7 +77,7 @@ public class AssetManager_07_AddEditAssetEntry extends AbstractTest {
 		
 		log.info("Step Pre-condition - 00: Open the site https://cherry.epmxweb.com");
 		log.info("Step Pre-condition - 00: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_CBK, Constant.LoginData.PASSWORD);
 		
 		log.info("Step Pre-condition - 00: Accept Alert message");
 		loginPage.acceptAlert();

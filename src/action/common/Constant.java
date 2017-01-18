@@ -15,8 +15,8 @@ public class Constant {
 
 	public static class LoginData {
 		//Database: epmxdata_nydoh
-		public static final String USERNAME_NYDOH = "tls15";
-		public static final String PASSWORD = "password";
+		public static final String USERNAME_CBK = "04137";
+		public static final String PASSWORD = "Password123!";
 		public static final String MASTER_PASSWORD = "minimax";
 		//Database: epmxdata_7dc
 //		public static final String USERNAME = "pnorcross";
@@ -28,14 +28,14 @@ public class Constant {
 
 	public static class DefaultValue {
 		public static final String COMPANY_NAME = "Cherry's Test Site";
-		public static final String CORPORATION = "Wadsworth Center";
+		public static final String CORPORATION = "General Services Department";
 		public static final String URL_CSV_FILENAME = "ePMX UI Pages.csv";
 //		public static final String URL_CSV_FILENAME = "ePMX UI Pages - Copy.csv";
-		public static final String CURRENT_DATABASE = "cherry_nydoh_daily_02Nov16";
+		public static final String CURRENT_DATABASE = "cherry_cbk_monthly_01Jan16";
 		public static final String AAC_DATABASE = "cherry_aac_weekly_03Dec16";
 		public static final String HSW_DATABASE = "cherry_hsw_daily_09Dec16";
 		public static final String NG_DATABASE = "cherry_ng_weekly_10Dec16";
-		public static final String CURRENT_BRANCH = "master";
+		public static final String CURRENT_BRANCH = "cbk";
 	}
 	
 	public static class PageUrl {

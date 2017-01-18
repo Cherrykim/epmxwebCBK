@@ -66,7 +66,7 @@ public class Admin_04_Index extends AbstractTest {
 		log.info("Step Login_004 - 03: Choose available MySQL database and get an Username");
 		log.info("Step Login_004 - 04: Open the site https://cherry.epmxweb.com");
 		log.info("Step Login_004 - 05: Input correct username and incorrect password");
-		loginPage.login(Constant.LoginData.USERNAME_NYDOH, "123456");
+		loginPage.login(Constant.LoginData.USERNAME_CBK, "123456");
 		
 		log.info("VP - 01: The system will show error message: Invalid Password");
 		verifyTrue(loginPage.isErrorMessageDisplayWithContent("Invalid Password"));
@@ -81,7 +81,7 @@ public class Admin_04_Index extends AbstractTest {
 		log.info("Step Login_005 - 04: Click on Config button and get default Password");
 		log.info("Step Login_005 - 05: Open the site https://cherry.epmxweb.com");
 		log.info("Step Login_005 - 06: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_CBK, Constant.LoginData.PASSWORD);
 		
 		log.info("Step Login_005 - 07: Accept Alert message");
 		loginPage.acceptAlert();

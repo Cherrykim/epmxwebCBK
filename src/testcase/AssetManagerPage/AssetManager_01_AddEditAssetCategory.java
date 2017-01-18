@@ -29,7 +29,7 @@ public class AssetManager_01_AddEditAssetCategory extends AbstractTest {
 		
 		log.info("Step AddEditAssetCategory_001 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditAssetCategory_001 - 02: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_CBK, Constant.LoginData.PASSWORD);
 		
 		log.info("Step AddEditAssetCategory_001 - 03: Accept Alert message");
 		loginPage.acceptAlert();

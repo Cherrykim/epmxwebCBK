@@ -30,7 +30,7 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		
 		log.info("Step Pre-condition - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step Pre-condition - 02: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_CBK, Constant.LoginData.PASSWORD);
 		
 		log.info("Step Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
@@ -41,9 +41,9 @@ public class MasterFiles_26_AddEditUser extends AbstractTest {
 		
 		log.info("Step Pre-condition - 05: Create GL Account");
 		masterFilesPage.createNewGLAccount(corp1, glAccountCode1);
-		masterFilesPage.assignGLAccount(glAccountCode1, Constant.LoginData.USERNAME_NYDOH);
+		masterFilesPage.assignGLAccount(glAccountCode1, Constant.LoginData.USERNAME_CBK);
 		masterFilesPage.createNewGLAccount(corp2, glAccountCode2);
-		masterFilesPage.assignGLAccount(glAccountCode2, Constant.LoginData.USERNAME_NYDOH);
+		masterFilesPage.assignGLAccount(glAccountCode2, Constant.LoginData.USERNAME_CBK);
 
 	}
 

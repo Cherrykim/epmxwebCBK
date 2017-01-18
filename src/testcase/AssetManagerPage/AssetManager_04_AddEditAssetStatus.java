@@ -29,7 +29,7 @@ public class AssetManager_04_AddEditAssetStatus extends AbstractTest {
 		
 		log.info("Step AddEditAssetStatus_001 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditAssetStatus_001 - 02: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_CBK, Constant.LoginData.PASSWORD);
 		
 		log.info("Step AddEditAssetStatus_001 - 03: Accept Alert message");
 		loginPage.acceptAlert();

@@ -30,7 +30,7 @@ public class MasterFiles_04_AddEditBillToCode extends AbstractTest {
 		
 		log.info("Step AddEditBillToCode_001 - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Step AddEditBillToCode_001 - 02: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_CBK, Constant.LoginData.PASSWORD);
 		
 		log.info("Step AddEditBillToCode_001 - 03: Accept Alert message");
 		loginPage.acceptAlert();
@@ -138,7 +138,7 @@ public class MasterFiles_04_AddEditBillToCode extends AbstractTest {
 		masterFilesPage.clickOnImageButtonByItsSrc(DriverManager.getDriver(), "manage");
 		
 		log.info("VP: Bill-To Code is deactivated");
-		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Bill-To Code is deactivated. Press OK to reactivate or Cancel to view record only.");
+		verifyEquals(masterFilesPage.getAlertText(DriverManager.getDriver()), "Deliver-to Code is deactivated. Press OK to reactivate or Cancel to view record only.");
 	}
 	
 	@Test(groups = { "regression" }, description = "Check REactivate Bill-to code works")

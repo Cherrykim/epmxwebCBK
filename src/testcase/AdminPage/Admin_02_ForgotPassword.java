@@ -30,7 +30,7 @@ public class Admin_02_ForgotPassword extends AbstractTest {
 		mailinatorPage = PageFactory.getMailinatorPage(DriverManager.getDriver(), ipClient);
 		log.info("Pre-condition - 01: Open the site https://cherry.epmxweb.com");
 		log.info("Pre-condition - 02: Input correct username and password");
-		loginPage.login(Constant.LoginData.USERNAME_NYDOH, Constant.LoginData.PASSWORD);
+		loginPage.login(Constant.LoginData.USERNAME_CBK, Constant.LoginData.PASSWORD);
 		log.info("Pre-condition - 03: Accept Alert message");
 		loginPage.acceptAlert();
 		log.info("Pre-condition - 04: Open Add user page");
